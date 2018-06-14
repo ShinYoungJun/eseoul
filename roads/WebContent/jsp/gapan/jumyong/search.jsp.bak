@@ -1,0 +1,438 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<%@ include file="/jsp/common/include.jsp" %>
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+<title>::::: 서울시 도로점용관리시스템 :::::</title>
+<style type="text/css">
+<!--
+body {
+	margin: 0px;
+	background-image: url(/img/left_back.gif);
+}
+-->
+</style>
+<link href="/css/roads.css" rel="stylesheet" type="text/css">
+<script language="javascript" src="/js/PopupCalendar.js"></script> 
+<script>
+	function goSearch()
+	{
+	
+//		var pType = document.getElementById("period_type").value;
+		var toDate = document.getElementById("searchToDate").value;
+		var fromDate = document.getElementById("searchFromDate").value;
+		var type = document.getElementById("TYPE").value;
+		var section = document.getElementById("SECTION").value;
+//		var ownergroup = document.getElementById("OWNER_GROUP").value;		
+
+		var tax_set = document.getElementById("TAX_SET").value;
+		var bj_cd = document.getElementById("BJ_CD").value;
+
+//		var san_ck = document.getElementById("SAN_CK").checked;
+		var bonbun = document.getElementById("BONBUN").value;
+		var bubun = document.getElementById("BUBUN").value;
+		var jumyongName = document.getElementById("jumyongName").value;
+//		var tong = document.getElementById("TONG").value;
+//		var ban = document.getElementById("BAN").value;
+		var check_yn = document.getElementById("check_yn").value;
+//		var number_type = document.getElementById("number_type").value;
+		var numberValue = document.getElementById("numberValue").value;				
+		
+		
+		
+		toDate = removeDash(toDate);
+		fromDate = removeDash(fromDate);
+
+//		if(san_ck) san_ck = "1";
+//		else san_ck = "0";
+		
+		
+		//var iFrm = document.getElementById("IFRM_PurposeCode");
+		var purpose = document.getElementById("PURPOSE_CD").value;				
+
+		location.href="/gapan/jumyong/search.do?tDate="+toDate+"&fDate="+fromDate+"&type="+type+"&section="+section
+		+"&tax_set="+tax_set+"&purpose="+purpose+"&bj_cd="+bj_cd+"&bonbun="+bonbun+"&bubun="+bubun+"&jumyongName="
+		+jumyongName+"&check_yn="+check_yn+"&numberValue="+numberValue;
+	}
+	
+	
+	function goView(adminVal,sectionVal, gpTyp)
+	{		
+		var toDate = document.getElementById("searchToDate").value;		
+		var fromDate = document.getElementById("searchFromDate").value;
+		var type = document.getElementById("TYPE").value;
+		var section = document.getElementById("SECTION").value;
+
+		var tax_set = document.getElementById("TAX_SET").value;
+		var bj_cd = document.getElementById("BJ_CD").value;
+
+		var bonbun = document.getElementById("BONBUN").value;
+		var bubun = document.getElementById("BUBUN").value;
+		var jumyongName = document.getElementById("jumyongName").value;
+		var check_yn = document.getElementById("check_yn").value;
+		var numberValue = document.getElementById("numberValue").value;
+
+		toDate = removeDash(toDate);
+		fromDate = removeDash(fromDate);
+
+		var purpose = document.getElementById("PURPOSE_CD").value;
+		var param = "/gapan/jumyong/view.do?ADMIN_NO="+adminVal+"&section="+sectionVal+"&tDate="+toDate+"&fDate="+fromDate+"&type="+type+"&section="+section
+		+"&tax_set="+tax_set+"&purpose="+purpose+"&bj_cd="+bj_cd+"&bonbun="+bonbun+"&bubun="+bubun+"&jumyongName="+jumyongName+"&check_yn="+check_yn+"&numberValue="+numberValue+"&GP_TYP="+gpTyp;
+
+		location.href=param;
+	}
+	
+	function InitPage()
+	{
+		
+		var now = new Date();
+		var day=now.getDay();
+		day = 1 - day;				
+		Date.prototype.addDate = add_date; // Date 객체에 메서드 정의
+		
+		var fromDate = new Date(); // 현재 날짜 객체 생성
+		
+		fromDate.addDate(day); // 
+
+		document.getElementById("searchToDate").value = getDateType1(now);
+		document.getElementById("searchFromDate").value = getDateType1(fromDate);
+		
+		var toDate =   document.getElementById("toDateValue").value ;
+		var fromDate =   document.getElementById("fromDateValue").value ;
+
+
+		if(toDate != "" && toDate !="99999999" )
+			document.getElementById("searchToDate").value = addDash(toDate);
+
+		if(fromDate != "" && fromDate != "0")		
+			document.getElementById("searchFromDate").value = addDash(fromDate);
+		document.getElementById("type").value = "1";
+		document.getElementById("section").value = "1";
+		
+	}
+	
+	function getDateType1(date1)
+	{
+		var year= date1.getFullYear();
+	    var mon = (date1.getMonth()+1)>9 ? ''+(date1.getMonth()+1) : '0'+(date1.getMonth()+1);
+	    var day = date1.getDate()>9 ? ''+date1.getDate() : '0'+date1.getDate();
+		
+		return (year+"-"+mon+"-"+day);
+	}
+	
+	
+	
+	function add_date(i) // 매서드가 될 함수 구현
+	{
+	   var currentDate; // 계산된 날
+	   currentDate = this.getDate() + i*1; // 현재 날짜에 더해(빼)줄 날짜를 계산
+	   this.setDate(currentDate); // 계산된 날짜로 다시 세팅
+	}
+	
+	function removeDash(num)
+	{	
+		return num.split('-').join("");
+	}
+	
+	function addDash(num)
+	{
+		return (num.substr(0,4)+"-"+num.substr(4,2)+"-"+num.substr(6,2));
+	}
+	
+	// 점용 종류 선택시 점용 목적 코드 나오게 함.
+	function	Select_UseType(sel)
+	{
+//		document.getElementById("UseType1").style.display = "none";
+//		document.getElementById("UseType2").style.display = "none";
+		
+//		if(sel.value == '2' || sel.value == '3')	
+//			document.getElementById("UseType2").style.display = "block";	//	하천, 구거
+//		else						
+//			document.getElementById("UseType1").style.display = "block";	//	도로		
+
+		document.getElementById("IFRM_PurposeCode").src="/jsp/common/purposeCode/purposeCode.jsp?SectionCode="+sel.value;
+	}
+	
+	
+	function checkKeySearch(){
+		if(event.keyCode == "13")
+			goSearch();
+	}
+	
+	
+	function	excel_Search()
+	{
+		var form = document.jumyongForm;		
+
+		form.action = "excel_search.do";
+		form.submit();
+	}
+	
+			
+</script>
+
+
+
+</head>
+
+<body onload="javascript:InitPage();">
+
+<form id="jumyongForm" name="jumyongForm">
+
+
+<input name="toDateValue" id = "toDateValue" value="${toDate}" type="hidden">
+<input name="fromDateValue" id = "fromDateValue" value="${fromDate}" type="hidden">
+
+<table width="800" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td height="43"><img src="/img/sub6_cont1_title.gif" width="800" height="43"></td>
+  </tr>
+  <tr>
+    <td ><table width="780" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td height="1" bgcolor="eaeaea"></td>
+      </tr>
+      <tr>
+        <td height="14"></td>
+      </tr>     
+      <tr>
+        <td><table width="780" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td align="left" height="22" background="/img/tab_line_blue.gif">
+            <table border="0" cellspacing="0" cellpadding="0">
+                <tr >
+                  <td ><img src="/img/sub_petition_title15.gif" width="110" height="22"></td>
+                </tr>
+            </table></td>
+          </tr>
+		<tr>
+            <td  class="contborder_purple"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td>
+                <table width="100%" border="1" bordercolor="#c9dfed" style="border-collapse:collapse;" cellpadding="0" cellspacing="0"  class="sub_table">
+                    <tr>
+                      <td height="32" align="center" bgcolor="e5eff8" class="sub_table_b" >등록 기간</td>
+                      <td colspan="3" bgcolor="eaeaea" class="table_bl_left" >
+					  <table border="0" cellpadding="0" cellspacing="0" class="sub_stan">
+                        <tr>
+                          <td>&nbsp;
+                          <input name="searchFromDate" id = "searchFromDate" type="text" class="input_form1" style="width:80px" readonly></td>
+                          <td>&nbsp;<img src="/img/calendar_icon.gif" style="cursor:pointer" 
+                            onclick="popUpCalendar(this, document.getElementById('searchFromDate'), 'yyyymmdd');">
+						  </td>
+                          <td width="16" align="center">&nbsp;&nbsp;~&nbsp;&nbsp;</td>
+                          <td>
+                            <input name="searchToDate" id = "searchToDate" type="text" class="input_form1" style="width:80px" readonly></td>
+                          <td>&nbsp;<img src="/img/calendar_icon.gif" style="cursor:pointer" onclick="popUpCalendar(this, document.getElementById('searchToDate'), 'yyyymmdd');">
+                          </td>
+                          <td width="20"></td>
+						</tr>
+                      </table></td>
+                    </tr>
+                    <tr>
+                      <td width="13%" height="32" align="center" bgcolor="e5eff8" class="sub_table_b">점용종류</td>                      
+					  <td width="37%" bgcolor="eaeaea" class="table_bl_left">
+						<select name="TYPE" class="input_form1" style="width:130px" OnChange="Select_UseType(this);" disabled>
+							${use_type}
+					    </select></td>
+                      <td width="13%" align="center" bgcolor="e5eff8" class="sub_table_b">점용구분</td>
+					  <td width="37%" bgcolor="eaeaea" class="table_bl_left">
+					  	<select name="SECTION" ID="SECTION" class="input_form1" style="width:130px" disabled>
+							${use_section}
+						</select></td>
+                    </tr>
+					
+                    <tr>
+                      <td align="center" bgcolor="e5eff8" class="sub_table_b">세입구분</td>
+					  <td bgcolor="eaeaea" class="table_bl_left"><select name="TAX_SET" class="input_form1" style="width:130px">
+						${taxation_section}
+					  </select></td>
+					  
+					  
+					   <td height="32" align="center" bgcolor="e5eff8" class="sub_table_b" >검토여부</td>
+                      <td bgcolor="eaeaea" class="table_bl_left" width="30%">
+					  <select name="check_yn" id="check_yn" class="input_form1" style="width:130px">
+							${check_yn}
+                      </select>
+					  </td>
+					  
+                    </tr>
+					
+					
+					
+                    <tr>
+				  <td height="32" align="center" bgcolor="e5eff8" class="sub_table_b">법정동</td>
+				  <td bgcolor="eaeaea" class="table_bl_left">
+				  <table border="0" cellpadding="0" cellspacing="0" class="sub_stan">
+					<tr >
+					  
+                          
+                          <td >
+                          <select name="BJ_CD" class="input_form1" style="width:130px">${bjdong_code}
+                          </select>
+                          </td>
+                          
+					  </tr>
+				  </table></td>
+				  <td height="26" align="center" bgcolor="e5eff8" class="sub_table_b">번 지 </td>
+                      <td bgcolor="eaeaea" class="table_bl_left">
+					  <table border="0" cellpadding="0" cellspacing="0" class="sub_stan">
+                        <tr>
+                          <td>
+                          
+                          <input name="BONBUN" type="text" class="input_form1" style="width:40px" >
+						- <input name="BUBUN" type="text" class="input_form1" style="width:40px" >
+                          
+                          
+                          </td>
+                        </tr>
+                      </table></td>
+				</tr> 
+                    
+					
+                    <tr>
+                     
+					  
+                      
+					  <td height="26" align="center" bgcolor="e5eff8" class="sub_table_b" >관리번호</td>
+                      <td bgcolor="eaeaea" class="table_bl_left" width="35%">
+					  <input name="numberValue" type="text" class="input_form1" style="width:130px"  onKeyDown="javascript:checkKeySearch();" value="${numberValue}">
+					  </td>
+					  
+					   <td height="26" align="center" bgcolor="e5eff8" class="sub_table_b">점용인</td>
+                      <td bgcolor="eaeaea" class="table_bl_left">
+					  <table border="0" cellpadding="0" cellspacing="0" class="sub_stan">
+                        <tr>
+                          <td><input name="jumyongName" id="jumyongName" type="text" class="input_form1" style="width:130px" onKeyDown="javascript:checkKeySearch();" value="${jumyongName}"></td>
+                        </tr>
+                      </table></td>
+                    </tr>
+                    <tr>
+					  <td height="26" align="center" bgcolor="e5eff8" class="sub_table_b">점용목적</td>
+					  <td colspan="3" bgcolor="eaeaea" class="table_bl_left"><table width="100%" border="0" cellpadding="0" cellspacing="0" class="sub_stan">
+						<select name="PURPOSE_CD" ID="PURPOSE_CD" class="input_form1" style="width:200px" >
+							<option value="">::선택::</option>
+							<option value="710">가로판매대,구두수선대</option>
+							<option value="720">노점,생활정보지 통합배포대</option>
+							<option value="730">자동판매기,상품진열대</option>
+						</select>
+					  </table></td>
+                    </tr>
+                </table>
+                
+                
+                </td>
+              </tr>
+ 
+                <tr>
+                  <td height="40" align="right"><img src="/img/inquiry_icon2.gif" alt="조회" width="56" height="18" border="0" onclick="javascript:goSearch();" style="cursor:pointer" >
+                  </td>
+                </tr>
+                <tr>
+                  <td height="1" bgcolor="#EAEAEA"></td>
+                </tr>
+                <tr>
+                  <td height="34" class="sub_stan">전체건수 : <span class="sub_stan_blue">${listCount}</span>건 </td>
+                </tr>
+                <tr>
+                  <td>
+                  	<table width="780" border="1" bordercolor="#c9dfed" style="border-collapse:collapse;" cellpadding="0" cellspacing="0"  class="sub_table">
+                      <tr>
+                        <td height="35" align="center" bgcolor="e5eff8" class="sub_table_b" width="50">번호</td>
+                        <td align="center" bgcolor="e5eff8" class="sub_table_b" >관리번호</td>
+                        <td align="center" bgcolor="e5eff8" class="sub_table_b"  >점용종류</td>
+                        <td align="center" bgcolor="e5eff8" class="sub_table_b" >점용구분</td>
+                        <td align="center" bgcolor="e5eff8" class="sub_table_b"  >세입구분</td>
+                        <td align="center" bgcolor="e5eff8" class="sub_table_b"  >점용인</td>
+                        <td align="center" bgcolor="e5eff8" class="sub_table_b"  >점용지</td>
+                        <td align="center" bgcolor="e5eff8" class="sub_table_b"  >점용목적</td>                        
+                        <td align="center" bgcolor="e5eff8" class="sub_table_b"  >갱신일자</td>                                                
+                        <td align="center" bgcolor="e5eff8" class="sub_table_b"  >검토여부</td>
+                      </tr>
+                                  
+                      <c:forEach items="${blist1}" var="board" varStatus="idx">	                      
+
+                      <tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor:pointer"
+                      onclick="javascript:goView('${board.ADMIN_NO}','${board.SECTION}','${board.GP_TYP}');">
+
+						<td height="26" align="center"> ${idx.count} </td>
+                        <td align="center" >
+                        	${board.ADMIN_NO}
+						</td>
+                        <td align="center">${board.TYPE_NAME}</td>
+                        <td align="center">${board.SECTION_NAME}</td>
+                        <td align="center">${board.TAX_SET_NAME}</td>                        
+                        <td align="center">${board.NAME}</td>
+                        <td align="center">${board.ADDR}</td>
+                        <td align="center">${board.PURPOSE_CD}</td>                                                                                    	                        
+                        <td align="center">${rnic:addDash(board.UP_DATE)}</td>                                                                                    
+                        <td align="center"><font color="red">${board.CHECK_NAME}</font></td>            
+                                                  
+                      </tr>
+
+					 </c:forEach>
+					 
+					
+                    </table>
+				  </td>
+                </tr>
+                
+                <tr>
+	                <td height="40" align="center"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+	                    <tr>
+	                      <td align="center"><table border="0" cellpadding="0" cellspacing="0">
+	                        <tr>
+	                        ${strPageDivideForm}
+	                        </tr>
+	                        
+	                      </table></td>
+
+	                    </tr>
+	                    <tr>
+
+
+	                    </tr>
+	                  </table></td>
+	              </tr>
+	              
+	              <tr>              
+		                <td height="40" align="right">
+			                <table border="0" width="100%">
+			                	<tr>
+				                	<td align="right">
+					                	<img src="/img/excel_icon.gif" alt="EXCEL 변환" border="0" onclick="javascript:excel_Search();" style="cursor:hand">					              
+					                </td>						                
+				                </tr>
+				                
+				                
+				             </table>
+						</td>
+		              </tr>
+                
+            </table></td>
+          </tr>
+          
+        </table></td>
+      </tr>
+      <tr>
+        <td height="30"></td>
+      </tr>
+</table>
+</td></tr></table>
+</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

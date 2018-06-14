@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+                       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<bean id="methodNameResolver_admin" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+ 		<property name="mappings">
+ 			<props>
+				<prop key="/admin/section/list.do">sectionList</prop>
+				<!--  //********** BEGIN_현진_20120309 -->
+				<prop key="/admin/section/registerView.do">registerView</prop>
+				<prop key="/admin/section/register.do">sectionRegister</prop>
+				<!--   //********** END_현진_20120309 -->
+				<!--  //********** BEGIN_현진_20120311 -->
+				<prop key="/admin/section/delete.do">sectionDelete</prop>
+				<!--   //********** END_현진_20120311 -->
+				<prop key="/admin/deleteMove/list.do">gapanDeleteMove</prop>
+				<prop key="/admin/deleteMove/delete.do">gapanDelete</prop>
+				<prop key="/admin/deleteMove/move.do">gapanMove</prop>
+				<!--  //********** BEGIN_현진_20120319 -->
+				<prop key="/admin/deleteMove/changeGapanUpdate.do">changeGapanUpdate</prop>
+				<!--   //********** END_현진_20120319 -->
+			</props>
+ 		</property>
+ 	</bean> 	
+ 	
+ 	<bean id="urlMapping_admin" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+ 		<property name="mappings">
+ 			<props>
+				<prop key="/admin/section/list.do">adminControl</prop>
+				<!--  //********** BEGIN_현진_20120309 -->
+				<prop key="/admin/section/registerView.do">adminControl</prop>				
+				<prop key="/admin/section/register.do">adminControl</prop>
+				<!--   //********** END_현진_20120309 -->
+				<!--  //********** BEGIN_현진_20120311 -->
+				<prop key="/admin/section/delete.do">adminControl</prop>
+				<!--   //********** END_현진_20120311 -->
+				<prop key="/admin/deleteMove/list.do">adminControl</prop>
+				<prop key="/admin/deleteMove/delete.do">adminControl</prop>
+				<prop key="/admin/deleteMove/move.do">adminControl</prop>
+				<!--  //********** BEGIN_현진_20120319 -->
+				<prop key="/admin/deleteMove/changeGapanUpdate.do">adminControl</prop>
+				<!--   //********** END_현진_20120319 -->
+ 			</props>
+ 		</property>
+ 	</bean>
+
+	<bean id="adminControl" class="main.java.admin.web.AdminControl">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_admin"/>
+		</property>
+		<property name="adminService" ref="adminService"/>	
+		<!--  //********** BEGIN_현진_20120307 -->
+		<property name="rojum_SurveyService" ref="rojum_SurveyService"/>
+		<!--   //********** END_현진_20120307 -->			
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+ 	<bean id="adminDao" parent="roadsJdbcDaoSupport" class="main.java.admin.dao.AdminDao"/>  
+
+ 	<bean id="adminService" class="main.java.admin.service.AdminService"> 
+ 		<property name="adminDao" ref="adminDao"/> 	
+ 	</bean>
+
+</beans>

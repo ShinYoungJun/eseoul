@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+                       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="methodNameResolver_Facility_Occupancy" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+ 		<property name="mappings">
+ 			<props>
+				<prop key="/facility/jumyong/search.do">jumyongList</prop> 			
+				<prop key="/facility/jumyong/view.do">view</prop>
+				<prop key="/facility/jumyong/product_view.do">product_view</prop>
+				<prop key="/facility/jumyong/productGo.do">productGo</prop>				
+			</props>
+ 		</property>
+ 	</bean>
+
+	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+ 		<property name="mappings">
+ 			<props>
+				<prop key="/facility/jumyong/search.do">JumyongBoardControl</prop>
+				<prop key="/facility/jumyong/view.do">JumyongBoardControl</prop>
+				<prop key="/facility/jumyong/product_view.do">JumyongBoardControl</prop>				
+				<prop key="/facility/jumyong/productGo.do">JumyongBoardControl</prop>								
+				<prop key="/facility/jumyong/productInsert.do">productBoardFormControl_facility</prop>				
+				<prop key="/facility/jumyong/productSubtractInsert.do">productSubtractBoardFormControl_facility</prop>								
+				<prop key="/facility/jumyong/productSubBeforeTax.do">productSubBeforeTaxBoardFormControl_facility</prop>												
+ 			</props>
+ 		</property>
+ 	</bean>
+	<bean id="JumyongBoardControl" class="main.java.facility.jumyong.web.JumyongBoardControl">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Facility_Occupancy"/>
+		</property>
+		<property name="jumyongService_facility" ref="jumyongService_facility"/>
+		<property name="commonCodeService" ref="commonCodeService"/>				
+	</bean>
+	
+	
+	<bean id="productSubBeforeTaxBoardFormControl_facility" class="main.java.facility.jumyong.web.ProductBoardBeforeTaxFormControl_facility">
+		<property name="jumyongService_facility" ref="jumyongService_facility"/>		
+		<property name="commandClass" value="main.java.facility.jumyong.model.Equip_ProductBean"/>
+		<property name="commandName" value="product"/>
+	</bean>
+	
+	<bean id="productSubtractBoardFormControl_facility" class="main.java.facility.jumyong.web.ProductSubtractBoardFormControl">
+		<property name="jumyongService_facility" ref="jumyongService_facility"/>		
+		<property name="commandClass" value="main.java.facility.jumyong.model.Equip_ProductBean"/>
+		<property name="commandName" value="product"/>
+	</bean>
+	
+	
+	<bean id="productBoardFormControl_facility" class="main.java.facility.jumyong.web.ProductBoardFormControl_facility">
+		<property name="jumyongService_facility" ref="jumyongService_facility"/>		
+		<property name="commandClass" value="main.java.facility.jumyong.model.Equip_ProductBean"/>
+		<property name="commandName" value="product"/>
+	</bean>
+	
+	
+ 	<bean id="jumyongService_facility" class="main.java.facility.jumyong.service.JumyongService">
+		<property name="jumyongDao_facility" ref="jumyongDao_facility"/>
+ 	</bean>
+ 	
+	<bean id="jumyongDao_facility" parent="roadsJdbcDaoSupport" class="main.java.facility.jumyong.dao.JumyongDao"/>
+
+ 	
+</beans>

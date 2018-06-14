@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+                       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<bean id="methodNameResolver_commCode" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+ 		<property name="mappings">
+ 			<props>
+			<prop key="/admin/commCode/areaCode.do">areaCodelist</prop>			
+			<!--  //********** BEGIN_현진_20120313 -->
+			<!--<prop key="/admin/commCode/orgCode.do">orgCodelist</prop>-->
+			<prop key="/admin/commCode/orgCode.do">orgCodelistNew</prop>
+			<prop key="/admin/commCode/orgCodeRegisterView.do">orgCodeRegisterView</prop>
+			<prop key="/admin/commCode/orgCodeRegister.do">orgCodeRegister</prop>
+			<prop key="/admin/commCode/orgCodeDelete.do">orgCodeDelete</prop>
+			<!--   //********** END_현진_20120313 -->
+			<!--  //********** BEGIN_현진_20120314 -->
+			<!-- <prop key="/admin/commCode/purposeCode.do">purposeCodelist</prop> -->
+			<prop key="/admin/commCode/purposeCode.do">purposeCodelistNew</prop>
+			<!--  //********** BEGIN_현진_20120319 -->
+			<prop key="/admin/commCode/purposeCodeDetailSelect.do">purposeCodeDetailSelect</prop>
+			<prop key="/admin/commCode/purposeCodeDetailModify.do">purposeCodeDetailModify</prop>
+			<!--   //********** END_현진_20120319 -->
+			<!--  //********** BEGIN_현진_20120320 -->
+			<prop key="/admin/commCode/purposeRegisterView.do">purposeRegisterView</prop>
+			<prop key="/admin/commCode/purposeRegister.do">purposeRegister</prop>
+			<prop key="/admin/commCode/purposeDelete.do">purposeDelete</prop>
+			<!--   //********** END_현진_20120320 -->
+			<prop key="/admin/commCode/getSectionCode.do">getSectionCode</prop>
+			<!--   //********** END_현진_20120314 -->
+			<!--  //********** BEGIN_현진_20120315 -->
+			<prop key="/admin/commCode/seal.do">seal</prop>
+			<prop key="/admin/commCode/sealRegister.do">sealRegister</prop>
+			<!--   //********** END_현진_20120315 -->
+			
+			<prop key="/admin/commCode/taxCode.do">taxCodelist</prop>
+			<prop key="/admin/commCode/zipCode.do">zipCodelist</prop>
+			<prop key="/admin/commCode/zipCode_New.do">zipCodeNewlist</prop>
+			<!--  //********** BEGIN_현진_20120313 -->
+			<!--<prop key="/admin/commCode/jojungCode.do">jojungCodelist</prop>  -->
+			<prop key="/admin/commCode/jojungCode.do">jojungCodelistNew</prop>
+			<prop key="/admin/commCode/jojungCodeRegisterView.do">jojungCodeRegisterView</prop>
+			<prop key="/admin/commCode/jojungCodeRegister.do">jojungCodeRegister</prop>
+			<prop key="/admin/commCode/jojungCodeDelete.do">jojungCodeDelete</prop>
+			<!--   //********** END_현진_20120313 -->
+				
+			<prop key="/admin/commCode/gradeCode.do">gradeCodelist</prop>
+			
+			<prop key="/admin/commCode/officeCode.do">officeCodelist</prop>
+			<prop key="/admin/commCode/insertOfficeCode.do">insertOfficeCode</prop>
+			<prop key="/admin/commCode/insertOfficeCodePrc.do">insertOfficeCodePrc</prop>
+			<prop key="/admin/commCode/modifyOfficeCodePrc.do">modifyOfficeCodePrc</prop>
+			<!--  //********** BEGIN_KANG_20120416 -->
+			<prop key="/admin/commCode/deleteOfficeCodePrc.do">deleteOfficeCodePrc</prop>
+			<!--   //********** END_KANG_20120416 -->			
+									
+							
+			</props>
+ 		</property>
+ 	</bean> 	
+ 	
+ 	<bean id="urlMapping_commCode" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+ 		<property name="mappings">
+ 			<props>
+			<prop key="/admin/commCode/areaCode.do">commCodeControl</prop>
+			<prop key="/admin/commCode/orgCode.do">commCodeControl</prop>
+			<!--  //********** BEGIN_현진_20120313 -->
+			<prop key="/admin/commCode/orgCodeRegisterView.do">commCodeControl</prop>
+			<prop key="/admin/commCode/orgCodeRegister.do">commCodeControl</prop>
+			<prop key="/admin/commCode/orgCodeDelete.do">commCodeControl</prop>
+			<!--   //********** END_현진_20120313 -->
+			<prop key="/admin/commCode/purposeCode.do">commCodeControl</prop>
+			<!--  //********** BEGIN_현진_20120319 -->
+			<prop key="/admin/commCode/purposeCodeDetailSelect.do">commCodeControl</prop>
+			<prop key="/admin/commCode/purposeCodeDetailModify.do">commCodeControl</prop>
+			<!--   //********** END_현진_20120319 -->
+			<!--  //********** BEGIN_현진_20120320 -->
+			<prop key="/admin/commCode/purposeRegisterView.do">commCodeControl</prop>
+			<prop key="/admin/commCode/purposeRegister.do">commCodeControl</prop>
+			<prop key="/admin/commCode/purposeDelete.do">commCodeControl</prop>
+			<!--   //********** END_현진_20120320 -->
+			<!--  //********** BEGIN_현진_20120314 -->
+			<prop key="/admin/commCode/getSectionCode.do">commCodeControl</prop>
+			<!--   //********** END_현진_20120314 -->			
+			<prop key="/admin/commCode/taxCode.do">commCodeControl</prop>
+			<prop key="/admin/commCode/zipCode.do">commCodeControl</prop>
+			<prop key="/admin/commCode/zipCode_New.do">commCodeControl</prop>
+			<prop key="/admin/commCode/jojungCode.do">commCodeControl</prop>
+			<!--  //********** BEGIN_현진_20120313 -->
+			<prop key="/admin/commCode/jojungCodeRegisterView.do">commCodeControl</prop>
+			<prop key="/admin/commCode/jojungCodeRegister.do">commCodeControl</prop>
+			<prop key="/admin/commCode/jojungCodeDelete.do">commCodeControl</prop>
+			<!--   //********** END_현진_20120313 -->
+			<!--  //********** BEGIN_현진_20120315 -->
+			<prop key="/admin/commCode/seal.do">commCodeControl</prop>
+			<prop key="/admin/commCode/sealRegister.do">commCodeControl</prop>
+			<!--   //********** END_현진_20120315 -->
+			<prop key="/admin/commCode/gradeCode.do">commCodeControl</prop>
+			
+			<prop key="/admin/commCode/officeCode.do">commCodeControl</prop>	
+			<prop key="/admin/commCode/insertOfficeCode.do">commCodeControl</prop>
+			<prop key="/admin/commCode/insertOfficeCodePrc.do">commCodeControl</prop>
+			<prop key="/admin/commCode/modifyOfficeCodePrc.do">commCodeControl</prop>
+			<!--  //********** BEGIN_KANG_20120416 -->
+			<prop key="/admin/commCode/deleteOfficeCodePrc.do">commCodeControl</prop>
+			<!--   //********** END_KANG_20120416 -->
+			<prop key="/admin/commCode/modifyGradeCode.do">commCodeFormControl</prop>	
+			<prop key="/admin/commCode/deleteGradeCode.do">commCodeFormControl</prop>					
+				  			 				 				
+ 			</props>
+ 		</property>
+ 	</bean>
+
+	<bean id="commCodeControl" class="main.java.admin.web.CommCodeControl">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_commCode"/></property>
+		<property name="commCodeService" ref="commCodeService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>			
+	</bean>
+
+	<bean id="commCodeFormControl" class="main.java.admin.web.CommCodeFormControl">
+		<property name="commCodeService" ref="commCodeService"/>
+		
+		<property name="commandClass" value="main.java.admin.model.GradeCodeBean"/>
+		<property name="commandName" value="codelist"/>
+			
+		<property name="formView" value="/admin/commCode/gradeCodeList"/>		
+	</bean>	
+	
+ 	<bean id="commCodeDao" parent="roadsJdbcDaoSupport" class="main.java.admin.dao.CommCodeDao"/>  
+
+ 	<bean id="commCodeService" class="main.java.admin.service.CommCodeService"> 
+ 		<property name="commCodeDao" ref="commCodeDao"/> 	
+ 	</bean>
+ 	
+ 	 <bean id="commonCodeService" class="main.java.common.commonCode.service.CommonCodeService">
+ 		<property name="commonCodeDao" ref="commonCodeDao"/>
+ 	</bean>
+ 	<bean id="commonCodeDao" parent="roadsJdbcDaoSupport" class="main.java.common.commonCode.dao.CommonCodeDao"/>
+ 
+
+</beans>

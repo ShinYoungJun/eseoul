@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="EUC-KR" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="total_bbs">
+
+	<typeAlias alias="boardDTO" type="com.board.BoardCommand" />
+
+
+	<!-- 시퀀스 기능 없이 일련 번호 증가를 시키기 위해서 기존 sid 값 중에서 가장 큰 값을 얻는 과정 -->
+	<select id="div_sidMax" resultClass="Integer">
+		SELECT NVL(MAX(div_sid), 0) FROM total_bbs WHERE div=#div#
+	</select>
+	<select id="sidMax" resultClass="Integer">
+		SELECT NVL(MAX(sid), 0) FROM total_bbs
+	</select>
+
+
+	<!-- 힛카운트!!!! 안할려다가 마지막에 뽀너쓰 -->
+	<select id="hitNext" resultClass="Integer" parameterClass="java.util.Map">
+		SELECT hitcount FROM total_bbs WHERE sid=#sid#
+	</select>
+	<update id="hitUpdate" parameterClass="java.util.Map" >
+		UPDATE total_bbs SET hitCount=#hitcount# WHERE sid=#sid#
+	</update>
+	
+	<insert id="insertData" parameterClass="com.file.FileCommand">
+		INSERT INTO total_bbs (div, div_sid, sid, notice, name, title, content
+		, hitcount, created, saveFileName, originalFileName)
+		VALUES (#div#, #div_sid#, #sid#, #notice#, #name#, #title#, #content#
+		, 0, SYSDATE, #saveFileName#, #originalFileName#)
+	</insert>
+
+	<!-- SELECT 구문 -->
+	<select id="listData2" resultClass="com.file.FileCommand" parameterClass="java.util.Map">
+	<![CDATA[SELECT * FROM (SELECT rownum rnum, data.* FROM (SELECT div_sid, sid, name, title, TO_CHAR(created, 'YYYY-MM-DD')created, hitcount, saveFileName, originalFileName
+		FROM total_bbs WHERE div=#div#
+		ORDER BY sid DESC) data) WHERE rnum>=#start# AND rnum<=#end#]]>
+	</select>
+	<select id="noticeList" resultClass="com.file.FileCommand" parameterClass="java.util.Map">
+	<![CDATA[SELECT * FROM (SELECT rownum rnum, data.* FROM (SELECT div_sid, sid, notice, name, title, TO_CHAR(created, 'YYYY-MM-DD')created, hitcount, saveFileName, originalFileName
+		FROM total_bbs WHERE notice='on' AND div=#div#
+		ORDER BY sid DESC) data) WHERE rnum>=#start# AND rnum<=#end#]]>
+	</select>
+	
+		<!-- 컨텐트 구문 -->
+	<select id="getContent" resultClass="com.file.FileCommand" 
+			parameterClass="java.util.Map">
+		<![CDATA[
+			SELECT sid, name, title, content, TO_CHAR(created, 'YYYY-MM-DD')created, hitcount, saveFileName, originalFileName FROM total_bbs WHERE sid=#sid#
+		]]>
+	</select>
+	<!-- UPDATE 구문 -->
+		<select id="getModify" resultClass="com.file.FileCommand" parameterClass="java.util.Map">
+		<![CDATA[
+			SELECT sid, name, title, content, TO_CHAR(created, 'YYYY-MM-DD')created, saveFileName, originalFileName FROM total_bbs WHERE sid=#sid#
+		]]>
+	</select>
+	<update id="updateData" parameterClass="java.util.Map">
+			UPDATE total_bbs SET title=#title#, content=#content#, saveFileName=#saveFileName#, originalFileName=#originalFileName# WHERE sid=#sid#
+	</update>
+	<!-- 페이징 구문 -->
+	<select id="countData" resultClass="Integer">
+		<![CDATA[
+			SELECT NVL(Count(sid), 0) FROM total_bbs WHERE div=#div#
+		]]>
+	</select>
+
+	<delete id="deleteContent" parameterClass="java.util.Map">
+		<![CDATA[
+			DELETE FROM total_bbs WHERE sid=#sid#
+		]]>
+	</delete>
+		<!-- 서치 구문 -->
+	<select id="searchData" resultClass="com.file.FileCommand" parameterClass="java.util.Map">
+		<![CDATA[
+		SELECT * FROM (SELECT rownum rnum, data.* FROM (SELECT div, div_sid, sid, name, title, TO_CHAR(created, 'YYYY-MM-DD')created, hitcount, saveFileName, originalFileName
+		FROM total_bbs WHERE div=#div# AND name LIKE #name# OR div=#div# AND title LIKE #title# 
+		ORDER BY sid DESC) data) WHERE rnum>=#start# AND rnum<=#end#
+		]]>
+	</select>
+	<select id="searchCountData" resultClass="Integer" parameterClass="java.util.Map">
+		<![CDATA[
+			SELECT NVL(Count(sid), 0) FROM total_bbs WHERE div=#div# AND name LIKE #name# OR div=#div# AND title LIKE #title#
+		]]>
+	</select>
+</sqlMap>

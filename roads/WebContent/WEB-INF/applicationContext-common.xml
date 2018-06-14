@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>	
+
+ 	
+	<bean class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver" id="userControlMethodNameResolver_common">
+		<property name="mappings">
+			<props>
+				<prop key="/download.do">download</prop>
+				<prop key="/vodownload.do">vodownload</prop>
+				<prop key="/get_bjdong_code.do">getBjdongCode</prop>
+				<prop key="/get_hjdong_code.do">getHjdongCode</prop>
+				<prop key="/get_seoul_gugan.do">getSeoulGugan</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping" id="urlMapping_common">
+		<property name="mappings">
+			<props>
+	    	<prop key="/download.do">CommonActionControl</prop>
+    		<prop key="/vodownload.do">CommonActionControl</prop>
+    		<prop key="/get_bjdong_code.do">CommonActionControl</prop>
+    		<prop key="/get_hjdong_code.do">CommonActionControl</prop>
+    		<prop key="/get_seoul_gugan.do">CommonActionControl</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="boardFileService" class="main.java.common.service.BoardFileServiceImpl"/>
+	
+	<bean class="main.java.common.web.CommonActionControl" id="CommonActionControl">
+	  	<property name="methodNameResolver">
+	  		<ref local="userControlMethodNameResolver_common"/>
+	  	</property>
+	  	<property name="commonCodeService" ref="commonCodeService"/>	
+ 	</bean>
+ 	
+	
+</beans> 	
+
+

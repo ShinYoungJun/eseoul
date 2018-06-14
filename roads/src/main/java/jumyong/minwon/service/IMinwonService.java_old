@@ -1,0 +1,29 @@
+//	2009		Kim Yun Seo
+
+package main.java.jumyong.minwon.service;
+
+import java.util.List;
+
+import main.java.jumyong.minwon.model.Admin_BaseBean;
+import main.java.jumyong.minwon.model.AppealBean;
+import main.java.jumyong.minwon.model.JumjiSearchBean;
+import main.java.jumyong.minwon.model.MinwonBean;
+import main.java.jumyong.minwon.model.PlaceBean;
+
+
+public interface IMinwonService {
+
+	public	List	executeSearch(String strName, String strReq_no, String strReq_date1, String strReq_date2, String strCheck, String Process, int intRn1, int intRn2);
+	public	int		executeCount(String strName, String strReq_no, String strReq_date1, String strReq_date2, String strCheck, String Process);
+
+	public	boolean	executeAdmin_Base_Register(Admin_BaseBean Bean);
+	public	boolean	executeMinwon_Register(MinwonBean Bean);
+	public 	boolean executeAppeal_Register(AppealBean Bean);
+	public 	boolean executePlace_Register(PlaceBean Bean);
+	
+	public	int		executeCheck_AdminnoCount(String BJ_CD);
+	public	int		executeCheck_Adminno(String ADMIN_NO);
+	
+	public	List	executeSearch_Jumji(JumjiSearchBean Bean, int intRn1, int intRn2);
+	public	int		executeSearch_JumjiCount(JumjiSearchBean Bean);
+}

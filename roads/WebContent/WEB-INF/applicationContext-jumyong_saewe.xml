@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+                       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<bean id="methodNameResolver_Jumyong_Saewe" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+ 		<property name="mappings">
+ 			<props>
+				<prop key="/jumyong/saewe/search.do">Search</prop>
+				<prop key="/jumyong/saewe/excel_search.do">Excel_Search</prop>
+				<prop key="/jumyong/saewe/view.do">View</prop>
+				<prop key="/jumyong/saewe/saewesuipbugwa.do">Saewesuipbugwa</prop>
+				<prop key="/jumyong/saewe/saeweSuipBugwa_ilgwal.do">Saewesuipbugwa_Ilgwal</prop>
+				
+				<prop key="/jumyong/saewe/sanchul_view.do">Sanchul_View</prop>
+				<prop key="/jumyong/saewe/sanchulinfo_view.do">SanchulInfo_View</prop>
+				<prop key="/jumyong/saewe/jumin_view.do">Jumin_View</prop>
+				<prop key="/jumyong/saewe/jumji_view.do">Jumji_View</prop>
+				<prop key="/jumyong/saewe/bugwa_view.do">Bugwa_View</prop>
+				
+				<prop key="/jumyong/saewe/bugwa_modify.do">Bugwa_Modify</prop>
+				<prop key="/jumyong/saewe/bugwa_modify_prc.do">Bugwa_Modify_Prc</prop>
+				<prop key="/jumyong/saewe/bugwa_register.do">Bugwa_Register</prop>
+				<prop key="/jumyong/saewe/bugwa_register_prc.do">Bugwa_Register_Prc</prop>
+				<prop key="/jumyong/saewe/semokinfo.do">SemokInfo</prop>
+
+				<prop key="/jumyong/saewe/bugwaDelete.do">BugwaDelete</prop>
+				<prop key="/jumyong/saewe/sunap_view.do">Sunap_View</prop>
+				<prop key="/jumyong/saewe/saeweSuipBugwa_ilgwal_junggi.do">Saewesuipbugwa_Ilgwal_junggi</prop>
+				
+			</props>
+ 		</property>
+ 	</bean>
+ 	
+ 	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+ 		<property name="mappings">
+ 			<props>
+				<prop key="/jumyong/saewe/search.do">jumyong_saeweControl</prop>
+				<prop key="/jumyong/saewe/excel_search.do">jumyong_saeweControl</prop>
+				<prop key="/jumyong/saewe/view.do">jumyong_saeweControl</prop>
+				<prop key="/jumyong/saewe/saewesuipbugwa.do">jumyong_saeweControl</prop>
+				<prop key="/jumyong/saewe/saeweSuipBugwa_ilgwal.do">jumyong_saeweControl</prop>
+				
+				<prop key="/jumyong/saewe/sanchul_view.do">jumyong_saeweControl_Sanchul</prop>
+				<prop key="/jumyong/saewe/sanchulinfo_view.do">jumyong_saeweControl_Sanchul</prop>
+				<prop key="/jumyong/saewe/jumin_view.do">jumyong_saeweControl_Jumin</prop>
+				<prop key="/jumyong/saewe/jumji_view.do">jumyong_saeweControl_Jumji</prop>
+				<prop key="/jumyong/saewe/bugwa_view.do">jumyong_saeweControl_Bugwa</prop>
+
+				<prop key="/jumyong/saewe/bugwa_modify.do">jumyong_saeweControl_Bugwa</prop>
+				<prop key="/jumyong/saewe/bugwa_modify_prc.do">jumyong_saeweControl_Bugwa</prop>
+				<prop key="/jumyong/saewe/bugwa_register.do">jumyong_saeweControl_Bugwa</prop>
+				<prop key="/jumyong/saewe/bugwa_register_prc.do">jumyong_saeweControl_Bugwa</prop>
+				<prop key="/jumyong/saewe/semokinfo.do">jumyong_saeweControl_Bugwa</prop>
+
+				<prop key="/jumyong/saewe/bugwaDelete.do">jumyong_saeweControl_Bugwa</prop>
+				<prop key="/jumyong/saewe/sunap_view.do">jumyong_saeweControl_Sunap</prop>
+				<prop key="/jumyong/saewe/saeweSuipBugwa_ilgwal_junggi.do">jumyong_saeweControl</prop>
+				
+ 			</props>
+ 		</property>
+ 	</bean>
+ 	
+
+	<bean id="jumyong_saeweControl" class="main.java.jumyong.saewe.web.SaeweControl">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Jumyong_Saewe"/></property>
+		<property name="jumyong_saeweService" ref="jumyong_saeweService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+		<property name="sysConnectService" ref="sysConnectService"/>
+	</bean>
+	
+	<bean id="jumyong_saeweControl_Sanchul" class="main.java.jumyong.saewe.web.TabSanchul_Control">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Jumyong_Saewe"/></property>
+		<property name="jumyong_saeweService" ref="jumyong_saeweService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+	<bean id="jumyong_saeweControl_Jumin" class="main.java.jumyong.saewe.web.TabJumin_Control">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Jumyong_Saewe"/></property>
+		<property name="jumyong_saeweService" ref="jumyong_saeweService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+	<bean id="jumyong_saeweControl_Jumji" class="main.java.jumyong.saewe.web.TabJumji_Control">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Jumyong_Saewe"/></property>
+		<property name="jumyong_saeweService" ref="jumyong_saeweService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+	<bean id="jumyong_saeweControl_Bugwa" class="main.java.jumyong.saewe.web.TabBugwa_Control">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Jumyong_Saewe"/></property>
+		<property name="jumyong_saeweService" ref="jumyong_saeweService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+	<bean id="jumyong_saeweControl_Sunap" class="main.java.jumyong.saewe.web.TabSunap_Control">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Jumyong_Saewe"/></property>
+		<property name="jumyong_saeweService" ref="jumyong_saeweService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+
+ 	<bean id="jumyong_saeweService" class="main.java.jumyong.saewe.service.SaeweService">
+ 		<property name="jumyong_saeweDao" ref="jumyong_saeweDao"/>
+ 	</bean>
+ 	<bean id="jumyong_saeweDao" parent="roadsJdbcDaoSupport" class="main.java.jumyong.saewe.dao.SaeweDao"/>
+ 	
+   	<bean id="sysConnectService" class="main.java.common.sysConnect.service.SysConnectService">
+ 		<property name="sysConnectDao" ref="sysConnectDao"/>
+ 	</bean>
+ 	<bean id="sysConnectDao" parent="roadsJdbcDaoSupport" class="main.java.common.sysConnect.dao.SysConnectDao"/>
+ 	
+</beans>

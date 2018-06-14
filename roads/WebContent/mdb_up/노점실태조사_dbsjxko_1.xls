@@ -1,0 +1,4456 @@
+
+
+
+  
+  
+  
+
+
+
+
+<html xmlns:x="urn:schemas-microsoft-com:office:excel">
+<head>
+<title>::::: 서울시 도로점용관리시스템 :::::</title>
+<!--[if gte mso 9]><xml>
+<x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet>
+<x:Name>Sheet1</x:Name>
+<x:WorksheetOptions><x:Panes><x:Pane>
+</x:Pane></x:Panes></x:WorksheetOptions>
+</x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook>
+</xml><![endif]-->
+</head> 
+<body>
+
+
+
+<table width="10000px" cellpadding="0" cellspacing="0" border="1" class="sub_table" bordercolor="#c9dfed" style="border-collapse: collapse;">
+<tr >
+	<td height="26px" width="400px" align="center" bgcolor="e5eff8" class="sub_table_b">관리번호</td>
+	<td width="400px" align="center" bgcolor="e5eff8" class="sub_table_b">운영인</td>
+	<td width="400px" align="center" bgcolor="e5eff8" class="sub_table_b">인접지 주소</td>
+	<td width="400px" align="center" bgcolor="e5eff8" class="sub_table_b">도로명 새주소</td>
+	<td width="400px" align="center" bgcolor="e5eff8" class="sub_table_b">시설 종류</td>
+	<td width="400px" align="center" bgcolor="e5eff8" class="sub_table_b">면적(㎡)</td>														
+	<td width="400px" align="center" bgcolor="e5eff8" class="sub_table_b">정비/관리</td>
+	<td width="400px" align="center" bgcolor="e5eff8" class="sub_table_b">거리조성</td>
+	<td width="400px" align="center" bgcolor="e5eff8" class="sub_table_b">특화거리 조성일자</td>
+	<td width="400px" align="center" bgcolor="e5eff8" class="sub_table_b">설치일자</td>
+	<td width="400px" align="center" bgcolor="e5eff8" class="sub_table_b">등록일자</td>
+	<td width="400px" align="center" bgcolor="e5eff8" class="sub_table_b">주민번호</td>
+	<td width="400px" align="center" bgcolor="e5eff8" class="sub_table_b">전화번호</td>
+	<td width="400px" align="center" bgcolor="e5eff8" class="sub_table_b">취급품목</td>
+	<td width="400px" align="center" bgcolor="e5eff8" class="sub_table_b">가입단체</td>
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545102_4_0002</td>
+	<td width="400px" align="center" >최순안</td>
+	<td width="400px" align="center" >가산동 1003</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >1.5</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >611006-2478713</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0062</td>
+	<td width="400px" align="center" >이범기</td>
+	<td width="400px" align="center" >가산동 142-45</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;좌판</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >500426-1383118</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545103_4_0081</td>
+	<td width="400px" align="center" >이태우</td>
+	<td width="400px" align="center" >시흥동 828-41</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >550324-1231123</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545103_4_0082</td>
+	<td width="400px" align="center" >이향재</td>
+	<td width="400px" align="center" >시흥동 911-21</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >.7</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >610908-2441111</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0060</td>
+	<td width="400px" align="center" >장명화</td>
+	<td width="400px" align="center" >가산동 371-12</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >2</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >791220-2163424</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0061</td>
+	<td width="400px" align="center" >전관호</td>
+	<td width="400px" align="center" >가산동 60-49</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;차량</td>
+	<td width="400px" align="center" >0</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-06</td>
+	<td width="400px" align="center" >541122-1388219</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545102_4_0055</td>
+	<td width="400px" align="center" >김은숙</td>
+	<td width="400px" align="center" >독산동 291-1</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >1.5</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >640307-2030427</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545102_4_0067</td>
+	<td width="400px" align="center" >정용현</td>
+	<td width="400px" align="center" >독산동 988-10</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;좌판</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >450818-1117711</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545102_4_0072</td>
+	<td width="400px" align="center" >봉화숙</td>
+	<td width="400px" align="center" >독산동 292-10</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >650624-2465106</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545102_4_0075</td>
+	<td width="400px" align="center" >정영애</td>
+	<td width="400px" align="center" >독산동 1093</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >1.5</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >690701-2397322</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545102_4_0076</td>
+	<td width="400px" align="center" >김성해</td>
+	<td width="400px" align="center" >독산동 1092</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;차량</td>
+	<td width="400px" align="center" >0</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >610224-1548212</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545102_4_0077</td>
+	<td width="400px" align="center" >한광삼</td>
+	<td width="400px" align="center" >독산동 733-33</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;차량</td>
+	<td width="400px" align="center" >0</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >600608-1536524</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545102_4_0078</td>
+	<td width="400px" align="center" >이혁수</td>
+	<td width="400px" align="center" >독산동 1087</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;차량</td>
+	<td width="400px" align="center" >0</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >640928-1392712</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545103_4_0020</td>
+	<td width="400px" align="center" >배형원</td>
+	<td width="400px" align="center" >시흥동 820-17</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;좌판</td>
+	<td width="400px" align="center" >1.8</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >610423-1074221</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545103_4_0031</td>
+	<td width="400px" align="center" >최연주</td>
+	<td width="400px" align="center" >시흥동 911-2</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >1.5</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >600521-1057714</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545103_4_0054</td>
+	<td width="400px" align="center" >김철수</td>
+	<td width="400px" align="center" >시흥동 1010-12</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;차량</td>
+	<td width="400px" align="center" >0</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >570913-1543916</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545103_4_0064</td>
+	<td width="400px" align="center" >황장상</td>
+	<td width="400px" align="center" >시흥동 880-11</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;좌판</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >460907-1067116</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545103_4_0065</td>
+	<td width="400px" align="center" >유순옥</td>
+	<td width="400px" align="center" >시흥동 880-11</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;좌판</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >470416-2005811</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545103_4_0066</td>
+	<td width="400px" align="center" >최앵순</td>
+	<td width="400px" align="center" >시흥동 874-9</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;좌판</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >390329-2237617</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545103_4_0067</td>
+	<td width="400px" align="center" >김재원</td>
+	<td width="400px" align="center" >시흥동 874-9</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;좌판</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >470130-1800911</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545103_4_0069</td>
+	<td width="400px" align="center" >한봉심</td>
+	<td width="400px" align="center" >시흥동 874-9</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;좌판</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >510903-2666110</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545103_4_0070</td>
+	<td width="400px" align="center" >김용희</td>
+	<td width="400px" align="center" >시흥동 855</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;좌판</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >660305-1538231</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545103_4_0071</td>
+	<td width="400px" align="center" >문영임</td>
+	<td width="400px" align="center" >시흥동 856-25</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;좌판</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >440205-2639718</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545103_4_0072</td>
+	<td width="400px" align="center" >조광철</td>
+	<td width="400px" align="center" >시흥동 856-25</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;좌판</td>
+	<td width="400px" align="center" >.5</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >641018-1638011</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545103_4_0073</td>
+	<td width="400px" align="center" >차방순</td>
+	<td width="400px" align="center" >시흥동 873-45</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;좌판</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >450824-2663511</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545103_4_0074</td>
+	<td width="400px" align="center" >원계수</td>
+	<td width="400px" align="center" >가산동 852-19</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >730201-1011114</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545103_4_0076</td>
+	<td width="400px" align="center" >김성춘</td>
+	<td width="400px" align="center" >시흥동 889-5</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >550501-1231215</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545103_4_0079</td>
+	<td width="400px" align="center" >이상철</td>
+	<td width="400px" align="center" >시흥동 1010-14</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;차량</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >510925-1468616</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545103_4_0080</td>
+	<td width="400px" align="center" >이종만</td>
+	<td width="400px" align="center" >시흥동 882-60</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >509126-1261514</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545103_4_0083</td>
+	<td width="400px" align="center" >이명례</td>
+	<td width="400px" align="center" >시흥동 912</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >1.5</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >610317-2465017</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545102_4_0045</td>
+	<td width="400px" align="center" >정갑기</td>
+	<td width="400px" align="center" >독산동 1037-31</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;좌판</td>
+	<td width="400px" align="center" >1.8</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >480805-1055511</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545102_4_0046</td>
+	<td width="400px" align="center" >양미순</td>
+	<td width="400px" align="center" >독산동 1042-9</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;차량</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >600424-2626113</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545103_4_0009</td>
+	<td width="400px" align="center" >성남희</td>
+	<td width="400px" align="center" >시흥동 993-3</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;포장마차</td>
+	<td width="400px" align="center" >1.5</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >640501-1122011</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545103_4_0012</td>
+	<td width="400px" align="center" >이효종</td>
+	<td width="400px" align="center" >시흥동 883-18</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;좌판</td>
+	<td width="400px" align="center" >2</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >590228-1041222</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545103_4_0014</td>
+	<td width="400px" align="center" >박명식</td>
+	<td width="400px" align="center" >시흥동 856-24</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;좌판</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >670202-1798716</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545103_4_0019</td>
+	<td width="400px" align="center" >김영숙</td>
+	<td width="400px" align="center" >시흥동 856-25</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;좌판</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >560214-2056416</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545103_4_0033</td>
+	<td width="400px" align="center" >양승길</td>
+	<td width="400px" align="center" >시흥동 911</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;좌판</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >531122-1058024</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545103_4_0034</td>
+	<td width="400px" align="center" >주영기</td>
+	<td width="400px" align="center" >시흥동 911-2</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;좌판</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >610212-1668838</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545103_4_0036</td>
+	<td width="400px" align="center" >구남선</td>
+	<td width="400px" align="center" >시흥동 911-2</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >1.5</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >481215-2011712</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545103_4_0038</td>
+	<td width="400px" align="center" >차성원</td>
+	<td width="400px" align="center" >시흥동 271-21</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;차량</td>
+	<td width="400px" align="center" >2</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >680104-1661911</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545103_4_0043</td>
+	<td width="400px" align="center" >박종각</td>
+	<td width="400px" align="center" >시흥동 1010-12</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;차량</td>
+	<td width="400px" align="center" >0</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >601115-1057516</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545103_4_0044</td>
+	<td width="400px" align="center" >박종택</td>
+	<td width="400px" align="center" >시흥동 896</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >530611-1017513</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545103_4_0060</td>
+	<td width="400px" align="center" >김조현</td>
+	<td width="400px" align="center" >시흥동 879-16</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;좌판</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >521103-1055227</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545103_4_0078</td>
+	<td width="400px" align="center" >성은희</td>
+	<td width="400px" align="center" >시흥동 220-29</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >610820-2392340</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545103_4_0029</td>
+	<td width="400px" align="center" >김세종</td>
+	<td width="400px" align="center" >시흥동 830</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;차량</td>
+	<td width="400px" align="center" >0</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >711127-1058030</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545102_4_0028</td>
+	<td width="400px" align="center" >장미숙</td>
+	<td width="400px" align="center" >독산동 292-8</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;좌판</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >480414-2067017</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545102_4_0029</td>
+	<td width="400px" align="center" >박종례</td>
+	<td width="400px" align="center" >독산동 292-10</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;좌판</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >640226-2029337</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545102_4_0030</td>
+	<td width="400px" align="center" >김동예</td>
+	<td width="400px" align="center" >독산동 292-10</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;좌판</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >570811-2482611</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545102_4_0031</td>
+	<td width="400px" align="center" >홍성수</td>
+	<td width="400px" align="center" >독산동 293-23</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;좌판</td>
+	<td width="400px" align="center" >1.6</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >480728-1528617</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545102_4_0033</td>
+	<td width="400px" align="center" >공기숙</td>
+	<td width="400px" align="center" >독산동 900-1</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >580924-2150016</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545102_4_0034</td>
+	<td width="400px" align="center" >박순례</td>
+	<td width="400px" align="center" >독산동 378-470</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >2</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >440130-2052211</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545102_4_0036</td>
+	<td width="400px" align="center" >이영</td>
+	<td width="400px" align="center" >독산동 1042-4</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >2</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >400820-2002214</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545102_4_0037</td>
+	<td width="400px" align="center" >김명자</td>
+	<td width="400px" align="center" >독산동 1042-6</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;기타</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >530622-2047017</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545102_4_0040</td>
+	<td width="400px" align="center" >한천식</td>
+	<td width="400px" align="center" >독산동 1023-1</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;차량</td>
+	<td width="400px" align="center" >0</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >590601-1806511</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545102_4_0053</td>
+	<td width="400px" align="center" >서지원</td>
+	<td width="400px" align="center" >독산동 1093-2</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;차량</td>
+	<td width="400px" align="center" >0</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >540428-1478118</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545102_4_0068</td>
+	<td width="400px" align="center" >권정엽</td>
+	<td width="400px" align="center" >독산동 160-5</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;좌판</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >440322-2663819</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545102_4_0070</td>
+	<td width="400px" align="center" >윤영임</td>
+	<td width="400px" align="center" >독산동 986-20</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;좌판</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >371002-2651212</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545102_4_0071</td>
+	<td width="400px" align="center" >김옥화</td>
+	<td width="400px" align="center" >독산동 984-9</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;좌판</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >400405-2057822</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545103_4_0001</td>
+	<td width="400px" align="center" >최미정</td>
+	<td width="400px" align="center" >시흥동 994-5</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;포장마차</td>
+	<td width="400px" align="center" >2</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >630724-2668611</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545103_4_0002</td>
+	<td width="400px" align="center" >최금례</td>
+	<td width="400px" align="center" >시흥동 994-11</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;포장마차</td>
+	<td width="400px" align="center" >2</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >500801-2542614</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545103_4_0010</td>
+	<td width="400px" align="center" >이진욱</td>
+	<td width="400px" align="center" >시흥동 993-3</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >620812-2247018</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545103_4_0013</td>
+	<td width="400px" align="center" >박영자</td>
+	<td width="400px" align="center" >시흥동 883-5</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;포장마차</td>
+	<td width="400px" align="center" >2</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >470519-2058019</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545103_4_0016</td>
+	<td width="400px" align="center" >조삼례</td>
+	<td width="400px" align="center" >시흥동 856-25</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;기타</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >410501-2632028</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545103_4_0017</td>
+	<td width="400px" align="center" >주성남</td>
+	<td width="400px" align="center" >시흥동 856-25</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;좌판</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >480528-1056415</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545103_4_0018</td>
+	<td width="400px" align="center" >김숙자</td>
+	<td width="400px" align="center" >시흥동 856-25</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;기타</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >371103-2231127</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545103_4_0022</td>
+	<td width="400px" align="center" >변인숙</td>
+	<td width="400px" align="center" >시흥동 841-5</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;좌판</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >451108-2018317</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545103_4_0023</td>
+	<td width="400px" align="center" >이규현</td>
+	<td width="400px" align="center" >시흥동 882-61</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >520109-1261514</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545103_4_0024</td>
+	<td width="400px" align="center" >이숙자</td>
+	<td width="400px" align="center" >시흥동 879-21</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;좌판</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >371104-2462111</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545103_4_0026</td>
+	<td width="400px" align="center" >정연택</td>
+	<td width="400px" align="center" >시흥동 828-41</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;좌판</td>
+	<td width="400px" align="center" >0</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >561112-1177615</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545102_4_0027</td>
+	<td width="400px" align="center" >엄미자</td>
+	<td width="400px" align="center" >독산동 292-8</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;좌판</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >590814-2046615</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545102_4_0007</td>
+	<td width="400px" align="center" >최천옥</td>
+	<td width="400px" align="center" >독산동 291-7</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;규격노점</td>
+	<td width="400px" align="center" >3</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >481215-2347833</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545102_4_0008</td>
+	<td width="400px" align="center" >김옥란</td>
+	<td width="400px" align="center" >독산동 291-7</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;규격노점</td>
+	<td width="400px" align="center" >2</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >611007-2808028</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545102_4_0009</td>
+	<td width="400px" align="center" >정오연</td>
+	<td width="400px" align="center" >독산동 291-7</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;규격노점</td>
+	<td width="400px" align="center" >3</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >740402-1657615</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545102_4_0010</td>
+	<td width="400px" align="center" >이재원</td>
+	<td width="400px" align="center" >독산동 291-7</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;차량</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >710206-2100114</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545102_4_0011</td>
+	<td width="400px" align="center" >이용길</td>
+	<td width="400px" align="center" >독산동 291-7</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;규격노점</td>
+	<td width="400px" align="center" >3</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >510816-1348515</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545102_4_0012</td>
+	<td width="400px" align="center" >이춘성</td>
+	<td width="400px" align="center" >독산동 291-7</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;차량</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >580108-1538217</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545102_4_0013</td>
+	<td width="400px" align="center" >강인실</td>
+	<td width="400px" align="center" >독산동 1012-17</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;규격노점</td>
+	<td width="400px" align="center" >3</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >640324-2953511</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545102_4_0014</td>
+	<td width="400px" align="center" >이문규</td>
+	<td width="400px" align="center" >독산동 1012</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;규격노점</td>
+	<td width="400px" align="center" >3</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >630112-1328621</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545102_4_0015</td>
+	<td width="400px" align="center" >이철성</td>
+	<td width="400px" align="center" >독산동 286-8</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >2</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >620508-1533724</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545102_4_0016</td>
+	<td width="400px" align="center" >이명임</td>
+	<td width="400px" align="center" >독산동 159-22</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;규격노점</td>
+	<td width="400px" align="center" >3</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >650624-2465016</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545102_4_0017</td>
+	<td width="400px" align="center" >윤영순</td>
+	<td width="400px" align="center" >독산동 983-15</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >581004-2520636</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545102_4_0018</td>
+	<td width="400px" align="center" >신영자</td>
+	<td width="400px" align="center" >독산동 159-22</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >640412-2815418</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545102_4_0019</td>
+	<td width="400px" align="center" >박재영</td>
+	<td width="400px" align="center" >독산동 967-9</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;좌판</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >810107-1463213</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545102_4_0020</td>
+	<td width="400px" align="center" >조용필</td>
+	<td width="400px" align="center" >독산동 968</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >2</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >391220-1405115</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545102_4_0021</td>
+	<td width="400px" align="center" >오태호</td>
+	<td width="400px" align="center" >독산동 968</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;좌판</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >500127-1148311</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545102_4_0022</td>
+	<td width="400px" align="center" >김남준</td>
+	<td width="400px" align="center" >독산동 146-1</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >650920-1535520</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545102_4_0023</td>
+	<td width="400px" align="center" >홍성복</td>
+	<td width="400px" align="center" >독산동 159-18</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;좌판</td>
+	<td width="400px" align="center" >2</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >580520-1182544</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545102_4_0032</td>
+	<td width="400px" align="center" >김춘자</td>
+	<td width="400px" align="center" >독산동 950</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >2</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >620123-2655414</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545103_4_0003</td>
+	<td width="400px" align="center" >김진호</td>
+	<td width="400px" align="center" >시흥동 870-10</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;규격노점</td>
+	<td width="400px" align="center" >3</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >570522-1777928</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545103_4_0004</td>
+	<td width="400px" align="center" >홍현숙</td>
+	<td width="400px" align="center" >시흥동 882-61</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;규격노점</td>
+	<td width="400px" align="center" >3</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >640819-2657424</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545103_4_0005</td>
+	<td width="400px" align="center" >박정희</td>
+	<td width="400px" align="center" >시흥동 108-76</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;차량</td>
+	<td width="400px" align="center" >0</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >630409-1481815</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545103_4_0006</td>
+	<td width="400px" align="center" >박안상</td>
+	<td width="400px" align="center" >시흥동 113-192</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >2</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >601006-1400216</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545103_4_0007</td>
+	<td width="400px" align="center" >정창설</td>
+	<td width="400px" align="center" >시흥동 113-192</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >420415-2058054</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545103_4_0008</td>
+	<td width="400px" align="center" >김대희</td>
+	<td width="400px" align="center" >시흥동 113-192</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;차량</td>
+	<td width="400px" align="center" >0</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >650829-1654512</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545102_4_0006</td>
+	<td width="400px" align="center" >최재규</td>
+	<td width="400px" align="center" >독산동 291-5</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;규격노점</td>
+	<td width="400px" align="center" >3.08</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >590505-1268529</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545102_4_0005</td>
+	<td width="400px" align="center" >하복순</td>
+	<td width="400px" align="center" >독산동 289-8</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >630216-2918925</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545102_4_0004</td>
+	<td width="400px" align="center" >권미경</td>
+	<td width="400px" align="center" >독산동 289-8</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;규격노점</td>
+	<td width="400px" align="center" >3</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >730813-2471513</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545102_4_0003</td>
+	<td width="400px" align="center" >최정미</td>
+	<td width="400px" align="center" >독산동 289-8</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >720706-2646122</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0059</td>
+	<td width="400px" align="center" >김영수</td>
+	<td width="400px" align="center" >독산동 714-1</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;좌판</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >521202-1537926</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0058</td>
+	<td width="400px" align="center" >조권호</td>
+	<td width="400px" align="center" >가산동 147-45</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;차량</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >561101-1325615</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0016</td>
+	<td width="400px" align="center" >이춘례</td>
+	<td width="400px" align="center" >가산동 60-73</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;포장마차</td>
+	<td width="400px" align="center" >2</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-09</td>
+	<td width="400px" align="center" >490217-2451219</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0056</td>
+	<td width="400px" align="center" >조미숙</td>
+	<td width="400px" align="center" >가산동 150-8</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;좌판</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >630705-2057512</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0055</td>
+	<td width="400px" align="center" >조원호</td>
+	<td width="400px" align="center" >독산동 146-61</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;차량</td>
+	<td width="400px" align="center" >0</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >561101-1325615</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0054</td>
+	<td width="400px" align="center" >장상수</td>
+	<td width="400px" align="center" >독산동 150-8</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;차량</td>
+	<td width="400px" align="center" >0</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-06</td>
+	<td width="400px" align="center" >550808-1535232</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0053</td>
+	<td width="400px" align="center" >윤경순</td>
+	<td width="400px" align="center" >가산동 150-8</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >0</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-06</td>
+	<td width="400px" align="center" >530422-2057411</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0052</td>
+	<td width="400px" align="center" >나금단</td>
+	<td width="400px" align="center" >가산동 150-8</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;차량</td>
+	<td width="400px" align="center" >0</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-06</td>
+	<td width="400px" align="center" >570826-2652815</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0051</td>
+	<td width="400px" align="center" >김순자</td>
+	<td width="400px" align="center" >가산동 150-8</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;차량</td>
+	<td width="400px" align="center" >0</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-06</td>
+	<td width="400px" align="center" >620419-2121025</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0057</td>
+	<td width="400px" align="center" >김영준</td>
+	<td width="400px" align="center" >가산동 150-8</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;좌판</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-06</td>
+	<td width="400px" align="center" >640212-1057417</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0034</td>
+	<td width="400px" align="center" >이일제</td>
+	<td width="400px" align="center" >가산동 371-27</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >2</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-05</td>
+	<td width="400px" align="center" >471001-1342111</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0050</td>
+	<td width="400px" align="center" >김주희</td>
+	<td width="400px" align="center" >가산동 481-10</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >2</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-06</td>
+	<td width="400px" align="center" >550802-2789718</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0049</td>
+	<td width="400px" align="center" >김미자</td>
+	<td width="400px" align="center" >가산동 371-12</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >2</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-06</td>
+	<td width="400px" align="center" >570920-2055916</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0048</td>
+	<td width="400px" align="center" >오미정</td>
+	<td width="400px" align="center" >가산동 426-5</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >2</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-06</td>
+	<td width="400px" align="center" >690812-2067118</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0047</td>
+	<td width="400px" align="center" >김미옥</td>
+	<td width="400px" align="center" >가산동 426-5</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >2</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-06</td>
+	<td width="400px" align="center" >600104-2567415</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0045</td>
+	<td width="400px" align="center" >최연숙</td>
+	<td width="400px" align="center" >가산동 345-30</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >2</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-06</td>
+	<td width="400px" align="center" >710210-2226111</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0044</td>
+	<td width="400px" align="center" >최용선</td>
+	<td width="400px" align="center" >가산동 338-10</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >0</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-05</td>
+	<td width="400px" align="center" >780113-1058014</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0043</td>
+	<td width="400px" align="center" >전순례</td>
+	<td width="400px" align="center" >가산동 505-14</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >2</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-05</td>
+	<td width="400px" align="center" >640320-2567111</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0042</td>
+	<td width="400px" align="center" >김미화</td>
+	<td width="400px" align="center" >가산동 459-11</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >2</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-05</td>
+	<td width="400px" align="center" >620111-2079513</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0041</td>
+	<td width="400px" align="center" >김옥순</td>
+	<td width="400px" align="center" >가산동 459-11</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >2</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-09</td>
+	<td width="400px" align="center" >510105-2538816</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0040</td>
+	<td width="400px" align="center" >이복금</td>
+	<td width="400px" align="center" >가산동 459-11</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >2</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-05</td>
+	<td width="400px" align="center" >580829-2910619</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0039</td>
+	<td width="400px" align="center" >정춘열</td>
+	<td width="400px" align="center" >가산동 371-28</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;포장마차</td>
+	<td width="400px" align="center" >2</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-05</td>
+	<td width="400px" align="center" >661006-1538610</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0038</td>
+	<td width="400px" align="center" >최영도</td>
+	<td width="400px" align="center" >가산동 371-28</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;포장마차</td>
+	<td width="400px" align="center" >2</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-05</td>
+	<td width="400px" align="center" >740614-1095316</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0037</td>
+	<td width="400px" align="center" >정정임</td>
+	<td width="400px" align="center" >가산동 371-28</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;포장마차</td>
+	<td width="400px" align="center" >2</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-05</td>
+	<td width="400px" align="center" >710512-2538615</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0036</td>
+	<td width="400px" align="center" >김을순</td>
+	<td width="400px" align="center" >가산동 371-63</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >2</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >430420-2841215</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0035</td>
+	<td width="400px" align="center" >서희복</td>
+	<td width="400px" align="center" >가산동 371-37</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;차량</td>
+	<td width="400px" align="center" >0</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-09</td>
+	<td width="400px" align="center" >510207-1066817</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0033</td>
+	<td width="400px" align="center" >김복순</td>
+	<td width="400px" align="center" >가산동 680</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;포장마차</td>
+	<td width="400px" align="center" >2</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-05</td>
+	<td width="400px" align="center" >460205-2047624</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0032</td>
+	<td width="400px" align="center" >석순이</td>
+	<td width="400px" align="center" >가산동 680-3</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;포장마차</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-05</td>
+	<td width="400px" align="center" >530812-2023510</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0031</td>
+	<td width="400px" align="center" >김기범</td>
+	<td width="400px" align="center" >가산동 680-3</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;좌판</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >570606-1451117</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0020</td>
+	<td width="400px" align="center" >홍성훈</td>
+	<td width="400px" align="center" >가산동 60-22</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;규격노점</td>
+	<td width="400px" align="center" >3</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-05</td>
+	<td width="400px" align="center" >650411-1460512</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0021</td>
+	<td width="400px" align="center" >김종석</td>
+	<td width="400px" align="center" >가산동 60-6</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >2</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-05</td>
+	<td width="400px" align="center" >521014-1536316</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0022</td>
+	<td width="400px" align="center" >김성광</td>
+	<td width="400px" align="center" >가산동 60-6</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >2</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-05</td>
+	<td width="400px" align="center" >600206-1348316</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0023</td>
+	<td width="400px" align="center" >김순자</td>
+	<td width="400px" align="center" >가산동 60-8</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >2</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-05</td>
+	<td width="400px" align="center" >510711-2348327</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0024</td>
+	<td width="400px" align="center" >이용진</td>
+	<td width="400px" align="center" >가산동 60-27</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >2</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-05</td>
+	<td width="400px" align="center" >840207-1183526</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0025</td>
+	<td width="400px" align="center" >정길조</td>
+	<td width="400px" align="center" >가산동 60-27</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >2</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-05</td>
+	<td width="400px" align="center" >590314-1067619</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0018</td>
+	<td width="400px" align="center" >김혜진</td>
+	<td width="400px" align="center" >가산동 60-22</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;포장마차</td>
+	<td width="400px" align="center" >2</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-05</td>
+	<td width="400px" align="center" >700918-2182521</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0027</td>
+	<td width="400px" align="center" >오대선</td>
+	<td width="400px" align="center" >가산동 60-9</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >2</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-05</td>
+	<td width="400px" align="center" >550905-1253811</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0012</td>
+	<td width="400px" align="center" >최복순</td>
+	<td width="400px" align="center" >가산동 50-3</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;포장마차</td>
+	<td width="400px" align="center" >2</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-05</td>
+	<td width="400px" align="center" >540531-2462711</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0017</td>
+	<td width="400px" align="center" >조중성</td>
+	<td width="400px" align="center" >가산동 60-22</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;포장마차</td>
+	<td width="400px" align="center" >2</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-05</td>
+	<td width="400px" align="center" >490202-1661717</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0019</td>
+	<td width="400px" align="center" >최정숙</td>
+	<td width="400px" align="center" >가산동 60-22</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >2</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-05</td>
+	<td width="400px" align="center" >660213-2144014</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0013</td>
+	<td width="400px" align="center" >박영심</td>
+	<td width="400px" align="center" >가산동 60-35</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >2</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-05</td>
+	<td width="400px" align="center" >510101-2066625</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0026</td>
+	<td width="400px" align="center" >김은순</td>
+	<td width="400px" align="center" >가산동 60-27</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >2</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-05</td>
+	<td width="400px" align="center" >560603-2074711</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0006</td>
+	<td width="400px" align="center" >최창석</td>
+	<td width="400px" align="center" >가산동 60-15</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >2</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-09</td>
+	<td width="400px" align="center" >610526-1533921</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0004</td>
+	<td width="400px" align="center" >김용택</td>
+	<td width="400px" align="center" >가산동 468-4</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;차량</td>
+	<td width="400px" align="center" >0</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >411219-1025149</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0003</td>
+	<td width="400px" align="center" >김용택</td>
+	<td width="400px" align="center" >가산동 50-1</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2006-11-01</td>
+	<td width="400px" align="center" >2009-06-09</td>
+	<td width="400px" align="center" >411219-1025149</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0002</td>
+	<td width="400px" align="center" >지경숙</td>
+	<td width="400px" align="center" >가산동 48-2</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;좌판</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-09</td>
+	<td width="400px" align="center" >510908-2231718</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0001</td>
+	<td width="400px" align="center" >김종표</td>
+	<td width="400px" align="center" >가산동 43-1</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >2</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2006-09-05</td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >610614-1536313</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0007</td>
+	<td width="400px" align="center" >윤복희</td>
+	<td width="400px" align="center" >가산동 60-15</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >2</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-09</td>
+	<td width="400px" align="center" >580316-2396518</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0008</td>
+	<td width="400px" align="center" >신영자</td>
+	<td width="400px" align="center" >가산동 60-15</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >2</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-05</td>
+	<td width="400px" align="center" >590812-2057411</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0009</td>
+	<td width="400px" align="center" >정순화</td>
+	<td width="400px" align="center" >가산동 60-19</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >2</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-05</td>
+	<td width="400px" align="center" >650119-2067618</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0010</td>
+	<td width="400px" align="center" >임부택</td>
+	<td width="400px" align="center" >가산동 60-20</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >2</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-05</td>
+	<td width="400px" align="center" >610205-1566913</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0011</td>
+	<td width="400px" align="center" >방용순</td>
+	<td width="400px" align="center" >가산동 60-20</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >2</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2009-06-05</td>
+	<td width="400px" align="center" >430212-2530813</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545103_4_0015</td>
+	<td width="400px" align="center" >김영숙</td>
+	<td width="400px" align="center" >시흥동 856-25</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;좌판</td>
+	<td width="400px" align="center" >1</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2007-05-08</td>
+	<td width="400px" align="center" >2009-06-08</td>
+	<td width="400px" align="center" >560214-2056416</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+<tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor: pointer">
+    <td height="26px" width="400px" align="center" >545101_4_0015</td>
+	<td width="400px" align="center" >이경숙</td>
+	<td width="400px" align="center" >가산동 60-35</td>
+	<td width="150px" align="center" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+																				
+	<td width="400px" align="center" >노점&nbsp;/&nbsp;손수레</td>
+	<td width="400px" align="center" >2</td>
+	<td width="400px" align="center" >
+	
+	관리대상
+	
+	
+	</td>
+	<td width="400px" align="center">
+		
+		
+		특화거리
+		
+	</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" >2007-02-04</td>
+	<td width="400px" align="center" >2009-06-05</td>
+	<td width="400px" align="center" >500111-2530714</td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td>
+	<td width="400px" align="center" ></td> 
+</tr>
+
+</table>
+</body>
+</html>
+

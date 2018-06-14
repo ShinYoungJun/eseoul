@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/roads/!svn/ver/56/roads/WebContent/OpenLayers/lib/OpenLayers/Handler
+END
+Click.js
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/roads/!svn/ver/56/roads/WebContent/OpenLayers/lib/OpenLayers/Handler/Click.js
+END
+Polygon.js
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/roads/!svn/ver/56/roads/WebContent/OpenLayers/lib/OpenLayers/Handler/Polygon.js
+END
+Box.js
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/roads/!svn/ver/56/roads/WebContent/OpenLayers/lib/OpenLayers/Handler/Box.js
+END
+Point.js
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/roads/!svn/ver/56/roads/WebContent/OpenLayers/lib/OpenLayers/Handler/Point.js
+END
+RegularPolygon.js
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/roads/!svn/ver/56/roads/WebContent/OpenLayers/lib/OpenLayers/Handler/RegularPolygon.js
+END
+Feature.js
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/roads/!svn/ver/56/roads/WebContent/OpenLayers/lib/OpenLayers/Handler/Feature.js
+END
+Path.js
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/roads/!svn/ver/56/roads/WebContent/OpenLayers/lib/OpenLayers/Handler/Path.js
+END
+Drag.js
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/roads/!svn/ver/56/roads/WebContent/OpenLayers/lib/OpenLayers/Handler/Drag.js
+END
+MouseWheel.js
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/roads/!svn/ver/56/roads/WebContent/OpenLayers/lib/OpenLayers/Handler/MouseWheel.js
+END
+Keyboard.js
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/roads/!svn/ver/56/roads/WebContent/OpenLayers/lib/OpenLayers/Handler/Keyboard.js
+END
+Pinch.js
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/roads/!svn/ver/56/roads/WebContent/OpenLayers/lib/OpenLayers/Handler/Pinch.js
+END
+Hover.js
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/roads/!svn/ver/56/roads/WebContent/OpenLayers/lib/OpenLayers/Handler/Hover.js
+END

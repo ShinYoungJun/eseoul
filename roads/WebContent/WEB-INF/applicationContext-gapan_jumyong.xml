@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<bean id="methodNameResolver_gapan_jumyongBoard" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+ 		<property name="mappings">
+ 			<props>
+				<prop key="/gapan/jumyong/view.do">View</prop>		
+				<prop key="/gapan/jumyong/search.do">jumyongList</prop>		
+				<prop key="/gapan/jumyong/excel_search.do">excel_jumyongList</prop>	
+				<prop key="/gapan/getRate.do">getRate</prop>	
+				<prop key="/gapan/getLicenseTax.do">getLicenseTax</prop>
+				<prop key="/gapan/jumyong/deleteLocation.do">deleteLocation</prop>											
+				<prop key="/gapan/jumyong/deleteFile.do">deleteFile</prop>
+				<prop key="/gapan/jumyong/productSubList.do">productSubList</prop>	
+				<prop key="/gapan/jumyong/productAddList.do">productaddList</prop>	
+				<prop key="/gapan/getSeqByFirstSeq.do">getSeqByFirstSeq</prop>		
+				<prop key="/gapan/officialLandPrice.do">getPrice</prop>					
+				<prop key="/gapan/jumyong/inspectDel.do">inspectDel</prop>																			
+				<prop key="/gapan/jumyong/confDel.do">confDel</prop>
+				<prop key="/gapan/jumyong/batch_cal1.do">batch_cal1</prop>
+				<prop key="/gapan/jumyong/batch_cal1_prc.do">batch_cal1_prc</prop>
+				<prop key="/gapan/jumyong/batch_cal4.do">batch_cal4</prop>
+				<prop key="/gapan/jumyong/batch_cal4_prc.do">batch_cal4_prc</prop>
+				
+				<!-- 2014.06.03 gapan register -kny -->
+				<prop key="/gapan/jumyong/register.do">register</prop>
+				<prop key="/gapan/jumyong/tab/info_register.do">infoRegister</prop>
+				<prop key="/gapan/jumyong/info_registerprc.do">infoRegisterPrc</prop>
+				
+				<prop key="/gapan/jumyong/batch_extention.do">batch_extention</prop>				
+				<prop key="/gapan/jumyong/batch_removeJumyong.do">batchRemoveJumyongByAjax</prop>
+				<prop key="/gapan/jumyong/batch_removeRental.do">batchRemoveRentalByAjax</prop>
+
+				<prop key="/gapan/jumyong/info_documents.do">publishDoc</prop>
+				<prop key="/gapan/jumyong/info_violation.do">getViolationList</prop>
+				<prop key="/gapan/jumyong/violation_register.do">register</prop>
+				<prop key="/gapan/jumyong/violation_registerPrc.do">registerPrc</prop>
+				<prop key="/gapan/jumyong/violation_view.do">getViolationView</prop>
+				
+			</props>
+ 		</property>
+ 	</bean> 	
+ 	
+ 	<bean id="urlMapping_gapan_jumyongboard" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+ 		<property name="mappings">
+ 			<props>
+				<prop key="/gapan/jumyong/view.do">gapan_jumyongBoardControl</prop>																																																																			
+				<prop key="/gapan/jumyong/search.do">gapan_jumyongBoardControl</prop>	
+				<prop key="/gapan/jumyong/excel_search.do">gapan_jumyongBoardControl</prop>
+				<prop key="/gapan/getRate.do">gapan_jumyongBoardControl</prop>	
+				<prop key="/gapan/getLicenseTax.do">gapan_jumyongBoardControl</prop>			
+				<prop key="/gapan/jumyong/deleteLocation.do">gapan_jumyongBoardControl</prop>
+				<prop key="/gapan/jumyong/deleteFile.do">gapan_jumyongBoardControl</prop>
+				<prop key="/gapan/jumyong/productSubList.do">gapan_jumyongBoardControl</prop>	
+				<prop key="/gapan/jumyong/productAddList.do">gapan_jumyongBoardControl</prop>				
+				<prop key="/gapan/getSeqByFirstSeq.do">gapan_jumyongBoardControl</prop>	
+				<prop key="/gapan/officialLandPrice.do">gapan_jumyongBoardControl</prop>			
+				<prop key="/gapan/jumyong/inspectDel.do">gapan_jumyongBoardControl</prop>	
+				<prop key="/gapan/jumyong/confDel.do">gapan_jumyongBoardControl</prop>	
+				<prop key="/gapan/jumyong/productInsert.do">gapan_productBoardFormControl</prop>
+				<prop key="/gapan/jumyong/rentalInsert.do">gapan_rentalBoardFormControl</prop>
+				<prop key="/gapan/jumyong/batch_cal1.do">gapan_jumyongBoardControl</prop>
+				<prop key="/gapan/jumyong/batch_cal1_prc.do">gapan_jumyongBoardControl</prop>
+				<prop key="/gapan/jumyong/batch_cal4.do">gapan_jumyongBoardControl</prop>
+				<prop key="/gapan/jumyong/batch_cal4_prc.do">gapan_jumyongBoardControl</prop>
+				
+				<!-- 2014.06.03 gapan register -kny -->
+				<prop key="/gapan/jumyong/register.do">gapan_jumyongBoardControl</prop>
+				<prop key="/gapan/jumyong/tab/info_register.do">gapan_jumyongBoardControl</prop>
+				<prop key="/gapan/jumyong/info_registerprc.do">gapan_jumyongBoardControl</prop>
+				
+				<prop key="/gapan/jumyong/batch_extention.do">gapan_jumyongBoardControl</prop>
+				
+				<prop key="/gapan/jumyong/batch_removeJumyong.do">gapan_jumyongBoardControl</prop>
+				<prop key="/gapan/jumyong/batch_removeRental.do">gapan_rentalBoardControl</prop>
+							
+				<prop key="/gapan/jumyong/inspectEdit.do">gapan_inspectBoardFormControl</prop>							
+				<prop key="/gapan/jumyong/confEdit.do">gapan_confBoardFormControl</prop>										
+				<prop key="/gapan/jumyong/placeLocationEdit.do">gapan_PlaceDetailLocationFormControl</prop>			
+				<prop key="/gapan/jumyong/placeFileEdit.do">gapan_PlaceDetailFileFormControl</prop>							
+				<prop key="/gapan/jumyong/disUse.do">gapan_DisUseFormControl</prop>
+				
+				<prop key="/gapan/jumyong/info_documents.do">gapan_jumyongBoardControl</prop>
+				<prop key="/gapan/jumyong/info_violation.do">gapan_ViolationControl</prop>
+				<prop key="/gapan/jumyong/violation_register.do">gapan_ViolationControl</prop>
+				<prop key="/gapan/jumyong/violation_registerPrc.do">gapan_ViolationControl</prop>
+				<prop key="/gapan/jumyong/violation_view.do">gapan_ViolationControl</prop>
+				
+ 			</props>
+ 		</property>
+ 	</bean>
+	
+	<bean id="gapan_jumyongBoardControl" class="main.java.gapan.jumyong.web.JumyongBoardControl">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_gapan_jumyongBoard"/>
+		</property>		
+		<property name="gapan_jumyongService" ref="gapan_jumyongService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+	<bean id="gapan_productBoardFormControl" class="main.java.gapan.jumyong.web.ProductBoardFormControl">
+		<property name="gapan_jumyongService" ref="gapan_jumyongService"/>		
+		<property name="commandClass" value="main.java.gapan.jumyong.model.ProductBean"/>
+		<property name="commandName" value="product"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+	<bean id="gapan_rentalBoardControl" class="main.java.gapan.jumyong.web.RentalBoardControl">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_gapan_jumyongBoard"/>
+		</property>		
+		<property name="gapan_jumyongService" ref="gapan_jumyongService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+	<bean id="gapan_rentalBoardFormControl" class="main.java.gapan.jumyong.web.RentalBoardFormControl">
+		<property name="gapan_jumyongService" ref="gapan_jumyongService"/>		
+		<property name="commandClass" value="main.java.gapan.jumyong.model.ProductBean"/>
+		<property name="commandName" value="product"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+	
+	<bean id="gapan_inspectBoardFormControl" class="main.java.gapan.jumyong.web.InspectBoardFormControl">
+		<property name="gapan_jumyongService" ref="gapan_jumyongService"/>		
+		<property name="commandClass" value="main.java.gapan.jumyong.model.InspectBean"/>
+		<property name="commandName" value="inspect"/>
+  		<property name="formView" value="/gapan/jumyong/info_inspect"/>
+	</bean>
+	
+	
+	<bean id="gapan_confBoardFormControl" class="main.java.gapan.jumyong.web.ConfBoardFormControl">
+		<property name="gapan_jumyongService" ref="gapan_jumyongService"/>		
+		<property name="commandClass" value="main.java.gapan.jumyong.model.ConfBean"/>
+		<property name="commandName" value="conf"/>
+  		<property name="formView" value="/gapan/jumyong/info_conf"/>
+	</bean>	
+	
+	
+	
+	<bean id="gapan_PlaceDetailLocationFormControl" class="main.java.gapan.jumyong.web.PlaceDetailLocationFormControl">
+		<property name="gapan_jumyongService" ref="gapan_jumyongService"/>		
+		<property name="commandClass" value="main.java.gapan.jumyong.model.PlaceLocationBean"/>		
+		<property name="commandName" value="place"/>
+	</bean>
+	
+	
+	
+	
+	<bean id="gapan_PlaceDetailFileFormControl" class="main.java.gapan.jumyong.web.PlaceDetailFileFormControl">
+		<property name="gapan_jumyongService" ref="gapan_jumyongService"/>		
+		<property name="commonCodeService" ref="commonCodeService"/>		
+		<property name="commandClass" value="main.java.gapan.jumyong.model.PlaceFileBean"/>				
+		<property name="commandName" value="place"/>
+	</bean>
+	
+	
+	
+	
+	<bean id="gapan_DisUseFormControl" class="main.java.gapan.jumyong.web.DisUseFormControl">
+		<property name="gapan_jumyongService" ref="gapan_jumyongService"/>
+		<property name="commandClass" value="main.java.gapan.jumyong.model.DisUseBean"/>				
+		<property name="commandName" value="disuse"/>
+	</bean>
+	
+	
+	<bean id="gapan_ViolationControl" class="main.java.gapan.jumyong.web.ViolationControl">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_gapan_jumyongBoard"/>
+		</property>		
+		<property name="gapan_jumyongService" ref="gapan_jumyongService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+		
+	<bean id="gapan_jumyongDao" parent="roadsJdbcDaoSupport" class="main.java.gapan.jumyong.dao.JumyongDao"/>
+
+ 	<bean id="gapan_jumyongService" class="main.java.gapan.jumyong.service.JumyongService"> 
+ 		<property name="gapan_jumyongDao" ref="gapan_jumyongDao"/>
+ 	</bean>
+</beans>

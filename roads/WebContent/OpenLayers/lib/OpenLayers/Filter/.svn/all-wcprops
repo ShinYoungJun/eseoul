@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/roads/!svn/ver/56/roads/WebContent/OpenLayers/lib/OpenLayers/Filter
+END
+Function.js
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/roads/!svn/ver/56/roads/WebContent/OpenLayers/lib/OpenLayers/Filter/Function.js
+END
+FeatureId.js
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/roads/!svn/ver/56/roads/WebContent/OpenLayers/lib/OpenLayers/Filter/FeatureId.js
+END
+Comparison.js
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/roads/!svn/ver/56/roads/WebContent/OpenLayers/lib/OpenLayers/Filter/Comparison.js
+END
+Logical.js
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/roads/!svn/ver/56/roads/WebContent/OpenLayers/lib/OpenLayers/Filter/Logical.js
+END
+Spatial.js
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/roads/!svn/ver/56/roads/WebContent/OpenLayers/lib/OpenLayers/Filter/Spatial.js
+END

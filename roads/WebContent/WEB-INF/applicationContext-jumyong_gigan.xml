@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+                       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<bean id="methodNameResolver_Jumyong_Gigan" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+ 		<property name="mappings">
+ 			<props>
+				<prop key="/jumyong/gigan/search.do">Search</prop>
+				<prop key="/jumyong/gigan/excel_search.do">Excel_Search</prop>
+				<prop key="/jumyong/gigan/view.do">View</prop>
+				<prop key="/jumyong/gigan/view_ilgwal.do">View_Ilgwal</prop>
+				
+				<prop key="/jumyong/gigan/jumin_view.do">Jumin_View</prop>
+				
+				<prop key="/jumyong/gigan/jumji_view.do">Jumji_View</prop>
+				
+				<prop key="/jumyong/gigan/gigan_view.do">Gigan_View</prop>
+				<prop key="/jumyong/gigan/gigan_register.do">Gigan_Register</prop>
+				
+				<prop key="/jumyong/gigan/ilgwal_view.do">Ilgwal_View</prop>
+				
+				<prop key="/jumyong/gigan/annae_view.do">Annae_View</prop>
+				<prop key="/jumyong/gigan/annae_print.do">Annae_Print</prop>
+				<prop key="/jumyong/gigan/annae_all_print.do">Annae_All_Print</prop>
+				
+				<prop key="/jumyong/gigan/giganilgwal_view.do">GiganIlgwal_View</prop>
+				<prop key="/jumyong/gigan/giganilgwal_ext.do">GiganIlgwal_Ext</prop>
+			</props>
+ 		</property>
+ 	</bean>
+ 	
+ 	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+ 		<property name="mappings">
+ 			<props>
+				<prop key="/jumyong/gigan/search.do">jumyong_giganControl</prop>
+				<prop key="/jumyong/gigan/excel_search.do">jumyong_giganControl</prop>
+				<prop key="/jumyong/gigan/view.do">jumyong_giganControl</prop>
+				<prop key="/jumyong/gigan/view_ilgwal.do">jumyong_giganControl</prop>
+				
+				<prop key="/jumyong/gigan/jumin_view.do">jumyong_giganControl_Jumin</prop>
+				
+				<prop key="/jumyong/gigan/jumji_view.do">jumyong_giganControl_Jumji</prop>
+
+				<prop key="/jumyong/gigan/gigan_view.do">jumyong_giganControl_Gigan</prop>
+				<prop key="/jumyong/gigan/gigan_register.do">jumyong_giganControl_Gigan</prop>
+				
+				<prop key="/jumyong/gigan/ilgwal_view.do">jumyong_giganControl_Ilgwal</prop>
+				
+				<prop key="/jumyong/gigan/annae_view.do">jumyong_giganControl_Annae</prop>
+				<prop key="/jumyong/gigan/annae_print.do">jumyong_giganControl_Annae</prop>
+				<prop key="/jumyong/gigan/annae_all_print.do">jumyong_giganControl_Annae</prop>
+				
+				<prop key="/jumyong/gigan/giganilgwal_view.do">jumyong_giganControl_GiganIlgwal</prop>
+				<prop key="/jumyong/gigan/giganilgwal_ext.do">jumyong_giganControl_GiganIlgwal</prop>
+ 			</props>
+ 		</property>
+ 	</bean>
+ 	
+
+	<bean id="jumyong_giganControl" class="main.java.jumyong.gigan.web.GiganControl">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Jumyong_Gigan"/></property>
+		<property name="jumyong_giganService" ref="jumyong_giganService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+	<bean id="jumyong_giganControl_Jumin" class="main.java.jumyong.gigan.web.TabJumin_Control">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Jumyong_Gigan"/></property>
+		<property name="jumyong_giganService" ref="jumyong_giganService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+	<bean id="jumyong_giganControl_Jumji" class="main.java.jumyong.gigan.web.TabJumji_Control">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Jumyong_Gigan"/></property>
+		<property name="jumyong_giganService" ref="jumyong_giganService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+	<bean id="jumyong_giganControl_Gigan" class="main.java.jumyong.gigan.web.TabGigan_Control">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Jumyong_Gigan"/></property>
+		<property name="jumyong_giganService" ref="jumyong_giganService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+	<bean id="jumyong_giganControl_Ilgwal" class="main.java.jumyong.gigan.web.TabIlgwal_Control">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Jumyong_Gigan"/></property>
+		<property name="jumyong_giganService" ref="jumyong_giganService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+	<bean id="jumyong_giganControl_Annae" class="main.java.jumyong.gigan.web.TabAnnae_Control">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Jumyong_Gigan"/></property>
+		<property name="jumyong_giganService" ref="jumyong_giganService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+	<bean id="jumyong_giganControl_GiganIlgwal" class="main.java.jumyong.gigan.web.TabGiganIlgwal_Control">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Jumyong_Gigan"/></property>
+		<property name="jumyong_giganService" ref="jumyong_giganService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+	
+ 	<bean id="jumyong_giganService" class="main.java.jumyong.gigan.service.GiganService">
+ 		<property name="jumyong_giganDao" ref="jumyong_giganDao"/>
+ 	</bean>
+ 	<bean id="jumyong_giganDao" parent="roadsJdbcDaoSupport" class="main.java.jumyong.gigan.dao.GiganDao"/>
+
+</beans>

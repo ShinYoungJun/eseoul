@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<bean id="methodNameResolver_rojum_ownerBoard" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+ 		<property name="mappings">
+ 			<props>
+ 				<prop key="/rojum/owner/search.do">search</prop>
+				<prop key="/rojum/owner/accuse_search.do">accuseSearch</prop>
+				<prop key="/rojum/owner/new_accuse.do">newAccuse</prop>
+				<prop key="/rojum/owner/modify_accuse.do">modifyAccuse</prop>
+				<prop key="/rojum/owner/del_accuse.do">delAccuse</prop>
+				
+				<prop key="/rojum/owner/changejob_search.do">changejobSearch</prop>
+				<prop key="/rojum/owner/new_changejob.do">newChangejob</prop>
+				<prop key="/rojum/owner/modify_changejob.do">modifyChangejob</prop>
+				<prop key="/rojum/owner/del_changejob.do">delChangejob</prop>
+				
+			</props>
+ 		</property>
+ 	</bean> 	
+ 	
+ 	<bean id="urlMapping_rojum_ownerboard" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+ 		<property name="mappings">
+ 			<props>
+ 				<prop key="/rojum/owner/search.do">rojum_ownerBoardControl</prop>
+ 				<prop key="/rojum/owner/accuse_search.do">rojum_ownerBoardControl</prop>
+ 				<prop key="/rojum/owner/new_accuse.do">rojum_ownerBoardControl</prop>
+				<prop key="/rojum/owner/modify_accuse.do">rojum_ownerBoardControl</prop>
+				<prop key="/rojum/owner/del_accuse.do">rojum_ownerBoardControl</prop>
+				
+				<prop key="/rojum/owner/changejob_search.do">rojum_ownerBoardControl</prop>
+				<prop key="/rojum/owner/new_changejob.do">rojum_ownerBoardControl</prop>
+				<prop key="/rojum/owner/modify_changejob.do">rojum_ownerBoardControl</prop>
+				<prop key="/rojum/owner/del_changejob.do">rojum_ownerBoardControl</prop>
+ 			</props>
+ 		</property>
+ 	</bean>
+	
+	<bean id="rojum_ownerBoardControl" class="main.java.rojum.owner.web.OwnerBoardControl">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_rojum_ownerBoard"/>
+		</property>		
+		<property name="rojum_ownerService" ref="rojum_ownerService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+
+	<bean id="rojum_ownerDao" parent="roadsJdbcDaoSupport" class="main.java.rojum.owner.dao.OwnerDao"/>
+
+ 	<bean id="rojum_ownerService" class="main.java.rojum.owner.service.OwnerService"> 
+ 		<property name="rojum_ownerDao" ref="rojum_ownerDao"/>
+ 	</bean>
+
+</beans>

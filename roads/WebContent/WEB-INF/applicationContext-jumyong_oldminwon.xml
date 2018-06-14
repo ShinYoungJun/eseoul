@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<bean id="methodNameResolver_Jumyong_OldMinwon" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+ 		<property name="mappings">
+ 			<props>
+				<prop key="/jumyong/oldminwon/search.do">Search</prop>
+				<prop key="/jumyong/oldminwon/view.do">View</prop>
+				<prop key="/jumyong/oldminwon/excel_search.do">Excel_Search</prop>
+				<prop key="/jumyong/oldminwon/sangse_view.do">Sangse_View</prop>
+				<prop key="/jumyong/oldminwon/get_jummok.do">Get_Jummok</prop>
+				
+				<prop key="/jumyong/oldminwon/get_history_list.do">Get_History</prop>	
+				
+				
+				
+			</props>
+ 		</property>
+ 	</bean>
+ 	
+ 	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+ 		<property name="mappings">
+ 			<props>
+				<prop key="/jumyong/oldminwon/search.do">oldMinwonControl</prop>
+				<prop key="/jumyong/oldminwon/view.do">oldMinwonControl</prop>
+				<prop key="/jumyong/oldminwon/excel_search.do">oldMinwonControl</prop>
+				<prop key="/jumyong/oldminwon/sangse_view.do">oldMinwonControl</prop>		
+				<prop key="/jumyong/oldminwon/get_jummok.do">oldMinwonControl</prop>
+				
+				<prop key="/jumyong/oldminwon/get_history_list.do">oldMinwonControl</prop>	
+			
+ 			</props>
+ 		</property>
+ 	</bean>
+
+	<bean id="oldMinwonControl" class="main.java.jumyong.oldminwon.web.MinwonControl">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Jumyong_OldMinwon"/></property>
+		<property name="oldminwonService" ref="oldminwonService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+
+ 	<bean id="oldminwonService" class="main.java.jumyong.oldminwon.service.MinwonService">
+ 		<property name="oldMinwonDao" ref="oldMinwonDao"/>
+ 	</bean>
+ 	<bean id="oldMinwonDao" parent="roadsJdbcDaoSupport" class="main.java.jumyong.oldminwon.dao.MinwonDao"/>
+ 
+</beans>

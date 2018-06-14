@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee web-jsptaglibrary_2_0.xsd"
+  version="2.0">
+
+
+  <description>rnic library</description>
+  <display-name>JSTL functions</display-name>
+  <tlib-version>1.2</tlib-version>
+  <short-name>rnic</short-name>
+<!--   <uri>gov.mogaha.rnic.common.util.StringUtil</uri> -->
+   
+	<function>
+		<name>getFormattedMoney</name>
+		<function-class>main.java.common.util.StringUtil</function-class>
+		<function-signature>String getFormattedMoney(java.lang.String)</function-signature>
+	</function>
+	<function>
+		<name>truncate</name>
+		<function-class>main.java.common.util.StringUtil</function-class>
+		<function-signature>String truncate(double, int)</function-signature>
+	</function>
+	<function>
+		<name>getSelectString</name>
+		<function-class>gov.mogaha.rnic.common.util.HtmlUtil</function-class>
+		<function-signature>String getSelectString(java.util.List, java.lang.String)</function-signature>
+	</function>
+	<function>
+		<name>getEllipsisString</name>
+		<function-class>main.java.common.util.StringUtil</function-class>
+		<function-signature>String getEllipsisString(java.lang.String, int)</function-signature>
+	</function>	
+	<function>
+		<name>convertHtmlBr</name>
+		<function-class>main.java.common.util.StringUtil</function-class>
+		<function-signature>String convertHtmlBr(java.lang.String)</function-signature>
+	</function>
+	<function>
+		<name>getArrayString</name>
+		<function-class>gov.mogaha.rnic.common.util.HtmlUtil</function-class>
+		<function-signature>String getArrayString(java.util.List, java.lang.String)</function-signature>
+	</function>
+	<function>
+		<name>convertImage</name>
+		<function-class>gov.mogaha.rnic.common.util.HtmlUtil</function-class>
+		<function-signature>String getExtentionImage(java.lang.String)</function-signature>
+	</function>
+	<function>
+		<name>encode</name>
+		<function-class>java.net.URLEncoder</function-class>
+		<function-signature>String encode(java.lang.String) </function-signature>
+	</function>
+	<function>
+		<name>getEllipsisNConvertedHtml</name>
+		<function-class>main.java.common.util.StringUtil</function-class>
+		<function-signature>String getEllipsisNConvertedHtml(java.lang.String, int)</function-signature>
+	</function>
+	<function>
+		<name>addIndentMark</name>
+		<function-class>gov.mogaha.rnic.common.util.BoardUtil</function-class>
+		<function-signature>String addIndentMark(java.lang.String)</function-signature>
+	</function>
+	<function>
+		<name>decodeText</name>
+		<function-class>gov.mogaha.rnic.common.util.Base64</function-class>
+		<function-signature>String decodeText(java.lang.String)</function-signature>
+	</function>
+	<function>
+		<name>insertComma2</name>
+		<function-class>main.java.common.util.StringUtil</function-class>
+		<function-signature>String insertComma2(java.lang.String)</function-signature>
+	</function>
+	<function>
+		<name>addDash</name>
+		<function-class>main.java.common.util.StringUtil</function-class>
+		<function-signature>String addDash(java.lang.String)</function-signature>
+	</function>
+</taglib>

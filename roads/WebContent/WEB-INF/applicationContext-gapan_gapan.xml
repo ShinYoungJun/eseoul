@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+                       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<bean id="methodNameResolver_Gapan" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+ 		<property name="mappings">
+ 			<props>
+				<prop key="/gapan/gapan/search.do">Search</prop>
+				<prop key="/gapan/gapan/register.do">Register</prop>
+				<prop key="/gapan/gapan/view.do">view</prop>
+				<prop key="/gapan/gapan/operator_view.do">operator_view</prop>
+				<prop key="/gapan/gapan/family_view.do">family_view</prop>
+				<prop key="/gapan/gapan/bloom_view.do">bloom_view</prop>
+				<prop key="/gapan/gapan/oper_view.do">oper_view</prop>
+
+				<prop key="/gapan/gapan/jumji_search.do">Search</prop>
+				
+				<prop key="/gapan/gapan/info_register.do">Register</prop>
+				<prop key="/gapan/gapan/info_registerprc.do">RegisterPrc</prop>
+				<prop key="/gapan/gapan/saewol_register.do">Saewol_Register</prop>
+				<prop key="/gapan/gapan/saewol_registerprc.do">Saewol_RegisterPrc</prop>
+				
+			</props>
+ 		</property>
+ 	</bean>
+ 	
+ 	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+ 		<property name="mappings">
+ 			<props>
+				<prop key="/gapan/gapan/search.do">gapanControl</prop>
+				<prop key="/gapan/gapan/register.do">gapanControl</prop>
+				<prop key="/gapan/gapan/view.do">gapanControl</prop>
+				<prop key="/gapan/gapan/operator_view.do">gapanControl</prop>
+				<prop key="/gapan/gapan/family_view.do">gapanControl</prop>
+				<prop key="/gapan/gapan/bloom_view.do">gapanControl</prop>
+				<prop key="/gapan/gapan/oper_view.do">gapanControl</prop>
+
+				<prop key="/gapan/gapan/jumji_search.do">gapan_minwonControl_Jumji</prop>
+				
+				<prop key="/gapan/gapan/info_register.do">gapanControl_Info</prop>
+				<prop key="/gapan/gapan/info_registerprc.do">gapanControl_Info</prop>
+				<prop key="/gapan/gapan/saewol_register.do">gapanControl_Info</prop>
+				<prop key="/gapan/gapan/saewol_registerprc.do">gapanControl_Info</prop>
+				
+ 			</props>
+ 		</property>
+ 	</bean>
+ 	
+	<bean id="gapanControl" class="main.java.gapan.gapan.web.GapanControl">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Gapan"/></property>
+		<property name="gapanService" ref="gapanService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+	<bean id="gapanControl_Info" class="main.java.gapan.gapan.web.TabInfo_Control">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Gapan"/></property>
+		<property name="gapanService" ref="gapanService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+
+	<bean id="gapan_minwonControl_Jumji" class="main.java.gapan.gapan.web.TabJumji_Control">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Gapan"/></property>
+		<property name="gapanService" ref="gapanService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+
+ 	<bean id="gapanService" class="main.java.gapan.gapan.service.GapanService">
+ 		<property name="gapanDao" ref="gapanDao"/>
+ 	</bean>
+ 	<bean id="gapanDao" parent="roadsJdbcDaoSupport" class="main.java.gapan.gapan.dao.GapanDao"/>
+
+</beans>

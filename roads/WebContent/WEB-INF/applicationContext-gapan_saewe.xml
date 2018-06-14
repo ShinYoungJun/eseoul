@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+                       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<bean id="methodNameResolver_Gapan_Saewe" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+ 		<property name="mappings">
+ 			<props>
+				<prop key="/gapan/saewe/search.do">Search</prop>
+				<prop key="/gapan/saewe/excel_search.do">Excel_Search</prop>
+				<prop key="/gapan/saewe/view.do">View</prop>
+				<prop key="/gapan/saewe/saewesuipbugwa.do">Saewesuipbugwa</prop>
+				<prop key="/gapan/saewe/saeweSuipBugwa_ilgwal.do">Saewesuipbugwa_Ilgwal</prop>
+				
+				<prop key="/gapan/saewe/sanchul_view.do">Sanchul_View</prop>
+				<prop key="/gapan/saewe/sanchulinfo_view.do">SanchulInfo_View</prop>
+				
+				<prop key="/gapan/saewe/jumin_view.do">Jumin_View</prop>
+				
+				<prop key="/gapan/saewe/jumji_view.do">Jumji_View</prop>
+				
+				<prop key="/gapan/saewe/bugwa_view.do">Bugwa_View</prop>
+				<prop key="/gapan/saewe/bugwa_modify.do">Bugwa_Modify</prop>
+				<prop key="/gapan/saewe/bugwa_modify_prc.do">Bugwa_Modify_Prc</prop>
+				<prop key="/gapan/saewe/bugwa_register.do">Bugwa_Register</prop>
+				<prop key="/gapan/saewe/bugwa_register_prc.do">Bugwa_Register_Prc</prop>
+				
+				<prop key="/gapan/saewe/semokinfo.do">SemokInfo</prop>
+				
+				<prop key="/gapan/saewe/sunap_view.do">Sunap_View</prop>
+				<!--  //********** BEGIN_현진_20120227 -->
+				<prop key="/gapan/saewe/bugwa_cancel.do">bugwaCancel</prop>
+				<!--   //********** END_현진_20120227 -->
+				
+			</props>
+ 		</property>
+ 	</bean>
+ 	
+ 	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+ 		<property name="mappings">
+ 			<props>
+				<prop key="/gapan/saewe/search.do">gapan_saeweControl</prop>
+				<prop key="/gapan/saewe/excel_search.do">gapan_saeweControl</prop>
+				<prop key="/gapan/saewe/view.do">gapan_saeweControl</prop>
+				<prop key="/gapan/saewe/saewesuipbugwa.do">gapan_saeweControl</prop>
+				<prop key="/gapan/saewe/saeweSuipBugwa_ilgwal.do">gapan_saeweControl</prop>
+				
+				<prop key="/gapan/saewe/sanchul_view.do">gapan_saeweControl_Sanchul</prop>
+				<prop key="/gapan/saewe/sanchulinfo_view.do">gapan_saeweControl_Sanchul</prop>
+				
+				<prop key="/gapan/saewe/jumin_view.do">gapan_saeweControl_Jumin</prop>
+				
+				<prop key="/gapan/saewe/jumji_view.do">gapan_saeweControl_Jumji</prop>
+				
+				<prop key="/gapan/saewe/bugwa_view.do">gapan_saeweControl_Bugwa</prop>
+				<prop key="/gapan/saewe/bugwa_modify.do">gapan_saeweControl_Bugwa</prop>
+				<prop key="/gapan/saewe/bugwa_modify_prc.do">gapan_saeweControl_Bugwa</prop>
+				<prop key="/gapan/saewe/bugwa_register.do">gapan_saeweControl_Bugwa</prop>
+				<prop key="/gapan/saewe/bugwa_register_prc.do">gapan_saeweControl_Bugwa</prop>
+				
+				<prop key="/gapan/saewe/semokinfo.do">gapan_saeweControl_Bugwa</prop>
+				
+				<prop key="/gapan/saewe/sunap_view.do">gapan_saeweControl_Sunap</prop>
+				<!--  //********** BEGIN_현진_20120227 -->
+				<prop key="/gapan/saewe/bugwa_cancel.do">gapan_saeweControl</prop>
+				<!--   //********** END_현진_20120227 -->
+ 			</props>
+ 		</property>
+ 	</bean>
+ 	
+
+	<bean id="gapan_saeweControl" class="main.java.gapan.saewe.web.SaeweControl">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Gapan_Saewe"/></property>
+		<property name="gapan_saeweService" ref="gapan_saeweService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+		<property name="sysConnectService" ref="sysConnectService"/>
+		<!--  //********** BEGIN_현진_20120228 -->
+		<property name="rojum_jumyongService" ref="rojum_jumyongService"/>
+		<!--   //********** END_현진_20120228 -->
+		
+		
+	</bean>
+	
+	<bean id="gapan_saeweControl_Sanchul" class="main.java.gapan.saewe.web.TabSanchul_Control">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Gapan_Saewe"/></property>
+		<property name="gapan_saeweService" ref="gapan_saeweService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+	<bean id="gapan_saeweControl_Jumin" class="main.java.gapan.saewe.web.TabJumin_Control">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Gapan_Saewe"/></property>
+		<property name="gapan_saeweService" ref="gapan_saeweService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+	<bean id="gapan_saeweControl_Jumji" class="main.java.gapan.saewe.web.TabJumji_Control">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Gapan_Saewe"/></property>
+		<property name="gapan_saeweService" ref="gapan_saeweService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+	<bean id="gapan_saeweControl_Bugwa" class="main.java.gapan.saewe.web.TabBugwa_Control">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Gapan_Saewe"/></property>
+		<property name="gapan_saeweService" ref="gapan_saeweService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+	<bean id="gapan_saeweControl_Sunap" class="main.java.gapan.saewe.web.TabSunap_Control">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Gapan_Saewe"/></property>
+		<property name="gapan_saeweService" ref="gapan_saeweService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+
+ 	<bean id="gapan_saeweService" class="main.java.gapan.saewe.service.SaeweService">
+ 		<property name="gapan_saeweDao" ref="gapan_saeweDao"/>
+ 	</bean>
+ 	<bean id="gapan_saeweDao" parent="roadsJdbcDaoSupport" class="main.java.gapan.saewe.dao.SaeweDao"/>
+
+   	<bean id="sysConnectService" class="main.java.common.sysConnect.service.SysConnectService">
+ 		<property name="sysConnectDao" ref="sysConnectDao"/>
+ 	</bean>
+ 	<bean id="sysConnectDao" parent="roadsJdbcDaoSupport" class="main.java.common.sysConnect.dao.SysConnectDao"/>
+ 	
+</beans>

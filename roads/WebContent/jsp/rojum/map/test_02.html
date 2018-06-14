@@ -1,0 +1,147 @@
+﻿
+<html>
+<head>
+<style type="text/css">
+    #myDiv {
+        position:absolute; 
+        left:260; 
+        top:50px; 
+    }
+    
+    #myDiv_02 {
+        position:absolute; 
+        left:0; 
+        top:150px; 
+    }
+</style>
+<script type="text/javascript">
+
+function init(){
+    if(document.getElementById){
+        myDivLayer = document.getElementById("myDiv");
+        myDivLayer.style.left = 260;
+        
+        myDivLayer_02 = document.getElementById("myDiv_02");
+        myDivLayer_02.style.left = 0;
+    }
+}
+
+
+function leftButtonClick()
+{
+  alert("11");
+  if(document.getElementById("leftButtonImg").src=='http://20.20.20.33:8080/kMap_base/img/left_Button.gif')
+  {
+      document.getElementById("leftButtonImg").src ='img/right_Button.gif';
+      ButtonLeft();
+//      MenuLeft();
+      
+  }else
+  {
+      document.getElementById("leftButtonImg").src ='img/left_Button.gif';
+      ButtonRight();
+//      MenuRight();
+  }
+
+}
+
+
+function ButtonRight(){  
+  //alert("ButtonRight()");
+  
+    if(document.getElementById){
+//  alert("ButtonRight()0001");
+        if(parseInt(myDivLayer.style.left) < 260){
+    //alert("ButtonRight()0002");
+            myDivLayer.style.left = parseInt(myDivLayer.style.left) + 10 + "px";
+  //  alert("ButtonRight()0003");
+            setTimeout("ButtonRight()",30);
+//    alert("ButtonRight()0004");
+        }
+    }
+}
+
+function ButtonLeft(){
+  //alert("ButtonLeft()");
+  
+    if(document.getElementById){
+//      alert("ButtonRight()0001"+ leftButton.style.left);
+        if(parseInt(myDivLayer.style.left) > 0){
+    //      alert("ButtonRight()0002");
+            myDivLayer.style.left = parseInt(myDivLayer.style.left) - 10 + "px";
+  //            alert("ButtonRight()0003");
+            setTimeout("ButtonLeft()",30);
+//              alert("ButtonRight()0004");
+        }
+    }
+}
+
+
+function MenuRight(){  
+  //alert("ButtonRight()");
+  
+    if(document.getElementById){
+//  alert("ButtonRight()0001");
+        if(parseInt(myDivLayer_02.style.left) < 0){
+    //alert("ButtonRight()0002");
+            myDivLayer_02.style.left = parseInt(myDivLayer_02.style.left) + 10 + "px";
+  //  alert("ButtonRight()0003");
+            setTimeout("ButtonRight()",30);
+//    alert("ButtonRight()0004");
+        }
+    }
+}
+
+function MenuLeft(){
+  //alert("ButtonLeft()");
+  
+    if(document.getElementById){
+//      alert("ButtonRight()0001"+ leftmenu.style.left);
+        if(parseInt(myDivLayer_02.style.left) > -260
+    //      alert("ButtonRight()0002");
+            myDivLayer_02.style.left = parseInt(myDivLayer_02.style.left) - 10 + "px";
+  //            alert("ButtonRight()0003");
+            setTimeout("ButtonLeft()",30);
+//              alert("ButtonRight()0004");
+        }
+    }
+}
+
+
+
+
+
+function slideRight(){
+    if(document.getElementById){
+        if(parseInt(myDivLayer.style.left) < 500){
+            myDivLayer.style.left = parseInt(myDivLayer.style.left) + 10 + "px";
+            setTimeout("slideRight()",30);
+        }
+    }
+}
+
+function slideLeft(){
+    if(document.getElementById){
+        if(parseInt(myDivLayer.style.left) > 0){
+    
+            myDivLayer.style.left = parseInt(myDivLayer.style.left) - 10 + "px";
+            setTimeout("slideLeft()",30);
+        }
+    }
+}
+
+</script>
+</head>
+<body onload="init()">
+<a href="#" onclick="slideLeft()">좌측으로</a><br>
+<a href="#" onclick="slideRight()">우측으로</a><br>
+<a href="#" onclick="{location.reload()}">원위치</a>
+
+<div id="myDiv"> <img src='img/left_Button.gif' onclick="leftButtonClick();" id="leftButtonImg">  </div>
+
+
+<div id="myDiv_02"><iframe src='left.htm' height='725px' frameborder='0'  name='leftMenu' scrolling='NO' noresize id='leftMenu'>
+             </iframe></div>
+
+</body>
+</html> 

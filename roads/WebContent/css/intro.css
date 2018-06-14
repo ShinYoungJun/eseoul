@@ -1,0 +1,41 @@
+A.list {
+	CURSOR: hand
+}
+A.list:visited {
+	FONT-SIZE: 12px; COLOR: #8e8e8e; font-family: "µ¸¿ò", "µ¸¿òÃ¼"; TEXT-DECORATION: none;
+}
+A.list:link {
+	FONT-SIZE: 12px; COLOR: #8e8e8e; font-family: "µ¸¿ò", "µ¸¿òÃ¼"; TEXT-DECORATION: none;
+}
+A.list:hover {
+	FONT-SIZE: 12px; COLOR: #bebebe; font-family: "µ¸¿ò", "µ¸¿òÃ¼"; BACKGROUND-COLOR: #dfebf4; TEXT-DECORATION: underline
+}
+
+
+
+.int_blue{
+	font-family: "µ¸¿ò", "µ¸¿òÃ¼"; 
+	font-size: 11px; 
+	color: #79b2da;
+	FONT-WEIGHT: bold;
+	text-decoration: none;
+}
+
+
+.int_d{
+	font-family: "µ¸¿ò", "µ¸¿òÃ¼"; 
+	font-size: 11px; 
+	color: #b5b5b5;
+	text-decoration: none;
+}
+
+
+
+.login_form {
+	font-family: "µ¸¿ò", "µ¸¿òÃ¼";
+	border: 2px #4eb6e2 solid; 
+	font-size: 11px; 
+	color: #848484;
+	PADDING-left: 3px; 
+	text-decoration: none;
+}

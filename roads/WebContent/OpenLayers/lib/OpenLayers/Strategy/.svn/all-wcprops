@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/roads/!svn/ver/56/roads/WebContent/OpenLayers/lib/OpenLayers/Strategy
+END
+Filter.js
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/roads/!svn/ver/56/roads/WebContent/OpenLayers/lib/OpenLayers/Strategy/Filter.js
+END
+Paging.js
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/roads/!svn/ver/56/roads/WebContent/OpenLayers/lib/OpenLayers/Strategy/Paging.js
+END
+BBOX.js
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/roads/!svn/ver/56/roads/WebContent/OpenLayers/lib/OpenLayers/Strategy/BBOX.js
+END
+Refresh.js
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/roads/!svn/ver/56/roads/WebContent/OpenLayers/lib/OpenLayers/Strategy/Refresh.js
+END
+Save.js
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/roads/!svn/ver/56/roads/WebContent/OpenLayers/lib/OpenLayers/Strategy/Save.js
+END
+Fixed.js
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/roads/!svn/ver/56/roads/WebContent/OpenLayers/lib/OpenLayers/Strategy/Fixed.js
+END
+Cluster.js
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/roads/!svn/ver/56/roads/WebContent/OpenLayers/lib/OpenLayers/Strategy/Cluster.js
+END

@@ -1,0 +1,87 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>:::::   :::::</title>
+<link href="/css/Mroads.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+body {
+	margin: 0px;
+	background-image: url(/img/mapImg/map_back.gif);
+}
+-->
+</style>
+
+<style type="text/css">
+    #container {
+        position:relative;
+        width:1250px;
+    }
+    
+    #leftMenu {
+        position:absolute;
+        top:0px;
+        left:0px;
+        width:260px;
+        height:700px;
+         z-index:98;
+     }
+     
+    
+    #myDiv {
+        position:absolute;
+        top:300px;
+        left:260px;
+        width:10x;
+        height:750px;
+         z-index:99;
+     }
+     
+
+    #map {
+        position:absolute;
+        top:0px;
+        left:15px;
+        width:1200px;
+        height:750px;
+         z-index:3;
+     }
+
+    </style>
+    
+<script type="text/javascript" src="http://123.140.215.33:8080/kMap_base/common"></script>
+<script type="text/javascript" src="/js/newWinMap.js"></script>
+<script type="text/javascript" src="/js/commMap.js"></script>
+
+</head>
+<body onLoad="init()">
+
+
+    <div id="container" >    
+      <div id='leftMenu'  oncontextmenu='return false' http-equiv='imagetoolbar' content='no'>
+               <iframe src='/jsp/map/left.html' width='260px' height='725px' frameborder='0'  name='left' scrolling='NO' noresize id='left'>
+               </iframe>
+      </div>
+        
+      <div id="myDiv"> <img src='/img/mapImg/left_Button.gif' onClick="leftButtonClick();" id="leftButtonImg">
+      </div>
+      
+      <div id='map' oncontextmenu='return false' http-equiv='imagetoolbar' content='no'>
+      </div>
+    </div>
+
+      <script>
+      	createWinMap("map",0,0,1250,725);
+      </script>
+
+      <div id='ctrl' width='500px' height='100px'>
+      </div>
+
+<script>  
+//	top.map.winMapLayerView('1:10000 도곽경계');
+	top.map.winMapLayerView('1:5000 도곽경계');
+	top.map.winMapLayerView('1:1000 도곽경계');
+	top.map.winMapLayerView('1:500 도곽경계');
+</script>
+</body>
+</html>

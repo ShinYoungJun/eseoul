@@ -1,0 +1,434 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>:::::  :::::</title>
+<link href="/css/Mroads.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+body {
+	margin: 0px;
+	background-image: url(/img/mapImg/left_background.gif);
+}
+-->
+</style>
+
+<script language="javaScript" type="text/javascript">
+
+ 
+ var xmlStr = "";
+ var DongInfoTemp;
+ 
+
+/*------------------------------------------------------------------+
+|	행정권역 콤보박스 OnChange 이벤트 처리모듈
++-------------------------------------------------------------------*/
+function changeLevel(DongInfo) {
+	var objParser;
+	var objParserTemp1;
+	var xmlStrTemp = "";
+	DongInfoTemp = DongInfo;
+	
+	alert(DongInfo);
+	
+/*
+	if (window.ActiveXObject) {
+		objParser = new ActiveXObject("Microsoft.XMLDOM");
+   	} 
+	else if (window.XMLHttpRequest) {
+		objParserTemp1 = new DOMParser();
+	}
+
+	//alert(document.getElementById("dCode").selectedIndex);
+	if (document.getElementById("dCode").selectedIndex == 0) {
+        	//parent.metro.GU_CODE.value = "";
+		document.getElementById("sCode").selectedIndex = 0;
+		document.getElementById("sCode").disabled = true;
+	} else {
+		zone_id = document.getElementById("dCode").value.substring(0,10);
+		//document.getElementById("firefoxXML").src = "detail_result_firefox.jsp?guCode=" + zone_id + "&tbl=sCode";
+		
+		//window.setTimeout("alert('a')", 5000);
+		
+		//zone_id = metro.dCode.value.substring(0, 10);
+		if (window.ActiveXObject) {
+			objParser.async = false;
+			objParser.load("detail_result.jsp?guCode=" + zone_id + "&tbl=sCode");
+			//alert(objParser.load("detail_result.jsp?guCode=" + zone_id + "&tbl=sCode"));
+			//alert(objParser.xml);
+			generateSelectList(objParser, DongInfo, "dCode");
+   		} 
+		else if (window.XMLHttpRequest) {
+			document.getElementById("firefoxXML").src = "detail_result_firefox.jsp?guCode=" + zone_id + "&tbl=sCode";
+			var isLoaded = firefoxXML.isLoaded;
+			while(isLoaded == false) {
+				isLoaded = firefoxXML.isLoaded;
+			}
+			//alert("1");
+			window.setTimeout("delayProcess()", 500);
+			//alert("2");
+			//xmlStrTemp = firefoxXML.setParent();
+			//alert(xmlStrTemp);
+			//objParser = objParserTemp1.parseFromString(xmlStrTemp, 'text/xml');
+			
+			//window.setTimeout("firefoxXML.setParent();", 2000);
+			//firefoxXML.setParent();
+			//objParser = objParserTemp1.parseFromString(xmlStr, 'text/xml');
+		}	
+		//objParser.async = false;
+		//objParser.load("detail_result.jsp?guCode=" + zone_id + "&tbl=sCode");
+		//alert("detail_result.jsp?guCode=" + zone_id + "&tbl=sCode");
+		//document.getElementById("Level2").innerHTML = generateSelectList(objParser, DongInfo, "dCode");
+	}
+	
+	*/
+}
+function delayProcess() {
+	//alert("delay1");
+	var xmlStrTemp = firefoxXML.setParent();
+	//alert("delay2");
+	var objParserTemp1 = new DOMParser();
+	//alert("delay3");
+	var objParser = objParserTemp1.parseFromString(xmlStrTemp, 'text/xml');
+	//alert("delay4");
+	document.getElementById("Level2").innerHTML = generateSelectList(objParser, DongInfoTemp, "dCode");
+	//alert("delay5");
+}
+
+/*------------------------------------------------------------------+
+|	법정동 데이터 로드시 동콤보박스 내용 조립
++-------------------------------------------------------------------*/
+function generateSelectList(objParser, DongInfo, type) {
+	document.getElementById("sCode").disabled = false;
+	
+	var root = objParser.documentElement;
+	var nodeList = root.getElementsByTagName("district");
+	
+	document.getElementById("sCode").options.length = nodeList.length;
+	document.getElementById("sCode").options[0] = new Option("Total", "");
+	for (var i=0; i < nodeList.length; i++ ) {
+		var idValue = nodeList[i].getElementsByTagName("id").item(0).firstChild.nodeValue;
+		var nameValue = nodeList[i].getElementsByTagName("name").item(0).firstChild.nodeValue;
+		document.getElementById("sCode").options[i+1] = new Option(nameValue, idValue);
+	}
+}
+
+
+function StrTrim(string) {
+	for(;string.indexOf(" ")!= -1;) {
+     		string = string.replace(" ","");
+	}
+	return string;
+}
+
+
+
+
+
+
+
+
+/*----------------------------------------------------------------------------------------------------------------------------------+
+|	iframe에서 받아온 구코드(dCode), 동코드(sCode), 대분류코드(xCode), 소분류코드(zCode), 대분류명(xName), 소분류명(zName)로 시설물 검색
++-----------------------------------------------------------------------------------------------------------------------------------*/
+function search(xCode, zCode, xName, zName) {
+	document.getElementById("goTopTR").style.visibility = "visible";
+
+	var dCode = document.getElementById("dCode").value;
+	var sCode = document.getElementById("sCode").value;
+/*
+
+	var search = document.getElementById("search");
+	var result = document.getElementById("result");
+
+	search.style.display = "none";
+	result.style.display = "block";
+
+	SearchResult.Lyr_SearchIng.style.display = "block";
+	glb_SearchMsg	= false;
+*/
+	document.getElementById("result_name").innerHTML = generateSelectList2(xName, zName);
+
+	// ResultPage로 Param 값을 넘겨 Map 검색
+	Param = "jobCode=2&SIDO_CODE=11&GU_CODE=" + StrTrim(dCode) + "&DONG_CODE=" + StrTrim(sCode) + "&CatType=" + StrTrim(xCode) + "&BLDG_TYPE=" + StrTrim(zCode);
+
+	//검색파라메터 저장
+/*
+        document.getElementById("SIDO_CODE").value 	= StrTrim(metro.sido.value);
+        document.getElementById("GU_CODE").value 	= StrTrim(dCode);
+        document.getElementById("DONG_CODE").value 	= StrTrim(sCode);
+        document.getElementById("xCode").value 		= StrTrim(xCode);
+        document.getElementById("zCode").value 		= StrTrim(zCode);
+*/
+	document.getElementById("iResult").src = "result.jsp?" + Param;
+
+//	명칭재검색페이지에 파라미터를 넘김 : 2006.3.추가 START
+//	strParam = Param;
+
+//	while ( strParam.indexOf('&') > -1 )
+//	{
+//		strParam = strParam.replace('&','^');
+//	}
+
+//	metro.strParam.value = strParam;
+//	document.all.DetailReSearch.src = "detail_research.jsp";
+
+//	명칭재검색페이지에 파라미터를 넘김 : 2006.3.추가 END
+}
+
+/*------------------------------------------------------------------+
+|	innerHTML로 대/소 검색분류(result_name)를 뿌려줌
++-------------------------------------------------------------------*/
+function generateSelectList2(xName, zName) {
+	var tmpStr = "";
+	var strHTML = "";
+	/*
+	if(zName == "") {
+            strHTML += "<font color='red' class='gis01_b'><b>" + xName + "</b></font>";
+	} else {
+            strHTML += "<font color='red' class='gis01_b'><b>" + xName + " >> " + zName + "</b></font>";
+	}
+	*/
+	if(zName == "") {
+            strHTML += "<font color='red' class='gis01_b'><b>" + xName + "</b></font>";
+	} else {
+            strHTML += "<font color='red' class='gis01_b'><b>" + zName + "</b></font>";
+	}
+	strHTML += '&nbsp;&nbsp;&nbsp;<img src="img/btn_home.gif" align="absmiddle" border="0" alt="Reset" onclick="javascript:ReSearch();" style="cursor:pointer; cursor:hand;"/>';
+	return strHTML;
+}
+
+
+/*-----------------------------------------------------------------------+
+|	iframe으로 되돌아가 재검색하는 스크립트
++-----------------------------------------------------------------------*/
+function ReSearch() {
+	document.getElementById("goTopTR").style.visibility = "hidden";
+	document.getElementById("iResult").src = "result2.jsp";
+/*
+	var search = document.getElementById("search");
+	var result = document.getElementById("result");
+
+	search.style.display = "block";
+	result.style.display = "none";
+*/
+}
+</script>
+</head>
+<body>
+<table width="260" height="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td width="10"></td>
+		<td valign="top"><table width="240" height="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td height="37" valign="top"><table border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td><a href="/jsp/map/left.html"><img src="/img/mapImg/tab1_on.gif" alt="도로점용" width="120" height="37" border="0"></a></td>
+								<td><a href="/jsp/map/left2.html"><img src="/img/mapImg/tab2_off.gif" alt="노정관리" width="120" height="37" border="0"></a></td>
+							</tr>
+						</table></td>
+				</tr>
+				<tr>
+					<td height="50" align="center" valign="top" bgcolor="f9f9f9" class="M_leftborder"><table width="220" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td valign="top"><table width="220" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+											<td height="33"><img src="/img/mapImg/left_title1.gif" alt="점용지 검색" width="220" height="33"></td>
+										</tr>
+										<tr>
+											<td align="center" valign="top" class="M_leftborder2"><table width="198" border="0" cellpadding="0" cellspacing="0" class="Map_stan">
+													<tr>
+														<td width="59" height="22" class="Map_stan_b">점용구분</td>
+														<td><select name="select3" class="input_form1" style="width:139px; background:e0eaf7">
+																<option vlaue='1'>도로</option>
+																<option vlaue='2'>하천</option>
+																<option vlaue='3'>구거</option>																
+															</select>
+														</td>
+													</tr>
+													<tr>
+														<td height="22">시/군/구</td>
+														<td>
+															<select id="dCode" name="dCode" class="input_form1" style="width:139px" onchange="javascript:changeLevel('');">
+																<option value="">::구를 선택하세요::</option>
+																<option value="11680">강남구</option>
+																<option value="11740">강동구</option>
+																<option value="11305">강북구</option>
+																<option value="11500">강서구</option>
+																<option value="11620">관악구</option>
+																<option value="11215">광진구</option>
+																<option value="11530">구로구</option>
+																<option value="11545">금천구</option>
+																<option value="11350">노원구</option>
+																<option value="11320">도봉구</option>
+																<option value="11230">동대문구</option>
+																<option value="11590">동작구</option>
+																<option value="11440">마포구</option>
+																<option value="11410">서대문구</option>
+																<option value="11650">서초구</option>
+																<option value="11200">성동구</option>
+																<option value="11290">성북구</option>
+																<option value="11710">송파구</option>
+																<option value="11470">양천구</option>
+																<option value="11560">영등포구</option>
+																<option value="11170">용산구</option>
+																<option value="11380">은평구</option>
+																<option value="11110">종로구</option>
+																<option value="11140">중구</option>
+																<option value="11260">중랑구</option>
+															</select>
+														</td>
+													</tr>
+													<tr>
+														<td height="22">읍/면/동</td>
+														<td>
+															<select name="select2" class="input_form1" style="width:139px">
+																<option>전체</option>
+															</select>
+														</td>
+													</tr>
+													<tr>
+														<td height="22">산/번지</td>
+														<td><input name="checkbox4" type="checkbox" value="checkbox" checked>
+															<input name="textfield2224" type="text" class="input_form1" style="width:48px">
+															-
+															<input name="textfield22242" type="text" class="input_form1" style="width:48px">
+														</td>
+													</tr>
+												</table></td>
+										</tr>
+										<tr>
+											<td height="9" background="/img/mapImg/left_bott_line.gif"></td>
+										</tr>
+									</table></td>
+							</tr>
+							<tr>
+								<td valign="top"><table width="220" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+											<td height="32"><img src="/img/mapImg/left_title2.gif" alt="점용지 검색" width="220" height="32"></td>
+										</tr>
+										<tr>
+											<td align="center" valign="top" class="M_leftborder2"><table width="198" border="0" cellpadding="0" cellspacing="0" class="Map_stan">
+													<tr>
+														<td width="59" height="22">점용인</td>
+														<td><input name="textfield2224422" type="text" class="input_form1" style="width:139px"></td>
+													</tr>
+													<tr>
+														<td height="22">주민번호</td>
+														<td><input name="textfield2224322" type="text" class="input_form1" style="width:60px">
+															-
+															<input name="textfield22242222" type="text" class="input_form1" style="width:60px">
+														</td>
+													</tr>
+												</table></td>
+										</tr>
+										<tr>
+											<td height="9" background="/img/mapImg/left_bott_line.gif"></td>
+										</tr>
+									</table></td>
+							</tr>
+							<tr>
+								<td height="40" align="center"><a href="#"><img src="/img/mapImg/search_icon.gif" alt="검색" width="220" height="20" border="0"></a></td>
+							</tr>
+						</table></td>
+				</tr>
+				<tr>
+					<td height="7"></td>
+				</tr>
+				<tr>
+					<td height="31"><img src="/img/mapImg/result_title.gif" width="240" height="31"></td>
+				</tr>
+				<tr>
+					<td align="center" valign="top" bgcolor="f9f9f9" class="M_leftborder"><table width="216" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td height="10"></td>
+							</tr>
+							<tr>
+								<td><table width="216" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+											<td height="25" align="right" class="Map_stan">검색결과 (총 <span class="sub_stan_blue">4</span>건) </td>
+										</tr>
+										<tr>
+											<td><table width="216" border="0" cellpadding="0" cellspacing="0" class="Map_stan">
+													<tr>
+														<td height="1" colspan="5" bgcolor="a3d1ec"></td>
+													</tr>
+													<tr>
+														<td width="51" height="28" align="center" bgcolor="deedf6" class="sub_stan_blue">점용인</td>
+														<td width="1" bgcolor="deedf6"><img src="/img/mapImg/result_blue.gif" width="1" height="20"></td>
+														<td width="118" align="center" bgcolor="deedf6" class="sub_stan_blue">동/번지</td>
+														<td width="1" bgcolor="deedf6"><img src="/img/mapImg/result_blue.gif" width="1" height="20"></td>
+														<td width="45" align="center" bgcolor="deedf6" class="sub_stan_blue">지목</td>
+													</tr>
+													<tr>
+														<td colspan="5" bgcolor="a3d1ec"></td>
+													</tr>
+													<tr>
+														<td height="23" align="center"><a href="#" class="inqu">김병모</a></td>
+														<td><img src="/img/mapImg/result_gray.gif" width="1" height="15"></td>
+														<td class="table_bl_left"><a href="#" class="inqu">우면동 142-3</a></td>
+														<td><img src="/img/mapImg/result_gray.gif" width="1" height="15"></td>
+														<td align="center"><a href="#" class="inqu">도로</a></td>
+													</tr>
+													<tr>
+														<td height="1" colspan="5" bgcolor="dbdbdb"></td>
+													</tr>
+													<tr>
+														<td height="23" align="center" bgcolor="f7f7f7"><a href="#" class="inqu">김병모</a></td>
+														<td bgcolor="f7f7f7"><img src="/img/mapImg/result_gray.gif" width="1" height="15"></td>
+														<td bgcolor="f7f7f7" class="table_bl_left"><a href="#" class="inqu">우면동 142-3</a></td>
+														<td bgcolor="f7f7f7"><img src="/img/mapImg/result_gray.gif" width="1" height="15"></td>
+														<td align="center" bgcolor="f7f7f7"><a href="#" class="inqu">하천</a></td>
+													</tr>
+													<tr>
+														<td height="1" colspan="5" bgcolor="dbdbdb"></td>
+													</tr>
+													<tr>
+														<td height="23" align="center"><a href="#" class="inqu">김병모</a></td>
+														<td><img src="/img/mapImg/result_gray.gif" width="1" height="15"></td>
+														<td class="table_bl_left"><a href="#" class="inqu">우면동 142-3</a></td>
+														<td><img src="/img/mapImg/result_gray.gif" width="1" height="15"></td>
+														<td align="center"><a href="#" class="inqu">도로</a></td>
+													</tr>
+													<tr>
+														<td height="1" colspan="5" bgcolor="dbdbdb"></td>
+													</tr>
+													<tr>
+														<td height="23" align="center" bgcolor="f7f7f7"><a href="#" class="inqu">김병모</a></td>
+														<td bgcolor="f7f7f7"><img src="/img/mapImg/result_gray.gif" width="1" height="15"></td>
+														<td bgcolor="f7f7f7" class="table_bl_left"><a href="#" class="inqu">우면동 142-3</a></td>
+														<td bgcolor="f7f7f7"><img src="/img/mapImg/result_gray.gif" width="1" height="15"></td>
+														<td align="center" bgcolor="f7f7f7"><a href="#" class="inqu">하천</a></td>
+													</tr>
+													<tr>
+														<td height="1" colspan="5" bgcolor="dbdbdb"></td>
+													</tr>
+												</table></td>
+										</tr>
+										<tr>
+											<td height="40" align="center"><table border="0" cellspacing="0" cellpadding="0">
+													<tr>
+														<td><a href="#"><img src="/img/mapImg/prev_icon.gif" width="12" height="11" border="0"></a></td>
+														<td width="15"></td>
+														<td align="center"><a href="#" class="list">1</a> <a href="#" class="list">2</a> <a href="#" class="list">3</a> <a href="#" class="list">4</a> <a href="#" class="list">5</a> <a href="#" class="list">6</a></td>
+														<td width="15">&nbsp;</td>
+														<td><a href="#"><img src="/img/mapImg/next_icon.gif" width="12" height="11" border="0"></a></td>
+													</tr>
+												</table></td>
+										</tr>
+										<tr>
+											<td>&nbsp;</td>
+										</tr>
+									</table></td>
+							</tr>
+							<tr>
+								<td height="20"></td>
+							</tr>
+						</table></td>
+				</tr>
+			</table></td>
+		<td width="10"></td>
+	</tr>
+</table>
+</body>
+</html>

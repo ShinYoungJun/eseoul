@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<bean id="methodNameResolver_jumyongBoard" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+ 		<property name="mappings">
+ 			<props>
+				<prop key="/jumyong/jumyong/view.do">View</prop>		
+				<prop key="/jumyong/jumyong/search.do">jumyongList</prop>		
+				<prop key="/jumyong/jumyong/excel_search.do">Excel_Search</prop>
+
+				<prop key="/getRate.do">getRate</prop>
+				<prop key="/getLicenseTax.do">getLicenseTax</prop>
+				
+				<prop key="/jumyong/jumyong/deleteLocation.do">deleteLocation</prop>											
+				<prop key="/jumyong/jumyong/deleteFile.do">deleteFile</prop>
+				<prop key="/jumyong/jumyong/productSubList.do">productSubList</prop>	
+				<prop key="/jumyong/jumyong/productAddList.do">productaddList</prop>	
+				
+				<prop key="/getSeqByFirstSeq.do">getSeqByFirstSeq</prop>		
+				<prop key="/officialLandPrice.do">getPrice</prop>
+				<prop key="/land_price.do">getPriceList</prop>
+				<prop key="/total_with.do">totalWith</prop>
+									
+				
+				<prop key="/jumyong/jumyong/inspectDel.do">inspectDel</prop>																			
+				<prop key="/jumyong/jumyong/confDel.do">confDel</prop>
+				
+				<prop key="/jumyong/jumyong/history_view.do">history_view</prop>
+				<prop key="/jumyong/jumyong/history_register.do">history_register</prop>
+				<prop key="/jumyong/jumyong/history_registerPrc.do">history_registerPrc</prop>
+				<prop key="/jumyong/jumyong/history_del.do">history_del</prop>
+			</props>
+ 		</property>
+ 	</bean> 	
+ 	
+ 	<bean id="urlMapping_jumyongboard" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+ 		<property name="mappings">
+ 			<props>
+				<prop key="/jumyong/jumyong/view.do">jumyongBoardControl</prop>		 			
+				<prop key="/jumyong/jumyong/search.do">jumyongBoardControl</prop>
+				<prop key="/jumyong/jumyong/excel_search.do">jumyongBoardControl</prop>
+				
+				<prop key="/getRate.do">jumyongBoardControl</prop>
+				<prop key="/getLicenseTax.do">jumyongBoardControl</prop>			
+				
+				<prop key="/jumyong/jumyong/deleteLocation.do">jumyongBoardControl</prop>
+				<prop key="/jumyong/jumyong/deleteFile.do">jumyongBoardControl</prop>
+				<prop key="/jumyong/jumyong/productSubList.do">jumyongBoardControl</prop>	
+				<prop key="/jumyong/jumyong/productAddList.do">jumyongBoardControl</prop>				
+				
+				<prop key="/getSeqByFirstSeq.do">jumyongBoardControl</prop>	
+				<prop key="/officialLandPrice.do">jumyongBoardControl</prop>	
+				<prop key="/land_price.do">jumyongBoardControl</prop>
+				<prop key="/total_with.do">jumyongBoardControl</prop>		
+				
+				<prop key="/jumyong/jumyong/inspectDel.do">jumyongBoardControl</prop>	
+				<prop key="/jumyong/jumyong/confDel.do">jumyongBoardControl</prop>																																																																	
+				
+				<prop key="/jumyong/productInsert.do">productBoardFormControl</prop>
+				<prop key="/jumyong/productSubtractInsert.do">productSubtractBoardFormControl</prop>							
+				<prop key="/jumyong/productSubtractBeforeTaxInsert.do">productSubtractBeforeTaxBoardFormControl</prop>				
+				<prop key="/jumyong/inspectEdit.do">inspectBoardFormControl</prop>							
+				<prop key="/jumyong/confEdit.do">confBoardFormControl</prop>										
+				<prop key="/jumyong/placeLocationEdit.do">PlaceDetailLocationFormControl</prop>			
+				<prop key="/jumyong/placeFileEdit.do">PlaceDetailFileFormControl</prop>		
+				<prop key="/jumyong/placeFileWrite.do">PlaceDetailFileFormControl</prop>		
+				<prop key="/jumyong/disUse.do">DisUseFormControl</prop>	
+				
+				<prop key="/jumyong/jumyong/history_view.do">jumyongBoardControl</prop>
+				<prop key="/jumyong/jumyong/history_register.do">jumyongBoardControl</prop>
+				<prop key="/jumyong/jumyong/history_registerPrc.do">jumyongBoardControl</prop>
+				<prop key="/jumyong/jumyong/history_del.do">jumyongBoardControl</prop>
+ 			</props>
+ 		</property>
+ 	</bean>
+ 	
+	
+		<bean id="jumyongBoardControl" class="main.java.jumyong.jumyong.web.JumyongBoardControl">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_jumyongBoard"/>
+		</property>		
+		<property name="jumyongService" ref="jumyongService"/>
+		<property name="boardFileService" ref="boardFileService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+
+	
+	<bean id="productBoardFormControl" class="main.java.jumyong.jumyong.web.ProductBoardFormControl">
+		<property name="jumyongService" ref="jumyongService"/>		
+		<property name="commandClass" value="main.java.jumyong.jumyong.model.ProductBean"/>
+		<property name="commandName" value="product"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+		
+	</bean>
+	
+	<bean id="productSubtractBoardFormControl" class="main.java.jumyong.jumyong.web.ProductSubtractBoardFormControl">
+		<property name="jumyongService" ref="jumyongService"/>		
+		<property name="commandClass" value="main.java.jumyong.jumyong.model.ProductBean"/>
+		<property name="commandName" value="product"/>
+	</bean>	
+	
+	
+	<bean id="productSubtractBeforeTaxBoardFormControl" class="main.java.jumyong.jumyong.web.productSubtractBeforeTaxBoardFormControl">
+		<property name="jumyongService" ref="jumyongService"/>
+		<property name="commandClass" value="main.java.jumyong.jumyong.model.ProductBean"/>
+		<property name="commandName" value="product"/>
+	</bean>
+	
+	
+	<bean id="inspectBoardFormControl" class="main.java.jumyong.jumyong.web.InspectBoardFormControl">
+		<property name="jumyongService" ref="jumyongService"/>		
+		<property name="commandClass" value="main.java.jumyong.jumyong.model.InspectBean"/>
+		<property name="commandName" value="inspect"/>
+  		<property name="formView" value="/jumyong/jumyong/info_inspect"/>
+	</bean>
+	
+	<bean id="confBoardFormControl" class="main.java.jumyong.jumyong.web.ConfBoardFormControl">
+		<property name="jumyongService" ref="jumyongService"/>		
+		<property name="commandClass" value="main.java.jumyong.jumyong.model.ConfBean"/>
+		<property name="commandName" value="conf"/>
+  		<property name="formView" value="/jumyong/jumyong/info_conf"/>
+	</bean>	
+	
+	<bean id="PlaceDetailLocationFormControl" class="main.java.jumyong.jumyong.web.PlaceDetailLocationFormControl">
+		<property name="jumyongService" ref="jumyongService"/>		
+		<property name="commonCodeService" ref="commonCodeService"/>		
+		<property name="commandClass" value="main.java.jumyong.jumyong.model.PlaceLocationBean"/>		
+		<property name="commandName" value="place"/>
+	</bean>
+
+	<bean id="PlaceDetailFileFormControl" class="main.java.jumyong.jumyong.web.PlaceDetailFileFormControl">
+		<property name="jumyongService" ref="jumyongService"/>		
+		<property name="commonCodeService" ref="commonCodeService"/>		
+		<property name="commandClass" value="main.java.jumyong.jumyong.model.PlaceFileBean"/>				
+		<property name="commandName" value="place"/>
+	</bean>
+
+
+	<bean id="DisUseFormControl" class="main.java.jumyong.jumyong.web.DisUseFormControl">
+		<property name="jumyongService" ref="jumyongService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>	
+		<property name="commandClass" value="main.java.jumyong.jumyong.model.DisUseBean"/>				
+		<property name="commandName" value="disuse"/>
+	</bean>
+	
+	<bean id="jumyongDao" parent="roadsJdbcDaoSupport" class="main.java.jumyong.jumyong.dao.JumyongDao"/>
+
+ 	<bean id="jumyongService" class="main.java.jumyong.jumyong.service.JumyongService"> 
+ 		<property name="jumyongDao" ref="jumyongDao"/>
+ 	</bean>
+ 	
+</beans>

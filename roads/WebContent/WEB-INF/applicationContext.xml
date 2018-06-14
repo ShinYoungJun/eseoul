@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>	
+	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+	    <property name="basenames">
+	        <list>
+ 				<value>/config/purposeCode_sql</value>
+	            <value>/config/commonCode_sql</value>  
+	            <value>/config/commCode_sql</value>
+	            <value>/config/jumreg_queries</value>	 
+				<value>/config/messages</value>	            
+	            <value>/config/zipCode_sql</value>
+   	            <value>/config/junggi_gigan_sql</value>
+	            <value>/config/periodical_queries</value>	            
+				<value>/config/sidoCode</value> 
+				<value>/config/corpCode_sql</value>
+			    <value>/config/userReg_sql</value>
+	            <value>/config/board_sql</value>
+				<value>/config/system_sql</value>
+				
+				<value>/config/jumyong_saewe_sql</value>
+	            <value>/config/jumyong_gigan_sql</value>
+	            <value>/config/jumyong_minwon_sql</value>
+	            <value>/config/jumyong_oldminwon_sql</value>
+				<value>/config/jumyong_minwoninfo_sql</value>
+	            <value>/config/jumyong_jumyong_sql</value>	            
+				<value>/config/jumyong_junggi_sql</value>
+				<value>/config/jumyong_jumyonginfo_sql</value>
+				<value>/config/jumyong_map_sql</value>
+				
+				<value>/config/facility_gigan_sql</value>
+	            <value>/config/facility_saewe_sql</value>
+				<value>/config/facility_jumyong_sql</value>	        	        
+				<value>/config/facility_junggi_sql</value>	
+				<value>/config/facility_minwon_sql</value>
+				<value>/config/facility_minwoninfo_sql</value>				
+				<value>/config/facility_jumyonginfo_sql</value>
+				<value>/config/facility_junggiinfo_sql</value>
+				<value>/config/facility_adminbiz_sql</value>
+								
+				<value>/config/gapan_gapan_sql</value>				
+				<value>/config/gapan_saewe_sql</value>
+				<value>/config/gapan_jumyong_sql</value>		
+				<value>/config/gapan_junggi_sql</value> 
+				<value>/config/gapan_sugeo_sql</value>
+				<value>/config/gapan_jumyonginfo_sql</value>
+				<value>/config/gapan_map_sql</value>
+
+				<value>/config/rojum_minwon_sql</value>
+				<value>/config/rojum_survey_sql</value>
+				<value>/config/rojum_owner_sql</value>			
+				<value>/config/rojum_saewe_sql</value>
+				<value>/config/rojum_jumyong_sql</value>		
+				<value>/config/rojum_junggi_sql</value> 
+				<value>/config/rojum_sugeo_sql</value>
+				<value>/config/rojum_jumyonginfo_sql</value>
+				<value>/config/rojum_map_sql</value>
+				
+				<value>/config/schedule_schedule_sql</value>
+				<value>/config/map_sql</value> 
+				<value>/config/rojum_mdb_sql</value>
+				<!--  //********** BEGIN_현진_20120229 -->
+				<value>/config/admin_sql</value>
+				<!--   //********** END_현진_20120229 -->
+	        </list>
+	    </property>
+	    <property name="cacheSeconds" value="5"/>
+	</bean>
+
+	<bean id="messageSourceAccessor" class="org.springframework.context.support.MessageSourceAccessor">
+		<constructor-arg>
+			<ref local="messageSource" />
+		</constructor-arg>
+	</bean>
+	
+	<bean id="globals" class="main.java.common.util.Globals">
+		<property name="messageSourceAccessor">
+			<ref bean="messageSourceAccessor" />
+		</property>
+	</bean>
+	
+	<bean id="scheduleDao" parent="roadsJdbcDaoSupport" class="main.java.schedule.dao.ScheduleDao"/>
+
+ 	<bean id="scheduleService" class="main.java.schedule.service.ScheduleService"> 
+ 		<property name="scheduleDao" ref="scheduleDao"/>
+ 	</bean>
+	
+	<bean name="initServlet" class="org.springframework.scheduling.quartz.JobDetailBean">
+	  <property name="jobDataAsMap">
+	  	<map>
+	  	<entry key="scheduleService">
+	  		<ref local="scheduleService"/>
+	  	</entry>
+	  	</map>
+	  </property>
+	  <property name="jobClass" value="main.java.schedule.prc.InitServlet" />
+	</bean>
+	
+	<bean id="simpleTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+	    <property name="jobDetail" ref="initServlet"/>
+	    <property name="startDelay" value="20000" />
+	    <property name="repeatInterval" value="100000"/>
+	</bean>
+	
+	<bean id="cronTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">  
+		<property name="jobDetail" ref="initServlet"/>  
+		<property name="cronExpression" value="0 10 5 ? * *"/>  
+	</bean>  
+	
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+	    <property name="triggers">
+	        <list>
+	            <ref bean="cronTrigger" />
+	        </list>
+	    </property>
+	    <property name="quartzProperties">  
+			<props>  
+				<prop key="org.quartz.threadPool.class">org.quartz.simpl.SimpleThreadPool</prop>  
+				<prop key="org.quartz.threadPool.threadCount">20</prop>  
+				<prop key="org.quartz.threadPool.threadPriority">4</prop>  
+				<prop key="org.quartz.jobStore.class">org.quartz.simpl.RAMJobStore</prop>  
+				<prop key="org.quartz.jobStore.misfireThreshold">60000</prop>  
+			</props>  
+		</property>
+	</bean>
+	
+</beans>

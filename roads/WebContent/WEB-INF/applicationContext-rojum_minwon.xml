@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<bean id="methodNameResolver_rojum_minwon" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+ 		<property name="mappings">
+ 			<props>
+				<prop key="/rojum/minwon/search.do">searchList</prop>
+				<prop key="/rojum/minwon/new.do">newMinwon</prop>
+				<prop key="/rojum/minwon/modify.do">modifyMinwon</prop>
+				<prop key="/rojum/minwon/del.do">delMinwon</prop>
+			</props>
+ 		</property>
+ 	</bean> 	
+ 	
+ 	<bean id="urlMapping_rojum_minwon" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+ 		<property name="mappings">
+ 			<props>
+				<prop key="/rojum/minwon/search.do">rojum_minwonControl</prop>
+				<prop key="/rojum/minwon/new.do">rojum_minwonControl</prop>
+				<prop key="/rojum/minwon/modify.do">rojum_minwonControl</prop>
+				<prop key="/rojum/minwon/del.do">rojum_minwonControl</prop>
+ 			</props>
+ 		</property>
+ 	</bean>
+	
+	<bean id="rojum_minwonControl" class="main.java.rojum.minwon.web.MinwonControl">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_rojum_minwon"/>
+		</property>		
+		<property name="rojum_minwonService" ref="rojum_minwonService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+	
+		
+	<bean id="rojum_minwonDao" parent="roadsJdbcDaoSupport" class="main.java.rojum.minwon.dao.MinwonDao"/>
+
+ 	<bean id="rojum_minwonService" class="main.java.rojum.minwon.service.MinwonService"> 
+ 		<property name="rojum_minwonDao" ref="rojum_minwonDao"/>
+ 	</bean>
+
+</beans>

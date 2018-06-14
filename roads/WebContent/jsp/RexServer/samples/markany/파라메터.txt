@@ -1,0 +1,6 @@
+rex_markany = true
+rex_markany_param = dllname=MAePageSAFERRexpert.dll;datafilename=MaPrintInfoKrxRex.dat;enablecapture=0;enablespool=0;enableprinter=0;enableprinterInfo=0;printeroption=3;imagesaferoption=0
+rex_markany_cellwidth = "18"
+rex_markany_cellheight = "2"
+rex_markany_path = rex_gsRexServiceRootURL + "rexpert/jsp/MaFpsCommon.jsp";
+rex_markany_setpagedata = "MaPrintInfoKrxRex.dat"

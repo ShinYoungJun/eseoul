@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+                       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<bean id="methodNameResolver_CorpCode" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+ 		<property name="mappings">
+ 			<props>
+				<prop key="/corpcode.do">CorpCode</prop>
+			</props>
+ 		</property>
+ 	</bean>
+ 	
+ 	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+ 		<property name="mappings">
+ 			<props>
+				<prop key="/corpcode.do">corpCodeControl</prop>
+ 			</props>
+ 		</property>
+ 	</bean>
+
+	<bean id="corpCodeControl" class="main.java.common.corpCode.web.CorpCodeControl">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_CorpCode"/></property>
+		<property name="corpCodeService" ref="corpCodeService"/>
+	</bean>
+
+ 	<bean id="corpCodeService" class="main.java.common.corpCode.service.CorpCodeService">
+ 		<property name="corpCodeDao" ref="corpCodeDao"/>
+ 	</bean>
+ 	<bean id="corpCodeDao" parent="roadsJdbcDaoSupport" class="main.java.common.corpCode.dao.CorpCodeDao"/>
+ 
+</beans>

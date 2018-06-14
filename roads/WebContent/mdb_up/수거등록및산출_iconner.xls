@@ -1,0 +1,4685 @@
+
+
+
+  
+  
+  
+
+
+
+
+<html xmlns:x="urn:schemas-microsoft-com:office:excel">
+<head>
+<title>::::: 서울시 도로점용관리시스템 :::::</title>
+<!--[if gte mso 9]><xml>
+<x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet>
+<x:Name>Sheet1</x:Name>
+<x:WorksheetOptions><x:Panes><x:Pane>
+</x:Pane></x:Panes></x:WorksheetOptions>
+</x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook>
+</xml><![endif]-->
+</head>
+
+<body>
+
+
+<table width="780" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td width="100px" align="center" bgcolor="e5eff8" class="sub_table_b">관리번호</td>
+		<td width="80px" align="center" bgcolor="e5eff8" class="sub_table_b">등록구분</td>
+		<td width="80px" align="center" bgcolor="e5eff8" class="sub_table_b">수거일</td>
+		<td width="60px" align="center" bgcolor="e5eff8" class="sub_table_b">보관일</td>
+		<td width="100px" align="center" bgcolor="e5eff8" class="sub_table_b">운영인</td>
+		<td width="150px" align="center" bgcolor="e5eff8" class="sub_table_b">점용지</td>
+		<td align="center" bgcolor="e5eff8" class="sub_table_b">상&nbsp;&nbsp;&nbsp;&nbsp;태</td>
+		<td width="70px" align="center" bgcolor="e5eff8" class="sub_table_b">면적(㎡)</td>
+		<td width="60px" align="center" bgcolor="e5eff8" class="sub_table_b">점용료</td>
+		<td width="80px" align="center" bgcolor="e5eff8" class="sub_table_b">정비/관리</td>
+		<td width="100px" align="center" bgcolor="e5eff8" class="sub_table_b">갱신일자</td>
+	</tr>
+            
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290136_4_0061</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">김현철</td>
+		<td width="150px" align="center">하월곡동 104-112</td>
+		<td align="center"><font color="red">2012년 점용료 부과</font></td>
+		<td width="70px" align="center">3.2</td>
+		<td width="60px" align="center">
+			
+				
+				
+					미부과
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-11-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290134_4_0149</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">이현란</td>
+		<td width="150px" align="center">길음동 1276-0</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+				
+					미부과
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-30</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290135_4_0037</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">구금자</td>
+		<td width="150px" align="center">종암동 10-125</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">2.6</td>
+		<td width="60px" align="center">
+			
+				
+				
+					미부과
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-30</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290135_4_0038</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">김삼남</td>
+		<td width="150px" align="center">종암동 10-125</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">2.6</td>
+		<td width="60px" align="center">
+			
+				
+				
+					미부과
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-30</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290134_4_0145</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">이기영</td>
+		<td width="150px" align="center">길음동 1276-0</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+				
+					미부과
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-30</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290134_4_0146</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">김옥자</td>
+		<td width="150px" align="center">길음동 1276-0</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+				
+					미부과
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-30</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290134_4_0147</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">윤완수</td>
+		<td width="150px" align="center">길음동 1276-0</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+				
+					미부과
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-30</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290134_4_0148</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">김현동</td>
+		<td width="150px" align="center">길음동 1276-0</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+				
+					미부과
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-30</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290139_4_0123</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">이성실</td>
+		<td width="150px" align="center">석관동 375-36</td>
+		<td align="center"><font color="red">2012년 점용료 부과</font></td>
+		<td width="70px" align="center">9</td>
+		<td width="60px" align="center">
+			
+				
+				
+					미부과
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290134_4_0143</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">이건순</td>
+		<td width="150px" align="center">길음동 1276-0</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+				
+					미부과
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290104_4_0037</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">고진숙</td>
+		<td width="150px" align="center">동소문동1가 13-0</td>
+		<td align="center"><font color="red">2012년 점용료 부과</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+				
+					미부과
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290104_4_0038</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">김복희</td>
+		<td width="150px" align="center">동소문동1가 13-0</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+				
+					미부과
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290104_4_0039</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">신남기</td>
+		<td width="150px" align="center">동소문동1가 13-0</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+				
+					미부과
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290104_4_0040</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">임택근</td>
+		<td width="150px" align="center">동소문동1가 13-0</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+				
+					미부과
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290104_4_0041</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">이상신</td>
+		<td width="150px" align="center">동소문동1가 13-0</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+				
+					미부과
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290104_4_0042</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">전영분</td>
+		<td width="150px" align="center">동소문동1가 13-0</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+				
+					미부과
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290104_4_0043</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">성헌권</td>
+		<td width="150px" align="center">동소문동1가 13-0</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+				
+					미부과
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290108_4_0023</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">김인수</td>
+		<td width="150px" align="center">동소문동5가 75-0</td>
+		<td align="center"><font color="red">2012년 점용료 부과</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+				
+					미부과
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290108_4_0024</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">김은미</td>
+		<td width="150px" align="center">동소문동5가 75-0</td>
+		<td align="center"><font color="red">2012년 점용료 부과</font></td>
+		<td width="70px" align="center">2.2</td>
+		<td width="60px" align="center">
+			
+				
+				
+					미부과
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290116_4_0131</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">장정순</td>
+		<td width="150px" align="center">동선동1가 1-1</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">2.04</td>
+		<td width="60px" align="center">
+			
+				
+				
+					미부과
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290116_4_0132</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">강현찬</td>
+		<td width="150px" align="center">동선동1가 1-1</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">2.04</td>
+		<td width="60px" align="center">
+			
+				
+				
+					미부과
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290116_4_0133</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">김일남</td>
+		<td width="150px" align="center">동선동1가 1-2</td>
+		<td align="center"><font color="red">미검토</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+				
+					미부과
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290116_4_0134</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">장인수</td>
+		<td width="150px" align="center">동선동1가 1-2</td>
+		<td align="center"><font color="red">미검토</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290116_4_0135</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">조경자</td>
+		<td width="150px" align="center">동선동1가 1-2</td>
+		<td align="center"><font color="red">미검토</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290116_4_0136</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">서선월</td>
+		<td width="150px" align="center">동선동1가 1-2</td>
+		<td align="center"><font color="red">미검토</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290116_4_0137</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">이강호</td>
+		<td width="150px" align="center">동선동1가 1-2</td>
+		<td align="center"><font color="red">미검토</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290116_4_0138</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">김상기</td>
+		<td width="150px" align="center">동선동1가 2-1</td>
+		<td align="center"><font color="red">2012년 점용료 부과</font></td>
+		<td width="70px" align="center">2.16</td>
+		<td width="60px" align="center">
+			
+				
+				
+					미부과
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290116_4_0139</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">곽용덕</td>
+		<td width="150px" align="center">동선동1가 1-2</td>
+		<td align="center"><font color="red">미검토</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290116_4_0140</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">옥금지</td>
+		<td width="150px" align="center">동선동1가 3-2</td>
+		<td align="center"><font color="red">2012년 점용료 부과</font></td>
+		<td width="70px" align="center">1.4</td>
+		<td width="60px" align="center">
+			
+				
+				
+					미부과
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290116_4_0141</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">정영기</td>
+		<td width="150px" align="center">동선동1가 3-2</td>
+		<td align="center"><font color="red">2012년 점용료 부과</font></td>
+		<td width="70px" align="center">1.7</td>
+		<td width="60px" align="center">
+			
+				
+				
+					미부과
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290116_4_0142</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">이주한</td>
+		<td width="150px" align="center">동선동1가 1-2</td>
+		<td align="center"><font color="red">미검토</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290116_4_0143</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">신순자</td>
+		<td width="150px" align="center">동선동1가 4-1</td>
+		<td align="center"><font color="red">미검토</font></td>
+		<td width="70px" align="center">1.5</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290116_4_0144</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">조선행</td>
+		<td width="150px" align="center">동선동1가 4-1</td>
+		<td align="center"><font color="red">미검토</font></td>
+		<td width="70px" align="center">1.5</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290116_4_0145</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">신화란</td>
+		<td width="150px" align="center">동선동1가 1-2</td>
+		<td align="center"><font color="red">미검토</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290116_4_0146</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">김유선</td>
+		<td width="150px" align="center">동선동1가 85-80</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">1.5</td>
+		<td width="60px" align="center">
+			
+				
+				
+					미부과
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290116_4_0147</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">양복순</td>
+		<td width="150px" align="center">동선동1가 26-0</td>
+		<td align="center"><font color="red">미검토</font></td>
+		<td width="70px" align="center">1.5</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290116_4_0148</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">정기호</td>
+		<td width="150px" align="center">동선동1가 107-0</td>
+		<td align="center"><font color="red">미검토</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290116_4_0149</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">김영순</td>
+		<td width="150px" align="center">동선동1가 1-2</td>
+		<td align="center"><font color="red">미검토</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290116_4_0150</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">임동희</td>
+		<td width="150px" align="center">동선동1가 78-0</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">1.14</td>
+		<td width="60px" align="center">
+			
+				
+				
+					미부과
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290116_4_0151</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">이순금</td>
+		<td width="150px" align="center">동선동1가 1-2</td>
+		<td align="center"><font color="red">미검토</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290116_4_0152</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">윤장현</td>
+		<td width="150px" align="center">동선동1가 1-2</td>
+		<td align="center"><font color="red">미검토</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290116_4_0153</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">이운순</td>
+		<td width="150px" align="center">동선동1가 87-0</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">1.7</td>
+		<td width="60px" align="center">
+			
+				
+				
+					미부과
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290116_4_0154</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">이현진</td>
+		<td width="150px" align="center">동선동1가 87-0</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">1.7</td>
+		<td width="60px" align="center">
+			
+				
+				
+					미부과
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290116_4_0155</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">김덕준</td>
+		<td width="150px" align="center">동선동1가 102-0</td>
+		<td align="center"><font color="red">미검토</font></td>
+		<td width="70px" align="center">1.35</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290116_4_0156</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">이덕규</td>
+		<td width="150px" align="center">동선동1가 102-0</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">1.28</td>
+		<td width="60px" align="center">
+			
+				
+				
+					미부과
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290116_4_0157</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">김매실</td>
+		<td width="150px" align="center">동선동1가 107-0</td>
+		<td align="center"><font color="red">미검토</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290116_4_0158</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">이영숙</td>
+		<td width="150px" align="center">동선동1가 107-0</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+				
+					미부과
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290116_4_0159</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">강공례</td>
+		<td width="150px" align="center">동선동1가 104-0</td>
+		<td align="center"><font color="red">2012년 점용료 부과</font></td>
+		<td width="70px" align="center">2.04</td>
+		<td width="60px" align="center">
+			
+				
+				
+					미부과
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290116_4_0160</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">박효근</td>
+		<td width="150px" align="center">동선동1가 104-0</td>
+		<td align="center"><font color="red">2012년 점용료 부과</font></td>
+		<td width="70px" align="center">2.16</td>
+		<td width="60px" align="center">
+			
+				
+				
+					미부과
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290116_4_0161</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">김성봉</td>
+		<td width="150px" align="center">동선동1가 117-0</td>
+		<td align="center"><font color="red">미검토</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290116_4_0162</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">변정임</td>
+		<td width="150px" align="center">동선동1가 117-0</td>
+		<td align="center"><font color="red">미검토</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290116_4_0163</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">김금자</td>
+		<td width="150px" align="center">동선동1가 117-0</td>
+		<td align="center"><font color="red">미검토</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290116_4_0164</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">이혜진</td>
+		<td width="150px" align="center">동선동1가 1-2</td>
+		<td align="center"><font color="red">미검토</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290116_4_0165</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">김우근</td>
+		<td width="150px" align="center">동선동1가 85-80</td>
+		<td align="center"><font color="red">2012년 점용료 부과</font></td>
+		<td width="70px" align="center">1.44</td>
+		<td width="60px" align="center">
+			
+				
+				
+					미부과
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290116_4_0166</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">신미희</td>
+		<td width="150px" align="center">동선동1가 1-2</td>
+		<td align="center"><font color="red">미검토</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290116_4_0167</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">변정순</td>
+		<td width="150px" align="center">동선동1가 117-0</td>
+		<td align="center"><font color="red">미검토</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290116_4_0169</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">김풍자</td>
+		<td width="150px" align="center">동선동1가 1-1</td>
+		<td align="center"><font color="red">2012년 점용료 부과</font></td>
+		<td width="70px" align="center">2.04</td>
+		<td width="60px" align="center">
+			
+				
+				
+					미부과
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290104_4_0036</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">신선자</td>
+		<td width="150px" align="center">동소문동1가 13-0</td>
+		<td align="center"><font color="red">2012년 점용료 부과</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+				
+					미부과
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290134_4_0142</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">김명옥</td>
+		<td width="150px" align="center">길음동 1276-0</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+				
+					미부과
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290134_4_0141</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">우대웅</td>
+		<td width="150px" align="center">길음동 1276-0</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+				
+					미부과
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290134_4_0131</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">유문희</td>
+		<td width="150px" align="center">길음동 33-5</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">2.2</td>
+		<td width="60px" align="center">
+			
+				
+				
+					미부과
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290134_4_0130</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">백종한</td>
+		<td width="150px" align="center">길음동 33-5</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">2.2</td>
+		<td width="60px" align="center">
+			
+				
+				
+					미부과
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290125_4_0026</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">김계숙</td>
+		<td width="150px" align="center">안암동5가 134-35</td>
+		<td align="center"><font color="red">2012년 점용료 부과</font></td>
+		<td width="70px" align="center">2.6</td>
+		<td width="60px" align="center">
+			
+				
+				
+					미부과
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290133_4_0056</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">김경애</td>
+		<td width="150px" align="center">정릉동 966-81</td>
+		<td align="center"><font color="red">2012년 점용료 부과</font></td>
+		<td width="70px" align="center">2.6</td>
+		<td width="60px" align="center">
+			
+				
+				
+					미부과
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-29</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290116_4_0188</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">김성봉</td>
+		<td width="150px" align="center">동선동1가 117-0</td>
+		<td align="center"><font color="red">2012년 점용료 부과</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-26</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290116_4_0187</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">김매실</td>
+		<td width="150px" align="center">동선동1가 107-0</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-26</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290116_4_0186</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">김덕준</td>
+		<td width="150px" align="center">동선동1가 102-0</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">1.35</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-26</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290116_4_0181</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">정기호</td>
+		<td width="150px" align="center">동선동1가 107-0</td>
+		<td align="center"><font color="red">2012년 점용료 부과</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-26</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290116_4_0180</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">양복순</td>
+		<td width="150px" align="center">동선동1가 26-0</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">1.5</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-03-26</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290103_4_0013</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">신대호</td>
+		<td width="150px" align="center">돈암동 48-4</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-01-21</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290108_4_0020</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">구금옥</td>
+		<td width="150px" align="center">동소문동5가 75-0</td>
+		<td align="center"><font color="red">2012년 점용료 부과</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-01-21</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290108_4_0021</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">임정임</td>
+		<td width="150px" align="center">동소문동5가 75-0</td>
+		<td align="center"><font color="red">2012년 점용료 부과</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-01-21</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290108_4_0022</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">전명옥</td>
+		<td width="150px" align="center">하월곡동 27-118</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">2.4</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-01-21</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290116_4_0130</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">문해숙</td>
+		<td width="150px" align="center">동선동1가 1-1</td>
+		<td align="center"><font color="red">2012년 점용료 부과</font></td>
+		<td width="70px" align="center">2.04</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-01-21</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290116_4_0168</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">정용식</td>
+		<td width="150px" align="center">동선동1가 1-1</td>
+		<td align="center"><font color="red">2012년 점용료 부과</font></td>
+		<td width="70px" align="center">2.16</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-01-21</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290119_4_0013</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">김동연</td>
+		<td width="150px" align="center">동선동4가 2-2</td>
+		<td align="center"><font color="red">2012년 점용료 부과</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-01-21</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290119_4_0014</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">허영순</td>
+		<td width="150px" align="center">동선동4가 2-2</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">2.6</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-01-21</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290125_4_0024</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">김명자</td>
+		<td width="150px" align="center">안암동5가 104-291</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">2.6</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-01-21</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290133_4_0057</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">신영택</td>
+		<td width="150px" align="center">길음동 537-306</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-01-21</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290134_4_0125</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">박성순</td>
+		<td width="150px" align="center">길음동 34-6</td>
+		<td align="center"><font color="red">2012년 점용료 부과</font></td>
+		<td width="70px" align="center">2.2</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-01-21</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290134_4_0126</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">정영철</td>
+		<td width="150px" align="center">길음동 34-6</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">2.2</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-01-21</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290134_4_0127</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">노병석</td>
+		<td width="150px" align="center">길음동 34-6</td>
+		<td align="center"><font color="red">2012년 점용료 부과</font></td>
+		<td width="70px" align="center">2.2</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-01-21</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290134_4_0128</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">박재근</td>
+		<td width="150px" align="center">길음동 33-8</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">2.2</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-01-21</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290134_4_0129</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">이수길</td>
+		<td width="150px" align="center">길음동 33-8</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">2.2</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-01-21</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290134_4_0132</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">이병균</td>
+		<td width="150px" align="center">길음동 33-5</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">2.2</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-01-21</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290134_4_0133</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">홍선순</td>
+		<td width="150px" align="center">길음동 33-6</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">2.2</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-01-21</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290134_4_0134</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">이인광</td>
+		<td width="150px" align="center">길음동 33-5</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">2.2</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-01-21</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290134_4_0135</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">김상은</td>
+		<td width="150px" align="center">길음동 33-5</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">2.2</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-01-21</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290134_4_0136</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">이재호</td>
+		<td width="150px" align="center">길음동 33-13</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">2.2</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-01-21</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290134_4_0137</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">김돈영</td>
+		<td width="150px" align="center">길음동 33-13</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">2.2</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-01-21</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290134_4_0138</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">김애자</td>
+		<td width="150px" align="center">길음동 33-13</td>
+		<td align="center"><font color="red">2012년 점용료 부과</font></td>
+		<td width="70px" align="center">2.2</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-01-21</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290134_4_0139</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">이형숙</td>
+		<td width="150px" align="center">길음동 33-13</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">2.2</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-01-21</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290134_4_0140</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">정성자</td>
+		<td width="150px" align="center">길음동 1276-0</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">2.4</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-01-21</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290134_4_0144</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">김찬희</td>
+		<td width="150px" align="center">길음동 1276-0</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">1.95</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-01-21</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290136_4_0059</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">박중영</td>
+		<td width="150px" align="center">하월곡동 104-123</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-01-21</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290136_4_0060</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">지명호</td>
+		<td width="150px" align="center">하월곡동 16-7</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">2.4</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-01-21</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290139_4_0101</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">김수남</td>
+		<td width="150px" align="center">석관동 168-56</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-01-21</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290139_4_0102</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">김일문</td>
+		<td width="150px" align="center">석관동 168-56</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-01-21</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290139_4_0103</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">이동심</td>
+		<td width="150px" align="center">석관동 168-56</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-01-21</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290139_4_0104</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">이명금</td>
+		<td width="150px" align="center">석관동 168-56</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-01-21</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290139_4_0105</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">이원영</td>
+		<td width="150px" align="center">석관동 168-56</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-01-21</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290139_4_0106</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">김용희</td>
+		<td width="150px" align="center">석관동 168-56</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">2.4</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-01-21</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290139_4_0107</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">최혜란</td>
+		<td width="150px" align="center">석관동 168-56</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">2.4</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-01-21</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290139_4_0108</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">한봉필</td>
+		<td width="150px" align="center">석관동 384-36</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">2.4</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-01-21</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290139_4_0109</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">이난영</td>
+		<td width="150px" align="center">석관동 384-36</td>
+		<td align="center"><font color="red">2012년 점용료 부과</font></td>
+		<td width="70px" align="center">2.4</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-01-21</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290139_4_0110</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">서남호</td>
+		<td width="150px" align="center">석관동 384-36</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">2.4</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-01-21</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290139_4_0111</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">이명순</td>
+		<td width="150px" align="center">석관동 134-2</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">2.4</td>
+		<td width="60px" align="center">
+			
+				
+				
+					미부과
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-01-21</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290139_4_0112</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">이병환</td>
+		<td width="150px" align="center">석관동 134-2</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">2.2</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-01-21</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290139_4_0113</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">정구준</td>
+		<td width="150px" align="center">석관동 134-2</td>
+		<td align="center"><font color="red">2012년 점용료 부과</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-01-21</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290139_4_0114</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">송윤국</td>
+		<td width="150px" align="center">석관동 134-2</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-01-21</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290139_4_0115</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">김만호</td>
+		<td width="150px" align="center">석관동 134-2</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-01-21</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290139_4_0116</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">이금례</td>
+		<td width="150px" align="center">석관동 134-2</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-01-21</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290139_4_0117</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">이명례</td>
+		<td width="150px" align="center">석관동 134-2</td>
+		<td align="center"><font color="red">2012년 점용료 부과</font></td>
+		<td width="70px" align="center">2.7</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-01-21</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290139_4_0118</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">김정희</td>
+		<td width="150px" align="center">석관동 134-2</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-01-21</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290139_4_0119</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">유여남</td>
+		<td width="150px" align="center">석관동 134-2</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">2.7</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-01-21</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290139_4_0120</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">강창숙</td>
+		<td width="150px" align="center">석관동 134-2</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-01-21</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290139_4_0121</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">김은영</td>
+		<td width="150px" align="center">석관동 134-2</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-01-21</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290139_4_0122</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">양병희</td>
+		<td width="150px" align="center">석관동 134-2</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">2.2</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-01-21</td>             
+	</tr>
+		                      
+	<tr>
+		<td height="26px" width="100px" align="center">290139_4_0124</td>
+		<td width="80px" align="center">
+			
+			
+			
+				실태조사
+			
+			
+		</td>
+		<td width="80px" align="center">
+			-
+		</td>
+		<td width="60px" align="center">
+			-
+		</td>
+		<td width="100px" align="center">유지수</td>
+		<td width="150px" align="center">석관동 134-2</td>
+		<td align="center"><font color="red">2012년 점용료 수납</font></td>
+		<td width="70px" align="center">3</td>
+		<td width="60px" align="center">
+			
+				
+					부과
+				
+				
+			
+		</td>
+		<td width="80px" align="center">
+			
+				
+				관리대상
+				
+				
+			
+		</td>
+		<td width="100px" align="center">2012-01-21</td>             
+	</tr>
+	
+</table>
+</body>
+</html>

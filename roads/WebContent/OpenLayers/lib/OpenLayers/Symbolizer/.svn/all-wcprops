@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/roads/!svn/ver/56/roads/WebContent/OpenLayers/lib/OpenLayers/Symbolizer
+END
+Text.js
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/roads/!svn/ver/56/roads/WebContent/OpenLayers/lib/OpenLayers/Symbolizer/Text.js
+END
+Line.js
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/roads/!svn/ver/56/roads/WebContent/OpenLayers/lib/OpenLayers/Symbolizer/Line.js
+END
+Polygon.js
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/roads/!svn/ver/56/roads/WebContent/OpenLayers/lib/OpenLayers/Symbolizer/Polygon.js
+END
+Point.js
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/roads/!svn/ver/56/roads/WebContent/OpenLayers/lib/OpenLayers/Symbolizer/Point.js
+END
+Raster.js
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/roads/!svn/ver/56/roads/WebContent/OpenLayers/lib/OpenLayers/Symbolizer/Raster.js
+END

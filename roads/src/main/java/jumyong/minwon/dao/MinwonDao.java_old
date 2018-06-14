@@ -1,0 +1,718 @@
+//	2009		Kim Yun Seo
+
+package main.java.jumyong.minwon.dao;
+
+import java.util.List;
+
+import main.java.common.dao.RoadsJdbcDaoSupport;
+import main.java.jumyong.minwon.model.Admin_BaseBean;
+import main.java.jumyong.minwon.model.AppealBean;
+import main.java.jumyong.minwon.model.PlaceBean;
+import main.java.jumyong.minwon.model.MinwonBean;
+import main.java.jumyong.minwon.model.JumjiSearchBean;
+
+public class MinwonDao	extends RoadsJdbcDaoSupport	implements	IMinwonDao
+{
+	private	MinwonMapDao	minwonMap	= new MinwonMapDao();
+	
+	
+    protected	void	initDao()  throws Exception
+    {
+		super.initDao();
+   	}
+    
+    //	검색
+    public	List	executeSearch(String strName, String strReq_no, String strReq_date1, String strReq_date2, String strCheck, String Process, int intRn1, int intRn2)
+	{
+    	MinwonMapDao.Search	search	= minwonMap.new Search(getDataSource(), getMessageSourceAccessor());
+    	
+    	if(strReq_no.equals("")	||	strReq_no == null)
+    		strReq_no	= "%";
+    	
+    	if(strCheck.equals("")	||	strCheck == null)
+    		strCheck	= "%";
+    	
+    	if(Process.equals("")	||	Process == null)
+    		Process	= "%";
+    	else if(Process.equals("0"))
+    		Process	= "N";   	
+    	else if(Process.equals("1"))
+    		Process	= "Y";  
+    	
+    	Object[] values = {
+    		"%" + strName + "%",
+    		strReq_no,
+    		strReq_date1,
+    		strReq_date2,
+    		strCheck,
+    		Process,
+        	new Integer(intRn1),
+        	new Integer(intRn2)
+    	};
+    	
+    	return search.execute(values);
+	}
+    
+    //	전체 건수
+    public	int		executeCount(String strName, String strReq_no, String strReq_date1, String strReq_date2, String strCheck, String Process)
+	{
+    	if(strReq_no.equals("")	||	strReq_no == null)
+    		strReq_no	= "%";
+    	
+    	if(strCheck.equals("")	||	strCheck == null)
+    		strCheck	= "%";
+    	
+    	if(Process.equals("")	||	Process == null)
+    		Process	= "%";
+    	else if(Process.equals("0"))
+    		Process	= "N";   	
+    	else if(Process.equals("1"))
+    		Process	= "Y";
+    	
+    	Object[] values = {
+        	"%" + strName + "%",
+        	strReq_no,
+        	strReq_date1,
+        	strReq_date2,
+        	strCheck,
+        	Process
+        };
+    	
+		String sql = getMessageSourceAccessor().getMessage("Querys.jumyong.minwon.Count");
+		return 	getJdbcTemplate().queryForInt(sql, values);
+	}
+    
+    //	조건 없이 검색 (TEST용)
+    public	List	executeSearchAll(int intRn1,int intRn2)
+	{
+    	MinwonMapDao.SearchAll	searchAll	= minwonMap.new SearchAll(getDataSource(), getMessageSourceAccessor());
+
+    	Object[] values = {
+        	new Integer(intRn1),
+        	new Integer(intRn2)
+        };
+
+    	return searchAll.execute(values);
+	}
+    
+    //	조건 없이 검색 전체 건수 (TEST용)
+    public	int		executeCountAll()
+	{
+		String sql = getMessageSourceAccessor().getMessage("Querys.jumyong.minwon.CountAll");
+		return 	getJdbcTemplate().queryForInt(sql);
+	}
+    
+    
+    //	ADMIN_BASE 등록
+    public	boolean	executeAdmin_Base_Register(Admin_BaseBean Bean)
+	{
+    	MinwonMapDao.Admin_Base_Register	admin_Base_Register	= minwonMap.new Admin_Base_Register(getDataSource(), getMessageSourceAccessor());
+    	
+		try
+		{
+			Object[] values = {
+				Bean.getADMIN_NO(),
+				Bean.getSEQ(),
+				Bean.getREGDATE(),
+				Bean.getUP_DATE(),
+				Bean.getMANAGER(),
+				Bean.getFINISH_ID(),
+				Bean.getCHECK_YN()
+			};
+
+			admin_Base_Register.update(values);
+		}
+		catch (Exception e)
+		{
+			System.out.println(" ! ERROR : executeAdmin_Base_Register");
+			e.printStackTrace();
+			return	false;
+		}
+		
+		return	true;
+    }
+    
+
+    //	민원, 점용인정보 등록
+    public	boolean	executeAppeal_Register(AppealBean Bean)
+	{
+    	MinwonMapDao.Appeal_Register	appeal_Register	= minwonMap.new Appeal_Register(getDataSource(), getMessageSourceAccessor());
+    	
+		try
+		{
+			Object[] values = {
+				Bean.getADMIN_NO(),
+				Bean.getREQ_DATE(),
+				Bean.getREQ_NM(),
+				Bean.getREQ_DEP(),
+				Bean.getMANAGER(),
+				Bean.getMANAGE_DEP(),
+				Bean.getPREDATE(),
+				Bean.getGUBUN(),
+				Bean.getREQ_CK(),
+				Bean.getNAME(),
+				Bean.getSSN(),
+				Bean.getBIZSSN(),
+				Bean.getBIZ_STATUS(),
+				Bean.getBIZ_TYPES(),
+				Bean.getPOST(),
+				Bean.getADDR1(),
+				Bean.getADDR2(),
+				Bean.getTEL(),
+				Bean.getHP(),
+				Bean.getEMAIL(),
+				Bean.getNOTES(),
+				Bean.getAGENT_NM(),
+				Bean.getAGENT_TEL(),
+				Bean.getTOPOST(),
+				Bean.getTOADDR1(),
+				Bean.getADDR2(),
+				Bean.getTOPOST_NM(),
+				Bean.getTOTEL(),
+				Bean.getTOHP(),
+				Bean.getTOEMAIL(),
+				Bean.getGU_CODE()
+			};
+
+			appeal_Register.update(values);
+		}
+		catch (Exception e)
+		{
+			System.out.println(" ! ERROR : executeAppeal_Register");
+			e.printStackTrace();
+			return	false;
+		}
+		
+		return	true;
+    }
+    
+    
+    //	점용지 정보 등록
+    public	boolean	executePlace_Register(PlaceBean Bean)
+	{
+    	MinwonMapDao.Place_Register	place_Register	= minwonMap.new Place_Register(getDataSource(), getMessageSourceAccessor());
+    	
+		try
+		{
+			Object[] values = {
+				Bean.getADMIN_NO(),
+				Bean.getTYPE(),
+				Bean.getSECTION(),
+				Bean.getPURPOSE_CD(),
+				Bean.getPARKING_NUM(),
+				Bean.getOWNER_SET(),
+				Bean.getTAX_SET(),
+				Bean.getMUL_POST(),
+				Bean.getSIDO(),
+				Bean.getSIGUNGU(),
+				Bean.getBJ_CD(),
+				Bean.getHJ_CD(),
+				Bean.getSAN_CK(),
+				Bean.getBONBUN(),
+				Bean.getBUBUN(),
+				Bean.getTONG(),
+				Bean.getBAN(),
+				Bean.getBD_NM(),
+				Bean.getBD_DONG(),
+				Bean.getBD_HO(),
+				Bean.getMUL_FROMDATE(),
+				Bean.getMUL_TODATE(),
+				Bean.getTOTAL_PERIOD(),
+				Bean.getPARTLY_PERIOD(),
+				Bean.getWORK_FROMDATE(),
+				Bean.getWORK_TODATE(),
+				Bean.getEXE_INFO(),
+				Bean.getROAD_ADD(),
+				Bean.getRIVER_NM(),
+				Bean.getWITH_POST(),
+				Bean.getWITH_ADDR1(),
+				Bean.getWITH_ADDR2()
+			};
+
+			place_Register.update(values);
+		}
+		catch (Exception e)
+		{
+			System.out.println(" ! ERROR : executePlace_Register");
+			e.printStackTrace();
+			return	false;
+		}
+		
+		return	true;
+    }
+    
+    
+    
+    //	민원정보 보기
+    public	List	executeMinwon_View(String strAdmin_no)
+	{
+    	MinwonMapDao.Minwon_View	minwon_View	= minwonMap.new Minwon_View(getDataSource(), getMessageSourceAccessor());
+    	
+    	Object[] values = {strAdmin_no};
+    	
+    	return minwon_View.execute(values);
+	}
+    
+    //	민원정보 등록
+    public	boolean	executeMinwon_Register(MinwonBean Bean)
+	{
+    	MinwonMapDao.Minwon_Register	minwon_Register	= minwonMap.new Minwon_Register(getDataSource(), getMessageSourceAccessor());
+    	
+		try
+		{
+			Object[] values = {
+					Bean.getADMIN_NO_MIN(),
+					Bean.getREQ_NO_MIN(),
+					Bean.getREQ_DATE_MIN(),
+					Bean.getREQ_NM_MIN(),
+					Bean.getMANAGER_MIN(),
+					Bean.getGUBUN_MIN(),
+					Bean.getAGENT_NM_MIN(),
+					Bean.getAGENT_TEL_MIN(),
+					Bean.getEVENT_SET_MIN(),
+					Bean.getREQ_SET_MIN(),
+					
+					Bean.getREQ_SIGU_MIN(),
+					Bean.getREQ_DEP_MIN(),
+					Bean.getREQ_SET_CN_MIN(),
+					Bean.getBIZSSN_MIN(),
+					Bean.getMANAGE_DEP_MIN(),
+					Bean.getNOTES_MIN(),
+					Bean.getPREDATE_MIN(),
+					Bean.getSSN_MIN(),
+					Bean.getNAME_MIN(),
+					Bean.getTEL_MIN(),
+					
+					Bean.getHP_MIN(),
+					Bean.getADDR1_MIN(),
+					Bean.getADDR2_MIN(),
+					Bean.getPOST_MIN(),
+					Bean.getREAL_DEAL_DATE_MIN(),
+					Bean.getMW_PROG_SE_MIN(),
+					Bean.getEMAIL_MIN()
+			};
+
+			minwon_Register.update(values);
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+			return	false;
+		}
+		
+		return	true;
+    }
+
+    //	민원정보 수정
+    public	boolean	executeMinwon_Modify(AppealBean Bean)
+	{
+    	MinwonMapDao.Minwon_Modify	minwon_Modify	= minwonMap.new Minwon_Modify(getDataSource(), getMessageSourceAccessor());
+    	
+		try
+		{
+			Object[] values = {
+				Bean.getREQ_NO(),
+				Bean.getGUBUN(),
+				Bean.getREQ_DATE(),
+				Bean.getPREDATE(),
+				Bean.getREQ_DEP(),
+				Bean.getREQ_NM(),
+				Bean.getMANAGER(),
+				Bean.getMANAGE_DEP(),
+				Bean.getNOTES(),
+				Bean.getAGENT_NM(),
+				Bean.getAGENT_TEL(),
+				Bean.getADMIN_NO()
+			};
+			
+			minwon_Modify.update(values);
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+			return	false;
+		}
+		
+		return	true;
+    }    
+    
+    //	점용인정보 보기
+    public	List	executeJumin_View(String strAdmin_no)
+	{
+    	MinwonMapDao.Jumin_View	jumin_View	= minwonMap.new Jumin_View(getDataSource(), getMessageSourceAccessor());
+    	
+    	Object[] values = {strAdmin_no};
+    	
+    	return jumin_View.execute(values);
+	}
+    
+    //	점용인 정보 수정
+    public	boolean	executeJumin_Modify(AppealBean Bean)
+	{
+    	MinwonMapDao.Jumin_Modify	jumin_Modify	= minwonMap.new Jumin_Modify(getDataSource(), getMessageSourceAccessor());
+    	
+    	
+    	
+		try
+		{
+			Object[] values = {
+				Bean.getNAME(),
+				Bean.getSSN(),
+				Bean.getBIZSSN(),
+				Bean.getBIZ_STATUS(),
+				Bean.getBIZ_TYPES(),
+				Bean.getPOST(),
+				Bean.getADDR1(),
+				Bean.getADDR2(),
+				Bean.getEMAIL(),
+				Bean.getTEL(),
+				Bean.getHP(),
+				Bean.getTOPOST_NM(),
+				Bean.getTOPOST(),
+				Bean.getTOADDR1(),
+				Bean.getTOADDR2(),
+				Bean.getTOEMAIL(),
+				Bean.getTOTEL(),
+				Bean.getTOHP(),
+				Bean.getADMIN_NO()
+			};
+
+			jumin_Modify.update(values);
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+			return	false;
+		}
+		
+		return	true;
+    }    
+    
+    //	점용지정보 보기
+    public	List	executeJumji_View(String strAdmin_no)
+	{
+    	MinwonMapDao.Jumji_View	jumji_View	= minwonMap.new Jumji_View(getDataSource(), getMessageSourceAccessor());
+    	
+    	Object[] values = {strAdmin_no};
+    	
+    	List a = jumji_View.execute(values);;
+    	
+    	PlaceBean pb = new PlaceBean();
+    	
+    	pb = (PlaceBean)a.get(0);
+    	
+    	System.out.println("type="+pb.getTYPE());
+    	
+    	return a;
+	}
+    
+    //	점용지정보  수정
+    public	boolean	executeJumji_Modify(PlaceBean Bean)
+	{
+    	MinwonMapDao.Jumji_Modify	jumji_Modify	= minwonMap.new Jumji_Modify(getDataSource(), getMessageSourceAccessor());
+    	
+		try
+		{
+			Object[] values = {
+					Bean.getTYPE(),
+					Bean.getSECTION(),
+					Bean.getPURPOSE_CD(),
+					Bean.getPARKING_NUM(),
+					Bean.getOWNER_SET(),
+					Bean.getTAX_SET(),
+					Bean.getMUL_POST(),
+					Bean.getSIDO(),
+					Bean.getSIGUNGU(),
+					Bean.getBJ_CD(),
+					Bean.getHJ_CD(),
+					Bean.getSAN_CK(),
+					Bean.getBONBUN(),
+					Bean.getBUBUN(),
+					Bean.getTONG(),
+					Bean.getBAN(),
+					Bean.getBD_NM(),
+					Bean.getBD_DONG(),
+					Bean.getBD_HO(),
+					Bean.getMUL_FROMDATE(),
+					Bean.getMUL_TODATE(),
+					Bean.getTOTAL_PERIOD(),
+					Bean.getPARTLY_PERIOD(),
+					Bean.getWORK_FROMDATE(),
+					Bean.getWORK_TODATE(),
+					Bean.getEXE_INFO(),
+					Bean.getROAD_ADD(),
+					Bean.getRIVER_NM(),
+					Bean.getWITH_POST(),
+					Bean.getWITH_ADDR1(),
+					Bean.getWITH_ADDR2(),
+					Bean.getADMIN_NO()
+			};
+			
+			System.out.println("빈dp dhsrjwl = "+
+					Bean.getTYPE()+"  "+
+					Bean.getSECTION()+"  "+
+					Bean.getPURPOSE_CD()+"  "+
+					Bean.getPARKING_NUM()+"  "+
+					Bean.getOWNER_SET()+"  "+
+					Bean.getTAX_SET()+"  "+
+					Bean.getMUL_POST()+"  "+
+					Bean.getSIDO()+"  "+
+					Bean.getSIGUNGU()+"  "+
+					Bean.getBJ_CD()+"  "+
+					Bean.getHJ_CD()+"  "+
+					Bean.getSAN_CK()+"  "+
+					Bean.getBONBUN()+"  "+
+					Bean.getBUBUN()+"  "+
+					Bean.getTONG()+"  "+
+					Bean.getBAN()+"  "+
+					Bean.getBD_NM()+"  "+
+					Bean.getBD_DONG()+"  "+
+					Bean.getBD_HO()+"  "+
+					Bean.getMUL_FROMDATE()+"  "+
+					Bean.getMUL_TODATE()+"  "+
+					Bean.getTOTAL_PERIOD()+"  "+
+					Bean.getPARTLY_PERIOD()+"  "+
+					Bean.getWORK_FROMDATE()+"  "+
+					Bean.getWORK_TODATE()+"  "+
+					Bean.getEXE_INFO()+"  "+
+					Bean.getROAD_ADD()+"  "+
+					Bean.getRIVER_NM()+"  "+
+					Bean.getWITH_POST()+"  "+
+					Bean.getWITH_ADDR1()+"  "+
+					Bean.getWITH_ADDR2()+"  "+
+					Bean.getADMIN_NO());
+			
+			jumji_Modify.update(values);
+		}
+		catch (Exception e)
+		{
+			System.out.println("에러="+e.toString());
+			e.printStackTrace();
+			return	false;
+		}
+		
+		return	true;
+    }
+    
+    //	점용지정보  추가
+    public	boolean	executeJumji_Register(PlaceBean Bean)
+	{
+    	MinwonMapDao.Jumji_Register	jumji_Register	= minwonMap.new Jumji_Register(getDataSource(), getMessageSourceAccessor());
+    	
+		try
+		{
+			Object[] values = {
+				Bean.getADMIN_NO(),
+				Bean.getTYPE(),
+				Bean.getSECTION(),
+				Bean.getPURPOSE_CD(),
+				Bean.getOWNER_SET(),
+				Bean.getTAX_SET(),
+				Bean.getBJ_CD(),
+				Bean.getHJ_CD(),
+				Bean.getSAN_CK(),
+				Bean.getBONBUN(),
+				Bean.getBUBUN(),
+				Bean.getTONG(),
+				Bean.getBAN(),
+				Bean.getMUL_POST(),
+				Bean.getBD_NM(),
+				Bean.getBD_DONG(),
+				Bean.getBD_HO(),
+				Bean.getROAD_ADD(),
+				Bean.getPARKING_NUM(),
+				Bean.getRIVER_NM(),
+				Bean.getMUL_FROMDATE(),
+				Bean.getMUL_TODATE(),
+				Bean.getWITH_POST(),
+				Bean.getWORK_FROMDATE(),
+				Bean.getWORK_TODATE(),
+				Bean.getWITH_ADDR1(),
+				Bean.getWITH_ADDR2(),
+				Bean.getEXE_INFO(),
+				Bean.getTOTAL_PERIOD(),
+				Bean.getPARTLY_PERIOD()
+			};
+			
+			jumji_Register.update(values);
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+			return	false;
+		}
+		
+		return	true;
+    }
+    
+    public	int		executeJumji_Check(String strAdmin_no)
+	{
+    	Object[] values = {strAdmin_no};
+    	
+		String sql = getMessageSourceAccessor().getMessage("Querys.jumyong.minwon.JumjiCheck");
+
+		return 	getJdbcTemplate().queryForInt(sql, values);
+	}
+    
+
+    //	민원 등록
+    public	boolean	executeInsertMin(AppealBean Bean)
+	{
+    	MinwonMapDao.InsertMin	insertMin	= minwonMap.new InsertMin(getDataSource(), getMessageSourceAccessor());
+    	
+		try
+		{
+			Object[] values = {
+				Bean.getADMIN_NO(),
+				Bean.getREQ_NO(),
+				Bean.getGUBUN(),
+				Bean.getREQ_DATE(),
+				Bean.getPREDATE(),
+				Bean.getREQ_DEP(),
+				Bean.getREQ_NM(),
+				Bean.getMANAGER(),
+				Bean.getMANAGE_DEP(),
+				Bean.getNOTES(),
+				Bean.getAGENT_NM(),
+				Bean.getAGENT_TEL(),
+				Bean.getGU_CODE()
+			};
+
+			insertMin.update(values);
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+			return	false;
+		}
+		
+		return	true;
+    }
+    
+    //	점용인 정보 수정
+    public	boolean	executeUpdateJumin(AppealBean Bean)
+	{
+    	MinwonMapDao.UpdateJumin	updateJumin	= minwonMap.new UpdateJumin(getDataSource(), getMessageSourceAccessor());
+    	
+		try
+		{
+			Object[] values = {
+				Bean.getNAME(),
+				Bean.getSSN(),
+				Bean.getBIZSSN(),
+				Bean.getADDR1(),
+				Bean.getADDR2(),
+				Bean.getEMAIL(),
+				Bean.getTEL(),
+				Bean.getHP(),
+				Bean.getADMIN_NO()
+			};
+
+			updateJumin.update(values);
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+			return	false;
+		}
+		
+		return	true;
+    }
+    
+    
+    //	관리자 생성 1단계 (법정동으로 관리번호 갯수 확인)
+    public	int		executeCheck_AdminnoCount(String BJ_CD)
+	{
+    	Object[] values = {BJ_CD};
+    	
+		String sql = getMessageSourceAccessor().getMessage("Querys.jumyong.minwon.Check_AdminnoCount");
+		return 	getJdbcTemplate().queryForInt(sql, values);
+	}
+    
+    
+    //	관리자 생성 2단계 (동일 관리번호 유무 확인)
+    public	int		executeCheck_Adminno(String ADMIN_NO)
+	{
+    	Object[] values = {ADMIN_NO};
+    	
+		String sql = getMessageSourceAccessor().getMessage("Querys.jumyong.minwon.Check_Adminno");
+		return 	getJdbcTemplate().queryForInt(sql, values);
+	}
+    
+//	관련 점용지 조회
+    public	List	executeSearch_Jumji(JumjiSearchBean Bean, int intRn1, int intRn2)
+	{
+    	MinwonMapDao.Search_Jumji	search_Jumji	= minwonMap.new Search_Jumji(getDataSource(), getMessageSourceAccessor());
+    	
+    //	if(Bean.getADMIN_NO().equals("")	||	Bean.getADMIN_NO() == null)
+    //		Bean.setADMIN_NO("%");
+    //	if(Bean.getNAME().equals("")	||	Bean.getNAME() == null)
+    //		Bean.setNAME("%");
+    	if(Bean.getSSN().equals("")	||	Bean.getSSN() == null)
+    		Bean.setSSN("%");
+    	if(Bean.getBJ_CD().equals("")	||	Bean.getBJ_CD() == null)
+    		Bean.setBJ_CD("%");
+    	if(Bean.getHJ_CD().equals("")	||	Bean.getHJ_CD() == null)
+    		Bean.setHJ_CD("%");
+    	if(Bean.getSAN_CK().equals("")	||	Bean.getSAN_CK() == null)
+    		Bean.setSAN_CK("%");
+    	if(Bean.getBONBUN().equals("")	||	Bean.getBONBUN() == null)
+    		Bean.setBONBUN("%");
+    	if(Bean.getBUBUN().equals("")	||	Bean.getBUBUN() == null)
+    		Bean.setBUBUN("%");
+    	
+		Object[] values = {
+				Bean.getSIDO(),
+				Bean.getSIGUNGU(),
+				"%" + Bean.getADMIN_NO() + "%",
+				"%" + Bean.getNAME() + "%",
+				Bean.getSSN(),
+				Bean.getBJ_CD(),
+				Bean.getHJ_CD(),
+				Bean.getSAN_CK(),
+				Bean.getBONBUN(),
+				Bean.getBUBUN(),
+	        	new Integer(intRn1),
+	        	new Integer(intRn2)
+			};
+			
+		return search_Jumji.execute(values);
+    }
+    
+    //	관련 점용지 조회
+    public	int	executeSearch_JumjiCount(JumjiSearchBean Bean)
+	{
+    //	if(Bean.getADMIN_NO().equals("")	||	Bean.getADMIN_NO() == null)
+    //		Bean.setADMIN_NO("%");
+    //	if(Bean.getNAME().equals("")	||	Bean.getNAME() == null)
+    //		Bean.setNAME("%");
+    	if(Bean.getSSN().equals("")	||	Bean.getSSN() == null)
+    		Bean.setSSN("%");
+    	if(Bean.getBJ_CD().equals("")	||	Bean.getBJ_CD() == null)
+    		Bean.setBJ_CD("%");
+    	if(Bean.getHJ_CD().equals("")	||	Bean.getHJ_CD() == null)
+    		Bean.setHJ_CD("%");
+    	if(Bean.getSAN_CK().equals("")	||	Bean.getSAN_CK() == null)
+    		Bean.setSAN_CK("%");
+    	if(Bean.getBONBUN().equals("")	||	Bean.getBONBUN() == null)
+    		Bean.setBONBUN("%");
+    	if(Bean.getBUBUN().equals("")	||	Bean.getBUBUN() == null)
+    		Bean.setBUBUN("%");
+    	
+		Object[] values = {
+				Bean.getSIDO(),
+				Bean.getSIGUNGU(),
+				"%" + Bean.getADMIN_NO() + "%",
+				"%" + Bean.getNAME() + "%",
+				Bean.getSSN(),
+				Bean.getBJ_CD(),
+				Bean.getHJ_CD(),
+				Bean.getSAN_CK(),
+				Bean.getBONBUN(),
+				Bean.getBUBUN()
+			};
+			
+		String sql = getMessageSourceAccessor().getMessage("Querys.jumyong.minwon.Search_JumjiCount");
+		return 	getJdbcTemplate().queryForInt(sql, values);
+    } 
+}

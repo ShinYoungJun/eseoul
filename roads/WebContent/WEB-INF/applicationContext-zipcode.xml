@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+                       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<bean id="methodNameResolver_ZipCode" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+ 		<property name="mappings">
+ 			<props>
+				<prop key="/zipcode.do">ZipCode</prop>
+			</props>
+ 		</property>
+ 	</bean> 
+ 	
+ 	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+ 		<property name="mappings">
+ 			<props>
+				<prop key="/zipcode.do">zipCodeControl</prop>
+ 			</props>
+ 		</property>
+ 	</bean>
+ 	
+ 	<bean id="methodNameResolver_ZipCode_New" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+ 		<property name="mappings">
+ 			<props>
+				<prop key="/zipCode_New.do">ZipCode_New</prop>
+				<!--  //********** BEGIN_현진_20120209 -->
+				<prop key="/zipCode_jibun.do">ZipCode_jibun</prop>
+				<!--   //********** END_현진_20120209 -->
+				
+			</props>
+ 		</property>
+ 	</bean>
+
+	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+ 		<property name="mappings">
+ 			<props>
+				<prop key="/zipCode_New.do">ZipCode_NewControl</prop>
+				<!--  //********** BEGIN_현진_20120209 -->
+				<prop key="/zipCode_jibun.do">ZipCode_NewControl</prop>
+				<!--   //********** END_현진_20120209 -->
+ 			</props>
+ 		</property>
+ 	</bean> 	
+
+	<bean id="zipCodeControl" class="main.java.common.zipCode.web.ZipCodeControl">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_ZipCode"/></property>
+		<property name="zipCodeService" ref="zipCodeService"/>
+	</bean>
+	
+	<bean id="ZipCode_NewControl" class="main.java.common.zipCode.web.ZipCode_NewControl">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_ZipCode_New"/></property>
+		<property name="zipCodeService" ref="zipCodeService"/>
+	</bean>
+
+
+ 	<bean id="zipCodeService" class="main.java.common.zipCode.service.ZipCodeService">
+ 		<property name="zipCodeDao" ref="zipCodeDao"/>
+ 	</bean>
+ 	<bean id="zipCodeDao" parent="roadsJdbcDaoSupport" class="main.java.common.zipCode.dao.ZipCodeDao"/>
+ 	
+ 
+</beans>

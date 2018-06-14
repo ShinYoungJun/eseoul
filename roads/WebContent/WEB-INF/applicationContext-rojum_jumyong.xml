@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<bean id="methodNameResolver_rojum_jumyongBoard" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+ 		<property name="mappings">
+ 			<props>
+				<prop key="/rojum/jumyong/view.do">View</prop>																																																																			
+				<prop key="/rojum/jumyong/search.do">jumyongList</prop>	
+				<prop key="/rojum/jumyong/excel_search.do">excel_jumyongList</prop>
+				<prop key="/rojum/jumyong/register.do">Register</prop>
+				<prop key="/rojum/jumyong/info_register.do">info_register</prop>
+				<prop key="/rojum/jumyong/info_registerprc.do">info_registerPrc</prop>
+				
+				<prop key="/rojum/jumyong/batch_cal1.do">batch_cal1</prop>
+				<prop key="/rojum/jumyong/batch_cal1_prc.do">batch_cal1_prc</prop>
+				<prop key="/rojum/jumyong/dlg_batch_cal1.do">dlg_batch_cal1</prop>
+				<prop key="/rojum/jumyong/batch_destroy_prc.do">batch_destroy_prc</prop>
+				
+				<prop key="/rojum/jumyong/history_info.do">history_info</prop>
+				<prop key="/rojum/jumyong/owner_history.do">owner_history</prop>
+				<prop key="/rojum/jumyong/owner_list.do">owner_list</prop>
+				
+				<prop key="/rojum/jumyong/returnProduct.do">returnProduct</prop>
+				<prop key="/rojum/getRate.do">getRate</prop>	
+				<prop key="/rojum/getLicenseTax.do">getLicenseTax</prop>
+				<prop key="/rojum/getSeqByFirstSeq.do">getSeqByFirstSeq</prop>	
+				<prop key="/rojum/officialLandPrice.do">getPrice</prop>			
+				<prop key="/rojum/jumyong/taxcodeinfo.do">getTaxCodeInfo</prop>
+				
+				
+				
+				
+			</props>
+ 		</property>
+ 	</bean> 	
+ 	
+ 	<bean id="urlMapping_rojum_jumyongboard" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+ 		<property name="mappings">
+ 			<props>
+				<prop key="/rojum/jumyong/view.do">rojum_jumyongBoardControl</prop>																																																																			
+				<prop key="/rojum/jumyong/search.do">rojum_jumyongBoardControl</prop>	
+				<prop key="/rojum/jumyong/excel_search.do">rojum_jumyongBoardControl</prop>
+				<prop key="/rojum/jumyong/register.do">rojum_jumyongBoardControl</prop>
+				<prop key="/rojum/jumyong/info_register.do">rojum_jumyongBoardControl</prop>
+				<prop key="/rojum/jumyong/info_registerprc.do">rojum_jumyongBoardControl</prop>
+				
+				<prop key="/rojum/jumyong/batch_cal1.do">rojum_jumyongBoardControl</prop>
+				<prop key="/rojum/jumyong/batch_cal1_prc.do">rojum_jumyongBoardControl</prop>
+				<prop key="/rojum/jumyong/dlg_batch_cal1.do">rojum_jumyongBoardControl</prop>
+				<prop key="/rojum/jumyong/batch_destroy_prc.do">rojum_jumyongBoardControl</prop>
+				
+				<prop key="/rojum/jumyong/history_info.do">rojum_jumyongBoardControl</prop>
+				<prop key="/rojum/jumyong/owner_history.do">rojum_jumyongBoardControl</prop>
+				<prop key="/rojum/jumyong/owner_list.do">rojum_jumyongBoardControl</prop>
+				
+				<prop key="/rojum/jumyong/rojumCal1.do">rojumCal1_FormControl</prop>
+				<prop key="/rojum/jumyong/rojumCal2.do">rojumCal2_FormControl</prop>
+				<prop key="/rojum/jumyong/rojumCal3.do">rojumCal3_FormControl</prop>
+				<prop key="/rojum/jumyong/rojumSale.do">rojumSale_FormControl</prop>
+				
+				<prop key="/rojum/jumyong/returnProduct.do">rojum_jumyongBoardControl</prop>
+				<prop key="/rojum/getRate.do">rojum_jumyongBoardControl</prop>	
+				<prop key="/rojum/getLicenseTax.do">rojum_jumyongBoardControl</prop>			
+				<prop key="/rojum/getSeqByFirstSeq.do">rojum_jumyongBoardControl</prop>	
+				<prop key="/rojum/officialLandPrice.do">rojum_jumyongBoardControl</prop>			
+				<prop key="/rojum/jumyong/taxcodeinfo.do">rojum_jumyongBoardControl</prop>
+				
+				<prop key="/rojum/jumyong/disUse.do">rojum_DisUseFormControl</prop>
+				
+ 			</props>
+ 		</property>
+ 	</bean>
+	
+	<bean id="rojum_jumyongBoardControl" class="main.java.rojum.jumyong.web.JumyongBoardControl">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_rojum_jumyongBoard"/>
+		</property>		
+		<property name="rojum_jumyongService" ref="rojum_jumyongService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+	<bean id="rojumCal1_FormControl" class="main.java.rojum.jumyong.web.rojumCal1_FormControl">
+		<property name="rojum_jumyongService" ref="rojum_jumyongService"/>		
+		<property name="commandClass" value="main.java.rojum.jumyong.model.ProductBean"/>
+		<property name="commandName" value="product"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+	<bean id="rojumCal2_FormControl" class="main.java.rojum.jumyong.web.rojumCal2_FormControl">
+		<property name="rojum_jumyongService" ref="rojum_jumyongService"/>		
+		<property name="commandClass" value="main.java.rojum.jumyong.model.ProductBean"/>
+		<property name="commandName" value="product"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+	<bean id="rojumCal3_FormControl" class="main.java.rojum.jumyong.web.rojumCal3_FormControl">
+		<property name="rojum_jumyongService" ref="rojum_jumyongService"/>		
+		<property name="commandClass" value="main.java.rojum.jumyong.model.ProductBean"/>
+		<property name="commandName" value="product"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+	<bean id="rojumSale_FormControl" class="main.java.rojum.jumyong.web.rojumSale_FormControl">
+		<property name="rojum_jumyongService" ref="rojum_jumyongService"/>		
+		<property name="commandClass" value="main.java.rojum.jumyong.model.SaleBean"/>
+		<property name="commandName" value="product"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+
+	
+	<bean id="rojum_DisUseFormControl" class="main.java.rojum.jumyong.web.DisUseFormControl">
+		<property name="rojum_jumyongService" ref="rojum_jumyongService"/>
+		<property name="commandClass" value="main.java.rojum.jumyong.model.DisUseBean"/>				
+		<property name="commandName" value="disuse"/>
+	</bean>
+	
+	
+	<bean id="rojum_jumyongDao" parent="roadsJdbcDaoSupport" class="main.java.rojum.jumyong.dao.JumyongDao"/>
+
+ 	<bean id="rojum_jumyongService" class="main.java.rojum.jumyong.service.JumyongService"> 
+ 		<property name="rojum_jumyongDao" ref="rojum_jumyongDao"/>
+ 	</bean>
+
+</beans>

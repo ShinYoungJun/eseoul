@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry exported="true" kind="lib" path="C:/TmaxSoft/JEUS5.0/lib/system/activation.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/TmaxSoft/JEUS5.0/lib/system/bootstrap.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/TmaxSoft/JEUS5.0/lib/system/derby.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/TmaxSoft/JEUS5.0/lib/system/ejbinterop.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/TmaxSoft/JEUS5.0/lib/system/ejbinteropFor5.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/TmaxSoft/JEUS5.0/lib/system/extension.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/TmaxSoft/JEUS5.0/lib/system/extensionReflection.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/TmaxSoft/JEUS5.0/lib/system/howl.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/TmaxSoft/JEUS5.0/lib/system/j2com.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/TmaxSoft/JEUS5.0/lib/system/jaxb-api.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/TmaxSoft/JEUS5.0/lib/system/jaxb-impl.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/TmaxSoft/JEUS5.0/lib/system/jaxb-libs.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/TmaxSoft/JEUS5.0/lib/system/jconsole.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/TmaxSoft/JEUS5.0/lib/system/jeus.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/TmaxSoft/JEUS5.0/lib/system/jeusjaxb.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/TmaxSoft/JEUS5.0/lib/system/jeusmbean.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/TmaxSoft/JEUS5.0/lib/system/jeusmp.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/TmaxSoft/JEUS5.0/lib/system/jeusutil.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/TmaxSoft/JEUS5.0/lib/system/jms.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/TmaxSoft/JEUS5.0/lib/system/jmxremote.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/TmaxSoft/JEUS5.0/lib/system/jmxri.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/TmaxSoft/JEUS5.0/lib/system/jmxtools.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/TmaxSoft/JEUS5.0/lib/system/jsse14_repack.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/TmaxSoft/JEUS5.0/lib/system/jxalan.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/TmaxSoft/JEUS5.0/lib/system/jxerces.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/TmaxSoft/JEUS5.0/lib/system/jxml-impl.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/TmaxSoft/JEUS5.0/lib/system/mail.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/TmaxSoft/JEUS5.0/lib/system/namespace.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/TmaxSoft/JEUS5.0/lib/system/omgapi.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/TmaxSoft/JEUS5.0/lib/system/optorbcomp.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/TmaxSoft/JEUS5.0/lib/system/orblib.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/TmaxSoft/JEUS5.0/lib/system/peorb.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/TmaxSoft/JEUS5.0/lib/system/peorb_add.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/TmaxSoft/JEUS5.0/lib/system/relaxngDatatype.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/TmaxSoft/JEUS5.0/lib/system/sasl.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/TmaxSoft/JEUS5.0/lib/system/snmp_agent.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/TmaxSoft/JEUS5.0/lib/system/tmaxjce_jdk14x.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/TmaxSoft/JEUS5.0/lib/system/toolresource.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/TmaxSoft/JEUS5.0/lib/system/webt50.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/TmaxSoft/JEUS5.0/lib/system/wsm.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/TmaxSoft/JEUS5.0/lib/system/xml_resource.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/TmaxSoft/JEUS5.0/lib/system/xmlsec.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/TmaxSoft/JEUS5.0/lib/system/xsdlib.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="WebContent/WEB-INF/classes"/>
+</classpath>

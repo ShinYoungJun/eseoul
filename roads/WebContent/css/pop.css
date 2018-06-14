@@ -1,0 +1,39 @@
+.admin_w_b{
+	font-family: "µ¸¿ò", "µ¸¿òÃ¼"; 
+	font-size: 13px; 
+	color: #FFFFFF;
+	FONT-WEIGHT: bold;
+	text-decoration: none;
+}
+
+
+
+.sub_stan_blue{
+	font-family: "µ¸¿ò", "µ¸¿òÃ¼"; 
+	font-size: 12px; 
+	color: #4376b5;
+	FONT-WEIGHT: bold;
+	text-decoration: none;
+}
+
+
+.sub_table{
+	font-family: "µ¸¿ò", "µ¸¿òÃ¼"; 
+	font-size: 11px; 
+	color: #5b5b5b;
+	text-decoration: none;
+}
+
+
+.sub_table_b{
+	font-family: "µ¸¿ò", "µ¸¿òÃ¼"; 
+	font-size: 11px; 
+	color: #5b5b5b;
+	FONT-WEIGHT: bold;
+	text-decoration: none;
+}
+
+
+.table_bl_left {
+	PADDING-left: 5px; 
+}

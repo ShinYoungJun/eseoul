@@ -1,0 +1,27 @@
+<RexServer 버젼 2.5.1.20090112 추가 기능>
+-------------------------------------
+
+>> 공통
+
+>> 서버 로직
+  - rexpert.properties
+    1) rex.nls.euckr.decoding.EscapeToUnicode 항목 추가
+        데이터베이스 필드 값 중에 #xxxx; 값(10진수) 또는 6CA2(16진수)을 뷰어에서 볼 수 있는 값으로 변환 (unicode 뷰어에서 적용)
+          10진수 유니코드들 문자열로 변환(&#27810; = > ?)
+          16진수 유니코드를 문자열로 변환(6CA2 = > ?)
+
+        사용예)
+        rex.nls.euckr.decoding.EscapeToUnicode = 10      # 10진수
+        rex.nls.euckr.decoding.EscapeToUnicode = 16      # 16진수
+
+        # 특정 필드의 값에 적용할 경우
+        rex.nls.euckr.decoding.EscapeToUnicode.field = HANJA1,HANJA2,HANJA3
+
+    2) RexService.java, RexDesign.java
+        서버로 통해 데이터를 가져올 때, 날짜 타입을 yyyy-mm-dd hh:mm:dd 형태로 리턴
+
+>> 스크립트
+  - UI 코딩 
+    1) rex_save_preview_direct 추가
+        oRptMainParam.put("rex_save_preview_direct", "true");  // 미리보기에서 저장버튼 클릭시 설정된 파일로 바로 저장
+                                                                                              // rex_save_file이 설정되어야 함.

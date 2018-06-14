@@ -1,0 +1,6 @@
+rex_event(
+	alter session set nls_language = 'AMERICAN'
+)
+rex_result(
+	select userenv('LANG') aa from dual
+)

@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/roads/!svn/ver/56/roads/WebContent/OpenLayers/lib/OpenLayers/BaseTypes
+END
+Class.js
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/roads/!svn/ver/56/roads/WebContent/OpenLayers/lib/OpenLayers/BaseTypes/Class.js
+END
+Element.js
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/roads/!svn/ver/56/roads/WebContent/OpenLayers/lib/OpenLayers/BaseTypes/Element.js
+END
+LonLat.js
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/roads/!svn/ver/56/roads/WebContent/OpenLayers/lib/OpenLayers/BaseTypes/LonLat.js
+END
+Bounds.js
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/roads/!svn/ver/56/roads/WebContent/OpenLayers/lib/OpenLayers/BaseTypes/Bounds.js
+END
+Size.js
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/roads/!svn/ver/56/roads/WebContent/OpenLayers/lib/OpenLayers/BaseTypes/Size.js
+END
+Date.js
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/roads/!svn/ver/56/roads/WebContent/OpenLayers/lib/OpenLayers/BaseTypes/Date.js
+END
+Pixel.js
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/roads/!svn/ver/56/roads/WebContent/OpenLayers/lib/OpenLayers/BaseTypes/Pixel.js
+END

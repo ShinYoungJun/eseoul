@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>	
+
+	<bean id="methodNameResolver_gapan_junggiBoard" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+ 		<property name="mappings">
+ 			<props>
+			<prop key="/gapan/junggi/search.do">search</prop>
+			<prop key="/gapan/junggi/view.do">view</prop>
+			<prop key="/gapan/junggi/bugwa_view.do">Bugwa_View</prop>
+			<prop key="/gapan/junggi/junggi_view.do">junggi_view</prop>
+			<prop key="/gapan/junggi/productAddList.do">productaddList</prop>
+			<prop key="/gapan/junggi/productSubList.do">productSubList</prop>
+			<prop key="/gapan/junggi/product_temp_insert.do">product_temp_insert</prop>
+			<prop key="/gapan/junggi/landPriceAllAplly.do">landPriceAllAplly</prop>
+			<prop key="/gapan/junggi/priceApplyUpdate.do">priceApllyUpdate</prop>
+			<prop key="/gapan/junggi/excel_search.do">excel_search</prop>
+			<prop key="/gapan/junggi/junggiAllCal.do">junggiAllCal</prop>
+			<prop key="/gapan/junggi/junggiAllCal_Prc.do">junggiAllCalPrc</prop>
+			</props>
+ 		</property>
+ 	</bean> 	
+ 	
+ 	<bean id="urlMapping_gapan_junggiboard" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+ 		<property name="mappings">
+ 			<props>
+			<prop key="/gapan/junggi/search.do">gapan_junggiBoardControl</prop>
+			<prop key="/gapan/junggi/view.do">gapan_junggiBoardControl</prop>
+			<prop key="/gapan/junggi/bugwa_view.do">gapan_junggiBoardControl</prop>
+			<prop key="/gapan/junggi/junggi_view.do">gapan_junggiBoardControl</prop>
+			<prop key="/gapan/junggi/productAddList.do">gapan_junggiBoardControl</prop>
+			<prop key="/gapan/junggi/product_temp_insert.do">gapan_junggiBoardControl</prop>
+			<prop key="/gapan/junggi/productSubList.do">gapan_junggiBoardControl</prop>
+			<prop key="/gapan/junggi/junggi_product.do">gapan_junggiBoardFormControl</prop>
+			<prop key="/gapan/junggi/reduction.do">gapan_reductionFormControl</prop>
+			<prop key="/gapan/junggi/landPriceAllAplly.do">gapan_junggiBoardControl</prop>
+			<prop key="/gapan/junggi/priceApplyUpdate.do">gapan_junggiBoardControl</prop>
+			<prop key="/gapan/junggi/excel_search.do">gapan_junggiBoardControl</prop>
+			<prop key="/gapan/junggi/junggiAllCal.do">gapan_junggiBoardControl</prop>
+			<prop key="/gapan/junggi/junggiAllCal_Prc.do">gapan_junggiBoardControl</prop>
+			
+			</props>   
+ 		</property>
+ 	</bean>
+
+	<bean id="gapan_junggiBoardControl" class="main.java.gapan.junggi.web.JunggiBoardControl">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_gapan_junggiBoard"/>
+		</property>
+		<property name="gapan_jumyongService" ref="gapan_jumyongService"/>
+		<property name="gapan_junggiService" ref="gapan_junggiService"/>				
+		<property name="commonCodeService" ref="commonCodeService"/>		
+	</bean>
+	
+	<bean id="gapan_junggiBoardFormControl" class="main.java.gapan.junggi.web.JunggiBoardFormControl">
+		<property name="gapan_junggiService" ref="gapan_junggiService"/>		
+		<property name="gapan_jumyongService" ref="gapan_jumyongService"/>
+		<property name="commandClass" value="main.java.gapan.jumyong.model.ProductBean"/>
+		<property name="commandName" value="product"/>
+	</bean>
+	
+	<bean id="gapan_reductionFormControl" class="main.java.gapan.junggi.web.ReductionFormControl">
+		<property name="gapan_junggiService" ref="gapan_junggiService"/>
+		<property name="commandClass" value="main.java.gapan.jumyong.model.ProductBean"/>
+		<property name="commandName" value="product"/>
+	</bean>
+
+
+ 	<bean id="gapan_junggiDao" parent="roadsJdbcDaoSupport" class="main.java.gapan.junggi.dao.JunggiDao"/>
+
+ 	
+  	<bean id="gapan_junggiService" class="main.java.gapan.junggi.service.JunggiService">
+ 		<property name="gapan_junggiDao" ref="gapan_junggiDao"/> 
+ 	</bean>
+</beans>

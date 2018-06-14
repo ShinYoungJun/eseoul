@@ -1,0 +1,183 @@
+package main.java.gapan.gapan.web;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
+import java.util.Locale;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import main.java.common.commonCode.service.CommonCodeService;
+import main.java.common.commonCode.model.ContactSysInfoBean;
+import main.java.common.commonCode.model.UserBean;
+import main.java.common.util.catUtil.Pageing;
+import main.java.common.util.catUtil.Util;
+import main.java.gapan.gapan.model.OperatorBean;
+import main.java.gapan.gapan.model.FamilyBean;
+import main.java.gapan.gapan.model.BloomBean;
+import main.java.gapan.gapan.model.OperBean;
+import main.java.gapan.gapan.service.IGapanService;
+import main.java.jumyong.minwon.model.AppealBean;
+import main.java.jumyong.minwon.web.SOWNN00214Control;
+
+import org.springframework.web.bind.ServletRequestUtils;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.multiaction.MultiActionController;
+
+public class GapanControl	extends MultiActionController{
+
+	private	IGapanService		iGapanservice	= null;
+	private	CommonCodeService	commonCode		= null;
+	private	Util				util			= new Util();
+	private	Pageing				pageing			= new Pageing();
+	
+	public void setGapanService(IGapanService gapanService) 
+	{
+		this.iGapanservice = gapanService;
+	}
+	
+	public void setCommonCodeService(CommonCodeService commonCode)
+	{
+		this.commonCode = commonCode;
+	}
+	
+	public ModelAndView Search(HttpServletRequest request, HttpServletResponse response) throws Exception 
+	{
+		SOWNN00214Control	sown00214Control	= new SOWNN00214Control();
+		
+		SimpleDateFormat	formatter 	= new SimpleDateFormat("yyyy-MM-dd", Locale.KOREA );
+		Calendar 			cal 		= Calendar.getInstance();
+		String	today		= formatter.format(cal.getTime());
+		cal.add(Calendar.DATE, -2);
+		String	beforeDay	= formatter.format(cal.getTime());
+		
+		String 	LISTVIEW	= ServletRequestUtils.getStringParameter(request, "LISTVIEW", "0");
+		String 	GIGAN1 		= ServletRequestUtils.getStringParameter(request, "GIGAN1", beforeDay);
+		String 	GIGAN2 		= ServletRequestUtils.getStringParameter(request, "GIGAN2", today);
+		String 	MIN_NAME 	= ServletRequestUtils.getStringParameter(request, "MIN_NAME", "");
+//		String 	MIN_REQNO 	= ServletRequestUtils.getStringParameter(request, "MIN_REQNO", "");
+		String 	MIN_CHECK 	= ServletRequestUtils.getStringParameter(request, "MIN_CHECK", "");
+		String 	MIN_PROCESS	= ServletRequestUtils.getStringParameter(request, "MIN_PROCESS", "");
+
+		int	 	currentPage	= Integer.parseInt(ServletRequestUtils.getStringParameter(request, "currentPage", "1"));
+		
+		request.setAttribute("check_yn", commonCode.executeCommonCode("check_yn", MIN_CHECK, "전체"));	//	접수
+		request.setAttribute("process_flag", commonCode.executeCommonCode("process_flag", MIN_PROCESS, "전체"));	//	처리
+		request.setAttribute("GIGAN1", GIGAN1);
+		request.setAttribute("GIGAN2", GIGAN2);
+		request.setAttribute("MIN_NAME", MIN_NAME);
+//		request.setAttribute("MIN_REQNO", MIN_REQNO);
+		
+		if(LISTVIEW.trim().equals("0"))	//	이 페이지를 처음 시작할때는 빈페이지를 출력한 다음 다시 이 페이지를 호출한다.
+		{
+			request.setAttribute("LISTVIEW", "0");
+			request.setAttribute("currentPage", "1");
+			request.setAttribute("totalcnt", "0");
+			return new ModelAndView("/jumyong/minwon/search");
+		}
+		
+		//	새올 데이터를 가져온다
+//		List	list	= sown00214Control.SaewolList(util.Date_Cut(GIGAN1), util.Date_Cut(GIGAN2), MIN_REQNO, MIN_NAME, currentPage, 10);
+//		세션에서 시도 코드를 가져온다.
+		String	SIDO_CD	= util.getSidoCode(getMessageSourceAccessor());
+		
+		//관리자 데이터를 가져온다.
+		UserBean	userBean	= new UserBean();
+		userBean	= commonCode.executeUserSearch(util.getSessionID(request, "sessionUserId"));
+		ContactSysInfoBean contactSysInfoBean = commonCode.executeContactsys_Info(SIDO_CD, userBean.getSIGU_CD());
+		
+//		List	list	= sown00214Control.SaewolList(util.Date_Cut(GIGAN1), util.Date_Cut(GIGAN2), MIN_NAME, currentPage, 10);
+		List	list	= sown00214Control.SaewolList(util.Date_Cut(GIGAN1), util.Date_Cut(GIGAN2), MIN_NAME, currentPage, 10
+				,contactSysInfoBean.getSAEALL_IP(), contactSysInfoBean.getSAEALL_PATH(), contactSysInfoBean.getSAEALL_PORT());
+		
+		int	iTotalCnt	= sown00214Control._Size;
+		
+		//	페이징 처리
+		pageing.execute(request, iTotalCnt, currentPage, 10);
+
+		AppealBean	Bean	= new AppealBean();
+		int			size	= list.size();
+	//	String		yn		= "1";
+
+		for(int i = 0	;	i < size	;	i++)
+		{
+			Bean	= (AppealBean)list.get(i);
+
+     //   	if(Bean.getTODATE() == null	||	Bean.getTODATE().trim().equals(""))
+     //   		yn	= "0";
+
+        	Bean.setREQ_DATE(util.Date_Paste(Bean.getREQ_DATE()));	//	접수일자
+        	Bean.setTODATE(util.Date_Paste(Bean.getTODATE()));		//	처리일자
+		}
+		
+		request.setAttribute("LISTVIEW", "1");
+		
+		sown00214Control	= null;
+				
+		return new ModelAndView("/gapan/gapan/search", "blist", list);
+	}
+
+	//	신규 등록 페이지
+	public ModelAndView		Register(HttpServletRequest request,HttpServletResponse response) throws Exception 
+	{
+		//	 삭제 세션
+	//	HttpSession session = request.getSession();
+	//	session.setAttribute("sessionUserId", "장구경");
+		
+		return new ModelAndView("/gapan/gapan/register");
+	}
+	
+	public ModelAndView view(HttpServletRequest request, HttpServletResponse response) throws Exception 
+	{
+		String GAPAN_NO 	= ServletRequestUtils.getStringParameter(request, "GAPAN_NO", "");
+		
+		return new ModelAndView("/gapan/gapan/view", "GAPAN_NO", GAPAN_NO);
+	}
+	
+	public ModelAndView operator_view(HttpServletRequest request, HttpServletResponse response) throws Exception 
+	{
+		String gapanNo = ServletRequestUtils.getStringParameter(request, "GAPAN_NO", "");
+			
+		List list = iGapanservice.getOperatorInfo(gapanNo);
+		OperatorBean Bean = new OperatorBean();
+		
+		if(list.size()<=0)
+			Bean = null;
+		else
+		{
+			Bean = (OperatorBean)list.get(0);
+		}
+
+		return new ModelAndView("/gapan/gapan/tab/operator_view", "info", Bean);
+	}
+	
+	
+	public ModelAndView family_view(HttpServletRequest request, HttpServletResponse response) throws Exception 
+	{
+		String gapanNo = ServletRequestUtils.getStringParameter(request, "GAPAN_NO", "");
+		
+		FamilyBean info = iGapanservice.getFamilyInfo(gapanNo);
+		
+		return new ModelAndView("/gapan/gapan/tab/family_view", "info", info);
+	}
+	
+	public ModelAndView bloom_view(HttpServletRequest request, HttpServletResponse response) throws Exception 
+	{
+		String gapanNo = ServletRequestUtils.getStringParameter(request, "GAPAN_NO", "");
+		
+		BloomBean info = iGapanservice.getBloomInfo(gapanNo);
+		
+		return new ModelAndView("/gapan/gapan/tab/bloom_view", "info", info);
+	}
+	
+	public ModelAndView oper_view(HttpServletRequest request, HttpServletResponse response) throws Exception 
+	{
+		String gapanNo = ServletRequestUtils.getStringParameter(request, "GAPAN_NO", "");
+		
+		OperBean info = iGapanservice.getOperInfo(gapanNo); 
+		
+		return new ModelAndView("/gapan/gapan/tab/oper_view", "info", info);
+	}	
+}

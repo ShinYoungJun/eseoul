@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+                       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<bean id="methodNameResolver_board" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+ 		<property name="mappings">
+ 			<props>
+			<prop key="/admin/board.do">list</prop>	
+			<prop key="/admin/boardRegSrch.do">list</prop>	
+			<prop key="/admin/boardDetail.do">adminView</prop>	
+			<prop key="/admin/noticeBoardList.do">noticeBoardList</prop>
+					
+			</props>
+ 		</property>
+ 	</bean> 	
+ 	
+ 	<bean id="urlMapping_board" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+ 		<property name="mappings">
+ 			<props>
+			<prop key="/admin/board.do">boardControl</prop>
+			<prop key="/admin/boardReg.do">boardFormControl</prop>
+			<prop key="/admin/boardDetail.do">boardControl</prop>
+			<prop key="/admin/noticeBoardList.do">boardControl</prop>
+			<prop key="/admin/boardEdit.do">boardFormControl</prop>
+			<prop key="/admin/boardDel.do">boardFormControl</prop>
+				  			 				 				
+ 			</props>
+ 		</property>
+ 	</bean>
+
+	<bean id="boardControl" class="main.java.admin.web.BoardControl">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_board"/></property>
+		<property name="boardService" ref="boardService"/>	
+		<property name="commonCodeService" ref="commonCodeService"/>		
+	</bean>
+	
+	<bean id="boardFormControl" class="main.java.admin.web.BoardFormControl">
+		<property name="boardService" ref="boardService"/>		
+		
+		<property name="commandClass" value="main.java.admin.model.BoardBean"/>
+		<property name="commandName" value="boardReg"/>
+		
+  		<property name="formView" value="/admin/board/boardReg"/>
+	</bean>
+
+ 	<bean id="boardDao" parent="roadsJdbcDaoSupport" class="main.java.admin.dao.BoardDao"/>  
+
+ 	<bean id="boardService" class="main.java.admin.service.BoardService"> 
+ 		<property name="boardDao" ref="boardDao"/> 
+ 		
+ 	</bean>
+ 	
+</beans>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+                       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<bean id="methodNameResolver_facility_Saewe" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+ 		<property name="mappings">
+ 			<props>
+				<prop key="/facility/saewe/search.do">Search</prop>
+				<prop key="/facility/saewe/excel_search.do">Excel_Search</prop>
+				<prop key="/facility/saewe/view.do">View</prop>
+				<prop key="/facility/saewe/saewesuipbugwa.do">Saewesuipbugwa</prop>
+				<prop key="/facility/saewe/saeweSuipBugwa_ilgwal.do">Saewesuipbugwa_Ilgwal</prop>
+				
+				<prop key="/facility/saewe/sanchul_view.do">Sanchul_View</prop>
+				<prop key="/facility/saewe/sanchulinfo_view.do">SanchulInfo_View</prop>
+				
+				<prop key="/facility/saewe/jumin_view.do">Jumin_View</prop>
+				
+				<prop key="/facility/saewe/jumji_view.do">Jumji_View</prop>
+				
+				<prop key="/facility/saewe/bugwa_view.do">Bugwa_View</prop>
+				<prop key="/facility/saewe/bugwa_modify.do">Bugwa_Modify</prop>
+				<prop key="/facility/saewe/bugwa_modify_prc.do">Bugwa_Modify_Prc</prop>
+				<prop key="/facility/saewe/bugwa_register.do">Bugwa_Register</prop>
+				<prop key="/facility/saewe/bugwa_register_prc.do">Bugwa_Register_Prc</prop>
+				
+				<prop key="/facility/saewe/semokinfo.do">SemokInfo</prop>
+				
+				<prop key="/facility/saewe/sunap_view.do">Sunap_View</prop>
+				
+			</props>
+ 		</property>
+ 	</bean>
+ 	
+ 	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+ 		<property name="mappings">
+ 			<props>
+				<prop key="/facility/saewe/search.do">facility_saeweControl</prop>
+				<prop key="/facility/saewe/excel_search.do">facility_saeweControl</prop>
+				<prop key="/facility/saewe/view.do">facility_saeweControl</prop>
+				<prop key="/facility/saewe/saewesuipbugwa.do">facility_saeweControl</prop>
+				<prop key="/facility/saewe/saeweSuipBugwa_ilgwal.do">facility_saeweControl</prop>
+				
+				<prop key="/facility/saewe/sanchul_view.do">facility_saeweControl_Sanchul</prop>
+				<prop key="/facility/saewe/sanchulinfo_view.do">facility_saeweControl_Sanchul</prop>
+				
+				<prop key="/facility/saewe/jumin_view.do">facility_saeweControl_Jumin</prop>
+				
+				<prop key="/facility/saewe/jumji_view.do">facility_saeweControl_Jumji</prop>
+				
+				<prop key="/facility/saewe/bugwa_view.do">facility_saeweControl_Bugwa</prop>
+				<prop key="/facility/saewe/bugwa_modify.do">facility_saeweControl_Bugwa</prop>
+				<prop key="/facility/saewe/bugwa_modify_prc.do">facility_saeweControl_Bugwa</prop>
+				<prop key="/facility/saewe/bugwa_register.do">facility_saeweControl_Bugwa</prop>
+				<prop key="/facility/saewe/bugwa_register_prc.do">facility_saeweControl_Bugwa</prop>
+				
+				<prop key="/facility/saewe/semokinfo.do">facility_saeweControl_Bugwa</prop>
+				
+				<prop key="/facility/saewe/sunap_view.do">facility_saeweControl_Sunap</prop>
+				
+ 			</props>
+ 		</property>
+ 	</bean>
+ 	
+
+	<bean id="facility_saeweControl" class="main.java.facility.saewe.web.SaeweControl">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_facility_Saewe"/></property>
+		<property name="facility_saeweService" ref="facility_saeweService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+		<property name="sysConnectService" ref="sysConnectService"/>
+	</bean>
+	
+	<bean id="facility_saeweControl_Sanchul" class="main.java.facility.saewe.web.TabSanchul_Control">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_facility_Saewe"/></property>
+		<property name="facility_saeweService" ref="facility_saeweService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+	<bean id="facility_saeweControl_Jumin" class="main.java.facility.saewe.web.TabJumin_Control">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_facility_Saewe"/></property>
+		<property name="facility_saeweService" ref="facility_saeweService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+	<bean id="facility_saeweControl_Jumji" class="main.java.facility.saewe.web.TabJumji_Control">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_facility_Saewe"/></property>
+		<property name="facility_saeweService" ref="facility_saeweService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+	<bean id="facility_saeweControl_Bugwa" class="main.java.facility.saewe.web.TabBugwa_Control">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_facility_Saewe"/></property>
+		<property name="facility_saeweService" ref="facility_saeweService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+	<bean id="facility_saeweControl_Sunap" class="main.java.facility.saewe.web.TabSunap_Control">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_facility_Saewe"/></property>
+		<property name="facility_saeweService" ref="facility_saeweService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+
+ 	<bean id="facility_saeweService" class="main.java.facility.saewe.service.SaeweService">
+ 		<property name="facility_saeweDao" ref="facility_saeweDao"/>
+ 	</bean>
+ 	<bean id="facility_saeweDao" parent="roadsJdbcDaoSupport" class="main.java.facility.saewe.dao.SaeweDao"/>
+
+
+  	<bean id="sysConnectService" class="main.java.common.sysConnect.service.SysConnectService">
+ 		<property name="sysConnectDao" ref="sysConnectDao"/>
+ 	</bean>
+ 	<bean id="sysConnectDao" parent="roadsJdbcDaoSupport" class="main.java.common.sysConnect.dao.SysConnectDao"/>
+ 	
+ 
+</beans>

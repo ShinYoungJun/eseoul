@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+                       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<bean id="methodNameResolver_Sisul" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+ 		<property name="mappings">
+ 			<props>
+				<prop key="/sisul/sisul/search.do">Search</prop>
+				<prop key="/sisul/sisul/view.do">View</prop>
+				
+				<prop key="/sisul/sisul/register.do">Register</prop>
+				<prop key="/sisul/sisul/register_prc.do">Register_Prc</prop>
+				
+				<prop key="/sisul/sisul/jumin_view.do">Jumin_View</prop>
+				<prop key="/sisul/sisul/jumin_modify.do">Jumin_Modify</prop>
+				<prop key="/sisul/sisul/jumin_modify_prc.do">Jumin_Modify_Prc</prop>
+				
+				<prop key="/sisul/sisul/jumji_view.do">Jumji_View</prop>
+				<prop key="/sisul/sisul/jumji_modify.do">Jumji_Modify</prop>
+				<prop key="/sisul/sisul/jumji_modify_prc.do">Jumji_Modify_Prc</prop>
+				
+				<prop key="/sisul/sisul/mulgun_view.do">Mulgun_View</prop>
+				<prop key="/sisul/sisul/mulgun_modify.do">Mulgun_Modify</prop>
+				<prop key="/sisul/sisul/mulgun_modify_prc.do">Mulgun_Modify_Prc</prop>
+				<prop key="/sisul/sisul/mulgun_register.do">Mulgun_Register</prop>
+				<prop key="/sisul/sisul/mulgun_register_prc.do">Mulgun_Register_Prc</prop>
+				
+				<prop key="/sisul/sisul/sanchul_view.do">Sanchul_View</prop>
+				<prop key="/sisul/sisul/sanchul_modify.do">Sanchul_Modify</prop>
+				<prop key="/sisul/sisul/sanchul_modify_prc.do">Sanchul_Modify_Prc</prop>
+				
+				<prop key="/sisul/sisul/bugwa_view.do">Bugwa_View</prop>
+				
+				<prop key="/sisul/sisul/sunap_view.do">Sunap_View</prop>
+				
+			</props>
+ 		</property>
+ 	</bean>
+ 	
+ 	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+ 		<property name="mappings">
+ 			<props>
+				<prop key="/sisul/sisul/search.do">sisulController</prop>
+				<prop key="/sisul/sisul/view.do">sisulController</prop>
+				
+				<prop key="/sisul/sisul/register.do">sisulController</prop>
+				<prop key="/sisul/sisul/register_prc.do">sisulController</prop>
+				
+				<prop key="/sisul/sisul/jumin_view.do">sisulController</prop>
+				<prop key="/sisul/sisul/jumin_modify.do">sisulController</prop>
+				<prop key="/sisul/sisul/jumin_modify_prc.do">sisulController</prop>
+				
+				<prop key="/sisul/sisul/jumji_view.do">sisulController</prop>
+				<prop key="/sisul/sisul/jumji_modify.do">sisulController</prop>
+				<prop key="/sisul/sisul/jumji_modify_prc.do">sisulController</prop>				
+	
+				<prop key="/sisul/sisul/mulgun_view.do">sisulController</prop>
+				<prop key="/sisul/sisul/mulgun_modify.do">sisulController</prop>
+				<prop key="/sisul/sisul/mulgun_modify_prc.do">sisulController</prop>
+				<prop key="/sisul/sisul/mulgun_register.do">sisulController</prop>
+				<prop key="/sisul/sisul/mulgun_register_prc.do">sisulController</prop>
+				
+				<prop key="/sisul/sisul/sanchul_view.do">sisulController</prop>
+				<prop key="/sisul/sisul/sanchul_modify.do">sisulController</prop>
+				<prop key="/sisul/sisul/sanchul_modify_prc.do">sisulController</prop>
+				
+				<prop key="/sisul/sisul/bugwa_view.do">sisulController</prop>
+				
+				<prop key="/sisul/sisul/sunap_view.do">sisulController</prop>
+				
+ 			</props>
+ 		</property>
+ 	</bean>
+ 	
+
+	<bean id="sisulController" class="main.java.sisul.sisul.web.SisulController">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Sisul"/></property>
+		<property name="sisulService" ref="sisulService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+
+ 	<bean id="sisulService" class="main.java.sisul.sisul.service.SisulService">
+ 		<property name="sisulDao" ref="sisulDao"/>
+ 	</bean>
+ 	<bean id="sisulDao" parent="roadsJdbcDaoSupport" class="main.java.sisul.sisul.dao.SisulDao"/>
+ 
+</beans>

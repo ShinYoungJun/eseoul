@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+                       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="methodNameResolver_jumyong_mapSearch" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+ 		<property name="mappings">
+ 			<props>		
+				<prop key="/jumyong/map/MapIndex.do">MapIndex</prop>
+				<prop key="/jumyong/map/search.do">MapSearch</prop>
+				<prop key="/jumyong/map/searchview.do">MapView</prop>
+				<prop key="/jumyong/map/mini_map.do">MiniMap</prop>
+				<prop key="/jumyong/map/search4json.do">MapSearchByJson</prop>
+			</props>
+ 		</property>
+ 	</bean> 	
+ 	
+ 	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+ 		<property name="mappings">
+ 			<props>	 			
+ 				<prop key="/jumyong/map/MapIndex.do">jumyongMapSearchControl</prop>
+				<prop key="/jumyong/map/search.do">jumyongMapSearchControl</prop>
+				<prop key="/jumyong/map/searchview.do">jumyongMapSearchControl</prop>
+				<prop key="/jumyong/map/mini_map.do">jumyongMapSearchControl</prop>
+ 				<prop key="/jumyong/map/search4json.do">jumyongMapSearchControl</prop>
+ 			</props>
+ 		</property>
+ 	</bean>
+
+		<bean id="jumyongMapSearchControl" class="main.java.jumyong.map.web.MapSearchControl">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_jumyong_mapSearch"/>
+		</property>		
+		<property name="mapSearchService" ref="jumyongMapSearchService"/>
+		<property name="userRegService" ref="userRegService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+		<property name="commonCodeDao" ref="commonCodeDao"/>
+	</bean>
+
+ 	<bean id="jumyongMapSearchService" class="main.java.jumyong.map.service.MapSearchService"> 
+ 		<property name="mapSearchDao" ref="jumyongMapSearchDao"/>
+ 	</bean> 
+ 	
+ 	<bean id="userRegService" class="main.java.admin.service.UserRegService"> 
+ 		<property name="userRegDao" ref="userRegDao"/>
+ 	</bean>
+ 	
+ 	<bean id="jumyongMapSearchDao" parent="roadsJdbcDaoSupport" class="main.java.jumyong.map.dao.MapSearchDao"/>
+ 	
+</beans>

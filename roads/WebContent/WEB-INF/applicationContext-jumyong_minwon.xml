@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+                       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<bean id="methodNameResolver_Jumyong_Minwon" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+ 		<property name="mappings">
+ 			<props>
+				<prop key="/jumyong/minwon/search.do">Search</prop>
+				<prop key="/jumyong/minwon/view.do">View</prop>
+				<prop key="/jumyong/minwon/register.do">Register</prop>
+				<prop key="/jumyong/minwon/registerprcall.do">RegisterPrcAll</prop>
+				<prop key="/jumyong/minwon/registerprc_saewol.do">RegisterPrc_Saewol</prop>
+				
+				
+				<prop key="/jumyong/minwon/jumyongjibuninfo.do">Jumyong_JibunInfo</prop>
+				<prop key="/jumyong/minwon/info_register.do">Register</prop>
+				<prop key="/jumyong/minwon/info_registerprc.do">RegisterPrc</prop>
+				<prop key="/jumyong/minwon/saewol_register.do">Saewol_Register</prop>
+				<prop key="/jumyong/minwon/saewol_registerprc.do">Saewol_RegisterPrc</prop>
+				
+				<prop key="/jumyong/minwon/jumji_search.do">Search</prop>
+				
+				<prop key="/jumyong/minwon/total_with.do">Total_With</prop>
+				<prop key="/jumyong/minwon/officialLandPrice.do">getPrice</prop>
+				
+				
+				
+			</props>
+ 		</property>
+ 	</bean>
+ 	
+ 	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+ 		<property name="mappings">
+ 			<props>
+				<prop key="/jumyong/minwon/search.do">jumyong_minwonControl</prop>
+				<prop key="/jumyong/minwon/view.do">jumyong_minwonControl</prop>
+				<prop key="/jumyong/minwon/register.do">jumyong_minwonControl</prop>
+				<prop key="/jumyong/minwon/registerprcall.do">jumyong_minwonControl</prop>
+				<prop key="/jumyong/minwon/registerprc_saewol.do">jumyong_minwonControl</prop>
+				
+				<prop key="/jumyong/minwon/jumyongjibuninfo.do">jumyong_minwonControl_Info</prop>
+				<prop key="/jumyong/minwon/info_register.do">jumyong_minwonControl_Info</prop>
+				<prop key="/jumyong/minwon/info_registerprc.do">jumyong_minwonControl_Info</prop>
+				<prop key="/jumyong/minwon/saewol_register.do">jumyong_minwonControl_Info</prop>
+				<prop key="/jumyong/minwon/saewol_registerprc.do">jumyong_minwonControl_Info</prop>
+				
+				<prop key="/jumyong/minwon/jumji_search.do">jumyong_minwonControl_Jumji</prop>
+				
+				<prop key="/jumyong/minwon/total_with.do">jumyong_minwonControl_Info</prop>
+				<prop key="/jumyong/minwon/officialLandPrice.do">jumyong_minwonControl_Info</prop>
+ 			</props>
+ 		</property>
+ 	</bean>
+ 	
+
+	<bean id="jumyong_minwonControl" class="main.java.jumyong.minwon.web.MinwonControl">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Jumyong_Minwon"/></property>
+		<property name="jumyong_minwonService" ref="jumyong_minwonService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+
+	<bean id="jumyong_minwonControl_Info" class="main.java.jumyong.minwon.web.TabInfo_Control">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Jumyong_Minwon"/></property>
+		<property name="jumyong_minwonService" ref="jumyong_minwonService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+	<bean id="jumyong_minwonControl_Jumji" class="main.java.jumyong.minwon.web.TabJumji_Control">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Jumyong_Minwon"/></property>
+		<property name="jumyong_minwonService" ref="jumyong_minwonService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+
+ 	<bean id="jumyong_minwonService" class="main.java.jumyong.minwon.service.MinwonService">
+ 		<property name="jumyong_minwonDao" ref="jumyong_minwonDao"/>
+ 	</bean>
+ 	<bean id="jumyong_minwonDao" parent="roadsJdbcDaoSupport" class="main.java.jumyong.minwon.dao.MinwonDao"/>
+ 
+</beans>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+                       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="methodNameResolver_Facility_Junggi" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+ 		<property name="mappings">
+ 			<props>
+				<prop key="/facility/junggi/search.do">search</prop> 				
+				<prop key="/facility/junggi/view.do">view</prop>	
+				<prop key="/facility/junggi/product_view.do">product_view</prop>	
+				<prop key="/facility/junggi/product_temp_insert.do">product_temp_insert</prop>				
+			</props>
+ 		</property>
+ 	</bean>
+
+	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+ 		<property name="mappings">
+ 			<props>
+				<prop key="/facility/junggi/search.do">junggiBoardControl_facility</prop>
+				<prop key="/facility/junggi/view.do">junggiBoardControl_facility</prop>		
+				<prop key="/facility/junggi/product_view.do">junggiBoardControl_facility</prop>			
+				<prop key="/facility/junggi/product_temp_insert.do">junggiBoardControl_facility</prop>		
+				<prop key="/facility/junggi/product_insert.do">productBoardFormControl_facility_junggi</prop>
+				<prop key="/facility/junggi/reduction.do">reduction_facility_FormControl</prop>	
+ 			</props>
+ 		</property>
+ 	</bean>
+ 	
+ 	
+	<bean id="reduction_facility_FormControl" class="main.java.facility.junggi.web.ReductionFormControl">
+		<property name="junggiService_facility" ref="junggiService_facility"/>
+		<property name="commandClass" value="main.java.facility.jumyong.model.Equip_ProductBean"/>
+		<property name="commandName" value="product"/>
+	</bean>
+ 	
+	<bean id="junggiBoardControl_facility" class="main.java.facility.junggi.web.JunggiBoardControl">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Facility_Junggi"/>
+		</property>
+		<property name="junggiService_facility" ref="junggiService_facility"/>
+		<property name="jumyongService_facility" ref="jumyongService_facility"/>
+		<property name="commonCodeService" ref="commonCodeService"/>				
+	</bean>
+	
+	<bean id="productBoardFormControl_facility_junggi" class="main.java.facility.junggi.web.ProductBoardFormControl_facility">
+		<property name="junggiService_facility" ref="junggiService_facility"/>	
+		<property name="jumyongService_facility" ref="jumyongService_facility"/>			
+		<property name="commandClass" value="main.java.facility.jumyong.model.Equip_ProductBean"/>
+		<property name="commandName" value="product"/>
+	</bean>
+	
+	
+ 	<bean id="junggiService_facility" class="main.java.facility.junggi.service.JunggiService">
+		<property name="junggiDao_facility" ref="junggiDao_facility"/>
+ 	</bean>
+ 	
+	<bean id="junggiDao_facility" parent="roadsJdbcDaoSupport" class="main.java.facility.junggi.dao.JunggiDao"/>
+
+ 	
+</beans>

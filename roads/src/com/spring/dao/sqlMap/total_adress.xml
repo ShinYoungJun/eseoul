@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="EUC-KR" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="total_adress">
+
+	<typeAlias alias="adressDTO" type="com.board.BoardCommand" />
+
+	<!-- 시퀀스 기능 없이 일련 번호 증가를 시키기 위해서 기존 sid 값 중에서 가장 큰 값을 얻는 과정 -->
+	<select id="sidMax" resultClass="Integer">
+		SELECT NVL(MAX(sid), 0) FROM total_adress
+	</select>
+	
+	<!-- sid 지정시 시퀀스 사용 하지 말 것 -->
+	<insert id="insertData" parameterClass="com.file.FileCommand">
+		INSERT INTO total_adress (div, sid, org_cd, gu_nm, or_nm, t_nm, dam_nm, dam_ph, dam_em, teem_nm, teem_ph, goa_nm, goa_ph, fax, memo)
+		VALUES (#div#, #sid#, #org_cd#, #gu_nm#, #or_nm#, #t_nm#, #dam_nm#, #dam_ph#, #dam_em#, #teem_nm#, #teem_ph#, #goa_nm#, #goa_ph#, #fax#, #memo#)
+	</insert>
+
+	<!-- SELECT 구문 -->
+	<select id="listData2" resultClass="com.file.FileCommand" parameterClass="java.util.Map">
+	<![CDATA[SELECT * FROM (SELECT rownum rnum, data.* FROM	(SELECT sid, org_cd, gu_nm, or_nm, t_nm, dam_nm, dam_ph, dam_em, teem_nm, teem_ph, goa_nm, goa_ph, fax, memo 
+		FROM total_adress WHERE div=#div#
+		ORDER BY gu_nm, or_nm, dam_nm DESC) data) WHERE rnum>=#start# AND rnum<=#end#
+		]]>
+	</select>
+	
+	<select id="countData" resultClass="Integer">
+		<![CDATA[
+			SELECT NVL(Count(sid), 0) FROM total_adress WHERE div=#div#
+		]]>
+	</select>
+
+	<delete id="deleteContent" parameterClass="java.util.Map">
+		<![CDATA[
+			DELETE FROM total_adress WHERE sid=#sid#
+		]]>
+	</delete>
+	<!-- UPDATE 구문 -->
+	<select id="getModify" resultClass="com.file.FileCommand" parameterClass="java.util.Map">
+		<![CDATA[
+			SELECT sid, org_cd, gu_nm, or_nm, t_nm, dam_nm, dam_ph, dam_em, teem_nm, teem_ph, goa_nm, goa_ph, fax, memo FROM total_adress WHERE sid=#sid#
+		]]>
+	</select>
+	<update id="updateData" parameterClass="java.util.Map">
+			UPDATE total_adress SET sid=#sid#, gu_nm=#gu_nm#, or_nm=#or_nm#, t_nm=#t_nm#, dam_nm=#dam_nm#, dam_ph=#dam_ph#, dam_em=#dam_em#, teem_nm=#teem_nm#, teem_ph=#teem_ph#, goa_nm=#goa_nm#, goa_ph=#goa_ph#, fax=#fax#, memo=#memo# WHERE sid=#sid#
+	</update>
+		<!-- 서치 구문 -->
+	<select id="searchData" resultClass="com.file.FileCommand" parameterClass="java.util.Map">
+		<![CDATA[
+		SELECT * FROM (SELECT rownum rnum, data.* FROM (SELECT div, sid, org_cd, gu_nm, or_nm, t_nm, dam_nm, dam_ph, dam_em, teem_nm, teem_ph, goa_nm, goa_ph, fax, memo 
+		FROM total_adress WHERE div=#div# AND gu_nm LIKE #gu_nm# AND or_nm LIKE #or_nm# AND t_nm LIKE #t_nm# AND dam_nm LIKE #dam_nm#
+		ORDER BY gu_nm, or_nm, dam_nm DESC) data) WHERE rnum>=#start# AND rnum<=#end#
+		]]>
+	</select>
+		<select id="searchCountData" resultClass="Integer" parameterClass="java.util.Map">
+		<![CDATA[
+			SELECT NVL(Count(sid), 0) FROM total_adress WHERE div=#div# AND gu_nm LIKE #gu_nm# AND or_nm LIKE #or_nm# AND t_nm LIKE #t_nm# AND dam_nm LIKE #dam_nm#
+		]]>
+	</select>
+
+</sqlMap>

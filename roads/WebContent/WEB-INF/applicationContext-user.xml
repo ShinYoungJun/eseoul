@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+                       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<bean id="methodNameResolver_user" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+ 		<property name="mappings">
+ 			<props>
+ 			<prop key="/admin/user/login.do">login</prop>
+ 			<prop key="/admin/user/logout.do">logout</prop>
+			<prop key="/admin/user/user.do">list</prop>
+			<prop key="/admin/user/userDetail.do">userView</prop>
+			<prop key="/admin/user/userAuthority.do">userAuthority</prop>
+			<prop key="/admin/user/deptCode.do">getDeptCd</prop>
+			<prop key="/admin/user/noticePop.do">openIndexPage</prop>	
+			<prop key="/admin/user/userInfo.do">userInfo</prop>
+			<prop key="/admin/user/changePwdView.do">changePwdView</prop>
+			<prop key="/admin/user/changePwd.do">changePwd</prop>	
+			<prop key="/admin/user/getInsarangKey.do">insarangKey</prop>
+											
+			</props>
+ 		</property>
+ 	</bean> 	
+ 	
+ 	<bean id="urlMapping_user" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+ 		<property name="mappings">
+ 			<props>
+ 			<prop key="/admin/user/login.do">userControl</prop>
+ 			<prop key="/admin/user/logout.do">userControl</prop>
+			<prop key="/admin/user/user.do">userControl</prop>
+			<prop key="/admin/user/userDetail.do">userControl</prop> 
+			<prop key="/admin/user/userAuthority.do">userControl</prop> 
+			<prop key="/admin/user/deptCode.do">userControl</prop>
+ 			<prop key="/admin/user/userReg.do">userEditControl</prop>
+ 			<prop key="/admin/user/userDel.do">userEditControl</prop>	
+ 			<prop key="/admin/user/confirm.do">userEditControl</prop>
+ 			<prop key="/admin/user/updateAuthority.do">userEditControl</prop>
+ 			<prop key="/admin/user/noticePop.do">userControl</prop>
+ 			<prop key="/admin/user/userInfo.do">userControl</prop>	
+			<prop key="/admin/user/changePwdView.do">userControl</prop>
+ 			<prop key="/admin/user/changePwd.do">userControl</prop>
+ 			<prop key="/admin/user/getInsarangKey.do">userControl</prop>
+ 				
+ 			</props>
+ 		</property>
+ 	</bean>
+
+	<bean id="userControl" class="main.java.admin.web.UserControl">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_user"/></property>
+		<property name="userRegService" ref="userRegService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>		
+	</bean>
+
+	<bean id="userEditControl" class="main.java.admin.web.UserEditControl">
+		<property name="userRegService" ref="userRegService"/>		
+		
+		<property name="commandClass" value="main.java.admin.model.UserRegBean"/>
+		<property name="commandName" value="userReg"/>
+		
+  		<property name="formView" value="/admin/user/userInsertPop"/>
+	</bean>
+
+ 	<bean id="userRegDao" parent="roadsJdbcDaoSupport" class="main.java.admin.dao.UserRegDao"/>  
+
+ 	<bean id="userRegService" class="main.java.admin.service.UserRegService"> 
+ 		<property name="userRegDao" ref="userRegDao"/> 
+ 		
+ 	</bean>
+</beans>

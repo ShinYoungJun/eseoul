@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+                       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="methodNameResolver_gapan_mapSearch" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+ 		<property name="mappings">
+ 			<props>		
+				<prop key="/gapan/map/MapIndex.do">MapIndex</prop>
+				<prop key="/gapan/map/search.do">MapSearch</prop>
+								<prop key="/gapan/map/searchMapbyjson.do">MapSearchbyjson</prop>
+				<prop key="/gapan/map/searchview.do">MapView</prop>
+				<prop key="/gapan/map/mini_map.do">MiniMap</prop>
+			</props>
+ 		</property>
+ 	</bean> 	
+ 	
+ 	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+ 		<property name="mappings">
+ 			<props>	 			
+ 				<prop key="/gapan/map/MapIndex.do">gapanMapSearchControl</prop>
+				<prop key="/gapan/map/search.do">gapanMapSearchControl</prop>
+								<prop key="/gapan/map/searchMapbyjson.do">gapanMapSearchControl</prop>
+				<prop key="/gapan/map/searchview.do">gapanMapSearchControl</prop>
+				<prop key="/gapan/map/mini_map.do">gapanMapSearchControl</prop>
+ 			</props>
+ 		</property>
+ 	</bean>
+
+		<bean id="gapanMapSearchControl" class="main.java.gapan.map.web.MapSearchControl">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_gapan_mapSearch"/>
+		</property>		
+		<property name="mapSearchService" ref="gapanMapSearchService"/>
+		<property name="userRegService" ref="userRegService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+		<property name="commonCodeDao" ref="commonCodeDao"/>
+	</bean>
+
+ 	<bean id="gapanMapSearchService" class="main.java.gapan.map.service.MapSearchService"> 
+ 		<property name="mapSearchDao" ref="gapanMapSearchDao"/>
+ 	</bean> 
+ 	
+ 	<bean id="userRegService" class="main.java.admin.service.UserRegService"> 
+ 		<property name="userRegDao" ref="userRegDao"/>
+ 	</bean>
+ 	
+ 	<bean id="gapanMapSearchDao" parent="roadsJdbcDaoSupport" class="main.java.gapan.map.dao.MapSearchDao"/>
+ 	
+</beans>

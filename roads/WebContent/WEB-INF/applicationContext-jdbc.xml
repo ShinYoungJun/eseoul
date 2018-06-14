@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+
+
+<beans>
+	<bean id="roadsDataSource" class="main.java.common.dao.RoadsDataSource" destroy-method="close"/>
+
+	<bean id="roadsJdbcDaoSupport" abstract="true" class="main.java.common.dao.RoadsJdbcDaoSupport">
+		<property name="roadsDataSource">
+			<ref local="roadsDataSource" />
+		</property>
+		<property name="messageSourceAccessor">
+			<ref bean="messageSourceAccessor" />
+		</property>
+	</bean>
+</beans>

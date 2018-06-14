@@ -1,0 +1,219 @@
+/***********************************
+ * 수정일 : 2007.9.27
+ * 최종수정자 : 최진용
+ * 수정내용 :
+ ***********************************/
+
+package main.java.facility.jumyong.web;
+
+
+import main.java.common.util.BoardUtil;
+import main.java.common.util.Globals;
+import main.java.common.util.catUtil.Pageing;
+import main.java.common.util.catUtil.Util;
+import main.java.common.util.BoardUtil;
+
+import g4c.db160.resident.app.ResidentCheckApp;
+import g4c.dc000.driver.resident.RequestTokenBean;
+import main.java.common.util.FileUtil;
+import main.java.common.commonCode.service.CommonCodeService;
+import main.java.common.model.BoardFileBean;
+import main.java.common.util.UUID;
+
+
+
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.*;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import org.springframework.validation.BindException;
+
+import org.springframework.web.bind.ServletRequestUtils;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.multiaction.MultiActionController;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Vector;
+import java.util.Calendar;
+
+import main.java.facility.jumyong.model.Equip_ProductBean;
+import main.java.facility.jumyong.service.IJumyongService;
+
+public class JumyongBoardControl extends MultiActionController {
+	
+  	/**
+  	 * QABoard 리스트 조회 (login 안한상태에 보이는 리스트)
+	 * @param HttpServletRequest request
+	 * @param HttpServletResponce responce
+	 * @return ModelAndView
+	 */
+		
+	private IJumyongService objJumyongService = null;
+	private	Util				util			= new Util();
+	private	CommonCodeService	commonCode		= null;	
+	
+	public void setJumyongService_facility(IJumyongService newObjJumyongService) {
+		this.objJumyongService = newObjJumyongService;
+	}
+	
+	public void setCommonCodeService(CommonCodeService commonCode) 
+	{
+		this.commonCode 	= commonCode;
+	}
+	
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 점용 조회
+	public ModelAndView jumyongList(HttpServletRequest request,HttpServletResponse response) throws Exception {
+		
+		String strYear = ServletRequestUtils.getStringParameter(request, "year", "");
+		String strReq_nm = ServletRequestUtils.getStringParameter(request, "req_nm", "");		
+		String strCurrentPage = ServletRequestUtils.getStringParameter(request, "currentPage", Globals.DEFAULT_CURRENT_PAGE);
+		String strCountPerPage = ServletRequestUtils.getStringParameter(request, "countPerPage", "4");
+		
+		request.setAttribute("year", strYear);
+		request.setAttribute("req_nm", strReq_nm);
+		request.setAttribute("currentPage", strCurrentPage);
+		request.setAttribute("countPerPage", strCountPerPage);
+		
+		int listCount = objJumyongService.getsearhListCount(strYear,strReq_nm,"");
+		
+		request.setAttribute("searchlistCount",String.valueOf(listCount));
+		
+		String strPageDivideForm = BoardUtil.getDividePageForm(
+				Integer.parseInt(strCurrentPage),10, "year="+strYear+"&req_nm="+strReq_nm, "", "/facility/jumyong/search.do", listCount);
+		
+		request.setAttribute("strPageDivideForm",strPageDivideForm);
+		
+		return new ModelAndView("/facility/jumyong/search","searchList",objJumyongService.searhList(strYear,strReq_nm,"",Integer.valueOf(strCurrentPage).intValue()));
+	}
+	
+	
+	
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+//	 점용 view
+		public ModelAndView view(HttpServletRequest request,HttpServletResponse response) throws Exception {
+			
+			String corp_cd = ServletRequestUtils.getStringParameter(request, "corp_cd", "");
+			String gu_code = ServletRequestUtils.getStringParameter(request, "gu_code", "");
+			String request_no = ServletRequestUtils.getStringParameter(request, "request_no", "");
+			String year = ServletRequestUtils.getStringParameter(request, "YEAR", "");
+			String ADMIN_NO = corp_cd + gu_code + request_no;
+			
+			request.setAttribute("corp_cd", corp_cd);
+			request.setAttribute("gu_code", gu_code);
+			request.setAttribute("request_no", request_no);
+			request.setAttribute("year", year);
+			request.setAttribute("ADMIN_NO", ADMIN_NO);
+			
+			return new ModelAndView("/facility/jumyong/view");
+		}
+		
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+//		 점용  product_view
+		public ModelAndView product_view(HttpServletRequest request,HttpServletResponse response) throws Exception {
+			
+			
+			
+			String gu_code = ServletRequestUtils.getStringParameter(request,"GU_CODE");		
+			String corp_cd = ServletRequestUtils.getStringParameter(request,"CORP_CD");
+			String request_no = ServletRequestUtils.getStringParameter(request,"REQUEST_NO");
+			String year = ServletRequestUtils.getStringParameter(request,"YEAR");
+			String object_no = ServletRequestUtils.getStringParameter(request, "OBJECT_NO","");
+			String strCurrentPage = ServletRequestUtils.getStringParameter(request, "currentPage", Globals.DEFAULT_CURRENT_PAGE);
+			String strCountPerPage = ServletRequestUtils.getStringParameter(request, "countPerPage", "4");
+			
+			
+			request.setAttribute("gu_code", gu_code);
+			request.setAttribute("corp_cd", corp_cd);
+			request.setAttribute("request_no", request_no);
+			request.setAttribute("currentPage", strCurrentPage);
+			request.setAttribute("year", year);
+			
+			
+			Equip_ProductBean epb = new Equip_ProductBean();
+			
+			List placeList = objJumyongService.placeList(gu_code,corp_cd,request_no,Integer.parseInt(strCurrentPage));
+			
+			System.out.println("11111dfsfsfsdffsfsgwerterfgrewf "+gu_code+" "+corp_cd+" "+request_no+" "+request_no);
+			
+			if(placeList.size()>0)
+			{
+				
+				List calSumList = objJumyongService.Equip_Cal_SumList(gu_code,corp_cd,request_no,year);
+			request.setAttribute("placeList", placeList);
+			request.setAttribute("calSumList", calSumList);
+			
+			System.out.println("11111dfsfsfsdffsfsgwerterfgrewf");
+			
+			if(object_no.equals("") )				
+			{	
+				System.out.println("11111dfsfsfsdffsfsgwerterfgrewf "+gu_code+" "+corp_cd+" "+request_no+" "+object_no);
+				object_no = ((Equip_ProductBean)placeList.get(0)).getOBJECT_NO();				
+			}
+			
+			request.setAttribute("object_no", object_no);
+			
+			epb = objJumyongService.Equip_CalculationInfo(gu_code,corp_cd,request_no,object_no,year);
+			
+			request.setAttribute("product", epb);
+			
+			System.out.println("11111dfsfsfsdffsfsgwerterfgrewf");
+			int quantity = objJumyongService.getQuantity(gu_code,corp_cd,request_no,object_no);
+			
+			request.setAttribute("quantity", String.valueOf(quantity));
+			}
+			return new ModelAndView("/facility/jumyong/tab/info_product_view");
+		}	
+		
+		
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+//점용 view
+		public ModelAndView productGo(HttpServletRequest request,HttpServletResponse response) throws Exception {
+		
+			String GU_CODE = ServletRequestUtils.getStringParameter(request, "GU_CODE", "");
+			String CORP_CD = ServletRequestUtils.getStringParameter(request, "CORP_CD", "");
+			String REQUEST_NO = ServletRequestUtils.getStringParameter(request, "REQUEST_NO", "");
+			String currentPage = ServletRequestUtils.getStringParameter(request, "currentPage", "");
+			String OBJECT_NO = ServletRequestUtils.getStringParameter(request, "OBJECT_NO", "");
+			String mode = ServletRequestUtils.getStringParameter(request, "mode", "");
+			String year = ServletRequestUtils.getStringParameter(request, "YEAR", "");
+			String quantity = ServletRequestUtils.getStringParameter(request, "quantity", "");
+			
+			
+			int tax_yn = objJumyongService.getProductTax_ynByYear( GU_CODE,  CORP_CD, REQUEST_NO,  OBJECT_NO,  year );
+			
+			
+			System.out.println("year="+year);
+		
+			System.out.println("a= "+quantity+"  "+tax_yn);
+			
+		if(Float.parseFloat(quantity)<0 && tax_yn >= 0)
+			return new ModelAndView("redirect:/facility/jumyong/productSubtractInsert.do?GU_CODE="+GU_CODE
+					+"&CORP_CD="+CORP_CD+"&REQUEST_NO="+REQUEST_NO+"&currentPage="+currentPage+"&OBJECT_NO="
+					+OBJECT_NO+"&mode="+mode+"&YEAR="+year);
+		else if(Float.parseFloat(quantity)<0 && tax_yn < 0)
+			return new ModelAndView("redirect:/facility/jumyong/productSubBeforeTax.do?GU_CODE="+GU_CODE
+					+"&CORP_CD="+CORP_CD+"&REQUEST_NO="+REQUEST_NO+"&currentPage="+currentPage+"&OBJECT_NO="
+					+OBJECT_NO+"&mode="+mode+"&YEAR="+year);
+		else return new ModelAndView("redirect:/facility/jumyong/productInsert.do?GU_CODE="+GU_CODE
+				+"&CORP_CD="+CORP_CD+"&REQUEST_NO="+REQUEST_NO+"&currentPage="+currentPage+"&OBJECT_NO="
+				+OBJECT_NO+"&mode="+mode+"&YEAR="+year);
+		
+		//return new ModelAndView("/facility/jumyong/view");
+		}
+	
+}

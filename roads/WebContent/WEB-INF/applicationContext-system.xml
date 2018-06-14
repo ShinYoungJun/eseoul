@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+                       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<bean id="methodNameResolver_sys" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+ 		<property name="mappings">
+ 			<props>
+			<prop key="/admin/sysHistory.do">historyList</prop>	
+			<prop key="/admin/sysConnect.do">connectList</prop>	 									
+			</props>
+ 		</property>
+ 	</bean> 	
+ 	
+ 	<bean id="urlMapping_sys" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+ 		<property name="mappings">
+ 			<props>
+			<prop key="/admin/sysHistory.do">sysHistoryControl</prop>	
+			<prop key="/admin/sysConnect.do">sysHistoryControl</prop>				 				 				
+ 			</props>
+ 		</property>
+ 	</bean>
+
+	<bean id="sysHistoryControl" class="main.java.admin.web.SysHistoryControl">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_sys"/></property>
+		<property name="sysHistoryService" ref="sysHistoryService"/>	
+		<property name="commonCodeService" ref="commonCodeService"/>		
+	</bean>
+
+ 	<bean id="sysHistoryDao" parent="roadsJdbcDaoSupport" class="main.java.admin.dao.SysHistoryDao"/>  
+
+ 	<bean id="sysHistoryService" class="main.java.admin.service.SysHistoryService"> 
+ 		<property name="sysHistoryDao" ref="sysHistoryDao"/> 	
+ 	</bean>
+</beans>

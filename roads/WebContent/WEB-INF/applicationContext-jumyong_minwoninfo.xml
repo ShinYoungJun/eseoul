@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+                       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<bean id="methodNameResolver_Minwoninfo" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+ 		<property name="mappings">
+ 			<props>
+				<prop key="/jumyong/minwoninfo/view.do">View</prop>
+				<prop key="/jumyong/minwoninfo/info_view.do">Info_View</prop>
+				
+				<prop key="/jumyong/minwoninfo/minwon_view.do">Minwon_View</prop>
+				<prop key="/jumyong/minwoninfo/minwon_view_search.do">Minwon_View_Search</prop>
+				<prop key="/jumyong/minwoninfo/minwon_modify.do">Minwon_Modify</prop>
+				<prop key="/jumyong/minwoninfo/minwon_modify_prc.do">Minwon_Modify_Prc</prop>
+				<prop key="/jumyong/minwoninfo/minwon_register.do">Minwon_Register</prop>
+				<prop key="/jumyong/minwoninfo/minwon_register_prc.do">Minwon_Register_Prc</prop>
+				<prop key="/jumyong/minwoninfo/minwoninfo_view.do">MinwonInfo_View</prop>
+				
+				<prop key="/jumyong/minwoninfo/jumin_view.do">Jumin_View</prop>
+				<prop key="/jumyong/minwoninfo/jumin_modify.do">Jumin_Modify</prop>
+				<prop key="/jumyong/minwoninfo/jumin_modify_prc.do">Jumin_Modify_Prc</prop>
+				<prop key="/jumyong/minwoninfo/jumininfo_view.do">JuminInfo_View</prop>
+								
+				<prop key="/jumyong/minwoninfo/jumji_view.do">Jumji_View</prop>
+				<prop key="/jumyong/minwoninfo/jumji_modify.do">Jumji_Modify</prop>
+				<prop key="/jumyong/minwoninfo/jumji_modify_prc.do">Jumji_Modify_Prc</prop>
+				<prop key="/jumyong/minwoninfo/jumjiinfo_view.do">JumjiInfo_View</prop>
+			</props>
+ 		</property>
+ 	</bean>
+
+ 	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+ 		<property name="mappings">
+ 			<props>
+				<prop key="/jumyong/minwoninfo/view.do">minwoninfoControl</prop>
+				<prop key="/jumyong/minwoninfo/info_view.do">minwoninfoControl</prop>
+				
+				<prop key="/jumyong/minwoninfo/minwon_view.do">minwoninfoControl_minwon</prop>
+				<prop key="/jumyong/minwoninfo/minwon_view_search.do">minwoninfoControl_minwon</prop>
+				<prop key="/jumyong/minwoninfo/minwon_modify.do">minwoninfoControl_minwon</prop>
+				<prop key="/jumyong/minwoninfo/minwon_modify_prc.do">minwoninfoControl_minwon</prop>
+				<prop key="/jumyong/minwoninfo/minwon_register.do">minwoninfoControl_minwon</prop>
+				<prop key="/jumyong/minwoninfo/minwon_register_prc.do">minwoninfoControl_minwon</prop>
+				<prop key="/jumyong/minwoninfo/minwoninfo_view.do">minwoninfoControl_minwon</prop>
+				
+				<prop key="/jumyong/minwoninfo/jumin_view.do">minwoninfoControl_jumin</prop>
+				<prop key="/jumyong/minwoninfo/jumin_modify.do">minwoninfoControl_jumin</prop>
+				<prop key="/jumyong/minwoninfo/jumin_modify_prc.do">minwoninfoControl_jumin</prop>
+				<prop key="/jumyong/minwoninfo/jumininfo_view.do">minwoninfoControl_jumin</prop>
+							
+				<prop key="/jumyong/minwoninfo/jumji_view.do">minwoninfoControl_jumji</prop>
+				<prop key="/jumyong/minwoninfo/jumji_modify.do">minwoninfoControl_jumji</prop>
+				<prop key="/jumyong/minwoninfo/jumji_modify_prc.do">minwoninfoControl_jumji</prop>
+				<prop key="/jumyong/minwoninfo/jumjiinfo_view.do">minwoninfoControl_jumji</prop>	
+ 			</props>
+ 		</property>
+ 	</bean>
+
+
+	<bean id="minwoninfoControl" class="main.java.jumyong.minwoninfo.web.MinwoninfoControl">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Minwoninfo"/></property>
+		<property name="minwoninfoService" ref="minwoninfoService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+	<bean id="minwoninfoControl_minwon" class="main.java.jumyong.minwoninfo.web.TabMinwon_Control">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Minwoninfo"/></property>
+		<property name="minwoninfoService" ref="minwoninfoService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>	
+	
+	<bean id="minwoninfoControl_jumin" class="main.java.jumyong.minwoninfo.web.TabJumin_Control">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Minwoninfo"/></property>
+		<property name="minwoninfoService" ref="minwoninfoService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+
+	<bean id="minwoninfoControl_jumji" class="main.java.jumyong.minwoninfo.web.TabJumji_Control">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Minwoninfo"/></property>
+		<property name="minwoninfoService" ref="minwoninfoService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+
+ 	<bean id="minwoninfoService" class="main.java.jumyong.minwoninfo.service.MinwoninfoService">
+ 		<property name="minwoninfoDao" ref="minwoninfoDao"/>
+ 	</bean>
+ 	<bean id="minwoninfoDao" parent="roadsJdbcDaoSupport" class="main.java.jumyong.minwoninfo.dao.MinwoninfoDao"/>
+
+</beans>

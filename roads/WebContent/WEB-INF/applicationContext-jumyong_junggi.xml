@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<bean id="methodNameResolver_junggiBoard" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+ 		<property name="mappings">
+ 			<props>
+			<prop key="/jumyong/junggi/search.do">search</prop>		
+			<prop key="/jumyong/junggi/view.do">View</prop>
+			<prop key="/jumyong/junggi/bugwa_view.do">Bugwa_View</prop>	
+			<prop key="/jumyong/junggi/junggi_view.do">junggi_view</prop>	
+			<prop key="/jumyong/junggi/productAddList.do">productaddList</prop>		
+			<prop key="/jumyong/junggi/productSubList.do">productSubList</prop>	
+			<prop key="/jumyong/junggi/product_temp_insert.do">product_temp_insert</prop>					
+			<prop key="/jumyong/junggi/excel_search.do">excel_search</prop>
+			<prop key="/jumyong/junggi/landPriceAllAplly.do">landPriceAllAplly</prop>
+			<prop key="/jumyong/junggi/priceApplyUpdate.do">priceApllyUpdate</prop>
+			<prop key="/jumyong/junggi/junggiAllCal.do">junggiAllCal</prop>
+			<prop key="/jumyong/junggi/junggiAllCal_Prc.do">junggiAllCalPrc</prop>
+			<prop key="/jumyong/junggi/excel_junggiAllCal.do">excel_junggiAllCal</prop>
+			<!--  //********** BEGIN_현진_20120308 -->			
+			<!-- 세목코드 조회 테스트를 위한 URL 매핑 부분  -->
+			<prop key="/jumyong/junggi/semokListTest.do">semokListTest</prop>
+			<!--   //********** END_현진_20120308 -->			
+			</props>
+ 		</property>
+ 	</bean> 	
+ 	
+ 	<bean id="urlMapping_junggiboard" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+ 		<property name="mappings">
+ 			<props>
+			<prop key="/jumyong/junggi/search.do">junggiBoardControl</prop>
+			<prop key="/jumyong/junggi/view.do">junggiBoardControl</prop>	
+			<prop key="/jumyong/junggi/bugwa_view.do">junggiBoardControl</prop>
+			<prop key="/jumyong/junggi/junggi_view.do">junggiBoardControl</prop>		
+			<prop key="/jumyong/junggi/productAddList.do">junggiBoardControl</prop>					
+			<prop key="/jumyong/junggi/product_temp_insert.do">junggiBoardControl</prop>								
+			<prop key="/jumyong/junggi/productSubList.do">junggiBoardControl</prop>		
+			<prop key="/jumyong/junggi/junggi_product.do">junggiBoardFormControl</prop>
+			<prop key="/jumyong/junggi/reduction.do">reductionFormControl</prop>	
+			<prop key="/jumyong/junggi/excel_search.do">junggiBoardControl</prop>
+			<prop key="/jumyong/junggi/landPriceAllAplly.do">junggiBoardControl</prop>
+			<prop key="/jumyong/junggi/priceApplyUpdate.do">junggiBoardControl</prop>
+			<prop key="/jumyong/junggi/junggiAllCal.do">junggiBoardControl</prop>
+			<prop key="/jumyong/junggi/junggiAllCal_Prc.do">junggiBoardControl</prop>
+			<prop key="/jumyong/junggi/excel_junggiAllCal.do">junggiBoardControl</prop>
+			<!--  //********** BEGIN_현진_20120308 -->			
+			<!-- 세목코드 조회 테스트를 위한 URL 매핑 부분  -->
+			<prop key="/jumyong/junggi/semokListTest.do">junggiBoardControl</prop>
+			<!--   //********** END_현진_20120308 -->			
+			</props>
+ 		</property>
+ 	</bean>
+	<bean id="junggiBoardControl" class="main.java.jumyong.junggi.web.JunggiBoardControl">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_junggiBoard"/>
+		</property>
+		<property name="jumyongService" ref="jumyongService"/>
+		<property name="junggiService" ref="junggiService"/>				
+		<property name="commonCodeService" ref="commonCodeService"/>		
+		<property name="jumyong_saeweService" ref="jumyong_saeweService"/>
+	</bean>
+	
+	<bean id="junggiBoardFormControl" class="main.java.jumyong.junggi.web.JunggiBoardFormControl">
+		<property name="junggiService" ref="junggiService"/>		
+		<property name="jumyongService" ref="jumyongService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+		<property name="commandClass" value="main.java.jumyong.jumyong.model.ProductBean"/>
+		<property name="commandName" value="product"/>
+	</bean>
+	
+	<bean id="reductionFormControl" class="main.java.jumyong.junggi.web.ReductionFormControl">
+		<property name="junggiService" ref="junggiService"/>
+		<property name="commandClass" value="main.java.jumyong.jumyong.model.ProductBean"/>
+		<property name="commandName" value="product"/>
+	</bean>
+	
+	<bean id="junggiService" class="main.java.jumyong.junggi.service.JunggiService">
+ 		<property name="junggiDao" ref="junggiDao"/> 
+ 	</bean>
+
+ 	<bean id="junggiDao" parent="roadsJdbcDaoSupport" class="main.java.jumyong.junggi.dao.JunggiDao"/>
+
+	<bean id="jumyongService" class="main.java.jumyong.jumyong.service.JumyongService"> 
+ 		<property name="jumyongDao" ref="jumyongDao"/>
+ 	</bean>
+ 	
+ 	<bean id="jumyongDao" parent="roadsJdbcDaoSupport" class="main.java.jumyong.jumyong.dao.JumyongDao"/>
+ 	
+</beans>

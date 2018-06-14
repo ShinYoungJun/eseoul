@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<bean id="methodNameResolver_mapSearch" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+ 		<property name="mappings">
+ 			<props>		
+				<prop key="/map/search.do">initMapSearch</prop>
+				<prop key="/map/searchresult.do">MapSearch</prop>
+				<prop key="/map/searchview.do">Map_View</prop>
+				<prop key="/getAreaCode.do">getAreaCode</prop>
+				<prop key="/map/searchType.do">searchType</prop>
+				<prop key="/map/miniMap.do">miniMapXY</prop>	
+			</props>
+ 		</property>
+ 	</bean> 	
+ 	
+ 	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+ 		<property name="mappings">
+ 			<props>	 			
+				<prop key="/map/search.do">mapSearchControl</prop>
+				<prop key="/map/searchresult.do">mapSearchControl</prop>
+				<prop key="/map/searchview.do">mapSearchControl</prop>
+				<prop key="/getAreaCode.do">mapSearchControl</prop>	
+				<prop key="/map/searchType.do">mapSearchControl</prop>
+				<prop key="/map/miniMap.do">mapSearchControl</prop>
+ 			</props>
+ 		</property>
+ 	</bean>
+
+		<bean id="mapSearchControl" class="main.java.map.web.MapSearchControl">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_mapSearch"/>
+		</property>		
+		<property name="mapSearchService" ref="mapSearchService"/>
+		<property name="userRegService" ref="userRegService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+		<property name="commonCodeDao" ref="commonCodeDao"/>
+	</bean>
+
+ 	<bean id="mapSearchService" class="main.java.map.service.MapSearchService"> 
+ 		<property name="mapSearchDao" ref="mapSearchDao"/>
+ 	</bean> 
+ 	
+ 	<bean id="userRegService" class="main.java.admin.service.UserRegService"> 
+ 		<property name="userRegDao" ref="userRegDao"/>
+ 	</bean>
+ 	
+ 	<bean id="mapSearchDao" parent="roadsJdbcDaoSupport" class="main.java.map.dao.MapSearchDao"/>
+ 	
+</beans>

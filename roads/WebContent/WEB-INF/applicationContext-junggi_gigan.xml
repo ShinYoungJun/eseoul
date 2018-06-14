@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+                       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<bean id="methodNameResolver_Junggi_Gigan" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+ 		<property name="mappings">
+ 			<props>
+				<prop key="/junggi/gigan/search.do">Search</prop>
+				<prop key="/junggi/gigan/view.do">View</prop>
+				<prop key="/junggi/gigan/view_ilgwal.do">View_Ilgwal</prop>
+				
+				<prop key="/junggi/gigan/jumin_view.do">Jumin_View</prop>
+				
+				<prop key="/junggi/gigan/jumji_view.do">Jumji_View</prop>
+				
+				<prop key="/junggi/gigan/gigan_view.do">Gigan_View</prop>
+				<prop key="/junggi/gigan/gigan_register.do">Gigan_Register</prop>
+				
+				<prop key="/junggi/gigan/ilgwal_view.do">Ilgwal_View</prop>
+				
+				<prop key="/junggi/gigan/annae_view.do">Annae_View</prop>
+				<prop key="/junggi/gigan/annae_print.do">Annae_Print</prop>
+				<prop key="/junggi/gigan/annae_all_print.do">Annae_All_Print</prop>
+				
+				<prop key="/junggi/gigan/giganilgwal_view.do">GiganIlgwal_View</prop>
+				<prop key="/junggi/gigan/giganilgwal_ext.do">GiganIlgwal_Ext</prop>
+			</props>
+ 		</property>
+ 	</bean>
+ 	
+ 	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+ 		<property name="mappings">
+ 			<props>
+				<prop key="/junggi/gigan/search.do">junggi_giganControl</prop>
+				<prop key="/junggi/gigan/view.do">junggi_giganControl</prop>
+				<prop key="/junggi/gigan/view_ilgwal.do">junggi_giganControl</prop>
+				
+				<prop key="/junggi/gigan/jumin_view.do">junggi_giganControl_Jumin</prop>
+				
+				<prop key="/junggi/gigan/jumji_view.do">junggi_giganControl_Jumji</prop>
+
+				<prop key="/junggi/gigan/gigan_view.do">junggi_giganControl_Gigan</prop>
+				<prop key="/junggi/gigan/gigan_register.do">junggi_giganControl_Gigan</prop>
+				
+				<prop key="/junggi/gigan/ilgwal_view.do">junggi_giganControl_Ilgwal</prop>
+				
+				<prop key="/junggi/gigan/annae_view.do">junggi_giganControl_Annae</prop>
+				<prop key="/junggi/gigan/annae_print.do">junggi_giganControl_Annae</prop>
+				<prop key="/junggi/gigan/annae_all_print.do">junggi_giganControl_Annae</prop>
+				
+				<prop key="/junggi/gigan/giganilgwal_view.do">junggi_giganControl_GiganIlgwal</prop>
+				<prop key="/junggi/gigan/giganilgwal_ext.do">junggi_giganControl_GiganIlgwal</prop>
+ 			</props>
+ 		</property>
+ 	</bean>
+ 	
+
+	<bean id="junggi_giganControl" class="main.java.junggi.gigan.web.GiganControl">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Junggi_Gigan"/></property>
+		<property name="junggi_giganService" ref="junggi_giganService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+	<bean id="junggi_giganControl_Jumin" class="main.java.junggi.gigan.web.TabJumin_Control">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Junggi_Gigan"/></property>
+		<property name="junggi_giganService" ref="junggi_giganService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+	<bean id="junggi_giganControl_Jumji" class="main.java.junggi.gigan.web.TabJumji_Control">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Junggi_Gigan"/></property>
+		<property name="junggi_giganService" ref="junggi_giganService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+	<bean id="junggi_giganControl_Gigan" class="main.java.junggi.gigan.web.TabGigan_Control">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Junggi_Gigan"/></property>
+		<property name="junggi_giganService" ref="junggi_giganService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+	<bean id="junggi_giganControl_Ilgwal" class="main.java.junggi.gigan.web.TabIlgwal_Control">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Junggi_Gigan"/></property>
+		<property name="junggi_giganService" ref="junggi_giganService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+	<bean id="junggi_giganControl_Annae" class="main.java.junggi.gigan.web.TabAnnae_Control">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Junggi_Gigan"/></property>
+		<property name="junggi_giganService" ref="junggi_giganService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+	<bean id="junggi_giganControl_GiganIlgwal" class="main.java.junggi.gigan.web.TabGiganIlgwal_Control">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Junggi_Gigan"/></property>
+		<property name="junggi_giganService" ref="junggi_giganService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+	
+ 	<bean id="junggi_giganService" class="main.java.junggi.gigan.service.GiganService">
+ 		<property name="junggi_giganDao" ref="junggi_giganDao"/>
+ 	</bean>
+ 	<bean id="junggi_giganDao" parent="roadsJdbcDaoSupport" class="main.java.junggi.gigan.dao.GiganDao"/>
+
+</beans>

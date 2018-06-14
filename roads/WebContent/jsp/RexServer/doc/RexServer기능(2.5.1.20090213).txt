@@ -1,0 +1,26 @@
+<RexServer 버젼 2.5.1.20090213 추가 기능>
+-------------------------------------
+>> 공통
+
+>> 서버 로직
+
+>> 스크립트
+  - rexpert_properties.js
+     1) rex_gsLanguage 속성 추가 : 언어설정 기능
+
+         사용예)
+         rex_gsLanguage = "ko";  // 한국어
+         rex_gsLanguage = "en";  // 영어
+
+  - rexpert.js : 버젼체크 함수 추가
+     1) rex_gfGetVersion() 함수 추가 : 버젼체크 함수 추가
+
+  - UI 코딩 
+    1) rex_print_option 추가
+        oRptMainParam.put("rex_print_option", "duplex=1");  // 인쇄시 옵션 (예: 양면출력 안함), RexPreViewOpen.jsp 참조
+
+    2) rex_gfRexRptOpen 함수에서 newpopup 타입 추가
+        rex_gfRexRptOpen("newpopup", oRptMainParam);   // 새로운 popup창에 미리보기가 됨
+
+    3) RexPrewView.jsp 기능 추가
+        rex_save_file에 파일명을 지정하면, 미리보기 후 저장 버튼 클릭시 기본 파일명 설정 됨

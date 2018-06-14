@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+                       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<bean id="methodNameResolver_PurposeCode" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+ 		<property name="mappings">
+ 			<props>
+ 				<prop key="/purposecode.do">PurposeCode</prop>
+				<prop key="/purposeclasscode.do">PurposeClassCode</prop>
+				<prop key="/purposesortcode.do">PurposeSortCode</prop>
+				<prop key="/purposekindcode.do">PurposeKindCode</prop>
+				<prop key="/purposesebucode.do">PurposeSebuCode</prop>
+			</props>
+ 		</property>
+ 	</bean>
+ 	
+ 	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+ 		<property name="mappings">
+ 			<props>
+ 				<prop key="/purposecode.do">purposeCodeControl</prop>
+				<prop key="/purposeclasscode.do">purposeCodeControl</prop>
+				<prop key="/purposesortcode.do">purposeCodeControl</prop>
+				<prop key="/purposekindcode.do">purposeCodeControl</prop>
+				<prop key="/purposesebucode.do">purposeCodeControl</prop>
+ 			</props>
+ 		</property>
+ 	</bean>
+
+	<bean id="purposeCodeControl" class="main.java.common.purposeCode.web.PurposeCodeControl">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_PurposeCode"/></property>
+		<property name="purposeCodeService" ref="purposeCodeService"/>
+	</bean>
+
+ 	<bean id="purposeCodeService" class="main.java.common.purposeCode.service.PurposeCodeService">
+ 		<property name="purposeCodeDao" ref="purposeCodeDao"/>
+ 	</bean>
+ 	<bean id="purposeCodeDao" parent="roadsJdbcDaoSupport" class="main.java.common.purposeCode.dao.PurposeCodeDao"/>
+ 	
+ 
+</beans>

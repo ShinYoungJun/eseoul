@@ -1,0 +1,858 @@
+//	2009		Kim Yun Seo
+
+package main.java.jumyong.saewe.web;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.List;
+import java.util.Locale;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import main.java.common.commonCode.model.UserBean;
+import main.java.common.commonCode.service.CommonCodeService;
+import main.java.common.sysConnect.service.ISysConnectService;
+import main.java.common.util.Globals;
+import main.java.common.util.catUtil.Pageing;
+import main.java.common.util.catUtil.Util;
+import main.java.jumyong.jumyong.model.SearchBean;
+import main.java.jumyong.minwoninfo.model.PlaceBean;
+import main.java.jumyong.saewe.model.BugaRegistBean;
+import main.java.jumyong.saewe.model.BugwaSearchBean;
+import main.java.jumyong.saewe.model.SaeweBean;
+import main.java.jumyong.saewe.model.TaxationBean;
+import main.java.jumyong.saewe.service.ISaeweService;
+
+import org.springframework.web.bind.ServletRequestUtils;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.multiaction.MultiActionController;
+
+public class SaeweControl	extends MultiActionController{
+
+	private	ISaeweService		iSaeweService	= null;
+	private	ISysConnectService	iSysConnectService	= null;
+	private	CommonCodeService	commonCode		= null;
+	private	Util				util			= new Util();
+	private	Pageing				pageing			= new Pageing();
+	
+	
+	public void setJumyong_saeweService(ISaeweService jumyong_saeweService) 
+	{
+		this.iSaeweService = jumyong_saeweService;
+	}
+	
+	public void setCommonCodeService(CommonCodeService commonCode)
+	{
+		this.commonCode 	= commonCode;
+	}
+	
+	public void setSysConnectService(ISysConnectService sysConnectService)
+	{
+		this.iSysConnectService = sysConnectService;
+	}
+	
+	//	부과 조회 화면
+	public ModelAndView 	Search(HttpServletRequest request,HttpServletResponse response, String message) throws Exception 
+	{
+		// 삭제 세션
+		HttpSession session = request.getSession();
+		
+		String 		userId	= (String)session.getAttribute("sessionUserId");
+		SearchBean objSearchBean = null;
+		List	list	=	null;
+		System.out.println("userId ==> " + userId);
+		
+		try
+		{
+			if(userId != null)
+			{
+				//	세션에서 시도 코드를 가져온다.
+				String	SIDO_CD	= util.getSidoCode(getMessageSourceAccessor());
+				
+				//	관리자 데이터를 가져온다.
+				UserBean	userBean	= new UserBean();
+				
+				try{
+					userBean	= commonCode.executeUserSearch(util.getSessionID(request, "sessionUserId"));
+				}
+				catch (Exception e)
+				{
+					String errReason = e.toString();
+					System.out.println(errReason);
+				}
+				
+				//	현재 년도
+				SimpleDateFormat	formatter 	= new SimpleDateFormat("yyyy-MM-dd", Locale.KOREA );
+				Calendar 			cal 		= Calendar.getInstance();
+				String	today		= formatter.format(cal.getTime());
+				cal.add(Calendar.DATE, -14);
+				String	beforeDay		= formatter.format(cal.getTime());
+				
+				String 	GIGAN1 		= ServletRequestUtils.getStringParameter(request, "GIGAN1", beforeDay);
+				String 	GIGAN2 		= ServletRequestUtils.getStringParameter(request, "GIGAN2", today);
+				String  YearVal		= ServletRequestUtils.getStringParameter(request, "YEAR", today.substring(0, 4));
+				int totalcnt = 	Integer.parseInt(ServletRequestUtils.getStringParameter(request, "TOTALCNT", "0"));
+				System.out.println("@TOTAL@@TOTAL@@TOTAL@ : " + totalcnt);
+				
+				BugwaSearchBean	bugwaSearchBean	= new BugwaSearchBean();
+				
+				bind(request, bugwaSearchBean);
+				
+				bugwaSearchBean.setSIDO(SIDO_CD);
+				bugwaSearchBean.setSIGUNGU(userBean.getSIGU_CD());
+				
+				bugwaSearchBean.setYEAR(YearVal);
+				bugwaSearchBean.setGIGAN1(util.Date_Cut(GIGAN1));
+				bugwaSearchBean.setGIGAN2(util.Date_Cut(GIGAN2));
+			
+				request.setAttribute("PURPOSE_CD", bugwaSearchBean.getPURPOSE_CD());
+				
+				int	currentPage	= Integer.parseInt(ServletRequestUtils.getStringParameter(request, "currentPage", "1"));
+				
+				//	검색한 데이터 총갯수를 가져온다.
+				
+				
+				int iTotalCnt = 0;
+				if(totalcnt == 0){
+					iTotalCnt	= iSaeweService.executeCount(bugwaSearchBean);
+				}else{
+					iTotalCnt = totalcnt;
+				}
+				
+				//	페이징 처리
+				int	rowCol		= pageing.execute(request, iTotalCnt, currentPage, 10);
+				
+				//	검색한 데이터를 가져온다.
+				list	= iSaeweService.executeSearch(bugwaSearchBean, rowCol, rowCol + 9);
+				SaeweBean	Bean	= new SaeweBean();
+				int			size	= list.size();
+				
+				for(int i = 0	;	i < size	;	i++)
+				{
+					Bean	= (SaeweBean)list.get(i);
+					
+					Bean.setRN(String.valueOf(rowCol+i));
+					
+					Bean.setTYPE(commonCode.executeSearchCommonCode("use_type", Bean.getTYPE()));	//	점용종류
+			
+					//Bean.setSECTION(commonCode.executeSearchCommonCode("occupancy_type", Bean.getSECTION()));	//	점용구분
+					Bean.setSECTION_NAME(commonCode.executeSearchCommonCode("occupancy_type", Bean.getSECTION()));	//	점용구분
+				
+					// 작성여부
+					if(Bean.getCAL_YN() != null && "1".equals(Bean.getCAL_YN()))
+		        		Bean.setCAL_YN(commonCode.executeSearchCommonCode("calculation_yn", "1"));
+		        	else
+		        		Bean.setCAL_YN(commonCode.executeSearchCommonCode("calculation_yn", "0"));
+		        		
+		        	//	부과여부
+					if(Bean.getTAX_YN() != null && "1".equals(Bean.getTAX_YN()))
+						Bean.setTAX_YN(commonCode.executeSearchCommonCode("taxation_yn", Bean.getTAX_YN()));
+		        	else
+		        		Bean.setTAX_YN(commonCode.executeSearchCommonCode("taxation_yn", "0"));
+		        	
+					
+					
+					// 부과 기간
+					if(Bean.getTAX_DATE() == null || Bean.getTAX_DATE() == ""){
+				 		Bean.setTAX_DATE("-");
+					}
+					else{
+						Bean.setTAX_DATE(util.Date_Paste(Bean.getTAX_DATE()));
+						
+					}				 	
+				 	
+				 	if(Bean.getBONSE() == null || Bean.getBONSE() == "")
+				 		Bean.setBONSE("-");
+				 	
+				 	if(Bean.getVAT() == null || Bean.getVAT() == "")
+				 		Bean.setVAT("-");
+				 	
+				 	
+				 	if(Bean.getTAXCODE_NM() == null || Bean.getTAXCODE_NM() == "")
+				 		Bean.setTAXCODE_NM("-");
+		        	
+		           	//	등록기간
+		        	Bean.setREQ_DATE(util.Date_Paste(Bean.getREQ_DATE()));
+		        	
+		        	if(Bean.getMUL_FROMDATE() != null)	//	점용기간
+		        		Bean.setJUMGIGAN(util.Date_Paste(Bean.getMUL_FROMDATE()) + " ~ " + util.Date_Paste(Bean.getMUL_TODATE()));
+		
+		        	if(Bean.getSECTION() != null)
+		        		if(Bean.getSECTION().equals("일시"))
+		        	        Bean.setJUMGIGAN(Bean.getPARTLY_PERIOD());
+				}
+				
+				request.setAttribute("use_type", commonCode.executeCommonCode("use_type", bugwaSearchBean.getTYPE(), "전체"));						//	점용종류
+				request.setAttribute("occupancy_type", commonCode.executeCommonCode("occupancy_type", bugwaSearchBean.getSECTION(), "전체"));		//	점용구분
+				request.setAttribute("use_owner_Group", commonCode.executeCommonCode("use_ownerGroup", bugwaSearchBean.getOWNER_SET(), "전체"));		//	소유자
+				request.setAttribute("taxation_section", commonCode.executeCommonCode("taxation_section", bugwaSearchBean.getTAX_SET(), "전체"));	//	세입구분	
+				request.setAttribute("bjdong_code", commonCode.CommonBJDongCodeSearch(SIDO_CD, userBean.getSIGU_CD(), bugwaSearchBean.getBJ_CD()));	//	법정동
+				request.setAttribute("hjdong_code", commonCode.CommonHJDongCodeSearch(SIDO_CD, userBean.getSIGU_CD(), bugwaSearchBean.getHJ_CD()));	//	행정동
+				request.setAttribute("taxation_yn", commonCode.executeCommonCode("taxation_yn", bugwaSearchBean.getTAX_YN(), "전체"));				//	부과여부
+				request.setAttribute("cal_yn", commonCode.executeCommonCode("calculation_yn", bugwaSearchBean.getCAL_YN(), "전체"));					//	작성여부	
+		 
+				request.setAttribute("GIGAN1", GIGAN1);
+				request.setAttribute("GIGAN2", GIGAN2);
+				request.setAttribute("YearVal", YearVal);
+				request.setAttribute("TYPE", bugwaSearchBean.getTYPE());
+				
+				if(bugwaSearchBean.getBONBUN().equals("%")){
+					bugwaSearchBean.setBONBUN("");
+				}
+				if(bugwaSearchBean.getBUBUN().equals("%")){
+					bugwaSearchBean.setBUBUN("");
+				}
+				
+				
+				request.setAttribute("BONBUN", bugwaSearchBean.getBONBUN());
+				request.setAttribute("BUBUN", bugwaSearchBean.getBUBUN());
+				request.setAttribute("NAME", bugwaSearchBean.getNAME());
+				request.setAttribute("ADMINNO", bugwaSearchBean.getADMINNO());
+				request.setAttribute("REFUND_YN", bugwaSearchBean.getREFUND_YN());
+				request.setAttribute("CAL_YN", bugwaSearchBean.getCAL_YN());
+				request.setAttribute("currentPage", String.valueOf(currentPage));
+				request.setAttribute("totalcnt", String.valueOf(iTotalCnt));
+				request.setAttribute("message", message);
+				
+				request.setAttribute("bugwa_id", util.nullTo(iSaeweService.executeBugwa_Id(userId),""));
+			}
+		} 
+		
+		catch(Exception e){
+			System.out.println(e.toString()); 	
+		}
+		
+		
+		return new ModelAndView("/jumyong/saewe/search", "blist", list);
+	}
+	
+	//	부과 조회 화면(excel)
+	public ModelAndView 	Excel_Search(HttpServletRequest request,HttpServletResponse response, String message) throws Exception 
+	{
+		// 삭제 세션
+		HttpSession session = request.getSession();
+		
+		String 		userId	= (String)session.getAttribute("sessionUserId");
+		SearchBean objSearchBean = null;
+		List	list	=	null;
+		System.out.println("userId ==> " + userId);
+		
+		try
+		{
+			if(userId != null)
+			{
+				//	세션에서 시도 코드를 가져온다.
+				String	SIDO_CD	= util.getSidoCode(getMessageSourceAccessor());
+				
+				//	관리자 데이터를 가져온다.
+				UserBean	userBean	= new UserBean();
+				
+				try{
+					userBean	= commonCode.executeUserSearch(util.getSessionID(request, "sessionUserId"));
+				}
+				catch (Exception e)
+				{
+					String errReason = e.toString();
+					System.out.println(errReason);
+				}
+				
+				//	현재 년도
+				SimpleDateFormat	formatter 	= new SimpleDateFormat("yyyy-MM-dd", Locale.KOREA );
+				Calendar 			cal 		= Calendar.getInstance();
+				String	today		= formatter.format(cal.getTime());
+				cal.add(Calendar.DATE, -6);
+				String	beforeDay		= formatter.format(cal.getTime());
+				
+				String 	GIGAN1 		= ServletRequestUtils.getStringParameter(request, "GIGAN1", beforeDay);
+				String 	GIGAN2 		= ServletRequestUtils.getStringParameter(request, "GIGAN2", today);
+				String  YearVal		= ServletRequestUtils.getStringParameter(request, "YEAR", today.substring(0, 4));
+				
+				BugwaSearchBean	bugwaSearchBean	= new BugwaSearchBean();
+				
+				bind(request, bugwaSearchBean);
+				
+				bugwaSearchBean.setSIDO(SIDO_CD);
+				bugwaSearchBean.setSIGUNGU(userBean.getSIGU_CD());
+				
+				bugwaSearchBean.setGIGAN1(util.Date_Cut(GIGAN1));
+				bugwaSearchBean.setGIGAN2(util.Date_Cut(GIGAN2));
+				bugwaSearchBean.setYEAR(YearVal);
+				
+			
+				request.setAttribute("PURPOSE_CD", bugwaSearchBean.getPURPOSE_CD());
+				
+				int	currentPage	= Integer.parseInt(ServletRequestUtils.getStringParameter(request, "currentPage", "1"));
+				
+				//	검색한 데이터 총갯수를 가져온다.
+				int	iTotalCnt	= iSaeweService.executeCount(bugwaSearchBean);
+				
+				//	검색한 데이터를 가져온다.
+				list	= iSaeweService.executeSearch(bugwaSearchBean, 1, iTotalCnt);
+				SaeweBean	Bean	= new SaeweBean();
+				int			size	= list.size();
+				
+				for(int i = 0	;	i < size	;	i++)
+				{
+					Bean	= (SaeweBean)list.get(i);
+					
+					Bean.setRN(String.valueOf(i+1));
+					Bean.setTYPE(commonCode.executeSearchCommonCode("use_type", Bean.getTYPE()));	//	점용종류
+		        	
+					Bean.setSECTION_NAME(commonCode.executeSearchCommonCode("occupancy_type", Bean.getSECTION()));	//	점용구분
+					
+					
+					// 작성여부
+					if(Bean.getCAL_YN() != null && "1".equals(Bean.getCAL_YN()))
+		        		Bean.setCAL_YN(commonCode.executeSearchCommonCode("calculation_yn", "1"));
+		        	else
+		        		Bean.setCAL_YN(commonCode.executeSearchCommonCode("calculation_yn", "0"));
+		        		
+		        	//	부과여부
+					if(Bean.getTAX_YN() != null && "1".equals(Bean.getTAX_YN()))
+						Bean.setTAX_YN(commonCode.executeSearchCommonCode("taxation_yn", Bean.getTAX_YN()));
+		        	else
+		        		Bean.setTAX_YN(commonCode.executeSearchCommonCode("taxation_yn", "0"));
+					
+					//관리번호 수정
+					if(Bean.getADMIN_NO().length() != 20){
+					
+					}else{
+						Bean.setADMIN_NO(Bean.getADMIN_NO().substring(9, 20));
+					}
+					
+					// 부과 기간
+					if(Bean.getTAX_DATE() == null || Bean.getTAX_DATE() == ""){
+				 		Bean.setTAX_DATE("-");
+					}
+					else{
+						Bean.setTAX_DATE(util.Date_Paste(Bean.getTAX_DATE()));
+						
+					}
+				 	
+				 	if(Bean.getBONSE() == null || Bean.getBONSE() == "")
+				 		Bean.setBONSE("-");
+				 	
+				 	if(Bean.getVAT() == null || Bean.getVAT() == "")
+				 		Bean.setVAT("-");
+				 	
+				 	if(Bean.getTAXCODE_NM() == null || Bean.getTAXCODE_NM() == "")
+				 		Bean.setTAXCODE_NM("-");
+				 	
+					
+		        	
+							        	
+		         	//	등록기간
+		        	Bean.setREQ_DATE(util.Date_Paste(Bean.getREQ_DATE()));
+		        	
+		        	if(Bean.getMUL_FROMDATE() != null)	//	점용기간
+		        		Bean.setJUMGIGAN(util.Date_Paste(Bean.getMUL_FROMDATE()) + " ~ " + util.Date_Paste(Bean.getMUL_TODATE()));
+		
+		        	if(Bean.getSECTION() != null)
+		        		if(Bean.getSECTION().equals("일시"))
+		        	        Bean.setJUMGIGAN(Bean.getPARTLY_PERIOD());
+				}
+				
+				//request.setAttribute("taxation_part", commonCode.executeCommonCode("taxation_part", bugwaSearchBean.getUSE_SECTION(), "전체"));		//  과세구분								//	과세구분
+				request.setAttribute("use_type", commonCode.executeCommonCode("use_type", bugwaSearchBean.getTYPE(), "전체"));						//	점용종류
+				request.setAttribute("occupancy_type", commonCode.executeCommonCode("occupancy_type", bugwaSearchBean.getSECTION(), "전체"));		//	점용구분
+				request.setAttribute("use_owner_Group", commonCode.executeCommonCode("use_ownerGroup", bugwaSearchBean.getOWNER_SET(), "전체"));		//	소유자
+				request.setAttribute("taxation_section", commonCode.executeCommonCode("taxation_section", bugwaSearchBean.getTAX_SET(), "전체"));	//	세입구분	
+				request.setAttribute("bjdong_code", commonCode.CommonBJDongCodeSearch(SIDO_CD, userBean.getSIGU_CD(), bugwaSearchBean.getBJ_CD()));	//	법정동
+				request.setAttribute("hjdong_code", commonCode.CommonHJDongCodeSearch(SIDO_CD, userBean.getSIGU_CD(), bugwaSearchBean.getHJ_CD()));	//	행정동
+				request.setAttribute("taxation_yn", commonCode.executeCommonCode("taxation_yn", bugwaSearchBean.getTAX_YN(), "전체"));				//	부과여부
+				//request.setAttribute("refund_yn", commonCode.executeCommonCode("refund_yn", bugwaSearchBean.getREFUND_YN(), "전체"));				//	환불여부  (삭제)2009.08.19	
+				request.setAttribute("cal_yn", commonCode.executeCommonCode("calculation_yn", bugwaSearchBean.getCAL_YN(), "전체"));					//	작성여부	
+		 
+				request.setAttribute("GIGAN1", GIGAN1);
+				request.setAttribute("GIGAN2", GIGAN2);
+				//request.setAttribute("USE_SECTION", bugwaSearchBean.getUSE_SECTION());
+				request.setAttribute("TYPE", bugwaSearchBean.getTYPE());
+				
+				request.setAttribute("BONBUN", bugwaSearchBean.getBONBUN());
+				request.setAttribute("BUBUN", bugwaSearchBean.getBUBUN());
+				request.setAttribute("NAME", bugwaSearchBean.getNAME());
+				request.setAttribute("ADMINNO", bugwaSearchBean.getADMINNO());
+				request.setAttribute("REFUND_YN", bugwaSearchBean.getREFUND_YN());
+				request.setAttribute("CAL_YN", bugwaSearchBean.getCAL_YN());
+				request.setAttribute("currentPage", String.valueOf(currentPage));
+				request.setAttribute("totalcnt", String.valueOf(iTotalCnt));
+				request.setAttribute("message", message);
+				
+				
+				
+				request.setAttribute("bugwa_id", util.nullTo(iSaeweService.executeBugwa_Id(userId),""));
+			}
+		} 
+		
+		catch(Exception e){
+			System.out.println(e.toString()); 	
+		}
+		
+		return new ModelAndView("/jumyong/saewe/excel_search", "blist", list);
+	}	
+	
+	//	검색 조건의 소멸을 방지하기 위해  데이터를 가지고 있는다.
+	public ModelAndView 	View(HttpServletRequest request,HttpServletResponse response) throws Exception 
+	{
+		HttpSession session = request.getSession();
+		String 		userId	= (String)session.getAttribute("sessionUserId");				
+		
+		String 	ADMIN_NO 	= ServletRequestUtils.getStringParameter(request, "ADMIN_NO", "");
+		String 	SEQ 	= ServletRequestUtils.getStringParameter(request, "SEQ", "");
+		String 	GIGAN1 		= ServletRequestUtils.getStringParameter(request, "GIGAN1", "");
+		String 	GIGAN2 		= ServletRequestUtils.getStringParameter(request, "GIGAN2", "");
+		String 	currentPage = ServletRequestUtils.getStringParameter(request, "currentPage", "1");
+		String 	SECTION = ServletRequestUtils.getStringParameter(request, "SECTION", "");
+		
+		try{
+			if(userId != null){
+				
+				BugwaSearchBean	bugwaSearchBean	= new BugwaSearchBean();
+				
+				bind(request, bugwaSearchBean);
+				
+				request.setAttribute("TYPE", bugwaSearchBean.getTYPE());			//	점용종류
+				request.setAttribute("SECTION", bugwaSearchBean.getSECTION());		//	점용구분
+				request.setAttribute("OWNER_SET", bugwaSearchBean.getOWNER_SET());	//	소유자
+				request.setAttribute("TAX_SET", bugwaSearchBean.getTAX_SET());		//	세입구분	
+				request.setAttribute("BJ_CD", bugwaSearchBean.getBJ_CD());			//	법정동
+				request.setAttribute("HJ_CD", bugwaSearchBean.getHJ_CD());			//	행정동
+				request.setAttribute("TAX_YN", bugwaSearchBean.getTAX_YN());		//	부과여부
+		
+				request.setAttribute("GIGAN1", GIGAN1);
+				request.setAttribute("GIGAN2", GIGAN2);
+				request.setAttribute("PURPOSE_CD", bugwaSearchBean.getPURPOSE_CD());
+				request.setAttribute("BONBUN", bugwaSearchBean.getBONBUN());
+				request.setAttribute("BUBUN", bugwaSearchBean.getBUBUN());
+				request.setAttribute("NAME", bugwaSearchBean.getNAME());
+				request.setAttribute("ADMINNO", bugwaSearchBean.getADMINNO());
+				request.setAttribute("SEQ", bugwaSearchBean.getSEQ());
+				
+				request.setAttribute("currentPage", String.valueOf(currentPage));
+				request.setAttribute("SECTION", SECTION);
+			}
+		}catch(Exception e){
+			System.out.println("error:"+e.toString());
+		}	
+		return new ModelAndView("/jumyong/saewe/view", "ADMIN_NO", ADMIN_NO);
+	}
+
+	
+	//	세외수입부과
+	public ModelAndView 	Saewesuipbugwa(HttpServletRequest request,HttpServletResponse response) throws Exception 
+	{
+		try{
+			
+			System.out.println("!! 세외수입부과 ");
+			BugaWebControl	bugaWebControl	= new BugaWebControl();
+			
+			String 	ADMIN_NO	= ServletRequestUtils.getStringParameter(request, "ADMIN_NO", "");
+			String 	SEQ			= ServletRequestUtils.getStringParameter(request, "SEQ", "");
+			
+			System.out.println("!! Saewesuipbugwa " + ADMIN_NO + ", " + SEQ);
+			
+			//	데이터를 가져온다.
+			List	list 	= iSaeweService.executeBugwa_View(ADMIN_NO, SEQ);
+			
+			String	message	= "";
+			String	TAX_YN	= "";
+			String  admin_no = "";
+			String  result = "";	
+			
+			TaxationBean	Bean			= new TaxationBean();
+			TaxationBean	userInfoBean	= new TaxationBean();
+			BugaRegistBean	bugaRegistBean	= new BugaRegistBean();
+	
+			if(list.size()	>	0)
+			{
+				Bean	= (TaxationBean)list.get(0);
+				
+				if(Bean.getTAX_YN() == null){
+					Bean.setTAX_YN("0");//String.valueOf(list.get(0));
+				}
+				
+				if(!Bean.getTAX_YN().trim().equals("1"))	//	부과가 안 되있으면..
+				{
+					String user_id = util.getSessionID(request, "sessionUserId");	
+					String bugwa_id = iSaeweService.executeBugwa_Id(user_id);
+
+					userInfoBean	= bugaWebControl.getUserInfo(bugwa_id);				//사용자정보조회
+					
+					if(userInfoBean != null)
+					{
+						
+		
+						if(Bean.getDEPT_CD().equals(userInfoBean.getDEPT_CD()) && Bean.getSIGU_CD().equals(userInfoBean.getSIGU_CD()))
+						{
+							String ret;
+							if(Long.parseLong(Bean.getSUM_ADJUST()) < 2000 && Bean.getTYPE_NM() !="도로"){
+								ret = "하천실패";
+							}else if(Long.parseLong(Bean.getSUM_ADJUST()) < 5000 && Bean.getTYPE_NM() =="도로"){
+								ret = "도로실패";
+							}else{
+								ret = "통과";
+							}
+								if(ret.equals("통과")){						
+									bugaRegistBean	= bugaWebControl.insertBugaRegist(Bean, request, bugwa_id, commonCode);
+									if(bugaRegistBean != null && bugaRegistBean.getErrorMsg()== null)	//	부과 성공
+									{
+											if(bugaRegistBean.getInsertKey().equals("") || bugaRegistBean.getInsertKey() == null)
+											{
+												message = "과세번호생성에 실패하였습니다.";
+											}
+											else
+											{
+												iSaeweService.SaeweSuipBugwa_Taxation_Info(ADMIN_NO, SEQ, bugaRegistBean.getInsertKey());
+												//iSaeweService.SaeweSuipBugwa_Admin_Base(ADMIN_NO, SEQ);
+												result = "1";
+												message	= "부과 되었습니다.";	//	부과성공
+											}
+									}
+									else
+									{
+										message	= "부과등록에 실패하였습니다";
+										message += "\n"+bugaRegistBean.getErrorMsg();
+										result = "0";
+									}
+									iSysConnectService.Sys_Connect_Info(ADMIN_NO,"2",user_id, "1",result);	//연계이력등록
+								
+								}else{
+									if(ret.equals("하천실패")){
+										message = "하천/구거는  점용료가 2천원 미만인 경우에는 부과하지 않습니다.";
+									}else{
+										message = "제42조에 따라 감면료를 제외한, 점용료가 5천원 미만인 경우에는 부과하지 않습니다.";
+									}
+								}
+						}
+						else
+							message = "시구코드/부서코드 불일치";  // 시구코드,부서코드 불일치
+					}
+					else
+						message = "사용자정보조회실패";   //사용자정보조회 실패
+				}
+				else
+					message	= "부과된 정보입니다.";	//	부과되어있음
+			}
+			else
+				message	= "부과가능한 내역이 없습니다.";	//	데이터 없음
+			
+			response.setCharacterEncoding("EUC-KR");
+			response.getWriter().write(message);
+			//request.setAttribute("SAEWESUIPBUGWA", message);
+			
+		}catch(Exception e){
+			System.out.println("error:"+e.toString());
+		}
+		
+		return null;
+	}
+	
+	//	세외수입부과_일괄
+	public ModelAndView 	Saewesuipbugwa_Ilgwal(HttpServletRequest request,HttpServletResponse response) throws Exception 
+	{
+		String	message	= "0";
+		
+		try
+		{
+			System.out.println("!! 세외수입부과 _일괄");
+			
+			//	세션에서 시도 코드를 가져온다.
+			String	SIDO_CD	= util.getSidoCode(getMessageSourceAccessor());
+			String user_id = util.getSessionID(request, "sessionUserId");	
+			
+			//	관리자 데이터를 가져온다.
+			UserBean	userBean	= new UserBean();
+			
+			try{
+				userBean	= commonCode.executeUserSearch(util.getSessionID(request, "sessionUserId"));
+			}
+			catch (Exception e){
+				String errReason = e.toString();
+				System.out.println(errReason);
+			}
+			
+			//	현재 년도
+			SimpleDateFormat	formatter 	= new SimpleDateFormat("yyyy-MM-dd", Locale.KOREA );
+			Calendar 			cal 		= Calendar.getInstance();
+			String	today		= formatter.format(cal.getTime());
+			cal.add(Calendar.DATE, -6);
+			String	beforeDay		= formatter.format(cal.getTime());
+			
+			String 	GIGAN1 		= ServletRequestUtils.getStringParameter(request, "GIGAN1", beforeDay);
+			String 	GIGAN2 		= ServletRequestUtils.getStringParameter(request, "GIGAN2", today);
+			
+			BugwaSearchBean	bugwaSearchBean	= new BugwaSearchBean();
+			
+			bind(request, bugwaSearchBean);
+			
+			bugwaSearchBean.setSIDO(SIDO_CD);
+			bugwaSearchBean.setSIGUNGU(userBean.getSIGU_CD());
+			
+			bugwaSearchBean.setGIGAN1(util.Date_Cut(GIGAN1));
+			bugwaSearchBean.setGIGAN2(util.Date_Cut(GIGAN2));
+			
+			System.out.println("LIST 를 가져오기 전 ...");
+			//	검색한 데이터를 가져온다.
+			List		list	= iSaeweService.executeSearch_Ilgwal(bugwaSearchBean);
+			System.out.println("LIST 를 가져온 후...");
+			String  admin_no = "";
+			String  result = "";	
+			String  seq = "";
+			int  reqCount = 0;
+			int  failCount = 0;
+			
+			TaxationBean	Bean			= new TaxationBean();
+			BugaRegistBean	bugaRegistBean	= new BugaRegistBean();	
+			BugaWebControl	bugaWebControl	= new BugaWebControl();
+			
+			if(list.size()	>	0)
+			{
+				String bugwa_id = "";
+				System.out.println("for문 시작~!!!!!!!!!!!!!!!!!!!!!!!!!!");
+				for(int i=0; i < list.size(); i++)
+				{
+					System.out.println("########## list.size() == > " + list.size());
+					
+					Bean	= (TaxationBean)list.get(i);
+					admin_no = Bean.getADMIN_NO();
+					seq = Bean.getSEQ();
+					//	String user_id = "1111111400049";
+					bugwa_id = iSaeweService.executeBugwa_Id(user_id);
+	//				System.out.println("user_id ==> " + user_id);
+	//				System.out.println("bugwa_id ==> " + bugwa_id);
+					
+						bugaRegistBean	= bugaWebControl.insertBugaRegist(Bean, request, bugwa_id, commonCode);
+					
+						if(bugaRegistBean != null && bugaRegistBean.getErrorMsg()== null)	//	부과 성공
+						{	
+							if(bugaRegistBean.getInsertKey().equals("") || bugaRegistBean.getInsertKey() == null)
+							{
+								message = "과세번호생성에 실패하였습니다.";
+							}
+							else
+							{
+		//						System.out.println("admin_no="+admin_no+"::seq="+seq+"::InsertKey="+ bugaRegistBean.getInsertKey());
+								iSaeweService.SaeweSuipBugwa_Taxation_Info(admin_no, seq, bugaRegistBean.getInsertKey());
+								//iSaeweService.SaeweSuipBugwa_Admin_Base(admin_no, seq);
+								result = "1";
+								message	= "부과 되었습니다.";	//	부과성공
+								reqCount++;
+							}
+						}
+						else
+						{	
+							message	= "부과등록에 실패하였습니다";
+							message += "\n"+bugaRegistBean.getErrorMsg();
+							result = "0";
+							failCount++;
+						}
+					System.out.println("########## 부과동록 순번 == > " + i);
+					iSysConnectService.Sys_Connect_Info(admin_no,"2",user_id, "1",result);	//연계이력등록
+				}
+				System.out.println("for문 종료~!!!!!!!!!!!!!!!!!!!!!!!!!!");
+				if(reqCount != 0 && list.size() != reqCount)
+					message = "부과등록중 실패한건이 있습니다.";
+			}
+			else
+				message	= "부과가능한 내역이 없습니다.";	//	데이터 없음
+			
+			if(reqCount > 0 || failCount > 0)
+				message += "\n성공:"+ reqCount + "건  " +"실패:"+failCount+ "건";
+			
+		}
+		catch(Exception e){
+			System.out.println("error:"+e.toString());
+		}
+		
+		return Search( request, response, message);
+	}
+
+	// 정기분 일괄부과
+	public ModelAndView 	Saewesuipbugwa_Ilgwal_junggi(HttpServletRequest request,HttpServletResponse response) throws Exception 
+	{
+		String	message	= "0";
+		String param = "";
+		
+		try
+		{
+			System.out.println("!! 정기분 세외수입부과 _일괄");
+			
+			//	세션에서 시도 코드를 가져온다.
+			String	SIDO_CD	= util.getSidoCode(getMessageSourceAccessor());
+			String user_id = util.getSessionID(request, "sessionUserId");	
+			
+			//	관리자 데이터를 가져온다.
+			UserBean	userBean	= new UserBean();
+			
+			try{
+				userBean	= commonCode.executeUserSearch(util.getSessionID(request, "sessionUserId"));
+			}
+			catch (Exception e){
+				String errReason = e.toString();
+				System.out.println(errReason);
+			}
+			
+			//	현재 년도
+			SimpleDateFormat	formatter 	= new SimpleDateFormat("yyyy-MM-dd", Locale.KOREA );
+			Calendar 			cal 		= Calendar.getInstance();
+			String	today		= formatter.format(cal.getTime());
+			cal.add(Calendar.DATE, -6);
+			String	beforeDay		= formatter.format(cal.getTime());
+			String thisYear = today.substring(0,4);
+			
+			String sigu_cd = userBean.getSIGU_CD();			 
+			String strCurrentPage = ServletRequestUtils.getStringParameter(request, "currentPage", Globals.DEFAULT_CURRENT_PAGE);
+			String year = ServletRequestUtils.getStringParameter(request,"YEAR", "");
+			String type = ServletRequestUtils.getStringParameter(request,"TYPE","");
+			String tax_set = ServletRequestUtils.getStringParameter(request,"TAX_SET","");
+			String tax_yn = ServletRequestUtils.getStringParameter(request,"TAX_YN","");
+			String mul_fromdate = ServletRequestUtils.getStringParameter(request,"mul_fromdate",thisYear+"-01-01");
+			String mul_todate = ServletRequestUtils.getStringParameter(request,"mul_todate",thisYear+"-12-31");
+			String purpose = ServletRequestUtils.getStringParameter(request,"PURPOSE_CD","");
+			String bj_cd = ServletRequestUtils.getStringParameter(request,"BJ_CD", "");
+			String hj_cd = ServletRequestUtils.getStringParameter(request,"HJ_CD", "");
+			String jumyongName = ServletRequestUtils.getStringParameter(request,"jumyongName","");
+			String cal_status = ServletRequestUtils.getStringParameter(request,"cal_status","");
+			String SECTION = ServletRequestUtils.getStringParameter(request,"SECTION","");
+			String search = ServletRequestUtils.getStringParameter(request,"search","0");
+			
+			// 날짜 검색 있을시 '-' 제거 
+			if(mul_fromdate != null && !"".equals(mul_fromdate) ) {
+				mul_fromdate = util.Date_Cut(mul_fromdate);
+			}
+			if(mul_todate != null && !"".equals(mul_todate) ) {
+				mul_todate = util.Date_Cut(mul_todate);
+			}
+			request.setAttribute("use_type", commonCode.executeCommonCode("use_type", type, "전체"));		
+			request.setAttribute("taxation_section", commonCode.executeCommonCode("taxation_section", tax_set, "전체"));
+			request.setAttribute("taxation_yn", commonCode.executeCommonCode("taxation_yn", tax_yn, "전체"));
+			request.setAttribute("bjdong_code", commonCode.CommonBJDongCodeSearch(SIDO_CD, userBean.getSIGU_CD(), bj_cd));	//	법정동
+			request.setAttribute("hjdong_code", commonCode.CommonHJDongCodeSearch(SIDO_CD, userBean.getSIGU_CD(), hj_cd));	//	행정동
+			request.setAttribute("cal_status", commonCode.executeCommonCode("cal_status", cal_status, "전체"));
+			request.setAttribute("tax_yn", tax_yn);
+			request.setAttribute("currentPage", strCurrentPage);
+			request.setAttribute("year", year);
+			request.setAttribute("mul_fromdate", util.Date_Paste(mul_fromdate));
+			request.setAttribute("mul_todate", util.Date_Paste(mul_todate));
+			request.setAttribute("TYPE", type);
+			request.setAttribute("PURPOSE_CD", purpose);
+			request.setAttribute("jumyongName", jumyongName);
+			request.setAttribute("SECTION", SECTION);
+			request.setAttribute("search", search);
+			
+			param = "currentPage="+strCurrentPage+"&year="+year+"&type="+type+"&tax_set="+tax_set+"&tax_yn="+tax_yn+"&mul_fromdate="+util.Date_Paste(mul_fromdate)+"&mul_todate="+util.Date_Paste(mul_todate)
+					+"&purpose_cd="+purpose+"&bj_cd="+bj_cd+"&hj_cd="+hj_cd+"&jumyongName="+jumyongName+"&cal_status="+cal_status+"&SECTION="+SECTION+"&search="+search;
+			
+			System.out.println("LIST 를 가져오기 전 ...");
+			//	검색한 데이터를 가져온다.
+			List list = iSaeweService.executeSearch_Ilgwal_junggi(sigu_cd, year,  type,  tax_set,  tax_yn,  mul_fromdate, mul_todate, purpose, bj_cd, hj_cd, jumyongName, cal_status, SECTION);
+			System.out.println("LIST 를 가져온 후...");
+			
+			String  admin_no = "";
+			String  result = "";	
+			String  seq = "";
+			int  reqCount = 0;
+			int  failCount = 0;
+			
+			TaxationBean	Bean			= new TaxationBean();
+			BugaRegistBean	bugaRegistBean	= new BugaRegistBean();	
+			BugaWebControl	bugaWebControl	= new BugaWebControl();
+			
+			System.out.println("########## list.size() == > " + list.size());
+			if(list.size()	>	0)
+			{
+				String bugwa_id = "";
+				
+				System.out.println("for문 시작~!!!!!!!!!!!!!!!!!!!!!!!!!!");
+				for(int i=0; i < list.size(); i++)
+				{
+					
+					Bean	= (TaxationBean)list.get(i);
+					admin_no = Bean.getADMIN_NO();
+					seq = Bean.getSEQ();
+					//	String user_id = "1111111400049";
+					bugwa_id = iSaeweService.executeBugwa_Id(user_id);
+					System.out.println("user_id ==> " + user_id);
+					System.out.println("bugwa_id ==> " + bugwa_id);
+					
+					
+					String ret;
+					if(Long.parseLong(Bean.getSUM_ADJUST()) < 2000 && Bean.getTYPE_NM() !="도로"){
+						ret = "하천실패";
+					}else if(Long.parseLong(Bean.getSUM_ADJUST()) < 5000 && Bean.getTYPE_NM() =="도로"){
+						ret = "도로실패";
+					}else{
+						ret = "통과";
+					}
+						if(ret.equals("통과")){
+						
+							bugaRegistBean	= bugaWebControl.insertBugaRegist(Bean, request, bugwa_id, commonCode);
+							
+							if(bugaRegistBean != null && bugaRegistBean.getErrorMsg()== null)	//	부과 성공
+							{	
+								if(bugaRegistBean.getInsertKey().equals("") || bugaRegistBean.getInsertKey() == null)
+								{
+									message = "과세번호생성에 실패하였습니다.";
+								}
+								else
+								{
+									//System.out.println("admin_no="+admin_no+"::seq="+seq+"::InsertKey="+ bugaRegistBean.getInsertKey());
+									iSaeweService.SaeweSuipBugwa_Taxation_Info(admin_no, seq, bugaRegistBean.getInsertKey());
+									result = "1";
+									message	= "부과 되었습니다.";	//	부과성공
+									reqCount++;
+								}
+							}
+							else
+							{	
+								message	= "부과등록에 실패하였습니다.  " + bugaRegistBean.getErrorMsg();
+								//message += "\n"+bugaRegistBean.getErrorMsg();
+								result = "0";
+								failCount++;
+							}
+							
+						}else{
+							if(ret.equals("하천실패")){
+								message = "하천/구거일 경우 점용료가 2천원 미만인 경우에는 부과하지 않습니다.";
+								result = "0";
+								failCount++;
+							}else{
+								message = "제42조에 따라 감면료를 제외한, 점용료가 5천원 미만인 경우에는 부과하지 않습니다.";
+								result = "0";
+								failCount++;
+							}
+						}
+						
+
+					System.out.println("########## 부과등록 순번 == > " + i);
+					iSysConnectService.Sys_Connect_Info(admin_no,"2",user_id, "1",result);	//연계이력등록
+					
+
+				}
+				System.out.println("for문 종료~!!!!!!!!!!!!!!!!!!!!!!!!!!");
+				
+				if(reqCount != 0 && list.size() != reqCount){
+					message = "부과등록중 실패한건이 있습니다. (성공:"+ reqCount + "건  " +"실패:"+failCount+ "건)";
+				}else if(reqCount != 0 && list.size() != reqCount){
+					message = "부과등록이 모두 성공하였습니다.(성공:"+reqCount+"건 )";
+				
+				}
+					
+			}
+			else
+				message	= "부과가능한 내역이 없습니다.";	//	데이터 없음
+			
+			//if(reqCount > 0 || failCount > 0)
+				//message += "\n성공:"+ reqCount + "건  " +"실패:"+failCount+ "건";
+				
+		}
+		catch(Exception e){
+			System.out.println("error:"+e.toString());
+		}
+		System.out.println(" message === " + message);
+		return new ModelAndView("redirect:/jumyong/junggi/search.do?"+param+"&message="+message);
+	}
+
+}

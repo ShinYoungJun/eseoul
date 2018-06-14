@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+                       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<bean id="methodNameResolver_Rojum_Jumyonginfo" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+ 		<property name="mappings">
+ 			<props>				
+				<prop key="/rojum/jumyonginfo/unyong_view.do">Unyong_View</prop>
+				<prop key="/rojum/jumyonginfo/unyong_modify.do">Unyong_Modify</prop>
+				<prop key="/rojum/jumyonginfo/unyong_modify_prc.do">Unyong_Modify_Prc</prop>
+				
+				<prop key="/rojum/jumyonginfo/jumji_view.do">Jumji_View</prop>
+				<prop key="/rojum/jumyonginfo/jumji_modify.do">Jumji_Modify</prop>
+				<prop key="/rojum/jumyonginfo/jumji_modify_prc.do">Jumji_Modify_Prc</prop>
+				
+				<prop key="/rojum/jumyonginfo/get_ft_cat.do">Get_FT_CAT</prop>
+				<prop key="/rojum/jumyonginfo/get_ft_sel.do">Get_FT_SEL</prop>
+				<prop key="/rojum/jumyonginfo/get_ft_typ.do">Get_FT_TYP</prop>
+				
+				
+				
+			</props>
+ 		</property>
+ 	</bean>
+ 	
+ 	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+ 		<property name="mappings">
+ 			<props>
+				<prop key="/rojum/jumyonginfo/unyong_view.do">rojum_jumyonginfoControl_unyong</prop>
+				<prop key="/rojum/jumyonginfo/unyong_modify.do">rojum_jumyonginfoControl_unyong</prop>
+				<prop key="/rojum/jumyonginfo/unyong_modify_prc.do">rojum_jumyonginfoControl_unyong</prop>
+				
+				<prop key="/rojum/jumyonginfo/jumji_view.do">rojum_jumyonginfoControl_jumji</prop>
+				<prop key="/rojum/jumyonginfo/jumji_modify.do">rojum_jumyonginfoControl_jumji</prop>
+				<prop key="/rojum/jumyonginfo/jumji_modify_prc.do">rojum_jumyonginfoControl_jumji</prop>
+				
+				<prop key="/rojum/jumyonginfo/get_ft_cat.do">rojum_jumyonginfoControl_jumji</prop>
+				<prop key="/rojum/jumyonginfo/get_ft_sel.do">rojum_jumyonginfoControl_jumji</prop>
+				<prop key="/rojum/jumyonginfo/get_ft_typ.do">rojum_jumyonginfoControl_jumji</prop>
+				
+ 			</props>
+ 		</property>
+ 	</bean>
+
+	<bean id="rojum_jumyonginfoControl_unyong" class="main.java.rojum.jumyonginfo.web.TabUnyong_Control">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Rojum_Jumyonginfo"/></property>
+		<property name="rojum_jumyonginfoService" ref="rojum_jumyonginfoService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+	<bean id="rojum_jumyonginfoControl_jumji" class="main.java.rojum.jumyonginfo.web.TabJumji_Control">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Rojum_Jumyonginfo"/></property>
+		<property name="rojum_jumyonginfoService" ref="rojum_jumyonginfoService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+
+ 	<bean id="rojum_jumyonginfoService" class="main.java.rojum.jumyonginfo.service.JumyonginfoService">
+ 		<property name="rojum_jumyonginfoDao" ref="rojum_jumyonginfoDao"/>
+ 	</bean>
+ 	<bean id="rojum_jumyonginfoDao" parent="roadsJdbcDaoSupport" class="main.java.rojum.jumyonginfo.dao.JumyonginfoDao"/>
+ 	
+</beans>

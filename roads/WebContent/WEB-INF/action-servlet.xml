@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+                       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+ <!--  Board Module Controller -->
+	<bean class="main.java.common.web.CommonControl" name="/**/*.htm"/>
+	<bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping" id="handlerMapping"/>
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" id="viewResolver">
+		<property name="viewClass">
+			<value>org.springframework.web.servlet.view.JstlView</value>
+		</property>
+		<property name="cache" value="false"/>
+		<property name="prefix" value="/jsp"/>
+		<property name="suffix" value=".jsp"/>
+	</bean>
+	<bean class="org.springframework.web.multipart.commons.CommonsMultipartResolver" id="multipartResolver">
+		<property name="maxUploadSize">
+			<value>100000000</value>
+		</property>
+		<property name="uploadTempDir" ref="uploadDirResource"/>
+	</bean>
+	<bean class="org.springframework.core.io.FileSystemResource" id="uploadDirResource">
+		<constructor-arg>
+			<value>C:/roads/filedown</value>
+		</constructor-arg>
+	</bean>
+	<bean class="org.springframework.context.support.ResourceBundleMessageSource" id="messageSource">
+		<property name="basename" value="Messages"/>
+	</bean>
+</beans>

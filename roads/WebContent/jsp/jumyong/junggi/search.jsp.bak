@@ -1,0 +1,717 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<%@ include file="/jsp/common/include.jsp" %>
+<%@ include file="/jsp/common/loginCheck.jsp" %>
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+<title>::::: 서울시 도로점용관리시스템 :::::</title>
+<style type="text/css">
+<!--
+body {
+	margin: 0px;
+	background-image: url(/img/left_back.gif);
+}
+-->
+</style>
+<link href="/css/roads.css" rel="stylesheet" type="text/css">
+<script language="javascript" src="/js/PopupCalendar.js"></script> 
+<script>
+
+	function checkKeySearch()
+	{
+		if(event.keyCode == 13) goSearch();
+	}
+	
+	// 조회
+	function goSearch()
+	{
+
+		var year = document.getElementById("YEAR").value;
+		var type = document.getElementById("TYPE").value;
+		var tax_set = document.getElementById("TAX_SET").value;
+		var tax_yn = document.getElementById("TAX_YN").value;		
+		var mul_fromdate = document.getElementById("mul_fromdate").value;
+		var mul_todate = document.getElementById("mul_todate").value;
+		var bj_cd = document.getElementById("BJ_CD").value;
+		var hj_cd = document.getElementById("HJ_CD").value;
+		var jumyongName = document.getElementById("jumyongName").value;
+		var cal_status = document.getElementById("cal_status").value;
+		var section = document.getElementById("SECTION").value;
+
+		if( year == ''){
+			alert("부과년도를 입력하세요. ");
+			document.getElementById("YEAR").focus();
+			return;
+		}
+		if( mul_fromdate == ''){
+			alert("사용부과기간을 입력하세요. ");
+			document.getElementById("mul_fromdate").focus();
+			return;
+		}
+		if( mul_todate == ''){
+			alert("사용부과기간을 입력하세요. ");
+			document.getElementById("mul_todate").focus();
+			return;
+		}
+		/*if( section == ''){
+			alert("점용구분을 선택하세요. ");
+			document.getElementById("SECTION").focus();
+			return;
+		}
+		if( type == ''){
+			alert("지목을 선택하세요. ");
+			document.getElementById("TYPE").focus();
+			return;
+		}
+		if( tax_set == ''){
+			alert("세입구분을 선택하세요. ");
+			document.getElementById("TAX_SET").focus();
+			return;
+		}
+		if( tax_yn == ''){
+			alert("부과여부를 선택하세요. ");
+			return;
+		}
+		if( bj_cd == ''){
+			alert("법정동을을 선택하세요. ");
+			return;
+		}
+		if( jumyongName == ''){
+			alert("점용인을 입력하세요. ");
+			return;
+		}*/
+		//var tax_yn = document.getElementById("tax_yn").value;				
+		//var numberValue = document.getElementById("numberValue").value;		
+		//var bonbun = document.getElementById("BONBUN").value;
+		//var bubun = document.getElementById("BUBUN").value;
+		
+		var iFrm = document.getElementById("IFRM_PurposeCode");
+		var purpose = iFrm.contentWindow.document.getElementById("PURPOSE_CD").value;
+		var purpose1 = iFrm.contentWindow.document.getElementById("PURPOSE1");
+			
+		if(purpose1[purpose1.selectedIndex].text == "::선택::")
+			purpose="";
+		
+		if(type.length==0)		//점용종류가 선택이 안되면 점용목적은 선택되지 않도록 purpose값을 지정 
+			purpose="";
+		/*
+		if( purpose == ''){
+			alert("점용목적을 선택하세요. ");
+			document.getElementById("IFRM_PurposeCode").focus();
+			return;
+		}*/
+				
+		location.href="/jumyong/junggi/search.do?year="+year+"&type="+type+"&tax_set="+tax_set+"&tax_yn="+tax_yn+"&mul_fromdate="+mul_fromdate+"&mul_todate="+mul_todate
+			"&purpose_cd="+purpose+"&bj_cd="+bj_cd+"&hj_cd="+hj_cd+"&jumyongName="+jumyongName+"&cal_status="+cal_status+"&SECTION="+section+"&search=1";
+
+	}
+	
+	function InitPage()
+	{
+	
+		//setYear();
+		var now = new Date();
+		var day=now.getDay();
+		day = 1 - day;				
+		Date.prototype.addDate = add_date; // Date 객체에 메서드 정의
+		
+		var fromDate = new Date(); // 현재 날짜 객체 생성
+		
+		fromDate.addDate(day); // 
+		
+		var toDate =   document.getElementById("toDateValue").value ;
+		var fromDate =   document.getElementById("fromDateValue").value ;
+		var jumyongName =   document.getElementById("jumyongNameValue").value ;
+		var numberValue =   document.getElementById("numberValueValue").value ;
+		var search_flag =   document.getElementById("search_flag").value ;
+
+
+		if(toDate != "" && toDate !="99999999" )
+			document.getElementById("searchToDate").value = addDash(toDate);
+
+		if(fromDate != "" && fromDate != "0")		
+			document.getElementById("searchFromDate").value = addDash(fromDate);
+			
+			
+		
+
+		if(jumyongName != "")				
+			document.getElementById("jumyongName").value = jumyongName;
+			
+		//if(numberValue != "")						
+		//	document.getElementById("numberValue").value = numberValue;
+
+		if(document.getElementById("PURPOSE_CD").value.length<1){
+			document.getElementById("IFRM_PurposeCode").src="/jsp/common/purposeCode/purposeCode2.jsp?SectionCode="+document.getElementById("TYPE").value+"&PURPOSE_CD=000"+"&search_flag="+search_flag;
+		}
+	}
+	
+	
+	function getDateType1(date1)
+	{
+		var year= date1.getFullYear();
+	    var mon = (date1.getMonth()+1)>9 ? ''+(date1.getMonth()+1) : '0'+(date1.getMonth()+1);
+	    var day = date1.getDate()>9 ? ''+date1.getDate() : '0'+date1.getDate();
+		
+		return (year+"-"+mon+"-"+day);
+	}
+	
+	
+	
+	function add_date(i) // 매서드가 될 함수 구현
+	{
+	   var currentDate; // 계산된 날
+	   currentDate = this.getDate() + i*1; // 현재 날짜에 더해(빼)줄 날짜를 계산
+	   this.setDate(currentDate); // 계산된 날짜로 다시 세팅
+	}
+	
+	function removeDash(num)
+	{	
+		return num.split('-').join("");
+	}
+	
+	function addDash(num)
+	{
+		return (num.substr(0,4)+"-"+num.substr(4,2)+"-"+num.substr(6,2));
+	}
+	
+	function setYear()
+	{
+		now = new Date();
+		Y = now.getYear();
+		
+		var strYear = document.getElementById("yearVal").value;
+
+		for(var i = 0 ; i < 10 ; i++){
+			  newItem = new Option(i);
+			  document.getElementById("YEAR").options[i]  = newItem;
+			  document.getElementById("YEAR").options[i].text = Y-i;
+			  document.getElementById("YEAR").options[i].value = Y-i;
+			  if(strYear == Y-i) document.getElementById("YEAR").options[i].selected = true;
+		} 	
+	}
+	
+	
+	function addOption(startNum,endNum,idVal,selectedVal)
+	{
+		for(var i = startNum ; i < endNum ; i++){
+			  newItem = new Option(i);
+			  document.getElementById(idVal).options[i]  = newItem;
+			  document.getElementById(idVal).options[i].text = Y-i;
+			  document.getElementById(idVal).options[i].value = Y-i;
+			  if(i == 0) document.getElementById("YEAR").options[i].selected = true;
+		} 	
+	
+	}
+	/*
+	 *	통합검색 key down function (엔터키가 입력되면 검색함수 호출)
+	 */
+	function checkKeySearch(){
+		if(event.keyCode == "13")
+			goSearch();
+	}
+	
+	// 점용 종류 선택시 점용 목적 코드 나오게 함.
+	function	Select_UseType(sel)
+	{
+//		document.getElementById("UseType1").style.display = "none";
+//		document.getElementById("UseType2").style.display = "none";
+		
+//		if(sel.value == '2' || sel.value == '3')	
+//			document.getElementById("UseType2").style.display = "block";	//	하천, 구거
+//		else						
+//			document.getElementById("UseType1").style.display = "block";	//	도로		
+
+		document.getElementById("IFRM_PurposeCode").src="/jsp/common/purposeCode/purposeCode2.jsp?SectionCode="+sel.value;
+	}
+	
+	
+	function goView(adminVal,year,purpose_cd)
+	{
+		//var year = document.getElementById("YEAR").value;
+		var type = document.getElementById("TYPE").value;
+		var tax_set = document.getElementById("TAX_SET").value;
+		var tax_yn = document.getElementById("TAX_YN").value;		
+		var mul_fromdate = document.getElementById("mul_fromdate").value;
+		var mul_todate = document.getElementById("mul_todate").value;
+		var iFrm = document.getElementById("IFRM_PurposeCode");
+		var purpose_search = iFrm.contentWindow.document.getElementById("PURPOSE_CD").value;
+		var bj_cd = document.getElementById("BJ_CD").value;
+		var hj_cd = document.getElementById("HJ_CD").value;
+		var jumyongName = document.getElementById("jumyongName").value;
+		var cal_status = document.getElementById("cal_status").value;
+		var section = document.getElementById("SECTION").value;
+		
+		location.href="/jumyong/junggi/view.do?ADMIN_NO="+adminVal+"&year="+year+"&purpose_cd="+purpose_cd+"&type="+type+"&tax_set="+tax_set+"&tax_yn="+tax_yn+"&mul_fromdate="+mul_fromdate+"&mul_todate="+mul_todate+
+					"&bj_cd="+bj_cd+"&hj_cd="+hj_cd+"&jumyongName="+jumyongName+"&cal_status="+cal_status+"&SECTION="+section+"&search=1&purpose_search="+purpose_search;
+
+	}
+	
+	// 부과년도 검색 셋팅
+	function change_value(val)
+	{
+		if(val.value.length == 4)
+		{	
+			
+			document.jumyongForm.mul_fromdate.value = val.value + "-01-01";
+			document.jumyongForm.mul_todate.value = val.value + "-12-31";
+						
+		}	
+	}
+	
+	
+	function	Page(page)
+	{
+		if(page	==	"")
+			return;
+		
+		var form = document.jumyongForm;
+		
+		var year = document.getElementById("YEAR").value;
+		var type = document.getElementById("TYPE").value;
+		var tax_set = document.getElementById("TAX_SET").value;
+		var tax_yn = document.getElementById("TAX_YN").value;		
+		var mul_fromdate = document.getElementById("mul_fromdate").value;
+		var mul_todate = document.getElementById("mul_todate").value;
+		var iFrm = document.getElementById("IFRM_PurposeCode");
+		var purpose = iFrm.contentWindow.document.getElementById("PURPOSE_CD").value;
+		var bj_cd = document.getElementById("BJ_CD").value;
+		var hj_cd = document.getElementById("HJ_CD").value;
+		var jumyongName = document.getElementById("jumyongName").value;
+		var cal_status = document.getElementById("cal_status").value;
+		var section = document.getElementById("SECTION").value;
+		var search = document.getElementById("search").value;
+		
+		form.currentPage.value	= page;
+		//alert(tax_set);
+		//form.action = "search.do?year="+year+"&type="+type+"&tax_set="+tax_set+"&tax_yn="+tax_yn+"&mul_fromdate="+mul_fromdate
+		//										+"&mul_todate="+mul_todate+"&purpose_cd="+purpose+"&bj_cd="+bj_cd+"&jumyongName="+jumyongName+"&cal_status="+cal_status;
+		//form.submit();
+		location.href="search.do?currentPage="+page+"&year="+year+"&type="+type+"&tax_set="+tax_set+"&tax_yn="+tax_yn+"&mul_fromdate="+mul_fromdate+"&mul_todate="+mul_todate+
+						"&purpose_cd="+purpose+"&bj_cd="+bj_cd+"&hj_cd="+hj_cd+"&jumyongName="+jumyongName+"&cal_status="+cal_status+"&SECTION="+section+"&search="+search;
+	}
+	
+
+	// 엑셀변환
+	function	excel_Search()
+	{
+		var form = document.jumyongForm;
+
+		
+		var year = document.getElementById("YEAR").value;
+		var type = document.getElementById("TYPE").value;
+		var tax_set = document.getElementById("TAX_SET").value;
+		var tax_yn = document.getElementById("TAX_YN").value;		
+		var mul_fromdate = document.getElementById("mul_fromdate").value;
+		var mul_todate = document.getElementById("mul_todate").value;
+		var iFrm = document.getElementById("IFRM_PurposeCode");
+		var purpose = iFrm.contentWindow.document.getElementById("PURPOSE_CD").value;
+		var bj_cd = document.getElementById("BJ_CD").value;
+		var hj_cd = document.getElementById("HJ_CD").value;
+		var jumyongName = document.getElementById("jumyongName").value;
+		var cal_status = document.getElementById("cal_status").value;
+		var section = document.getElementById("SECTION").value;
+		
+		var purpose1 = iFrm.contentWindow.document.getElementById("PURPOSE1");
+			
+		if(purpose1[purpose1.selectedIndex].text == "::선택::")
+			purpose="";
+		
+		//location.href="/jumyong/junggi/search.do?year="+year+"&type="+type+"&tax_set="+tax_set+"&tax_yn="+tax_yn+"&mul_fromdate="+mul_fromdate
+		//				+"&mul_todate="+mul_todate+"&purpose_cd="+purpose+"&bj_cd="+bj_cd+"&jumyongName="+jumyongName+"&cal_status="+cal_status;
+		
+		
+		//form.currentPage.value	= 1;
+		//form.action = "excel_search.do";
+		//form.submit();
+		location.href= "/jumyong/junggi/excel_search.do?currentPage=1&year="+year+"&type="+type+"&tax_set="+tax_set+"&tax_yn="+tax_yn+"&mul_fromdate="+mul_fromdate+"&mul_todate="+mul_todate+
+						"&purpose_cd="+purpose+"&bj_cd="+bj_cd+"&hj_cd="+hj_cd+"&jumyongName="+jumyongName+"&cal_status="+cal_status+"&SECTION="+section+"&search=1";
+	}
+
+	// 일괄 부과하기
+	function SaeweSuipBugwa_Ilgwal()
+	{
+		var form = document.jumyongForm;
+		var year = document.getElementById("YEAR").value;
+		var type = document.getElementById("TYPE").value;
+		
+		if(form.TOTALCNT.value <= 0){
+			alert("일괄처리할 데이터가 없습니다. ");
+			return;
+		}
+		
+		if(!confirm("일괄처리 하시겠습니까?"))
+			return;
+		
+		form.action = "/jumyong/saewe/saeweSuipBugwa_ilgwal_junggi.do?year="+year;
+		form.submit();
+	}
+	
+	//공시지가 일괄처리
+	function NowPriceApply(){
+		var winW = 500;
+		var winH = 430;
+		var status ="toolbar=no, location=no, directories=no, status=no, menubar=no, resizable=no, scrollbars=no, width="+winW+", height="+winH+", left=0, top=0"
+
+		var iFrm = document.getElementById("IFRM_PurposeCode");
+		
+		var year		= document.getElementById("YEAR").value;
+		var section		= document.getElementById("SECTION").value;
+		var type		= document.getElementById("TYPE").value;
+		var tax_set		= document.getElementById("TAX_SET").value;
+		var tax_yn		= document.getElementById("TAX_YN").value;
+		var fromdate	= document.getElementById("mul_fromdate").value;
+		var todate		= document.getElementById("mul_todate").value;
+		var purpose_cd	= iFrm.contentWindow.document.getElementById("PURPOSE_CD").value;
+		var bj_cd		= document.getElementById("BJ_CD").value;
+		var hj_cd		= document.getElementById("HJ_CD").value;
+		var jumyongName	= document.getElementById("jumyongName").value;
+
+		//var param = 'year='+year+'&SECTION='+section+'&type='+type+'&tax_set='+tax_set+'&tax_yn='+tax_yn+'&mul_fromdate='+fromdate
+		//            +'&mul_todate='+todate+'&purpose_cd='+purpose_cd+'&bj_cd='+bj_cd+'&hj_cd='+hj_cd+'&jumyongName='+jumyongName;
+		var param = 'year='+year+'&SECTION='+section+'&type='+type+'&tax_set='+tax_set+'&tax_yn='+tax_yn+'&mul_fromdate='+fromdate+'&mul_todate='+todate+'&purpose_cd='+purpose_cd+'&bj_cd='+bj_cd+'&hj_cd='+hj_cd+'&jumyongName='+jumyongName;
+		window.open('/jsp/jumyong/junggi/wait.jsp?'+param, 'win', status);
+		//window.open('/jumyong/junggi/landPriceAllAplly.do?'+param, 'win', status);
+	}
+
+
+	// 일괄 산출
+	function goCal(){
+
+		var f = document.jumyongForm;
+		var year = document.getElementById("YEAR").value;
+		
+		if(form.TOTALCNT.value <= 0){
+			alert("처리할 데이터가 없습니다. ");
+			return;
+		}
+		
+		if(!confirm("일괄산출 하시겠습니까?"))
+			return;
+
+		form.action = "/jumyong/junggi/junggiAllCal.do?year="+year;
+		form.submit();
+	}
+	
+</script>
+
+
+
+</head>
+
+<body onload="javascript:InitPage();">
+
+<form name="jumyongForm">
+
+<input type="hidden" name="search" value="${search }">
+<input name="toDateValue" id = "toDateValue" value="${toDate}" type="hidden">
+<input name="fromDateValue" id = "fromDateValue" value="${fromDate}" type="hidden">
+<input name="jumyongNameValue" id = "jumyongNameValue" value="${jumyongName}" type="hidden">
+<input name="numberValueValue" id = "numberValueValue" value="${numberValue}" type="hidden">
+<input name="yearVal" id = "yearVal" value="${year}" type="hidden">
+<input type="hidden" name="currentPage" value="${currentPage}">
+<input type="hidden" name="PURPOSE_CD" value="${PURPOSE_CD}">
+<input name="search" id="search" type="hidden" value="${search}">
+<input name="search_flag" id="search_flag" type="hidden" value="${search_flag}">
+<input type="hidden" name="TOTALCNT" value="${totalcnt}">
+<input type="hidden" name="gubun" value="junggi">
+
+<table width="800" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td height="43"><img src="/img/jumyong_junggi_title.gif" width="800" height="43"></td>
+  </tr>
+  <tr>
+    <td ><table width="780" border="0" cellspacing="0" cellpadding="0">
+      <!-- tr>
+        <td height="40" align="right">
+	
+		<table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="8" colspan="2"></td>
+            </tr>
+          <tr>
+            <td><a href="#"><img src="/img/report_icon.gif" alt="기안문 상신" width="92" height="18" border="0"></a></td>
+            <td><a href="#"><img src="/img/help_icon.gif" alt="도움말" width="65" height="18" border="0"></a></td>
+            </tr>
+        </table>
+			</td>
+      </tr-->
+      <tr>
+        <td height="1" bgcolor="eaeaea"></td>
+      </tr>
+      <tr>
+        <td height="14"></td>
+      </tr>     
+      <tr>
+        <td><table width="780" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td align="left" height="22" background="/img/tab_line_blue.gif">
+            <table border="0" cellspacing="0" cellpadding="0">
+                <tr >
+                  <td ><img src="/img/sub_petition_title15.gif" width="110" height="22"></td>
+                </tr>
+            </table></td>
+          </tr>
+		<tr>
+            <td  class="contborder_purple"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td><table width="100%" border="1" bordercolor="#c9dfed" style="border-collapse:collapse;" cellpadding="0" cellspacing="0"  class="sub_table">
+                    <tr>
+                      <td height="30" align="center" bgcolor="e5eff8" class="sub_table_b" >부과년도</td>
+                      <td bgcolor="eaeaea" class="table_bl_left" colspan="3">
+	                      <!-- select name="YEAR" id="YEAR" class="input_form1" style="width:130px"></select-->
+	                      <input type="text" name="YEAR" id="YEAR" class="input_form1" style="width:50px" maxlength="4" value="${year}" onKeyUp="change_value(this)"> 년
+					  </td>
+					 </tr>
+					 <tr>
+					  <td height="30" align="center" bgcolor="e5eff8" class="sub_table_b">점용구분</td>                      
+					  <td bgcolor="eaeaea" class="table_bl_left">
+						<select name="SECTION" id="SECTION" class="input_form1" style="width:130px" OnChange="Select_UseType(this);">
+							<option value="">::전체::</option>
+							<option value="1">계속</option>
+							<option value="3">무단</option>							
+					    </select>
+					  </td>
+                      <td height="30" align="center" bgcolor="e5eff8" class="sub_table_b">지목</td>                      
+					  <td bgcolor="eaeaea" class="table_bl_left">
+						<select name="TYPE" id="TYPE" class="input_form1" style="width:130px" OnChange="Select_UseType(this);">
+							${use_type}
+					    </select>
+					  </td>
+                    </tr>
+					
+                    <tr>
+                      <td height="30" align="center" bgcolor="e5eff8" class="sub_table_b">세입구분</td>
+					  <td bgcolor="eaeaea" class="table_bl_left">
+					  	<select name="TAX_SET" id="TAX_SET" class="input_form1" style="width:130px">
+							${taxation_section}
+					  	</select>
+					  </td>
+					  <td height="30" align="center" bgcolor="e5eff8" class="sub_table_b">부과여부 </td>
+					  <td bgcolor="eaeaea" class="table_bl_left">
+                          <select name="TAX_YN" id="TAX_YN" class="input_form1" style="width:130px">${taxation_yn}
+               	      </td>
+					  <!-- td height="30" align="center" bgcolor="e5eff8" class="sub_table_b">법정동 </td>
+					  <td bgcolor="eaeaea" class="table_bl_left">
+                          <select name="BJ_CD" id="BJ_CD" class="input_form1" style="width:130px">${bjdong_code}
+               	      </td-->
+                    </tr>
+                    
+                     <tr>
+                      <td height="30" align="center" bgcolor="e5eff8" class="sub_table_b">산출기간</td>
+					  <td bgcolor="eaeaea" class="table_bl_left">
+					  	
+					  	<input name="mul_fromdate" type="text" class="input_form1" style="width:70px" value="${mul_fromdate }"><a>
+					  	<img src="/img/calendar_icon.gif" width="19" height="16" border="0" align="absmiddle" onclick="popUpCalendar(this, mul_fromdate, 'yyyymmdd')" style="CURSOR: Hand;"></a>
+					  	<input name="mul_todate" type="text" class="input_form1" style="width:70px" value="${mul_todate }"><a>
+					  	<img src="/img/calendar_icon.gif" width="19" height="16" border="0" align="absmiddle" onclick="popUpCalendar(this, mul_todate, 'yyyymmdd')" style="CURSOR: Hand;"></a>
+					  	
+					  </td>
+					  <td height="30" align="center" bgcolor="e5eff8" class="sub_table_b">산출여부</td>                      
+					  <td bgcolor="eaeaea" class="table_bl_left">
+						<select name="cal_status" id="cal_status" class="input_form1" style="width:130px">
+							${cal_status }
+					    </select>
+					  </td>
+                    </tr>
+                    <input type="hidden" name="cal_status" value=""><!-- 임시로 주석처리하고 넣어줌  -->															                                        					
+                    <!-- tr>
+					  <td height="30" align="center" bgcolor="e5eff8" class="sub_table_b" width="15%">관리 번호</td>
+                      <td bgcolor="eaeaea" class="table_bl_left" width="35%">
+					  <input name="numberValue" id="numberValue" type="text" class="input_form1" style="width:130px" onKeyDown="javascript:checkKeySearch();"  >
+					  </td>
+					  
+					  <td height="30" align="center" bgcolor="e5eff8" class="sub_table_b">점용인/법인명</td>
+                      <td bgcolor="eaeaea" class="table_bl_left">
+					  <table border="0" cellpadding="0" cellspacing="0" class="sub_stan">
+                        <tr>
+                          <td><input name="jumyongName" id="jumyongName" type="text" class="input_form1" style="width:130px" onKeyDown="javascript:checkKeySearch();"></td>
+                        </tr>
+                      </table></td>
+                    </tr>
+                    <tr>
+				    	<td height="30" align="center" bgcolor="e5eff8" class="sub_table_b">점용지 지번</td>
+                        <td bgcolor="eaeaea" class="table_bl_left" colspan="3">
+							<table border="0" cellpadding="0" cellspacing="0" class="sub_stan">
+                        		<tr>
+                          			<td>                          
+                          <input name="BONBUN" id="BONBUN" type="text" class="input_form1" style="width:40px" value="${bonbun}"  onKeyDown="javascript:checkKeySearch();">
+						- <input name="BUBUN" id="BUBUN" type="text" class="input_form1" style="width:40px" value="${bubun}"  onKeyDown="javascript:checkKeySearch();">
+                          			</td>
+                        		</tr>
+                      		</table>
+						</td>
+ 				   </tr--> 
+				<tr>
+					<td height="30" align="center" bgcolor="e5eff8" class="sub_table_b">점용목적</td>
+					<td colspan="3" bgcolor="eaeaea" class="table_bl_left">
+						<table width="100%" border="0" cellpadding="0" cellspacing="0" class="sub_stan">
+							<tr><td>
+								<iframe id="IFRM_PurposeCode" align="absmiddle" scrolling="no" frameborder="0" framespacing="0" width="100%" height="25" src="/jsp/common/purposeCode/purposeCode2.jsp?SectionCode=${TYPE}&PURPOSE_CD=${PURPOSE_CD}"></iframe>
+							</td></tr>
+					  	</table>
+					</td>
+                </tr>
+                <tr>
+					<td height="30" align="center" bgcolor="e5eff8" class="sub_table_b">법정동/행정동</td>
+					<td bgcolor="eaeaea" class="table_bl_left">
+						<select name="BJ_CD" id="BJ_CD" class="input_form1" style="width:130px">${bjdong_code}</select>
+						<select name="HJ_CD" id="HJ_CD" class="input_form1" style="width:130px">${hjdong_code}</select>
+					</td>
+					<td height="30" align="center" bgcolor="e5eff8" class="sub_table_b">점용인/법인명</td>
+                    <td bgcolor="eaeaea" class="table_bl_left">
+						<table border="0" cellpadding="0" cellspacing="0" class="sub_stan">
+                        	<tr>
+                          		<td><input name="jumyongName" id="jumyongName" type="text" class="input_form1" style="width:130px" onKeyDown="javascript:checkKeySearch();"></td>
+                        	</tr>
+                      	</table>
+                   	</td>
+                </tr>
+                </table></td>
+              </tr>
+ 
+                <tr>
+                  <td height="32" align="right"><img src="/img/inquiry_icon2.gif" alt="조회" width="56" height="18" border="0" onclick="javascript:goSearch();" style="cursor:pointer" >
+                  </td>
+                </tr>
+                <tr>
+                  <td height="1" bgcolor="#EAEAEA"></td>
+                </tr>
+                <tr>
+                  <td height="34" class="sub_stan">전체건수 : <span class="sub_stan_blue">${listCount}</span>건 </td>
+                </tr>
+                <tr>
+                  <td>
+				<div style=" width:780;  padding:10px;overflow-x:auto; scrollbar-face-color:#EEF8FB;  scrollbar-3dlight-color:#BBBDB6; 
+					scrollbar-highlight-color:#EEF8FB;scrollbar-shadow-color:#BBBDB6; scrollbar-darkshadow-color:#EEF8FB;  scrollbar-track-color:#EEF8FB; scrollbar-arrow-color:#BBBDB6; "--> 
+                  <table width="2000" border="1" bordercolor="#c9dfed" style="border-collapse:collapse;" cellpadding="0" cellspacing="0"  class="sub_table">
+			      	<tr>
+                        <td height="28" align="center" bgcolor="e5eff8" class="sub_table_b">관리번호</td>
+                        <td align="center" bgcolor="e5eff8" class="sub_table_b">과세<br/>번호</td>
+                        <td align="center" bgcolor="e5eff8" class="sub_table_b">점용인/법인명</td>
+                        <td align="center" bgcolor="e5eff8" class="sub_table_b">과세<br/>구분</td>
+                        <td align="center" bgcolor="e5eff8" class="sub_table_b">점용<br/>구분</td>
+                        <td align="center" bgcolor="e5eff8" class="sub_table_b">점용<br/>종류</td>
+                        <td align="center" bgcolor="e5eff8" class="sub_table_b">세입<br/>구분</td>
+                        <td align="center" bgcolor="e5eff8" class="sub_table_b">점용지</td>
+                        <td align="center" bgcolor="e5eff8" class="sub_table_b">점용<br/>면적</td>
+                        <td align="center" bgcolor="e5eff8" class="sub_table_b">점용목적</td>
+                        <td align="center" bgcolor="e5eff8" class="sub_table_b">조정산출식</td>
+                        <td align="center" bgcolor="e5eff8" class="sub_table_b">조정<br/>점용료</td>
+                        <!-- td align="center" bgcolor="e5eff8" class="sub_table_b">전년도 시작일</td>
+                        <td align="center" bgcolor="e5eff8" class="sub_table_b">전년도 끝일</td-->
+                        <td align="center" bgcolor="e5eff8" class="sub_table_b">현년도<br/>시작일</td>
+                        <td align="center" bgcolor="e5eff8" class="sub_table_b">현년도<br/>끝일</td>
+                        <td align="center" bgcolor="e5eff8" class="sub_table_b">요율<br/>(단가)</td>
+                        <td align="center" bgcolor="e5eff8" class="sub_table_b">공시지가</td>
+                        <td align="center" bgcolor="e5eff8" class="sub_table_b">산출<br/>여부</td>
+                        <td align="center" bgcolor="e5eff8" class="sub_table_b">부과<br/>여부</td>
+                   	</tr>
+                    
+                    <c:choose>
+					<c:when test='${blist != null && !empty blist}'>  
+                   	<c:forEach items="${blist}" var="board" varStatus="idx">
+                    <tr onMouseOver="this.style.backgroundColor='#f6f7f8'" onMouseOut="this.style.backgroundColor=''" style="cursor:pointer"
+                    onclick="javascript:goView('${board.ADMIN_NO}','${board.YEAR}','${board.PURPOSE_CD }');">
+
+                        <td width="80px" height="26" align="center">${board.ADMIN_NO2}</td>
+                        <td width="50px" align="center">${board.TAX_NO}</td>
+                        <td width="100px" align="center">${board.NAME}</td>
+                        <td align="center">${board.SECTION_NAME}</td>
+                        <td align="center">${board.SECTION}</td>
+                        <td align="center">${board.TYPE}</td>
+                        <td align="center">${board.TAX_SET}</td>
+                        <td align="center">${board.BJ_NM} ${board.BONBUN }</td>
+						<td align="center">${board.AREA}</td>
+						<td align="center">${board.PURPOSE_CLASSNM}</td>
+						<td align="center">${board.FORM_ADJUST}</td>
+						<td align="center">${board.SUM}</td>
+						<!-- td align="center">${board.LAST_FROMDATE}</td>
+						<td align="center">${board.LAST_TODATE}</td-->
+						<td align="center">${board.FROMDATE}</td>
+						<td align="center">${board.TODATE}</td>
+						<td align="center">${board.RATE}</td>
+						<td align="center">${board.PRICE}</td>
+						<td align="center"><font color="red">${board.SUM_ADJUST}</font></td>  
+						<td align="center"><font color="red">${board.TAX_YN}</font></td>
+                      </tr>
+					 </c:forEach>
+					 </c:when>
+					<c:otherwise>
+						<tr>
+							<td align="center" class="sub_table" colspan="15" height="85"> 내용이 없습니다</td>
+						</tr>
+					</c:otherwise>
+					</c:choose>
+					 
+                  </table>
+                  </br>
+                  </div></td>
+                </tr>
+                
+                <tr>
+	                <td height="40" align="center"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+	                    <tr>
+	                    	<td align="center"><table border="0" cellpadding="0" cellspacing="0">
+	                        	<tr>
+	                       			${pageing}
+	                        	</tr>
+	                      	</table></td>
+	                    </tr>
+	                  </table></td>
+	              </tr>
+	              
+	              <tr>              
+		          	<td height="40" align="right">
+			        	<table border="0" width="100%">
+			            	<tr>
+			                	<td  align="right">
+			                		
+			                		<a href="javascript:NowPriceApply();"><img src="/img/gonsi_search.gif" alt="공시지가 일괄 적용" border="0"></a>
+				                	<img src="/img/excel_icon.gif" alt="EXCEL 변환" border="0" onclick="javascript:excel_Search();" style="cursor:hand">
+						            <!-- 
+						            <c:if test="${showBatch == 'true'}"> 								                	
+							        <a href="/jumyong/junggi/junggi_product.do?ADMIN_NO=${no}&year=${year}&currentPage=${currentPage}&countPerPage=${countPerPage}&mode=add";">
+							        <img src="/img/levy_icon3.gif" alt="일괄부과처리" border="0" >
+							        </a>
+							        </c:if> -->
+							        <c:if test="${tax_yn == '0'}"> 
+							        <img src="/img/levy_icon3.gif" alt="일괄 부과처리" border="0" onclick="javascript:SaeweSuipBugwa_Ilgwal();" style="cursor:hand">
+							        </c:if>
+					            </td>
+				             </tr>
+				                
+				                
+				     	</table>
+					</td>
+	              </tr>
+               
+            </table></td>
+          </tr>
+          
+        </table></td>
+      </tr>
+      <tr>
+        <td height="30"></td>
+      </tr>
+</table>
+</td></tr></table>
+</form>
+</body>
+<script language="javascript">
+
+	//select의 option을 선택된 값으로 지정
+	function setSelectedOption(obj, val){
+		for(i = 0 ; i < obj.options.length ; i++){
+			if(obj.options[i].value == val){
+				obj.options[i].selected = true;
+				return;
+			}
+		}
+	}
+	setSelectedOption(document.jumyongForm.SECTION, '${SECTION}');
+</script>
+</html>
+

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/roads/!svn/ver/56/roads/WebContent/OpenLayers
+END
+license.txt
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/roads/!svn/ver/56/roads/WebContent/OpenLayers/license.txt
+END
+readme.txt
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/roads/!svn/ver/56/roads/WebContent/OpenLayers/readme.txt
+END
+OpenLayers.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/roads/!svn/ver/56/roads/WebContent/OpenLayers/OpenLayers.js
+END
+repository-license.txt
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/roads/!svn/ver/56/roads/WebContent/OpenLayers/repository-license.txt
+END
+release-license.txt
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/roads/!svn/ver/56/roads/WebContent/OpenLayers/release-license.txt
+END

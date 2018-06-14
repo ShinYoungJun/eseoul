@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+                       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<bean id="methodNameResolver_Gapan_Jumyonginfo" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+ 		<property name="mappings">
+ 			<props>
+				<prop key="/gapan/jumyonginfo/minwon_view.do">Minwon_View</prop>
+				<prop key="/gapan/jumyonginfo/minwon_view_search.do">Minwon_View_Search</prop>
+				<prop key="/gapan/jumyonginfo/minwon_modify.do">Minwon_Modify</prop>
+				<prop key="/gapan/jumyonginfo/minwon_modify_prc.do">Minwon_Modify_Prc</prop>
+				
+				<prop key="/gapan/jumyonginfo/unyong_view.do">Unyong_View</prop>
+				<prop key="/gapan/jumyonginfo/unyong_modify.do">Unyong_Modify</prop>
+				<prop key="/gapan/jumyonginfo/unyong_modify_prc.do">Unyong_Modify_Prc</prop>
+				
+				<prop key="/gapan/jumyonginfo/jumin_view.do">Jumin_View</prop>
+				<prop key="/gapan/jumyonginfo/jumin_modify.do">Jumin_Modify</prop>
+				<prop key="/gapan/jumyonginfo/jumin_modify_prc.do">Jumin_Modify_Prc</prop>
+				
+				<prop key="/gapan/jumyonginfo/jumji_view.do">Jumji_View</prop>
+				<prop key="/gapan/jumyonginfo/jumji_modify.do">Jumji_Modify</prop>
+				<prop key="/gapan/jumyonginfo/jumji_modify_prc.do">Jumji_Modify_Prc</prop>
+				
+				<prop key="/gapan/jumyonginfo/get_ft_sel.do">Get_FT_SEL</prop>
+				<prop key="/gapan/jumyonginfo/get_ft_typ.do">Get_FT_TYP</prop>
+				
+				
+				
+			</props>
+ 		</property>
+ 	</bean>
+ 	
+ 	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+ 		<property name="mappings">
+ 			<props>
+				<prop key="/gapan/jumyonginfo/minwon_view.do">gapan_jumyonginfoControl_minwon</prop>
+				<prop key="/gapan/jumyonginfo/minwon_view_search.do">gapan_jumyonginfoControl_minwon</prop>
+				<prop key="/gapan/jumyonginfo/minwon_modify.do">gapan_jumyonginfoControl_minwon</prop>
+				<prop key="/gapan/jumyonginfo/minwon_modify_prc.do">gapan_jumyonginfoControl_minwon</prop>
+				
+				<prop key="/gapan/jumyonginfo/unyong_view.do">gapan_jumyonginfoControl_unyong</prop>
+				<prop key="/gapan/jumyonginfo/unyong_modify.do">gapan_jumyonginfoControl_unyong</prop>
+				<prop key="/gapan/jumyonginfo/unyong_modify_prc.do">gapan_jumyonginfoControl_unyong</prop>
+				
+				<prop key="/gapan/jumyonginfo/jumin_view.do">gapan_jumyonginfoControl_jumin</prop>
+				<prop key="/gapan/jumyonginfo/jumin_modify.do">gapan_jumyonginfoControl_jumin</prop>
+				<prop key="/gapan/jumyonginfo/jumin_modify_prc.do">gapan_jumyonginfoControl_jumin</prop>
+
+				<prop key="/gapan/jumyonginfo/jumji_view.do">gapan_jumyonginfoControl_jumji</prop>
+				<prop key="/gapan/jumyonginfo/jumji_modify.do">gapan_jumyonginfoControl_jumji</prop>
+				<prop key="/gapan/jumyonginfo/jumji_modify_prc.do">gapan_jumyonginfoControl_jumji</prop>
+				
+				<prop key="/gapan/jumyonginfo/get_ft_sel.do">gapan_jumyonginfoControl_jumji</prop>
+				<prop key="/gapan/jumyonginfo/get_ft_typ.do">gapan_jumyonginfoControl_jumji</prop>
+				
+ 			</props>
+ 		</property>
+ 	</bean>
+
+	<bean id="gapan_jumyonginfoControl_minwon" class="main.java.gapan.jumyonginfo.web.TabJumyong_Control">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Gapan_Jumyonginfo"/></property>
+		<property name="gapan_jumyonginfoService" ref="gapan_jumyonginfoService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>	
+
+	<bean id="gapan_jumyonginfoControl_unyong" class="main.java.gapan.jumyonginfo.web.TabUnyong_Control">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Gapan_Jumyonginfo"/></property>
+		<property name="gapan_jumyonginfoService" ref="gapan_jumyonginfoService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+	<bean id="gapan_jumyonginfoControl_jumin" class="main.java.gapan.jumyonginfo.web.TabJumin_Control">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Gapan_Jumyonginfo"/></property>
+		<property name="gapan_jumyonginfoService" ref="gapan_jumyonginfoService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+	<bean id="gapan_jumyonginfoControl_jumji" class="main.java.gapan.jumyonginfo.web.TabJumji_Control">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Gapan_Jumyonginfo"/></property>
+		<property name="gapan_jumyonginfoService" ref="gapan_jumyonginfoService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+
+ 	<bean id="gapan_jumyonginfoService" class="main.java.gapan.jumyonginfo.service.JumyonginfoService">
+ 		<property name="gapan_jumyonginfoDao" ref="gapan_jumyonginfoDao"/>
+ 	</bean>
+ 	<bean id="gapan_jumyonginfoDao" parent="roadsJdbcDaoSupport" class="main.java.gapan.jumyonginfo.dao.JumyonginfoDao"/>
+
+</beans>

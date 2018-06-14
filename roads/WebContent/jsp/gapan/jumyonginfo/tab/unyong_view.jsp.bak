@@ -1,0 +1,261 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
+<%@ include file="/jsp/common/loginCheck.jsp" %>    
+<%@ include file="/jsp/common/include.jsp" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+
+<title>::::: 서울시 도로점용관리시스템 :::::</title>
+<style type="text/css">
+
+<!--
+body {
+	margin: 0px;
+}
+-->
+
+</style>
+<link href="/css/roads.css" rel="stylesheet" type="text/css">
+</head>
+
+<script type="text/javascript">
+//<![CDATA[
+	function 	Init()
+	{
+		parent.Tab_Img("unyong");
+	}
+	
+	function	Modify(gapanno, gp_typ)
+	{
+		var form = document.form;
+
+		form.action = "/gapan/jumyonginfo/unyong_modify.do?GAPAN_NO="+gapanno+"&GP_TYP="+gp_typ;
+		form.submit();
+	}
+/*
+	function	View(gapanno, seq)
+	{
+		params	= "GAPAN_NO=" + gapanno + "&SEQ=" + seq;
+		
+		sendRequest("/gapan/minwoninfo/minwon_view_search.do", params, "GET", Result_InfoView);
+	}
+*/
+
+	var w, h;
+	var max_w = 150; //창의 가로크기, 이미지의 최대 크기가 된다.
+	img_src = "${filePath }${board.OWNER_IMG_NAME }"; //이미지의 주소, img1의 src속성과 같아야 한다.
+	
+	function img_resize()
+	{
+		var i = eval(document.all.img1);
+	 	w = i.width;
+	 	h = i.height;
+		if(w > max_w)
+	 	{
+	  		i.width = max_w;
+	 	}
+	}
+	
+	
+	function resize_popup()
+	{
+	 	w_dummy = w + 20; //스크롤바를 위해서 팝업창의 가로길이를 20픽셀 추가한다.
+	 	with( window.open("","madi_image",'height='+h+',width='+w_dummy+',scrollbars=yes,resizable=yes') )
+	 	{
+	  	document.write("<body topmargin=0 rightmargin=0 bottommargin=0 leftmargin=0>","<a href='#' alt='클릭하시면 창이 닫힙니다.'><img src='"+img_src+"' hspace=0 vspace=0 border=0 onclick='window.close();'></a>","</body>");
+	  	focus();
+	 	}
+	}
+
+
+//]]>
+</script>
+
+<body onload="Init()">
+
+<form name="form" method="post">
+	<input type="hidden" name="GAPAN_NO" value="${GAPAN_NO}">
+	<input type="hidden" name="GU_CODE" value="${GU_CODE}">
+	<input type="hidden" name="GP_TYP" value="${GP_TYP}">
+
+	<table width="780" border="0" cellpadding="0" cellspacing="0">
+		<tr>
+			<td align="left" class="contborder_purple">
+			
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+				  <td>
+				  
+					<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	                <tr>
+	                  	<td>
+	                  	<table width="100%" border="1" bordercolor="#c9dfed" style="border-collapse:collapse;table-layout:fixed;" cellpadding="0" cellspacing="0"  class="sub_table">
+					  	<tr>
+							<td width="100" height="28" align="center" bgcolor="e5eff8" class="sub_table_b">운영자명</td>
+							<td width="37%" bgcolor="eaeaea" class="table_bl_left">${board.OWNER_NAME}
+								<c:if test="${board.OWNER_IDCHK == '1'}"> 
+									(신분증 확인)
+								</c:if>
+							</td>
+							<td width="100" align="center" bgcolor="e5eff8" class="sub_table_b" rowspan="3">
+								<table>
+									<tr><td>운영자 사진</td></tr>
+									<tr>
+										<td>
+											<br><br>
+											<span onclick="javascript:document.getElementById('file1').click();" style="overflow:hidden; background-repeat:no-repeat; cursor: pointer;">
+												<!-- img src="/img/file_icon.gif" align="absmiddle" alt="파일첨부하기">
+												<input type='file' id="file1" name='OWNER_IMG' style="width:0;height:5;filter:alpha(opacity=0); CURSOR:hand;" onchange='ChangeImg(); attach(this);' value="${board.OWNER_IMG}"-->
+											</span>
+										</td>
+									</tr>
+								</table>
+							</td>
+							<td bgcolor="eaeaea" class="table_bl_left" rowspan="3" align="center">
+								<table>
+									<tr>
+										<!-- td width=100 height=130 id="tblview" style="background-image:url('${board.OWNER_IMG}'); background-repeat:no-repeat; background-attachment:scroll;"-->
+										<td width="100" height="130" style="background-position:50% 50%;" >
+											<c:if test="${board.OWNER_IMG_NAME != null }">
+												<img src="${filePath }${board.OWNER_IMG_NAME }" name="img1" onload="img_resize();" onclick="resize_popup();" style="cursor:hand">
+											</c:if>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td width="100" align="center" bgcolor="e5eff8" class="sub_table_b">주민등록번호</td>
+							<td bgcolor="eaeaea" class="table_bl_left">${board.OWNER_SSN}</td>
+					  	</tr>
+					  	<tr>
+							<td height="26" align="center" bgcolor="e5eff8" class="sub_table_b">성별(나이)</td>
+							<td bgcolor="eaeaea" class="table_bl_left">
+								<c:if test="${board.OWNER_GENDER == '1'}">남</c:if>
+								<c:if test="${board.OWNER_GENDER == '2'}">여</c:if>
+								<c:if test="${board.OWNER_AGE != null}">&nbsp;(${board.OWNER_AGE} 세)</c:if>
+							</td>
+					  	</tr>
+					  	<tr>
+							<td height="26" align="center" bgcolor="e5eff8" class="sub_table_b">전화번호</td>
+							<td bgcolor="eaeaea" class="table_bl_left">${board.OWNER_TEL}</td>
+							<td height="26" align="center" bgcolor="e5eff8" class="sub_table_b">휴대전화</td>
+							<td bgcolor="eaeaea" class="table_bl_left">${board.OWNER_HP}</td>
+					  	</tr>
+					  	<tr>
+							<td height="34" colspan="2" align="left" bgcolor="#FFFFFF" class="">
+								<table border="0" cellpadding="0" cellspacing="0" class="sub_stan">
+									<tr>
+									  <td width="50%">
+									  	<span class="sub_stan_blue">* 주민등록지 주소</span>
+									  </td>
+									</tr>
+								</table>
+							</td>
+							<td height="34" colspan="2" align="left" bgcolor="#FFFFFF" class="">
+								<table border="0" cellpadding="0" cellspacing="0" class="sub_stan">
+									<tr>
+									  <td width="50%">
+									  	<span class="sub_stan_blue">* 실제거주지 : </span>
+									  	<c:if test="${board.ADDR_CHECK1 == '1'}">
+									  		주민등록지 주소 정보와 동일
+									  	</c:if>
+									  	<c:if test="${board.ADDR_CHECK1 != '1'}">
+									  		주민등록지 주소 정보와 동일하지 않음
+									  	</c:if>
+									  </td>
+									</tr>
+								</table>
+							</td>
+					  	</tr>
+					  	<tr>
+							<td height="26" align="center" bgcolor="e5eff8" class="sub_table_b">우편번호</td>
+							<td bgcolor="eaeaea" class="table_bl_left">
+								<table border="0" cellpadding="0" cellspacing="0" class="sub_stan">
+									<tr>
+									  <td>${board.OWNER_POST}</td>
+									</tr>
+								</table>
+							</td>
+							<td height="26" align="center" bgcolor="e5eff8" class="sub_table_b">우편번호</td>
+							<td bgcolor="eaeaea" class="table_bl_left">
+								<table border="0" cellpadding="0" cellspacing="0" class="sub_stan">
+									<tr>
+									  <td>${board.OWNER_TOPOST}</td>
+									</tr>
+								</table>
+							</td>
+					  	</tr>
+					  	<tr>
+							<td height="26" align="center" bgcolor="e5eff8" class="sub_table_b">기본 주소</td>
+							<td bgcolor="eaeaea" class="table_bl_left">
+								${board.OWNER_ADDR1}<br>	
+								<c:if test="${board.OWNER_SAN == '1'}">
+									산
+								</c:if>
+								<!-- OWNER_BONBUN + OWNER_BUBUN = OWNER_JIBUN -->
+								${board.OWNER_JIBUN} ${board.OWNER_ADDR2}
+							</td>
+							<td height="26" align="center" bgcolor="e5eff8" class="sub_table_b">기본 주소</td>
+							<td bgcolor="eaeaea" class="table_bl_left">
+								${board.OWNER_TOADDR1}<br> 
+								<c:if test="${board.OWNER_TOSAN == '1'}">
+									산
+								</c:if>
+								<!-- OWNER_TOBONBUN + OWNER_TOBUBUN = OWNER_TOJIBUN -->
+								${board.OWNER_TOJIBUN} ${board.OWNER_TOADDR2}
+							</td>
+					  	</tr>
+					  	<tr>
+						  	<td height="34" colspan="4" align="left" bgcolor="#FFFFFF" class="">
+								<table border="0" cellpadding="0" cellspacing="0" class="sub_stan">
+									<tr>
+									  <td width="50%">
+									  	<span class="sub_stan_blue">* 생활정도</span>
+									  </td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td width="100" height="28" align="center" bgcolor="e5eff8" class="sub_table_b" nowrap="nowrap">생활정도</td>
+							<td width="37%" bgcolor="eaeaea" class="table_bl_left" nowrap="nowrap">${board.LC_SEL_NM} ${board.LC_TXT}</td>
+							<td width="100" align="center" bgcolor="e5eff8" class="sub_table_b" nowrap="nowrap">주거정보</td>
+							<td width="36%" bgcolor="eaeaea" class="table_bl_left">${board.RT_SEL_NM} ${board.RT_TXT}</td>
+						</tr>
+						<tr>
+							<td width="100" height="28" align="center" bgcolor="e5eff8" class="sub_table_b" nowrap="nowrap">동산/부동산</td>
+							<td width="37%" bgcolor="eaeaea" class="table_bl_left" nowrap="nowrap">
+								<c:if test="${board.ESTATE_MOVE != null}">${board.ESTATE_MOVE} 원</c:if>
+								<c:if test="${board.ESTATE_REAL != null}">/ ${board.ESTATE_REAL} 원</c:if>
+							</td>
+							<td width="100" align="center" bgcolor="e5eff8" class="sub_table_b" nowrap="nowrap">가판종류</td>
+							<td width="36%" bgcolor="eaeaea" class="table_bl_left">
+									${board.TP_TYP_NM}
+							</td>
+						</tr>
+						
+	                  	</table>
+	                  	</td>
+				  	</tr>
+				</table>
+				</td>
+				</tr>
+				
+				<tr>
+					<td height="40" align="right">
+					<table width="0" border="0" cellspacing="0" cellpadding="0" align="right">
+				  		<td height="40" align="right"><a href="javascript:Modify('${GAPAN_NO}','${GP_TYP}')"><img src="/img/mod_icon.gif" alt="수정" width="56" height="18" border="0"></a>
+				  	</table>
+				  	</td>
+				</tr>
+			</table></td>
+		</tr>
+	</table>
+
+</form>
+</body>
+</html>

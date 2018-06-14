@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+                       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<bean id="methodNameResolver_mdb" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+ 		<property name="mappings">
+ 			<props>
+			<prop key="/mdb/executeUpload.do">executeUpload</prop>			
+			<prop key="/mdb/execute_download.do">executeDownLoad</prop>
+			<prop key="/mdb/testindex.do">TestIndex</prop>
+			<prop key="/mdb/uploadInputData.do">uploadInputData</prop>
+			<prop key="/mdb/upRedirectSurvey.do">upRedirectSurvey</prop>
+			
+			
+			</props>
+ 		</property>
+ 	</bean> 	
+ 	 	
+ 	<bean id="urlMapping_mdb" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+ 		<property name="mappings">
+ 			<props>
+				<prop key="/mdb/executeUpload.do">MdbCtl</prop>	  		
+				<prop key="/mdb/execute_download.do">MdbCtl</prop>
+				<prop key="/mdb/testindex.do">MdbCtl</prop>
+				<prop key="/mdb/uploadInputData.do">MdbCtl</prop>	
+				<prop key="/mdb/upRedirectSurvey.do">MdbCtl</prop>
+					 				
+ 			</props>
+ 		</property>
+ 	</bean>
+
+	<bean id="MdbCtl" class="main.java.mdb.web.MdbCtl">
+		<property name="methodNameResolver">
+			<ref local ="methodNameResolver_mdb"/></property>	
+		<property name ="jdbcService"  ref="jdbcService" />			
+	</bean>
+	
+	<bean id="jdbcDao" parent="roadsJdbcDaoSupport" class="main.java.mdb.dao.JdbcDao"/>
+	
+ 	<bean id="jdbcService" class="main.java.mdb.service.JdbcService"> 
+ 		<property name="jdbcDao" ref="jdbcDao"/>
+ 	</bean>
+ 
+ 
+</beans>

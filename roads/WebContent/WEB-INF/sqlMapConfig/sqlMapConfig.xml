@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="EUC-KR" ?>
+
+<!DOCTYPE sqlMapConfig      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+<sqlMapConfig>
+
+  <settings cacheModelsEnabled="false" useStatementNamespaces="true"/>
+  <sqlMap resource="com/spring/dao/sqlMap/total_bbs.xml"/>
+  <sqlMap resource="com/spring/dao/sqlMap/total_inquiry.xml"/>
+  <sqlMap resource="com/spring/dao/sqlMap/total_adress.xml"/>
+  <sqlMap resource="com/spring/dao/sqlMap/logindata.xml"/>
+  <sqlMap resource="com/spring/dao/sqlMap/deptcode.xml"/>
+</sqlMapConfig>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+                       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<bean id="methodNameResolver_Facility_AdminBiz" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+ 		<property name="mappings">
+ 			<props>
+				<prop key="/facility/adminbiz/search.do">Search</prop>
+				<!--  //********** BEGIN_KANG_20120409 -->
+				<prop key="/facility/adminbiz/office.do">office</prop>
+				<!--   //********** END_KANG_20120409 -->
+				<prop key="/facility/adminbiz/view.do">View</prop>
+				<prop key="/facility/adminbiz/register.do">Register</prop>		
+				<prop key="/facility/adminbiz/registerprc.do">RegisterPrc</prop>
+				<prop key="/facility/adminbiz/modify.do">Modify</prop>
+				<prop key="/facility/adminbiz/modifyprc.do">ModifyPrc</prop>
+				<prop key="/facility/adminbiz/delete.do">Delete</prop>								
+			</props>
+ 		</property>
+ 	</bean>
+ 	
+ 	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+ 		<property name="mappings">
+ 			<props>
+				<prop key="/facility/adminbiz/search.do">facility_adminbizControl</prop>
+				<!--  //********** BEGIN_KANG_20120409 -->
+				<prop key="/facility/adminbiz/office.do">facility_adminbizControl</prop>
+				<!--   //********** END_KANG_20120409 -->
+				<prop key="/facility/adminbiz/view.do">facility_adminbizControl</prop>
+				<prop key="/facility/adminbiz/register.do">facility_adminbizControl</prop>
+				<prop key="/facility/adminbiz/registerprc.do">facility_adminbizControl</prop>
+				<prop key="/facility/adminbiz/modify.do">facility_adminbizControl</prop>
+				<prop key="/facility/adminbiz/modifyprc.do">facility_adminbizControl</prop>
+				<prop key="/facility/adminbiz/delete.do">facility_adminbizControl</prop>
+ 			</props>
+ 		</property>
+ 	</bean>
+ 	
+
+	<bean id="facility_adminbizControl" class="main.java.facility.adminbiz.web.AdminBizControl">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Facility_AdminBiz"/></property>
+		<property name="facility_adminbizService" ref="facility_adminbizService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+
+
+
+ 	<bean id="facility_adminbizService" class="main.java.facility.adminbiz.service.AdminBizService">
+ 		<property name="facility_adminbizDao" ref="facility_adminbizDao"/>
+ 	</bean>
+ 	<bean id="facility_adminbizDao" parent="roadsJdbcDaoSupport" class="main.java.facility.adminbiz.dao.AdminBizDao"/>
+
+</beans>

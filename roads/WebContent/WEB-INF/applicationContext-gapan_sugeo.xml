@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+                       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<bean id="methodNameResolver_Gapan_Sugeo" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+ 		<property name="mappings">
+ 			<props>
+				<prop key="/gapan/sugeo/search.do">Search</prop>
+				<prop key="/gapan/sugeo/excel_search.do">Excel_Search</prop>
+				<prop key="/gapan/sugeo/register.do">Register</prop>
+				
+				<prop key="/gapan/sugeo/sugeo_register.do">Register</prop>
+				<prop key="/gapan/sugeo/sugeo_registerprc.do">RegisterPrc</prop>
+				
+				<prop key="/gapan/sugeo/goods_registerprc.do">Goods_Register_Execute</prop>
+				
+				<prop key="/gapan/sugeo/sugeo_bugwa_register.do">Bugwa_Register</prop>
+				<prop key="/gapan/sugeo/sugeo_bugwa_registerprc.do">Bugwa_RegisterPrc</prop>
+				<prop key="/gapan/sugeo/sugeo_sale_registerprc.do">Sale_RegisterPrc</prop>
+				
+				<prop key="/gapan/sugeo/view.do">View</prop>
+				<prop key="/gapan/sugeo/sugeo_view.do">sugeo_view</prop>
+				<prop key="/gapan/sugeo/sugeo_bugwa_view.do">sugeo_bugwa_view</prop>
+				<prop key="/gapan/sugeo/goods_excel_search.do">goods_excel_search</prop>
+				
+				<prop key="/gapan/sugeo/sugeo_modify.do">sugeo_modify</prop>
+				<prop key="/gapan/sugeo/sugeo_bugwa_modify.do">sugeo_bugwa_modify</prop>
+				<prop key="/gapan/sugeo/sugeo_fine_modify.do">sugeo_fine_modify</prop>
+				<prop key="/gapan/sugeo/sugeo_sale_modify.do">sugeo_sale_modify</prop>
+				
+				
+				<prop key="/gapan/sugeo/sugeo_register_view.do">sugeo_register_view</prop>
+				<prop key="/gapan/sugeo/sugeo_bugwa_register_view.do">sugeo_bugwa_register_view</prop>
+			</props>
+ 		</property>
+ 	</bean>
+ 	
+ 	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+ 		<property name="mappings">
+ 			<props>
+				<prop key="/gapan/sugeo/search.do">sugeoControl</prop>
+				<prop key="/gapan/sugeo/excel_search.do">sugeoControl</prop>
+				<prop key="/gapan/sugeo/register.do">sugeoControl</prop>
+				
+				<prop key="/gapan/sugeo/sugeo_register.do">tabSugeo_Control</prop>
+				<prop key="/gapan/sugeo/sugeo_registerprc.do">tabSugeo_Control</prop>
+				
+				<prop key="/gapan/sugeo/goods_registerprc.do">tabSugeo_Control</prop>
+				
+				<prop key="/gapan/sugeo/sugeo_bugwa_register.do">tabSugeo_Control</prop>
+				<prop key="/gapan/sugeo/sugeo_bugwa_registerprc.do">tabSugeo_Control</prop>
+				<prop key="/gapan/sugeo/sugeo_sale_registerprc.do">tabSugeo_Control</prop>
+				
+				<prop key="/gapan/sugeo/view.do">sugeoControl</prop>
+				<prop key="/gapan/sugeo/sugeo_view.do">tabSugeo_Control</prop>
+				<prop key="/gapan/sugeo/sugeo_bugwa_view.do">tabSugeo_Control</prop>
+				<prop key="/gapan/sugeo/goods_excel_search.do">tabSugeo_Control</prop>
+				
+				<prop key="/gapan/sugeo/sugeo_modify.do">tabSugeo_Control</prop>
+				<prop key="/gapan/sugeo/sugeo_bugwa_modify.do">tabSugeo_Control</prop>
+				<prop key="/gapan/sugeo/sugeo_fine_modify.do">tabSugeo_Control</prop>
+				<prop key="/gapan/sugeo/sugeo_sale_modify.do">tabSugeo_Control</prop>
+				
+				<prop key="/gapan/sugeo/sugeo_register_view.do">tabSugeo_Control</prop>
+				<prop key="/gapan/sugeo/sugeo_bugwa_register_view.do">tabSugeo_Control</prop>
+ 			</props>
+ 		</property>
+ 	</bean>
+ 	
+
+	<bean id="sugeoControl" class="main.java.gapan.sugeo.web.SugeoControl">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Gapan_Sugeo"/>
+		</property>
+		<property name="sugeoService" ref="sugeoService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+		<!-- property name="sysConnectService" ref="sysConnectService"/-->
+	</bean>
+	
+	
+	<bean id="tabSugeo_Control" class="main.java.gapan.sugeo.web.TabSugeo_Control">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Gapan_Sugeo"/>
+		</property>
+		<property name="sugeoService" ref="sugeoService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+	
+ 	<bean id="sugeoService" class="main.java.gapan.sugeo.service.SugeoService">
+ 		<property name="sugeoDao" ref="sugeoDao"/>
+ 	</bean>
+ 	<bean id="sugeoDao" parent="roadsJdbcDaoSupport" class="main.java.gapan.sugeo.dao.SugeoDao"/>
+
+   	<bean id="sysConnectService" class="main.java.common.sysConnect.service.SysConnectService">
+ 		<property name="sysConnectDao" ref="sysConnectDao"/>
+ 	</bean>
+ 	<bean id="sysConnectDao" parent="roadsJdbcDaoSupport" class="main.java.common.sysConnect.dao.SysConnectDao"/>
+ 	
+</beans>

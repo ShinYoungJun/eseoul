@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<bean id="methodNameResolver_rojum_surveyBoard" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+ 		<property name="mappings">
+ 			<props>
+				<prop key="/rojum/survey/search.do">surveyList</prop>
+				<prop key="/rojum/survey/excel_search.do">Excel_Search</prop>
+				<prop key="/rojum/survey/register.do">register</prop>
+				<prop key="/rojum/survey/info_register.do">infoRegister</prop>
+				<prop key="/rojum/survey/info_registerprc.do">infoRegisterPrc</prop>		
+				<prop key="/rojum/survey/un_pickup.do">unPickup</prop>
+				<prop key="/rojum/survey/batch_mod_special.do">batchModSpecial</prop>
+				<!--  //********** BEGIN_현진_20120312 -->
+				<prop key="/rojum/survey/getSectionCode.do">getSectionCode</prop>
+				<prop key="/rojum/survey/getSectionRegName.do">getSectionRegName</prop>
+				<!--   //********** END_현진_20120312 -->
+				
+			</props>
+ 		</property>
+ 	</bean> 	
+ 	
+ 	<bean id="urlMapping_rojum_surveyBoard" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+ 		<property name="mappings">
+ 			<props>
+				<prop key="/rojum/survey/search.do">rojum_surveyBoardControl</prop>
+				<prop key="/rojum/survey/excel_search.do">rojum_surveyBoardControl</prop>
+				<prop key="/rojum/survey/register.do">rojum_surveyBoardControl</prop>
+				<prop key="/rojum/survey/info_register.do">rojum_surveyBoardControl</prop>
+				<prop key="/rojum/survey/info_registerprc.do">rojum_surveyBoardControl</prop>
+				<prop key="/rojum/survey/un_pickup.do">rojum_surveyBoardControl</prop>
+				<prop key="/rojum/survey/batch_mod_special.do">rojum_surveyBoardControl</prop>
+				<!--  //********** BEGIN_현진_20120312 -->
+				<prop key="/rojum/survey/getSectionCode.do">rojum_surveyBoardControl</prop>
+				<prop key="/rojum/survey/getSectionRegName.do">rojum_surveyBoardControl</prop>
+				<!--   //********** END_현진_20120312 -->
+ 			</props>
+ 		</property>
+ 	</bean>
+	
+	<bean id="rojum_surveyBoardControl" class="main.java.rojum.survey.web.SurveyBoardControl">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_rojum_surveyBoard"/>
+		</property>		
+		<property name="rojum_SurveyService" ref="rojum_SurveyService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+		
+	<bean id="rojum_SurveyDao" parent="roadsJdbcDaoSupport" class="main.java.rojum.survey.dao.SurveyDao"/>
+
+ 	<bean id="rojum_SurveyService" class="main.java.rojum.survey.service.SurveyService"> 
+ 		<property name="rojum_SurveyDao" ref="rojum_SurveyDao"/>
+ 	</bean>
+
+</beans>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+                       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<bean id="methodNameResolver_Facility_Minwon" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+ 		<property name="mappings">
+ 			<props>
+				<prop key="/facility/minwon/search.do">Search</prop>
+				<prop key="/facility/minwon/view.do">View</prop>
+				<prop key="/facility/minwon/register.do">Register</prop>
+				<prop key="/facility/minwon/registerprcall.do">RegisterPrcAll</prop>
+				<prop key="/facility/minwon/registerprc_saewol.do">RegisterPrc_Saewol</prop>
+				
+				<prop key="/facility/minwon/info_register.do">Register</prop>
+				<prop key="/facility/minwon/info_registerprc.do">RegisterPrc</prop>
+				
+				<prop key="/facility/minwon/saewol_register.do">Saewol_Register</prop>
+				<prop key="/facility/minwon/saewol_registerprc.do">Saewol_RegisterPrc</prop>
+				
+				<prop key="/facility/minwon/jumin_search.do">Search</prop>
+			</props>
+ 		</property>
+ 	</bean>
+ 	
+ 	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+ 		<property name="mappings">
+ 			<props>
+				<prop key="/facility/minwon/search.do">facility_minwonControl</prop>
+				<prop key="/facility/minwon/view.do">facility_minwonControl</prop>
+				<prop key="/facility/minwon/register.do">facility_minwonControl</prop>
+				<prop key="/facility/minwon/registerprcall.do">facility_minwonControl</prop>
+				<prop key="/facility/minwon/registerprc_saewol.do">facility_minwonControl</prop>
+				
+				<prop key="/facility/minwon/info_register.do">facility_minwonControl_Info</prop>
+				<prop key="/facility/minwon/info_registerprc.do">facility_minwonControl_Info</prop>
+				
+				<prop key="/facility/minwon/saewol_register.do">facility_minwonControl_Info</prop>
+				<prop key="/facility/minwon/saewol_registerprc.do">facility_minwonControl_Info</prop>
+				
+				<prop key="/facility/minwon/jumin_search.do">facility_minwonControl_Jumin</prop>
+ 			</props>
+ 		</property>
+ 	</bean>
+ 	
+
+	<bean id="facility_minwonControl" class="main.java.facility.minwon.web.MinwonControl">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Facility_Minwon"/></property>
+		<property name="facility_minwonService" ref="facility_minwonService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+
+	<bean id="facility_minwonControl_Info" class="main.java.facility.minwon.web.TabInfo_Control">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Facility_Minwon"/></property>
+		<property name="facility_minwonService" ref="facility_minwonService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+	<bean id="facility_minwonControl_Jumin" class="main.java.facility.minwon.web.TabJumin_Control">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Facility_Minwon"/></property>
+		<property name="facility_minwonService" ref="facility_minwonService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+
+ 	<bean id="facility_minwonService" class="main.java.facility.minwon.service.MinwonService">
+ 		<property name="facility_minwonDao" ref="facility_minwonDao"/>
+ 	</bean>
+ 	<bean id="facility_minwonDao" parent="roadsJdbcDaoSupport" class="main.java.facility.minwon.dao.MinwonDao"/>
+
+</beans>

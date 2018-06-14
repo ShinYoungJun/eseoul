@@ -1,0 +1,105 @@
+.M_leftborder {
+	border-bottom: 2px #dbdbdb solid;
+	border-left: 2px #dbdbdb solid;
+	border-right: 2px #dbdbdb solid;
+}
+
+
+.M_leftborder2 {
+	border-left: 1px #dbdbdb solid;
+	border-right: 1px #dbdbdb solid;
+}
+
+
+
+.input_form1 {
+	font-family: "µ¸¿ò", "µ¸¿òÃ¼";
+	border: 1px #cccccc solid; 
+	font-size: 11px; 
+	color: #848484;
+	PADDING-left: 3px; 
+	text-decoration: none;
+}
+
+A.inqu {
+	CURSOR: hand
+}
+A.inqu:visited {
+	FONT-SIZE: 11px; COLOR: #858585; font-family: "µ¸¿ò", "µ¸¿òÃ¼"; TEXT-DECORATION: none;
+}
+A.inqu:link {
+	FONT-SIZE: 11px; COLOR: #858585; font-family: "µ¸¿ò", "µ¸¿òÃ¼"; TEXT-DECORATION: none;
+}
+A.inqu:hover {
+	FONT-SIZE: 11px; COLOR: #c5c5c5; font-family: "µ¸¿ò", "µ¸¿òÃ¼"; TEXT-DECORATION: underline;
+}
+
+
+
+
+A.list {
+	CURSOR: hand
+}
+A.list:visited {
+	FONT-SIZE: 11px; COLOR: #8e8e8e; font-family: "µ¸¿ò", "µ¸¿òÃ¼"; TEXT-DECORATION: none;
+}
+A.list:link {
+	FONT-SIZE: 11px; COLOR: #8e8e8e; font-family: "µ¸¿ò", "µ¸¿òÃ¼"; TEXT-DECORATION: none;
+}
+A.list:hover {
+	FONT-SIZE: 11px; COLOR: #bebebe; font-family: "µ¸¿ò", "µ¸¿òÃ¼"; BACKGROUND-COLOR: #dfebf4; TEXT-DECORATION: underline
+}
+
+
+
+.Map_stan{
+	font-family: "µ¸¿ò", "µ¸¿òÃ¼"; 
+	font-size: 11px; 
+	color: #7d7d7d;
+	text-decoration: none;
+}
+
+
+.Map_stan_b{
+	font-family: "µ¸¿ò", "µ¸¿òÃ¼"; 
+	font-size: 11px; 
+	color: #7d7d7d;
+	FONT-WEIGHT: bold;
+	text-decoration: none;
+}
+
+
+.table_bl_left {
+	PADDING-left: 5px; 
+}
+
+
+.sub_stan_blue{
+	font-family: "µ¸¿ò", "µ¸¿òÃ¼"; 
+	font-size: 11px; 
+	color: #4376b5;
+	FONT-WEIGHT: bold;
+	text-decoration: none;
+}
+
+
+.sub_table{
+	font-family: "µ¸¿ò", "µ¸¿òÃ¼"; 
+	font-size: 11px; 
+	color: #757575;
+	text-decoration: none;
+}
+
+
+.sub_table_b{
+	font-family: "µ¸¿ò", "µ¸¿òÃ¼"; 
+	font-size: 11px; 
+	color: #757575;
+	FONT-WEIGHT: bold;
+	text-decoration: none;
+}
+
+
+.mapborder {
+	border: 3px #e5e5e5 solid;   
+}

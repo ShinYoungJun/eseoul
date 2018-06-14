@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+                       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<bean id="methodNameResolver_Rojum_Saewe" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+ 		<property name="mappings">
+ 			<props>
+				<prop key="/rojum/saewe/search.do">Search</prop>
+				<prop key="/rojum/saewe/excel_search.do">Excel_Search</prop>
+				<prop key="/rojum/saewe/view.do">View</prop>
+				<prop key="/rojum/saewe/saewesuipbugwa.do">Saewesuipbugwa</prop>
+				<prop key="/rojum/saewe/saeweSuipBugwa_ilgwal.do">Saewesuipbugwa_Ilgwal</prop>
+				<prop key="/rojum/saewe/saeweSunap.do">Saewe_Sunap</prop>
+				<prop key="/rojum/saewe/sanchul_view.do">Sanchul_View</prop>
+				<prop key="/rojum/saewe/sanchulinfo_view.do">SanchulInfo_View</prop>
+				<prop key="/rojum/saewe/jumin_view.do">Jumin_View</prop>
+				<prop key="/rojum/saewe/jumji_view.do">Jumji_View</prop>
+				<prop key="/rojum/saewe/bugwa_view.do">Bugwa_View</prop>
+				<prop key="/rojum/saewe/bugwa_modify.do">Bugwa_Modify</prop>
+				<prop key="/rojum/saewe/bugwa_modify_prc.do">Bugwa_Modify_Prc</prop>
+				<prop key="/rojum/saewe/bugwa_register.do">Bugwa_Register</prop>
+				<prop key="/rojum/saewe/bugwa_register_prc.do">Bugwa_Register_Prc</prop>
+				<prop key="/rojum/saewe/semokinfo.do">SemokInfo</prop>
+				<prop key="/rojum/saewe/sunap_view.do">Sunap_View</prop>
+				<prop key="/rojum/saewe/search_penalty_ilgwal.do">SearchPenaltyIlgwal</prop>
+				<prop key="/rojum/saewe/search_penalty_ilgwal_prc.do">SearchPenaltyIlgwalPrc</prop>
+				<!--  //********** BEGIN_현진_20120222 -->
+				<prop key="/rojum/saewe/misunap.do">misunap</prop>
+				<prop key="/rojum/saewe/misunap_sanchul.do">sanchul</prop>
+				<!--   //********** END_현진_20120222 -->
+				<prop key="/rojum/saewe/submit_reply.do">submitReply</prop>
+				<!--  //********** BEGIN_현진_20120227 -->
+				<prop key="/rojum/saewe/bugwa_cancel.do">bugwaCancel</prop>
+				<!--   //********** END_현진_20120227 -->
+				
+			</props>
+ 		</property>
+ 	</bean>
+ 	
+ 	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+ 		<property name="mappings">
+ 			<props>
+				<prop key="/rojum/saewe/search.do">rojum_saeweControl</prop>
+				<prop key="/rojum/saewe/excel_search.do">rojum_saeweControl</prop>
+				<prop key="/rojum/saewe/view.do">rojum_saeweControl</prop>
+				<prop key="/rojum/saewe/saewesuipbugwa.do">rojum_saeweControl</prop>
+				<prop key="/rojum/saewe/saeweSuipBugwa_ilgwal.do">rojum_saeweControl</prop>
+				<prop key="/rojum/saewe/saeweSunap.do">rojum_saeweControl</prop>
+				<prop key="/rojum/saewe/search_penalty_ilgwal.do">rojum_saeweControl</prop>
+				<prop key="/rojum/saewe/search_penalty_ilgwal_prc.do">rojum_saeweControl</prop>
+				<prop key="/rojum/saewe/sanchul_view.do">rojum_saeweControl_Sanchul</prop>
+				<prop key="/rojum/saewe/sanchulinfo_view.do">rojum_saeweControl_Sanchul</prop>
+				<prop key="/rojum/saewe/jumin_view.do">rojum_saeweControl_Jumin</prop>
+				<prop key="/rojum/saewe/jumji_view.do">rojum_saeweControl_Jumji</prop>
+				<prop key="/rojum/saewe/bugwa_view.do">rojum_saeweControl_Bugwa</prop>
+				<prop key="/rojum/saewe/bugwa_modify.do">rojum_saeweControl_Bugwa</prop>
+				<prop key="/rojum/saewe/bugwa_modify_prc.do">rojum_saeweControl_Bugwa</prop>
+				<prop key="/rojum/saewe/bugwa_register.do">rojum_saeweControl_Bugwa</prop>
+				<prop key="/rojum/saewe/bugwa_register_prc.do">rojum_saeweControl_Bugwa</prop>
+				<prop key="/rojum/saewe/semokinfo.do">rojum_saeweControl_Bugwa</prop>
+				<prop key="/rojum/saewe/sunap_view.do">rojum_saeweControl_Sunap</prop>
+				<!--  //********** BEGIN_현진_20120222 -->
+				<prop key="/rojum/saewe/misunap.do">rojum_saeweControl</prop>
+				<prop key="/rojum/saewe/misunap_sanchul.do">rojum_saeweControl</prop>
+				<!--   //********** END_현진_20120222 -->
+				<prop key="/rojum/saewe/submit_reply.do">rojum_saeweControl</prop>
+				<!--  //********** BEGIN_현진_20120227 -->
+				<prop key="/rojum/saewe/bugwa_cancel.do">rojum_saeweControl</prop>
+				<!--   //********** END_현진_20120227 -->
+				
+ 			</props>
+ 		</property>
+ 	</bean>
+ 	
+
+	<bean id="rojum_saeweControl" class="main.java.rojum.saewe.web.SaeweControl">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Rojum_Saewe"/></property>
+		<property name="rojum_saeweService" ref="rojum_saeweService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+		<property name="sysConnectService" ref="sysConnectService"/>
+		<!--  //********** BEGIN_현진_20120222 -->
+		<property name="rojum_jumyongService" ref="rojum_jumyongService"/>	
+		<!--   //********** END_현진_20120222 -->
+	</bean>
+	
+	<bean id="rojum_saeweControl_Sanchul" class="main.java.rojum.saewe.web.TabSanchul_Control">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Rojum_Saewe"/></property>
+		<property name="rojum_saeweService" ref="rojum_saeweService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+	<bean id="rojum_saeweControl_Jumin" class="main.java.rojum.saewe.web.TabJumin_Control">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Rojum_Saewe"/></property>
+		<property name="rojum_saeweService" ref="rojum_saeweService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+	<bean id="rojum_saeweControl_Jumji" class="main.java.rojum.saewe.web.TabJumji_Control">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Rojum_Saewe"/></property>
+		<property name="rojum_saeweService" ref="rojum_saeweService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+	<bean id="rojum_saeweControl_Bugwa" class="main.java.rojum.saewe.web.TabBugwa_Control">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Rojum_Saewe"/></property>
+		<property name="rojum_saeweService" ref="rojum_saeweService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+	<bean id="rojum_saeweControl_Sunap" class="main.java.rojum.saewe.web.TabSunap_Control">
+		<property name="methodNameResolver">
+			<ref local="methodNameResolver_Rojum_Saewe"/></property>
+		<property name="rojum_saeweService" ref="rojum_saeweService"/>
+		<property name="commonCodeService" ref="commonCodeService"/>
+	</bean>
+	
+
+ 	<bean id="rojum_saeweService" class="main.java.rojum.saewe.service.SaeweService">
+ 		<property name="rojum_saeweDao" ref="rojum_saeweDao"/>
+ 	</bean>
+ 	<bean id="rojum_saeweDao" parent="roadsJdbcDaoSupport" class="main.java.rojum.saewe.dao.SaeweDao"/>
+
+   	<bean id="sysConnectService" class="main.java.common.sysConnect.service.SysConnectService">
+ 		<property name="sysConnectDao" ref="sysConnectDao"/>
+ 	</bean>
+ 	<bean id="sysConnectDao" parent="roadsJdbcDaoSupport" class="main.java.common.sysConnect.dao.SysConnectDao"/>
+ 	
+</beans>

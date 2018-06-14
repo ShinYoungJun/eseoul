@@ -1,0 +1,22 @@
+<RexServer 버젼 2.5.1.20081107 추가 기능>
+-------------------------------------
+
+>> 공통
+  - SVG xml(DB에 값으로 저장됨)을 jpg변환 기능
+     호출예) oRptMainParam.put("rex_image_fields", "main=test1,test2:SVG;서브리포트1=test2:SVG:HEXA");
+
+>> 서버 로직
+  - CSV split 기능 추가
+  - 버젼 정보 보는 기능 추가
+     http://localhost:8080/RexServer/RexService.jsp?designtype=version
+
+>> 스크립트
+  - rex_gfRexRptOpen 타입(iframepush, iframeall, savepush, saveall) 추가
+     한화면에서 여러 레포트를 iframe에 조회, 한꺼번에 여러 레포트를 저장 가능
+     printpush(기존 존재), prntall(기존 존재)
+     호출예) rex_gfRexRptOpen("savepush",  oRptMainParam);
+                 rex_gfRexRptOpen("saveall", "");
+
+  - rex_Open 함수 추가
+    한문장으로 레포트를 호출하는 함수
+    호출예) rex_Open("popup", [["rex_rptname","test"]]);
